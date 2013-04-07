@@ -1,1 +1,1 @@
-<?php header( 'Location: http://localhost/cava/prototype/home'); ?>
+<?php header( 'Location: http://localhost/cavaproperty/prototype/home'); ?>
