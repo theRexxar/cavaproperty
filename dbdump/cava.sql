@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 14, 2013 at 10:39 PM
+-- Generation Time: Apr 15, 2013 at 12:09 AM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `cv_activities` (
   `created_on` datetime NOT NULL,
   `deleted` tinyint(12) NOT NULL DEFAULT '0',
   PRIMARY KEY (`activity_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=59 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=69 ;
 
 --
 -- Dumping data for table `cv_activities`
@@ -149,7 +149,122 @@ INSERT INTO `cv_activities` (`activity_id`, `user_id`, `activity`, `module`, `cr
 (55, 1, 'Upload File: 6 : ::1', 'files', '2013-04-14 22:37:36', 0),
 (56, 1, 'Upload File: 7 : ::1', 'files', '2013-04-14 22:37:36', 0),
 (57, 1, 'Created record with ID: 1 : ::1', 'about', '2013-04-14 22:38:13', 0),
-(58, 1, 'Updated record with ID: 1 : ::1', 'about', '2013-04-14 22:38:40', 0);
+(58, 1, 'Updated record with ID: 1 : ::1', 'about', '2013-04-14 22:38:40', 0),
+(59, 1, 'Created Module: Career : ::1', 'modulebuilder', '2013-04-14 22:46:42', 0),
+(60, 1, 'Created record with ID: 1 : ::1', 'career', '2013-04-14 23:03:49', 0),
+(61, 1, 'Deleted record with ID: 1 : ::1', 'career', '2013-04-14 23:04:24', 0),
+(62, 1, 'Created Module: Contact : ::1', 'modulebuilder', '2013-04-14 23:15:43', 0),
+(63, 1, 'Created record with ID: 1 : ::1', 'contact', '2013-04-14 23:29:53', 0),
+(64, 1, 'Updated record with ID: 1 : ::1', 'contact', '2013-04-14 23:30:04', 0),
+(65, 1, 'Created record with ID: 1 : ::1', 'contact', '2013-04-14 23:54:26', 0),
+(66, 1, 'Deleted record with ID: 1 : ::1', 'contact', '2013-04-14 23:55:41', 0),
+(67, 1, 'Created record with ID: 1 : ::1', 'contact', '2013-04-15 00:07:57', 0),
+(68, 1, 'Deleted record with ID: 1 : ::1', 'contact', '2013-04-15 00:08:07', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cv_career`
+--
+
+DROP TABLE IF EXISTS `cv_career`;
+CREATE TABLE IF NOT EXISTS `cv_career` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `summary` text NOT NULL,
+  `description` text NOT NULL,
+  `qualification` text NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `deleted` tinyint(1) NOT NULL DEFAULT '0',
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `cv_career`
+--
+
+INSERT INTO `cv_career` (`id`, `title`, `summary`, `description`, `qualification`, `slug`, `deleted`, `created_on`, `modified_on`) VALUES
+(1, 'Marketing Division', '<p>\r\n Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>', '<p>\r\n Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie.</p>', '<ol>\r\n <li>\r\n  Vel illum dolore eu feugiat nulla</li>\r\n <li>\r\n  Legentis in iis qui facit eorum claritatem</li>\r\n <li>\r\n  Quam nunc putamus</li>\r\n <li>\r\n  Nunc nobis videntur</li>\r\n</ol>', 'marketing-division', 0, '2013-04-14 23:03:49', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cv_contact_mail`
+--
+
+DROP TABLE IF EXISTS `cv_contact_mail`;
+CREATE TABLE IF NOT EXISTS `cv_contact_mail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  `deleted` tinyint(1) NOT NULL DEFAULT '0',
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `cv_contact_mail`
+--
+
+INSERT INTO `cv_contact_mail` (`id`, `name`, `email`, `subject`, `message`, `deleted`, `created_on`, `modified_on`) VALUES
+(1, 'Andhika', 'andhikanovandi@gmail.com', 'test', '<p>\r\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ipsum eros, consectetur eu eleifend quis, egestas aliquet massa. Curabitur orci odio, volutpat a vestibulum eu, hendrerit sed nunc. Ut sit amet lacus vitae tortor tincidunt fringilla. In vel sapien ut nisl consectetur tincidunt ut non lorem. Maecenas at ullamcorper metus. Phasellus et odio nec lacus faucibus consectetur sit amet ut turpis. Ut a risus in tellus suscipit malesuada.</p>', 0, '2013-04-14 23:54:26', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cv_contact_office`
+--
+
+DROP TABLE IF EXISTS `cv_contact_office`;
+CREATE TABLE IF NOT EXISTS `cv_contact_office` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `address` text NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `fax` varchar(255) NOT NULL,
+  `deleted` tinyint(1) NOT NULL DEFAULT '0',
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `cv_contact_office`
+--
+
+INSERT INTO `cv_contact_office` (`id`, `title`, `address`, `phone`, `fax`, `deleted`, `created_on`, `modified_on`) VALUES
+(1, 'Cava''s Head Office', '<p>\r\n CITYLOFTS SUDIRMAN&nbsp;<br />\r\n #26 floor unit #2623&nbsp;<br />\r\n Jl. KH. Mas Mansyur No. 121&nbsp;<br />\r\n Jakarta 10220</p>', '021 2555 8994 / 021 2991 2845', '021 2991 2844', 0, '2013-04-14 23:29:53', '2013-04-14 23:30:04');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cv_contact_phone`
+--
+
+DROP TABLE IF EXISTS `cv_contact_phone`;
+CREATE TABLE IF NOT EXISTS `cv_contact_phone` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `phone` int(20) NOT NULL,
+  `other_phone` int(20) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `deleted` tinyint(1) NOT NULL DEFAULT '0',
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `cv_contact_phone`
+--
+
+INSERT INTO `cv_contact_phone` (`id`, `name`, `phone`, `other_phone`, `subject`, `deleted`, `created_on`, `modified_on`) VALUES
+(1, 'Andhika', 123456, 654321, 'Test', 0, '2013-04-15 00:07:57', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -323,7 +438,7 @@ CREATE TABLE IF NOT EXISTS `cv_permissions` (
   `description` varchar(100) NOT NULL,
   `status` enum('active','inactive','deleted') DEFAULT 'active',
   PRIMARY KEY (`permission_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=84 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=92 ;
 
 --
 -- Dumping data for table `cv_permissions`
@@ -398,7 +513,15 @@ INSERT INTO `cv_permissions` (`permission_id`, `name`, `description`, `status`) 
 (80, 'About.Content.View', '', 'active'),
 (81, 'About.Content.Create', '', 'active'),
 (82, 'About.Content.Edit', '', 'active'),
-(83, 'About.Content.Delete', '', 'active');
+(83, 'About.Content.Delete', '', 'active'),
+(84, 'Career.Content.View', '', 'active'),
+(85, 'Career.Content.Create', '', 'active'),
+(86, 'Career.Content.Edit', '', 'active'),
+(87, 'Career.Content.Delete', '', 'active'),
+(88, 'Contact.Content.View', '', 'active'),
+(89, 'Contact.Content.Create', '', 'active'),
+(90, 'Contact.Content.Edit', '', 'active'),
+(91, 'Contact.Content.Delete', '', 'active');
 
 -- --------------------------------------------------------
 
@@ -656,6 +779,14 @@ INSERT INTO `cv_role_permissions` (`role_id`, `permission_id`) VALUES
 (1, 81),
 (1, 82),
 (1, 83),
+(1, 84),
+(1, 85),
+(1, 86),
+(1, 87),
+(1, 88),
+(1, 89),
+(1, 90),
+(1, 91),
 (2, 1),
 (2, 2),
 (2, 3),
@@ -695,6 +826,8 @@ CREATE TABLE IF NOT EXISTS `cv_schema_version` (
 INSERT INTO `cv_schema_version` (`type`, `version`) VALUES
 ('about_', 2),
 ('app_', 0),
+('career_', 2),
+('contact_', 2),
 ('core', 34),
 ('files_', 2),
 ('marketing_', 2),
