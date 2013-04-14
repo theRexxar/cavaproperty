@@ -96,3 +96,80 @@ ERROR - 2013-04-14 19:46:54 --> 404 Page Not Found -->
 ERROR - 2013-04-14 19:46:54 --> 404 Page Not Found --> 
 ERROR - 2013-04-14 19:46:55 --> 404 Page Not Found --> 
 ERROR - 2013-04-14 19:48:15 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 21:49:53 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 21:49:55 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 21:49:57 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 21:52:21 --> Could not find the language line "mb_form_rules_limit_note"
+ERROR - 2013-04-14 21:52:21 --> Could not find the language line "mb_form_rules_limit_note"
+ERROR - 2013-04-14 21:52:21 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 21:52:48 --> Severity: Warning  --> mkdir() [<a href='function.mkdir'>function.mkdir</a>]: File exists C:\xampp\htdocs\cavaproperty\system\application\core_modules\builder\libraries\modulebuilder.php 316
+ERROR - 2013-04-14 21:52:48 --> Severity: Warning  --> mkdir() [<a href='function.mkdir'>function.mkdir</a>]: File exists C:\xampp\htdocs\cavaproperty\system\application\core_modules\builder\libraries\modulebuilder.php 316
+ERROR - 2013-04-14 21:52:48 --> Severity: Warning  --> mkdir() [<a href='function.mkdir'>function.mkdir</a>]: File exists C:\xampp\htdocs\cavaproperty\system\application\core_modules\builder\libraries\modulebuilder.php 316
+ERROR - 2013-04-14 21:52:48 --> Severity: Warning  --> mkdir() [<a href='function.mkdir'>function.mkdir</a>]: File exists C:\xampp\htdocs\cavaproperty\system\application\core_modules\builder\libraries\modulebuilder.php 316
+ERROR - 2013-04-14 21:52:48 --> Severity: Warning  --> mkdir() [<a href='function.mkdir'>function.mkdir</a>]: File exists C:\xampp\htdocs\cavaproperty\system\application\core_modules\builder\libraries\modulebuilder.php 316
+ERROR - 2013-04-14 21:52:48 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 21:52:50 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 21:53:20 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 21:53:23 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 21:53:25 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 21:53:28 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 21:53:31 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 21:53:59 --> Could not find the language line "mb_form_rules_limit_note"
+ERROR - 2013-04-14 21:53:59 --> Could not find the language line "mb_form_rules_limit_note"
+ERROR - 2013-04-14 21:53:59 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 21:54:28 --> Severity: Warning  --> mkdir() [<a href='function.mkdir'>function.mkdir</a>]: File exists C:\xampp\htdocs\cavaproperty\system\application\core_modules\builder\libraries\modulebuilder.php 316
+ERROR - 2013-04-14 21:54:28 --> Severity: Warning  --> mkdir() [<a href='function.mkdir'>function.mkdir</a>]: File exists C:\xampp\htdocs\cavaproperty\system\application\core_modules\builder\libraries\modulebuilder.php 316
+ERROR - 2013-04-14 21:54:28 --> Severity: Warning  --> mkdir() [<a href='function.mkdir'>function.mkdir</a>]: File exists C:\xampp\htdocs\cavaproperty\system\application\core_modules\builder\libraries\modulebuilder.php 316
+ERROR - 2013-04-14 21:54:28 --> Severity: Warning  --> mkdir() [<a href='function.mkdir'>function.mkdir</a>]: File exists C:\xampp\htdocs\cavaproperty\system\application\core_modules\builder\libraries\modulebuilder.php 316
+ERROR - 2013-04-14 21:54:28 --> Severity: Warning  --> mkdir() [<a href='function.mkdir'>function.mkdir</a>]: File exists C:\xampp\htdocs\cavaproperty\system\application\core_modules\builder\libraries\modulebuilder.php 316
+ERROR - 2013-04-14 21:54:28 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 21:54:29 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 21:54:34 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:02:58 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:14:46 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:14:49 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:14:52 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:17:40 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:17:40 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:18:30 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:18:46 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:18:53 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:18:56 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:18:56 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:19:04 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:19:14 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:34:32 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:34:39 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:34:39 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:36:05 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:36:09 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:36:11 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:36:18 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:36:23 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:36:29 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:36:31 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:36:33 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:36:34 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:37:36 --> Could not find the language line "file_folders.description_label"
+ERROR - 2013-04-14 22:37:36 --> Could not find the language line "file_folders.description_label"
+ERROR - 2013-04-14 22:37:36 --> Could not find the language line "file_folders.description_label"
+ERROR - 2013-04-14 22:37:36 --> Could not find the language line "file_folders.description_label"
+ERROR - 2013-04-14 22:37:36 --> Could not find the language line "file_folders.description_label"
+ERROR - 2013-04-14 22:37:41 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:37:44 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:37:44 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-14 22:37:45 --> Query error: Field 'slug' doesn't have a default value
+ERROR - 2013-04-14 22:38:08 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:38:13 --> Severity: Notice  --> Undefined property: stdClass::$title C:\xampp\htdocs\cavaproperty\system\modules\about\views\about_people\index.php 41
+ERROR - 2013-04-14 22:38:14 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-14 22:38:14 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:38:22 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:38:25 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:38:25 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:38:29 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:38:29 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:38:37 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:38:39 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:38:41 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:38:41 --> 404 Page Not Found --> 
+ERROR - 2013-04-14 22:38:41 --> 404 Page Not Found --> 

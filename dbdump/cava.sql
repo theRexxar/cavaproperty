@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 14, 2013 at 07:49 PM
+-- Generation Time: Apr 14, 2013 at 10:39 PM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -23,6 +23,56 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `cv_about_landing_page`
+--
+
+DROP TABLE IF EXISTS `cv_about_landing_page`;
+CREATE TABLE IF NOT EXISTS `cv_about_landing_page` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `deleted` tinyint(1) NOT NULL DEFAULT '0',
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `cv_about_landing_page`
+--
+
+INSERT INTO `cv_about_landing_page` (`id`, `title`, `description`, `deleted`, `created_on`, `modified_on`) VALUES
+(1, 'We are CAVA Property', '<p>\r\n We are professionals in property marketing and consulting who always carry together our experience, knowledge and passion to our clients.</p>\r\n<p>\r\n <span class="text-green">OUR SERVICE</span><br />\r\n <span class="text-green">WE ADVISE WHAT BEST TO ACHIEVE THE BEST</span><br />\r\n Through detailed study, we tailor the best approach (including size, targets, strategies and marketing communications) to match our clients&#39; expectations.</p>\r\n<p>\r\n <span class="text-green">VISION</span><br />\r\n <span class="text-green">MORE GAINS, LESS RISKS</span><br />\r\n We believe it can be achieved with a great decision based on our detailed strategies.</p>\r\n<p>\r\n <span class="text-green">MISSION</span><br />\r\n <span class="text-green">OUR GOAL IS SIMPLE</span><br />\r\n We want to create a successful story with our clients and their projects.</p>', 0, '2013-04-14 22:18:45', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cv_about_people`
+--
+
+DROP TABLE IF EXISTS `cv_about_people`;
+CREATE TABLE IF NOT EXISTS `cv_about_people` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `position` varchar(255) DEFAULT NULL,
+  `description` text NOT NULL,
+  `image_id` int(11) DEFAULT NULL,
+  `deleted` tinyint(1) NOT NULL DEFAULT '0',
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `cv_about_people`
+--
+
+INSERT INTO `cv_about_people` (`id`, `name`, `position`, `description`, `image_id`, `deleted`, `created_on`, `modified_on`) VALUES
+(1, 'Reynolds Darmadi', '0', '<p>\r\n Gazing at the skyscrapers while meeting new people around, Reynolds founded &Ccedil;ava in 2010 to bridge those two different interests. His experience in property consultants and developers both in a company and independently gives him insight to combine visions from them to create a better project and to match clients&rsquo; expectations.</p>', 3, 0, '2013-04-14 22:38:13', '2013-04-14 22:38:40');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `cv_activities`
 --
 
@@ -35,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `cv_activities` (
   `created_on` datetime NOT NULL,
   `deleted` tinyint(12) NOT NULL DEFAULT '0',
   PRIMARY KEY (`activity_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=45 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=59 ;
 
 --
 -- Dumping data for table `cv_activities`
@@ -85,7 +135,21 @@ INSERT INTO `cv_activities` (`activity_id`, `user_id`, `activity`, `module`, `cr
 (41, 1, 'Updated record with ID: 1 : ::1', 'project', '2013-04-14 18:53:23', 0),
 (42, 1, 'Updated record with ID: 1 : ::1', 'project', '2013-04-14 18:54:29', 0),
 (43, 1, 'Created Module: Marketing : ::1', 'modulebuilder', '2013-04-14 19:13:13', 0),
-(44, 1, 'Created record with ID: 1 : ::1', 'marketing', '2013-04-14 19:35:09', 0);
+(44, 1, 'Created record with ID: 1 : ::1', 'marketing', '2013-04-14 19:35:09', 0),
+(45, 1, 'logged in from: ::1', 'users', '2013-04-14 21:49:52', 0),
+(46, 1, 'Created Module: Aboout : ::1', 'modulebuilder', '2013-04-14 21:52:48', 0),
+(47, 1, 'Migrate Type: aboout_ Uninstalled Version: 0 from: ::1', 'migrations', '2013-04-14 21:53:22', 0),
+(48, 1, 'Deleted Module: Aboout : ::1', 'builder', '2013-04-14 21:53:27', 0),
+(49, 1, 'Created Module: About : ::1', 'modulebuilder', '2013-04-14 21:54:28', 0),
+(50, 1, 'Created record with ID: 1 : ::1', 'about', '2013-04-14 22:18:45', 0),
+(51, 1, 'Create File Folder: 3 : ::1', 'files folders', '2013-04-14 22:36:29', 0),
+(52, 1, 'Upload File: 4 : ::1', 'files', '2013-04-14 22:37:36', 0),
+(53, 1, 'Upload File: 5 : ::1', 'files', '2013-04-14 22:37:36', 0),
+(54, 1, 'Upload File: 3 : ::1', 'files', '2013-04-14 22:37:36', 0),
+(55, 1, 'Upload File: 6 : ::1', 'files', '2013-04-14 22:37:36', 0),
+(56, 1, 'Upload File: 7 : ::1', 'files', '2013-04-14 22:37:36', 0),
+(57, 1, 'Created record with ID: 1 : ::1', 'about', '2013-04-14 22:38:13', 0),
+(58, 1, 'Updated record with ID: 1 : ::1', 'about', '2013-04-14 22:38:40', 0);
 
 -- --------------------------------------------------------
 
@@ -132,7 +196,7 @@ CREATE TABLE IF NOT EXISTS `cv_file` (
   `date_added` int(11) NOT NULL DEFAULT '0',
   `sort` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `cv_file`
@@ -140,7 +204,12 @@ CREATE TABLE IF NOT EXISTS `cv_file` (
 
 INSERT INTO `cv_file` (`id`, `folder_id`, `user_id`, `type`, `name`, `filename`, `description`, `extension`, `mimetype`, `width`, `height`, `filesize`, `date_added`, `sort`) VALUES
 (1, 2, 1, 'i', 'One Balmoral.jpg', '1365353249_ce75def4456f0700d91a1eed7fb060fe.jpg', '', '.jpg', 'image/jpeg', 1024, 485, 96, 1365353249, 0),
-(2, 2, 1, 'i', 'One Balmoral 1.jpg', '1365353249_bfb0f9334add6f827a0638ca95b8fdf4.jpg', '', '.jpg', 'image/jpeg', 1200, 964, 168, 1365353249, 0);
+(2, 2, 1, 'i', 'One Balmoral 1.jpg', '1365353249_bfb0f9334add6f827a0638ca95b8fdf4.jpg', '', '.jpg', 'image/jpeg', 1200, 964, 168, 1365353249, 0),
+(3, 3, 1, 'i', 'p-1.jpg', '1365953856_27e37efff7bca80a6e195055256cdcae.jpg', '', '.jpg', 'image/jpeg', 180, 180, 13, 1365953856, 0),
+(4, 3, 1, 'i', 'p-3.jpg', '1365953856_c6089052af56c4ab6f7ed69bec96f01e.jpg', '', '.jpg', 'image/jpeg', 180, 180, 10, 1365953856, 0),
+(5, 3, 1, 'i', 'p-2.jpg', '1365953856_ddc5b2162ae573b96488c0c1b142df9d.jpg', '', '.jpg', 'image/jpeg', 180, 180, 12, 1365953856, 0),
+(6, 3, 1, 'i', 'p-4.jpg', '1365953856_41f568bba0094b20232a725caf979ac7.jpg', '', '.jpg', 'image/jpeg', 180, 180, 11, 1365953856, 0),
+(7, 3, 1, 'i', 'p-5.jpg', '1365953856_4c5a3abbaa482e228229e9a58081ec16.jpg', '', '.jpg', 'image/jpeg', 180, 180, 11, 1365953856, 0);
 
 -- --------------------------------------------------------
 
@@ -157,7 +226,7 @@ CREATE TABLE IF NOT EXISTS `cv_file_folders` (
   `date_added` int(11) NOT NULL,
   `sort` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `cv_file_folders`
@@ -165,7 +234,8 @@ CREATE TABLE IF NOT EXISTS `cv_file_folders` (
 
 INSERT INTO `cv_file_folders` (`id`, `parent_id`, `slug`, `name`, `date_added`, `sort`) VALUES
 (1, 0, 'default', 'Default Folder', 1365203367, 0),
-(2, 0, 'property-image', 'Property Image', 1365353213, 0);
+(2, 0, 'property-image', 'Property Image', 1365353213, 0),
+(3, 0, 'people-image', 'People Image', 1365953789, 0);
 
 -- --------------------------------------------------------
 
@@ -253,7 +323,7 @@ CREATE TABLE IF NOT EXISTS `cv_permissions` (
   `description` varchar(100) NOT NULL,
   `status` enum('active','inactive','deleted') DEFAULT 'active',
   PRIMARY KEY (`permission_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=76 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=84 ;
 
 --
 -- Dumping data for table `cv_permissions`
@@ -324,7 +394,11 @@ INSERT INTO `cv_permissions` (`permission_id`, `name`, `description`, `status`) 
 (72, 'Marketing.Content.View', '', 'active'),
 (73, 'Marketing.Content.Create', '', 'active'),
 (74, 'Marketing.Content.Edit', '', 'active'),
-(75, 'Marketing.Content.Delete', '', 'active');
+(75, 'Marketing.Content.Delete', '', 'active'),
+(80, 'About.Content.View', '', 'active'),
+(81, 'About.Content.Create', '', 'active'),
+(82, 'About.Content.Edit', '', 'active'),
+(83, 'About.Content.Delete', '', 'active');
 
 -- --------------------------------------------------------
 
@@ -578,6 +652,10 @@ INSERT INTO `cv_role_permissions` (`role_id`, `permission_id`) VALUES
 (1, 73),
 (1, 74),
 (1, 75),
+(1, 80),
+(1, 81),
+(1, 82),
+(1, 83),
 (2, 1),
 (2, 2),
 (2, 3),
@@ -615,6 +693,7 @@ CREATE TABLE IF NOT EXISTS `cv_schema_version` (
 --
 
 INSERT INTO `cv_schema_version` (`type`, `version`) VALUES
+('about_', 2),
 ('app_', 0),
 ('core', 34),
 ('files_', 2),
@@ -733,7 +812,7 @@ CREATE TABLE IF NOT EXISTS `cv_users` (
 --
 
 INSERT INTO `cv_users` (`id`, `role_id`, `email`, `username`, `password_hash`, `reset_hash`, `salt`, `last_login`, `last_ip`, `created_on`, `deleted`, `banned`, `ban_message`, `reset_by`, `display_name`, `display_name_changed`, `timezone`, `language`, `active`, `activate_hash`) VALUES
-(1, 1, 'andhikanovandi@gmail.com', 'andhika', 'd8db64dfb1062b9200c4e57c51d0b736d5f57692', NULL, 'Seqx4Rm', '2013-04-14 18:29:30', '::1', '0000-00-00 00:00:00', 0, 0, NULL, NULL, 'Andhika Novandi Patria', NULL, 'UM6', 'english', 1, ''),
+(1, 1, 'andhikanovandi@gmail.com', 'andhika', 'd8db64dfb1062b9200c4e57c51d0b736d5f57692', NULL, 'Seqx4Rm', '2013-04-14 21:49:52', '::1', '0000-00-00 00:00:00', 0, 0, NULL, NULL, 'Andhika Novandi Patria', NULL, 'UM6', 'english', 1, ''),
 (2, 1, 'admin@bonfire.com', 'admin', '1d06325762c0707eb40517772e1eafd6838075ac', NULL, 'JoCRMtX', '0000-00-00 00:00:00', '', '2013-04-07 09:59:19', 0, 0, NULL, NULL, 'Administrator', NULL, 'UM6', 'english', 1, '');
 
 -- --------------------------------------------------------
