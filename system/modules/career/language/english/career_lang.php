@@ -1,0 +1,30 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$lang['career_manage']						= 'Manage Career';
+$lang['career_edit']						= 'Edit';
+$lang['career_true']						= 'True';
+$lang['career_false']						= 'False';
+$lang['career_create']						= 'Create';
+$lang['career_list']						= 'Career List';
+$lang['career_new']							= 'Create New Career';
+$lang['career_edit_text']					= 'Edit this to suit your needs';
+$lang['career_no_records']					= 'There aren\'t any career in the system.';
+$lang['career_create_new']					= 'Create a new Career.';
+$lang['career_create_success']				= 'Career successfully created.';
+$lang['career_create_failure']				= 'There was a problem creating the career: ';
+$lang['career_create_new_button']			= 'Create New Career';
+$lang['career_invalid_id']					= 'Invalid Career ID.';
+$lang['career_edit_success']				= 'Career successfully saved.';
+$lang['career_edit_failure']				= 'There was a problem saving the career: ';
+$lang['career_delete_success']				= 'record(s) successfully deleted.';
+$lang['career_delete_failure']				= 'We could not delete the record: ';
+$lang['career_delete_error']				= 'You have not selected any records to delete.';
+$lang['career_actions']						= 'Actions';
+$lang['career_cancel']						= 'Cancel';
+$lang['career_delete_record']				= 'Delete this Career';
+$lang['career_delete_confirm']				= 'Are you sure you want to delete this career?';
+$lang['career_edit_heading']				= 'Edit Career';
+
+// Activities
+$lang['career_act_create_record']			= 'Created record with ID';
+$lang['career_act_edit_record']				= 'Updated record with ID';
+$lang['career_act_delete_record']			= 'Deleted record with ID';
