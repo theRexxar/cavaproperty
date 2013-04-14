@@ -33,6 +33,32 @@ $id = isset($project['id']) ? $project['id'] : '';
             </div>
         </div>
 
+        <!-- Developer -->
+        <div class="control-group <?php echo form_error('developer_id') ? 'error' : ''; ?>">
+            <?php echo form_label('Developer'. lang('bf_form_label_required'), 'developer_id', array('class' => "control-label") ); ?>
+            <div class='controls'>
+                <select name="developer_id" id="developer_id" no_parent="1" style="width: 230px;" >
+                    <?php foreach($developer AS $developer_list) : ?>
+                    <option value="<?php echo $developer_list->id; ?>" <?php echo isset($project['developer_id']) && $developer_list->id == $project['developer_id'] ? 'selected="selected"' : ""; ?> ><?php echo $developer_list->title; ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <span class="help-inline"><?php echo form_error('developer_id'); ?></span>
+            </div>
+        </div>
+
+        <!-- Marketing Agent -->
+        <div class="control-group <?php echo form_error('marketing_id') ? 'error' : ''; ?>">
+            <?php echo form_label('Marketing Agent'. lang('bf_form_label_required'), 'marketing_id', array('class' => "control-label") ); ?>
+            <div class='controls'>
+                <select name="marketing_id" id="marketing_id" no_parent="1" style="width: 230px;" >
+                    <?php foreach($marketing AS $marketing_list) : ?>
+                    <option value="<?php echo $marketing_list->id; ?>" <?php echo isset($project['marketing_id']) && $marketing_list->id == $project['marketing_id'] ? 'selected="selected"' : ""; ?> ><?php echo $marketing_list->name; ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <span class="help-inline"><?php echo form_error('marketing_id'); ?></span>
+            </div>
+        </div>
+
         <!-- Title -->
         <div class="control-group <?php echo form_error('title') ? 'error' : ''; ?>">
             <?php echo form_label('Title'. lang('bf_form_label_required'), 'title', array('class' => "control-label") ); ?>
@@ -73,7 +99,7 @@ $id = isset($project['id']) ? $project['id'] : '';
         <div class="control-group <?php echo form_error('bedroom') ? 'error' : ''; ?>">
             <?php echo form_label('Bedroom'. lang('bf_form_label_required'), 'bedroom', array('class' => "control-label") ); ?>
             <div class='controls'>
-                <input id="bedroom" type="text" name="bedroom" maxlength="255" value="<?php echo set_value('bedroom', isset($project['bedroom']) ? $project['bedroom'] : ''); ?>"  />
+                <input id="bedroom" type="text" name="bedroom" maxlength="3" style="width: 20px;" value="<?php echo set_value('bedroom', isset($project['bedroom']) ? $project['bedroom'] : ''); ?>"  />
                 Bedroom(s)
                 <span class="help-inline"><?php echo form_error('bedroom'); ?></span>
             </div>

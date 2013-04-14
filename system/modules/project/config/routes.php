@@ -26,6 +26,12 @@ $route['project/content/project_type/(:any)/(:any)']		= "project_type/$1/$2";
 $route['project/content/project_type/(:any)'] 		= "project_type/$1";
 $route['project/content/project_type']				= "project_type";
 
+$route['project/content/project_developer/(:any)/(:any)/(:any)/(:any)']		= "project_developer/$1/$2/$3/$4";
+$route['project/content/project_developer/(:any)/(:any)/(:any)']		= "project_developer/$1/$2/$3";
+$route['project/content/project_developer/(:any)/(:any)']		= "project_developer/$1/$2";
+$route['project/content/project_developer/(:any)'] 		= "project_developer/$1";
+$route['project/content/project_developer']				= "project_developer";
+
 $route['project/content/project_property/(:any)/(:any)/(:any)/(:any)']		= "project_property/$1/$2/$3/$4";
 $route['project/content/project_property/(:any)/(:any)/(:any)']		= "project_property/$1/$2/$3";
 $route['project/content/project_property/(:any)/(:any)']		= "project_property/$1/$2";

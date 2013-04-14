@@ -26,10 +26,19 @@ class Project_property_model extends BF_Model {
                             project_type.id AS id_type,
                             project_type.title AS title_type,
                             project_type.slug AS slug_type,
+                            project_developer.id AS id_developer,
+                            project_developer.title AS title_developer,
+                            project_developer.slug AS slug_developer,
+                            marketing_agent.id AS id_marketing,
+                            marketing_agent.name AS name_marketing,
+                            marketing_agent.phone AS phone_marketing,
+                            marketing_agent.email AS email_marketing,
                             ');
         }
 
         $this->db->join('project_type', 'project_property.type_id = project_type.id', 'left');
+        $this->db->join('project_developer', 'project_property.developer_id = project_developer.id', 'left');
+        $this->db->join('marketing_agent', 'project_property.marketing_id = marketing_agent.id', 'left');
         $this->db->where('project_property.deleted', '0');
 
         return parent::find_all();

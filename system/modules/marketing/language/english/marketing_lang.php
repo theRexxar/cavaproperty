@@ -1,0 +1,30 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$lang['marketing_manage']						= 'Manage Agent';
+$lang['marketing_edit']							= 'Edit';
+$lang['marketing_true']							= 'True';
+$lang['marketing_false']						= 'False';
+$lang['marketing_create']						= 'Create';
+$lang['marketing_list']							= 'Agent List';
+$lang['marketing_new']							= 'Create New Agent';
+$lang['marketing_edit_text']					= 'Edit this to suit your needs';
+$lang['marketing_no_records']					= 'There aren\'t any agent in the system.';
+$lang['marketing_create_new']					= 'Create a new Agent.';
+$lang['marketing_create_success']				= 'Agent successfully created.';
+$lang['marketing_create_failure']				= 'There was a problem creating the agent: ';
+$lang['marketing_create_new_button']			= 'Create New Agent';
+$lang['marketing_invalid_id']					= 'Invalid Agent ID.';
+$lang['marketing_edit_success']					= 'Agent successfully saved.';
+$lang['marketing_edit_failure']					= 'There was a problem saving the agent: ';
+$lang['marketing_delete_success']				= 'record(s) successfully deleted.';
+$lang['marketing_delete_failure']				= 'We could not delete the record: ';
+$lang['marketing_delete_error']					= 'You have not selected any records to delete.';
+$lang['marketing_actions']						= 'Actions';
+$lang['marketing_cancel']						= 'Cancel';
+$lang['marketing_delete_record']				= 'Delete this Agent';
+$lang['marketing_delete_confirm']				= 'Are you sure you want to delete this agent?';
+$lang['marketing_edit_heading']					= 'Edit Agent';
+
+// Activities
+$lang['marketing_act_create_record']			= 'Created record with ID';
+$lang['marketing_act_edit_record']				= 'Updated record with ID';
+$lang['marketing_act_delete_record']			= 'Deleted record with ID';

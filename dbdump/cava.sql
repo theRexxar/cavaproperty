@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 07, 2013 at 11:56 PM
+-- Generation Time: Apr 14, 2013 at 07:49 PM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `cv_activities` (
   `created_on` datetime NOT NULL,
   `deleted` tinyint(12) NOT NULL DEFAULT '0',
   PRIMARY KEY (`activity_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=37 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=45 ;
 
 --
 -- Dumping data for table `cv_activities`
@@ -77,7 +77,15 @@ INSERT INTO `cv_activities` (`activity_id`, `user_id`, `activity`, `module`, `cr
 (33, 1, 'Upload File: 2 : ::1', 'files', '2013-04-07 23:47:29', 0),
 (34, 1, 'Created record with ID: 1 : ::1', 'project', '2013-04-07 23:47:42', 0),
 (35, 1, 'Updated record with ID: 1 : ::1', 'project', '2013-04-07 23:54:48', 0),
-(36, 1, 'Updated record with ID: 1 : ::1', 'project', '2013-04-07 23:55:07', 0);
+(36, 1, 'Updated record with ID: 1 : ::1', 'project', '2013-04-07 23:55:07', 0),
+(37, 1, 'logged in from: ::1', 'users', '2013-04-14 13:14:41', 0),
+(38, 1, 'logged in from: ::1', 'users', '2013-04-14 18:29:30', 0),
+(39, 1, 'Created record with ID: 1 : ::1', 'project', '2013-04-14 18:44:02', 0),
+(40, 1, 'Updated record with ID: 1 : ::1', 'project', '2013-04-14 18:52:33', 0),
+(41, 1, 'Updated record with ID: 1 : ::1', 'project', '2013-04-14 18:53:23', 0),
+(42, 1, 'Updated record with ID: 1 : ::1', 'project', '2013-04-14 18:54:29', 0),
+(43, 1, 'Created Module: Marketing : ::1', 'modulebuilder', '2013-04-14 19:13:13', 0),
+(44, 1, 'Created record with ID: 1 : ::1', 'marketing', '2013-04-14 19:35:09', 0);
 
 -- --------------------------------------------------------
 
@@ -177,6 +185,31 @@ CREATE TABLE IF NOT EXISTS `cv_login_attempts` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `cv_marketing_agent`
+--
+
+DROP TABLE IF EXISTS `cv_marketing_agent`;
+CREATE TABLE IF NOT EXISTS `cv_marketing_agent` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `deleted` tinyint(1) NOT NULL DEFAULT '0',
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `cv_marketing_agent`
+--
+
+INSERT INTO `cv_marketing_agent` (`id`, `name`, `phone`, `email`, `deleted`, `created_on`, `modified_on`) VALUES
+(1, 'Agent 1', '+62812 3456 789', 'agent1@cavaproperty.com', 0, '2013-04-14 19:35:09', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `cv_news`
 --
 
@@ -220,7 +253,7 @@ CREATE TABLE IF NOT EXISTS `cv_permissions` (
   `description` varchar(100) NOT NULL,
   `status` enum('active','inactive','deleted') DEFAULT 'active',
   PRIMARY KEY (`permission_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=72 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=76 ;
 
 --
 -- Dumping data for table `cv_permissions`
@@ -287,7 +320,11 @@ INSERT INTO `cv_permissions` (`permission_id`, `name`, `description`, `status`) 
 (68, 'Project.Content.View', '', 'active'),
 (69, 'Project.Content.Create', '', 'active'),
 (70, 'Project.Content.Edit', '', 'active'),
-(71, 'Project.Content.Delete', '', 'active');
+(71, 'Project.Content.Delete', '', 'active'),
+(72, 'Marketing.Content.View', '', 'active'),
+(73, 'Marketing.Content.Create', '', 'active'),
+(74, 'Marketing.Content.Edit', '', 'active'),
+(75, 'Marketing.Content.Delete', '', 'active');
 
 -- --------------------------------------------------------
 
@@ -318,6 +355,31 @@ INSERT INTO `cv_project_category` (`id`, `title`, `description`, `slug`, `delete
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `cv_project_developer`
+--
+
+DROP TABLE IF EXISTS `cv_project_developer`;
+CREATE TABLE IF NOT EXISTS `cv_project_developer` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `deleted` tinyint(1) NOT NULL DEFAULT '0',
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `cv_project_developer`
+--
+
+INSERT INTO `cv_project_developer` (`id`, `title`, `description`, `slug`, `deleted`, `created_on`, `modified_on`) VALUES
+(1, 'One Balmoral', '<p>\r\n One Balmoral</p>', 'one-balmoral', 0, '2013-04-14 18:44:02', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `cv_project_property`
 --
 
@@ -325,6 +387,7 @@ DROP TABLE IF EXISTS `cv_project_property`;
 CREATE TABLE IF NOT EXISTS `cv_project_property` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `type_id` int(11) NOT NULL,
+  `developer_id` int(11) NOT NULL,
   `marketing_id` int(11) NOT NULL DEFAULT '1',
   `title` varchar(255) NOT NULL,
   `location` text NOT NULL,
@@ -345,8 +408,8 @@ CREATE TABLE IF NOT EXISTS `cv_project_property` (
 -- Dumping data for table `cv_project_property`
 --
 
-INSERT INTO `cv_project_property` (`id`, `type_id`, `marketing_id`, `title`, `location`, `size`, `bedroom`, `facility`, `condition`, `additional`, `image_id`, `slug`, `deleted`, `created_on`, `modified_on`) VALUES
-(1, 1, 1, 'ONE BALMORAL', 'Balmoral Road (District 10)', '3000 m2', 5, '<p>\r\n Developed by Hong Leong Holdings Ltd, twin blocks of 12 storey apartments comprising of 91 apartments to be built on an approximately 6157m2 land. It offers a choice of 1, 2, 3 and 4 bedrooms, equipped with imported finishings.</p>\r\n<p>\r\n One Balmoral is strategically located at Balmoral Road (District 10) and within the greenery of neighbouring Goodwood Hill. One of Singapore&iacute;s premier schools, Raffles Girls&#39; Secondary School, is a stone&iacute;s throw away and you will be spoilt for choice with the private clubs available nearby, namely The Pines, the Tanglin Club and the American Club. One Balmoral is just minutes&iacute; drive away from ION Orchard and the shopping belt of Orchard Road.</p>\r\n<p>\r\n Currently, the piling is near completion and anticipated handing over is March 2015.</p>\r\n<ul>\r\n <li>\r\n  Total no. of units 91</li>\r\n <li>\r\n  Twin towers of 12 storeys plus attic</li>\r\n <li>\r\n  Car park lots 103, inclusive of 2 handicap lots at basement and first storey</li>\r\n <li>\r\n  Facilities &ntilde; Lap pool, clubhouse, meditation garden, gym, BBQ pavilions amongst others</li>\r\n</ul>', 'New', '<p>\r\n For more questions and inquiries please feel free to contact us in +62817 9999 199 or +62813 1848 9293</p>', 1, 'one-balmoral', 0, '2013-04-07 23:47:42', '2013-04-07 23:55:07');
+INSERT INTO `cv_project_property` (`id`, `type_id`, `developer_id`, `marketing_id`, `title`, `location`, `size`, `bedroom`, `facility`, `condition`, `additional`, `image_id`, `slug`, `deleted`, `created_on`, `modified_on`) VALUES
+(1, 1, 1, 1, 'One Balmoral 1', 'Balmoral Road (District 10)', '3000 m2', 5, '<p>\r\n Developed by Hong Leong Holdings Ltd, twin blocks of 12 storey apartments comprising of 91 apartments to be built on an approximately 6157m2 land. It offers a choice of 1, 2, 3 and 4 bedrooms, equipped with imported finishings.</p>\r\n<p>\r\n One Balmoral is strategically located at Balmoral Road (District 10) and within the greenery of neighbouring Goodwood Hill. One of Singapore&iacute;s premier schools, Raffles Girls&#39; Secondary School, is a stone&iacute;s throw away and you will be spoilt for choice with the private clubs available nearby, namely The Pines, the Tanglin Club and the American Club. One Balmoral is just minutes&iacute; drive away from ION Orchard and the shopping belt of Orchard Road.</p>\r\n<p>\r\n Currently, the piling is near completion and anticipated handing over is March 2015.</p>\r\n<ul>\r\n <li>\r\n  Total no. of units 91</li>\r\n <li>\r\n  Twin towers of 12 storeys plus attic</li>\r\n <li>\r\n  Car park lots 103, inclusive of 2 handicap lots at basement and first storey</li>\r\n <li>\r\n  Facilities &ntilde; Lap pool, clubhouse, meditation garden, gym, BBQ pavilions amongst others</li>\r\n</ul>', 'New', '<p>\r\n For more questions and inquiries please feel free to contact us in +62817 9999 199 or +62813 1848 9293</p>', 1, 'one-balmoral-1', 0, '2013-04-07 23:47:42', '2013-04-14 18:54:29');
 
 -- --------------------------------------------------------
 
@@ -511,6 +574,10 @@ INSERT INTO `cv_role_permissions` (`role_id`, `permission_id`) VALUES
 (1, 69),
 (1, 70),
 (1, 71),
+(1, 72),
+(1, 73),
+(1, 74),
+(1, 75),
 (2, 1),
 (2, 2),
 (2, 3),
@@ -551,6 +618,7 @@ INSERT INTO `cv_schema_version` (`type`, `version`) VALUES
 ('app_', 0),
 ('core', 34),
 ('files_', 2),
+('marketing_', 2),
 ('news_', 3),
 ('project_', 2);
 
@@ -665,7 +733,7 @@ CREATE TABLE IF NOT EXISTS `cv_users` (
 --
 
 INSERT INTO `cv_users` (`id`, `role_id`, `email`, `username`, `password_hash`, `reset_hash`, `salt`, `last_login`, `last_ip`, `created_on`, `deleted`, `banned`, `ban_message`, `reset_by`, `display_name`, `display_name_changed`, `timezone`, `language`, `active`, `activate_hash`) VALUES
-(1, 1, 'andhikanovandi@gmail.com', 'andhika', 'd8db64dfb1062b9200c4e57c51d0b736d5f57692', NULL, 'Seqx4Rm', '2013-04-07 22:08:14', '::1', '0000-00-00 00:00:00', 0, 0, NULL, NULL, 'Andhika Novandi Patria', NULL, 'UM6', 'english', 1, ''),
+(1, 1, 'andhikanovandi@gmail.com', 'andhika', 'd8db64dfb1062b9200c4e57c51d0b736d5f57692', NULL, 'Seqx4Rm', '2013-04-14 18:29:30', '::1', '0000-00-00 00:00:00', 0, 0, NULL, NULL, 'Andhika Novandi Patria', NULL, 'UM6', 'english', 1, ''),
 (2, 1, 'admin@bonfire.com', 'admin', '1d06325762c0707eb40517772e1eafd6838075ac', NULL, 'JoCRMtX', '0000-00-00 00:00:00', '', '2013-04-07 09:59:19', 0, 0, NULL, NULL, 'Administrator', NULL, 'UM6', 'english', 1, '');
 
 -- --------------------------------------------------------

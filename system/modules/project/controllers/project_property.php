@@ -12,8 +12,10 @@ class project_property extends Admin_Controller {
 		$this->auth->restrict('Project.Content.View');
 		$this->load->model('project_property_model', null, true);
 		$this->load->model('project_property_gallery_model');
-		$this->load->model('project_type_model');
 		$this->load->model('project_model');
+		$this->load->model('project_type_model');
+		$this->load->model('project_developer_model');
+		$this->load->model('marketing/marketing_model');
 		$this->lang->load('project_property');
 		
 		Template::set_block('sub_nav', 'project_property/_sub_nav');
@@ -97,6 +99,24 @@ class project_property extends Admin_Controller {
 				$data["category"][$record->id] = $record;
 
 				$data["category"][$record->id]->type = $this->project_type_model->order_by('title','asc')->find_all_by('project_type.category_id', $record->id);
+			}
+		}  
+
+		$developer = $this->project_developer_model->order_by('title','asc')->find_all();
+		if (is_array($developer) && count($developer)) 
+		{
+			foreach($developer as $record)
+			{
+				$data["developer"][$record->id] = $record;
+			}
+		}  
+
+		$marketing = $this->marketing_model->order_by('name','asc')->find_all();
+		if (is_array($marketing) && count($marketing)) 
+		{
+			foreach($marketing as $record)
+			{
+				$data["marketing"][$record->id] = $record;
 			}
 		}  
 		Template::set("data", $data);
@@ -211,6 +231,24 @@ class project_property extends Admin_Controller {
 				$data["category"][$record->id] = $record;
 
 				$data["category"][$record->id]->type = $this->project_type_model->order_by('title','asc')->find_all_by('project_type.category_id', $record->id);
+			}
+		}  
+
+		$developer = $this->project_developer_model->order_by('title','asc')->find_all();
+		if (is_array($developer) && count($developer)) 
+		{
+			foreach($developer as $record)
+			{
+				$data["developer"][$record->id] = $record;
+			}
+		} 
+
+		$marketing = $this->marketing_model->order_by('name','asc')->find_all();
+		if (is_array($marketing) && count($marketing)) 
+		{
+			foreach($marketing as $record)
+			{
+				$data["marketing"][$record->id] = $record;
 			}
 		}  
 		Template::set("data", $data);
@@ -396,6 +434,7 @@ class project_property extends Admin_Controller {
 
 		
 		$this->form_validation->set_rules('type_id','Type','required|trim|xss_clean|is_numeric|max_length[11]');
+		$this->form_validation->set_rules('developer_id','Developer','required|trim|xss_clean|is_numeric|max_length[11]');
 		$this->form_validation->set_rules('title','Title','required|trim|xss_clean|max_length[255]|callback__check_title['.$id.']');
 		$this->form_validation->set_rules('slug', 'Slug', 'required|trim|xss_clean|max_length[255]|alpha_dot_dash|callback__check_slug['.$id.']');
 		$this->form_validation->set_rules('location','Location','required|trim|xss_clean');
@@ -417,6 +456,7 @@ class project_property extends Admin_Controller {
 		
 		$data = array();
 		$data['type_id']          	  	= $this->input->post('type_id');
+		$data['developer_id']          	= $this->input->post('developer_id');
 		$data['title']                	= $this->input->post('title');
 		$data['location']          		= $this->input->post('location');
 		$data['size']          			= $this->input->post('size');
