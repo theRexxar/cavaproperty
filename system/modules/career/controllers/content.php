@@ -54,7 +54,7 @@ class content extends Admin_Controller {
 
 		$offset = $this->uri->segment(5);
 
-		$records = $this->career_model->limit($this->limit, $offset)->find_all();
+		$records = $this->career_model->order_by('created_on','desc')->limit($this->limit, $offset)->find_all();
 
                 
         // Pagination

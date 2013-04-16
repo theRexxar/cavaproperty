@@ -426,6 +426,15 @@ tfoot td {
 	line-height: 2.1 !important;
 }
 
+.banner-group{
+	padding: 0 10px;
+	height: 30px;
+	line-height: 30px;
+	margin: 20px 0 0;
+	font-weight: bold;
+	background: #B6B6C6;
+}
+
 /*
 Login Page
  */

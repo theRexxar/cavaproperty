@@ -24,6 +24,15 @@ $id = isset($about['id']) ? $about['id'] : '';
                 <span class="help-inline"><?php echo form_error('name'); ?></span>
             </div>
         </div>
+
+        <!-- Position -->
+        <div class="control-group <?php echo form_error('position') ? 'error' : ''; ?>">
+            <?php echo form_label('Position', 'position', array('class' => "control-label") ); ?>
+            <div class='controls'>
+                <input id="position" type="text" name="position" maxlength="255" value="<?php echo set_value('position', isset($about['position']) ? $about['position'] : ''); ?>"  />
+                <span class="help-inline"><?php echo form_error('position'); ?></span>
+            </div>
+        </div>
         
         <!-- Description -->
         <div class="control-group <?php echo form_error('description') ? 'error' : ''; ?>">

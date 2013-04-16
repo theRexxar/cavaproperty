@@ -9,6 +9,17 @@ class Home extends Front_Controller {
 	
 	public function index()
 	{
+		$this->load->model('banner/banner_model');
+
+        $banner 	= $this->banner_model->order_by('position','asc')->where('publish','Y')->find_all();
+
+        $vars = array(
+						'banner'      => $banner,
+					);
+        
+        //print_r($vars);exit();
+		
+        Template::set('data', $vars);
         Template::set('toolbar_title', "Home");
         Template::set_view('front_page/index');
 		Template::render();

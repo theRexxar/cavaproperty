@@ -1,3 +1,5 @@
+<div class="scrollable" id="ajax-content">
+
 <div class="admin-box">
 	<h3>People</h3>
 	<?php echo form_open($this->uri->uri_string()); ?>
@@ -8,8 +10,8 @@
 					<th class="column-check" width="1%"><input class="check-all" type="checkbox" /></th>
 					<?php endif;?>
 					
-            		<th width="20%">Image</th>
-            		<th width="20%">Name</th>
+            		<th width="15%">Image</th>
+            		<th width="25%">Name</th>
             		<th width="30%">Description</th>
             		<th width="15%">Created</th>
             		<th width="15%"></th>
@@ -19,7 +21,7 @@
 			<tfoot>
 				<?php if ($this->auth->has_permission('About.Content.Delete')) : ?>
 				<tr>
-					<td colspan="6">
+					<td colspan="11">
 						<?php echo lang('bf_with_selected') ?>
 						<input type="submit" name="delete" id="delete-me" class="btn btn-danger" value="<?php echo lang('bf_action_delete') ?>" onclick="return confirm('<?php echo lang('about_delete_confirm'); ?>')">
 					</td>
@@ -27,26 +29,27 @@
 				<?php endif;?>
 			</tfoot>
 			<?php endif; ?>
-			<tbody>
+			<tbody class="sortable">
 			<?php if (isset($records) && is_array($records) && count($records)) : ?>
 			<?php foreach ($records as $record) : ?>
-				<tr>
+				<tr style="cursor: move;">
 					<?php if ($this->auth->has_permission('About.Content.Delete')) : ?>
 					<td><input type="checkbox" name="checked[]" value="<?php echo $record->id ?>" /></td>
 					<?php endif;?>
 					
-					<td>
+					<td width="15%">
+                        <?php echo form_hidden('action_to[]', $record->id); ?>
                         <img src="<?php echo base_url().'files/large/'.$record->image_id.'/200/200' ?>" />
                     </td>
-				    <td><?php echo $record->name?></td>
-    				<td>
+				    <td width="25%"><?php echo $record->name?></td>
+    				<td width="30%">
                         <?php 
     						$description = strip_tags($record->description);
     						echo ( strlen($description) > 200 ) ? substr($description,0,198) . '..' : $description;                        
     					?>
                     </td>
-    				<td><?php echo date('d M Y - H:i:s',strtotime($record->created_on));?></td>
-                    <td class="actions">
+    				<td width="15%"><?php echo date('d M Y - H:i:s',strtotime($record->created_on));?></td>
+                    <td width="15%" class="actions">
     					<?php if (has_permission('About.Content.Edit')): ?>
     					<?php 
     						echo anchor(SITE_AREA . '/content/about/about_people/edit/' . $record->id, 
@@ -74,4 +77,6 @@
 			</tbody>
 		</table>
 	<?php echo form_close(); ?>
+</div>
+
 </div>

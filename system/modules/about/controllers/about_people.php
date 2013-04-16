@@ -13,6 +13,9 @@ class About_people extends Admin_Controller {
 		$this->load->model('about_people_model', null, true);
 		$this->lang->load('about_people');
 		
+		Assets::add_css('flick/jquery-ui-1.8.13.custom.css');
+		Assets::add_js('jquery-ui-1.8.8.min.js');
+		
 		Template::set_block('sub_nav', 'about_people/_sub_nav');
 	}
 
@@ -53,6 +56,8 @@ class About_people extends Admin_Controller {
 		}
 
 		$records = $this->about_people_model->find_all();
+
+		Assets::add_js($this->load->view('about_people/js', null, true), 'inline');
 
 		Template::set('records', $records);
 		Template::set('toolbar_title', 'Manage About People');
@@ -315,6 +320,8 @@ class About_people extends Admin_Controller {
 
 		if ($type == 'insert')
 		{
+			$data['ordering'] = 99;
+
 			$id = $this->about_people_model->insert($data);
 
 			if (is_numeric($id))
@@ -332,6 +339,25 @@ class About_people extends Admin_Controller {
 		}
 
 		return $return;
+	}
+    
+    
+    public function ajax_update_positions()
+	{
+		// Create an array containing the IDs
+		$ids = explode(',', $this->input->post('order'));
+
+		// Counter variable
+		$pos = 1;
+
+		foreach($ids as $id)
+		{
+			// Update the position
+			$data['ordering'] = $pos;
+			$this->about_people_model->update($id, $data);
+			++$pos;
+		}
+
 	}
 
 	//--------------------------------------------------------------------

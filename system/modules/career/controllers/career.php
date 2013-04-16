@@ -8,12 +8,6 @@ class career extends Front_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-
-		$this->load->library('form_validation');
-		$this->load->model('career_model', null, true);
-		$this->lang->load('career');
-		
-			Assets::add_js(Template::theme_url('js/editors/ckeditor/ckeditor.js'));
 	}
 
 	//--------------------------------------------------------------------
@@ -27,10 +21,19 @@ class career extends Front_Controller {
 	*/
 	public function index()
 	{
+		$this->load->model('career_model');
 
-		$records = $this->career_model->find_all();
+        $career = $this->career_model->order_by('created_on','desc')->find_all();
 
-		Template::set('records', $records);
+        $vars = array(
+						'career' => $career,
+					);
+        
+        //print_r($vars);exit();
+		
+        Template::set('data', $vars);
+		Template::set('toolbar_title', "Career");
+        Template::set_view('front_page/index');
 		Template::render();
 	}
 
