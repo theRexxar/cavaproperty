@@ -89,6 +89,18 @@ $(document).ready(function(){
 		
 	}
 
+	var acordion_menu = function(param){
+		$(param).toggle(function(){
+			var _this = $(this);
+			_this.addClass("active");
+			_this.siblings("ol").slideDown()
+		}, function(){
+			var _this = $(this);
+			_this.removeClass("active");
+			_this.siblings("ol").slideUp()
+		});
+	}
+
 	var klik_detail = function(param){
 		$(param).toggle(function(){
 			// $(".expand").children("p.hide").fadeOut(20);
@@ -121,7 +133,7 @@ $(document).ready(function(){
 			$(".mb20").slideDown();
 			_this.parents(".sidebar").removeClass("expand");
 			$(this).parent("p").siblings("p.hide").fadeOut();
-			_this.children("span").html("- ");
+			_this.children("span").html("+ ");
 			
 		});
 	}
@@ -206,9 +218,11 @@ $(document).ready(function(){
 
 		finder("#finder");
 
-		about_detail(".item img");
+		about_detail(".item .row");
 
 		member_area(".member a");
+
+		acordion_menu(".acordion span");
 
 	}
 
