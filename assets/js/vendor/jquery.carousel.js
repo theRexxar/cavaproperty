@@ -114,7 +114,7 @@ if (typeof Object.create !== 'function') {
 				this.nextLink
 					.add(this.prevLink)
 						.removeClass('disabled');
-				if (this.itemIndex === (this.noOfItems - this.options.itemsPerPage)) {
+				if (this.itemIndex === (this.noOfItems - this.options.itemsPerPage - 1)) {
 					this.nextLink.addClass('disabled');
 				} 
 				else if (this.itemIndex === 0) {

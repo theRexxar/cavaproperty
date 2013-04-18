@@ -371,7 +371,7 @@ header{
 #slider .disabled , #carousel .disabled{opacity: .3!important; filter:alpha(opacity=30); cursor: default;}
 #slider .overview { list-style: none; padding: 0; margin: 0;  position: absolute; left: 0; top: 0; }
 #slider .active { color: #fff; background-color:  #555555; }
-
+#slider .next.disabled, #carousel a.next.disabled, #slider .prev.disabled, #carousel a.prev.disabled{display: none;}
 
 #carousel{position: relative}
 
@@ -521,7 +521,7 @@ header{
 
 		.nine{
 			width: 680px;
-			height: 360px;
+			// height: 360px;
 			overflow: hidden;
 		}
 	}
@@ -538,7 +538,7 @@ header{
 	.right-sidebar{
 		min-height  : 360px;
 		max-height  : 380px;
-		overflow-y  : scroll;
+		overflow    : auto;
 		min-width   : 200px;
 		padding     : 20px;
 		background  : $white;
@@ -1109,8 +1109,8 @@ footer{
 	@include transition-duration(0.5s);
 	@include transition-timing-function(ease-in-out);
 	&.active{
-		z-index: 20;
-		top: 0 !important;
+		z-index : 20;
+		top     : 0 !important;
 		@include transition-property(all);
 		@include transition-duration(0.5s);
 		@include transition-timing-function(ease-in-out);

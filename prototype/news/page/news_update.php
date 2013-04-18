@@ -65,11 +65,11 @@
 				<p class="hide">Elegant from all sides, Park is perfect for a wide range of environments including open concept spaces and lounges. The winged seat gives a sense of privacy and seclusion while being generous enough to promote multiple seating positions. The molded foam body contains an internal frame with elastic webbing so the whole chair can flex and adapt to the sitter. The marriage of innovative production techniques with considered dimensions creates a contemporary chair that is superbly comfortable and elegantly reduced.</p>
 				<p class="hide">The upholstered seat sits on a simple precision-made steel base, and expertly sewn and fitted covers create a beautiful tailored appearance.</p>
 				<p class="hide">A matching Ottoman compliments the aesthetic of the chair.</p>
-				<p><a href="" class="more-detail more"><span>+</span> READ MORE</a></p>
+				<p><a href="http://localhost/cavaproperty/prototype/news/page/ajax.php" class="more-detail more"><span>+</span> READ MORE</a></p>
 			</article>
 		</div>
 		<div class="columns nine end ml10">
-			<img src="images/news-a.jpg" alt="THE Izzara - Syukuran project 29 November 2012">
+			<a href="images/news-a.jpg" class="cboxElement" id="group1" title="THE Izzara - Syukuran project 29 November 2012"><img src="images/news-a.jpg" alt="THE Izzara - Syukuran project 29 November 2012"></a>
 		</div>
 	</div>
 	<div class="row mb20">

@@ -97,14 +97,14 @@
 					<div class="columns sixteen">
 						<h5>OUR PROJECT</h5>
 						<p>
-							<span class="text-lg">SETIA BUDI SKY GARDEN</span><br>
-							<span class="text-lg">IZZARA</span><br>
-							<span class="text-lg">CASSAMORA</span><br>
-							<span class="text-lg">SERENA HILLS</span><br>
-							<span class="text-lg">ONE BALMORAL</span><br>
-							<span class="text-lg">ALILA</span><br>
-							<span class="text-lg">WUKU</span><br>
-							<span class="text-lg">HARRIS</span>
+							<a href="detail.php" class="active">SETIA BUDI SKY GARDEN</a><br>
+							<a href="detail.php">IZZARA</a><br>
+							<a href="detail.php">CASSAMORA</a><br>
+							<a href="detail.php">SERENA HILLS</a><br>
+							<a href="detail.php">ONE BALMORAL</a><br>
+							<a href="detail.php">ALILA</a><br>
+							<a href="detail.php">WUKU</a><br>
+							<a href="detail.php">HARRIS</a>
 						</p>
 						<p class="clear left mt20"><a href="" class="left button-more"><span>+</span> DETAIL PROJECT</a> <a href="" class="right button-more"><span>+</span> MORE PROJECT</a></p>
 						<p class="clear left mt20"><a href="<?php echo $base_url ?>/includes/finder.php" class="link-button green left" id="finder">FINDER</a></p>

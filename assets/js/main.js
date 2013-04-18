@@ -103,36 +103,36 @@ $(document).ready(function(){
 
 	var klik_detail = function(param){
 		$(param).toggle(function(){
-			// $(".expand").children("p.hide").fadeOut(20);
-			
-			// var _this = $(this);
-
-			// setTimeout(function(){
-			// 	$(".expand").removeClass("expand");
-			// 	_this.children("span").html("- ");
-			// 	_this.parent("p").siblings("p.hide").fadeIn().parents(".sidebar").addClass("expand");	
-			// },40);
 			var _this = $(this);
+			var url = _this.attr("href");
+			var img_container = _this.parents(".columns.five").siblings(".nine");
+			console.log(img_container);
+
 			_this.parents(".mb20").addClass("active");
-			$(".mb20:not(.active)").slideUp();
+			$(".mb20:not(.active)").fadeOut(200).slideUp(300);
 			_this.children("span").html("- ");
-			_this.parent("p").siblings("p.hide").fadeIn().parents(".sidebar").addClass("expand");
+			_this.parent("p").siblings("p.hide").fadeIn(500).parents(".sidebar").addClass("expand");
 			
+			$.ajax({
+			  url: url,
+			  dataType : 'html'
+			}).done(function(data) {
+			  img_container.append(data);
+			  
+			  // call colorbox
+			  cboxImage(".cboxElement");
+			});
 
 		}, function(){
-			// var _this = $(this);
-
-			// $(this).children("span").html("+ ");
-			// $(this).parent("p").siblings("p.hide").fadeOut();
-			// setTimeout(function(){
-			// 	_this.parents(".sidebar").removeClass("expand");
-			// },500)
-
 			var _this = $(this);
+			var url = _this.attr("href");
+			var img_container = _this.parents(".columns.five").siblings(".nine");
+			console.log(img_container);
+
 			_this.parents(".mb20").removeClass("active");
-			$(".mb20").slideDown();
+			$(this).parent("p").siblings("p.hide").fadeOut(500);
 			_this.parents(".sidebar").removeClass("expand");
-			$(this).parent("p").siblings("p.hide").fadeOut();
+			$(".mb20").fadeIn(200).slideDown(300);
 			_this.children("span").html("+ ");
 			
 		});
@@ -207,8 +207,19 @@ $(document).ready(function(){
 		});
 	}
 
+	var cboxImage = function(param){
+		$(param).colorbox({rel: param});
+	}
+
+	var cboxImageClick = function(param){
+		$(param).click(function(){
+			var group = $(this).attr("id");
+			$.colorbox({rel : group})
+		});
+	}
+
 	function INIT(){
-		initial(".sidebar", "nav.fix");
+		//initial(".sidebar", "nav.fix");
 		//window_resize(".sidebar","nav.fix");
 		scrolling('.scroll-content', '.scroll-container', '.list-career a');
 		scrolling('.scroll-content', '.scroll-container', '.list-contact a');
@@ -223,6 +234,8 @@ $(document).ready(function(){
 		member_area(".member a");
 
 		acordion_menu(".acordion span");
+
+		cboxImageClick(".cboxElement");
 
 	}
 

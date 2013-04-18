@@ -9,6 +9,7 @@
         <script src="../../assets/js/vendor/jquery.isotope.min.js"></script>
         <script src="../../assets/js/vendor/jquery.tinycarousel.js"></script>
         <script src="../../assets/js/vendor/jquery.carousel.js"></script>
+        <script src="../../assets/js/vendor/jquery.colorbox.js"></script>
         <script src="../../assets/js/plugins.js"></script>
         <script src="../../assets/js/main.js"></script>
 
