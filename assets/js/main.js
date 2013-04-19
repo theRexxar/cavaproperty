@@ -117,7 +117,7 @@ $(document).ready(function(){
 			  url: url,
 			  dataType : 'html'
 			}).done(function(data) {
-			  img_container.append(data);
+			  img_container.append('<div class="img-extend">' + data + '</div>');
 			  
 			  // call colorbox
 			  cboxImage(".cboxElement");
@@ -130,8 +130,11 @@ $(document).ready(function(){
 			console.log(img_container);
 
 			_this.parents(".mb20").removeClass("active");
-			$(this).parent("p").siblings("p.hide").fadeOut(500);
+			$(this).parent("p").siblings("p.hide").fadeOut(200);
 			_this.parents(".sidebar").removeClass("expand");
+			$(".img-extend").slideUp(200,function(){
+				$(this).remove();
+			});
 			$(".mb20").fadeIn(200).slideDown(300);
 			_this.children("span").html("+ ");
 			

@@ -6,36 +6,36 @@
 				<div class="row">
 					<div class="columns sixteen">
 						<h5><?php echo $property->title ?></h5>
-						<p>
+						<div class="article">
 							<span class="text-lg">LOCATION</span><br>
 							<span class="mlr10"><?php echo $property->location ?></span>
-						</p>
-						<p>
+						</div>
+						<div class="article">
 							<span class="text-lg">SIZE</span><br>
 							<span class="mlr10"><?php echo $property->size ?></span>
-						</p>
-						<p>
+						</div>
+						<div class="article">
 							<span class="text-lg">BEDROOM</span><br>
 							<span class="mlr10"><?php echo $property->bedroom ?></span>
-						</p>
-						<p>
+						</div>
+						<div class="article">
 							<span class="text-lg">FACILITY</span><br>
 							<span class="mlr10">
 								<?php echo $property->facility ?>
 							</span>
-						</p>
-						<p>
+						</div>
+						<div class="article">
 							<span class="text-lg">CONDITION</span><br>
 							<span class="mlr10">
 								<p><?php echo $property->condition ?></p>
 							</span>
 						</p>
-						<p>
+						<div class="article">
 							<span class="text-lg">ADDITIONAL</span><br>
 							<span class="mlr10">
 								<?php echo $property->additional ?>
 							</span>
-						</p>
+						</div>
 						<p class="clear left mt20"><a href="<?php echo base_url().'project/developer/'.$property->slug_developer; ?>" class="right button-more"><span>+</span> MORE PROJECT</a></p>
 						<p class="clear left mt20"><a href="#" class="link-button green left">FINDER</a></p>
 					</div>

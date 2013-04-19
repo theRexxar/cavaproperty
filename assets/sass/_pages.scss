@@ -499,7 +499,7 @@ header{
 
 // CONTENT
 .container{
-	margin: 155px 0 50px;
+	margin: 175px 0 50px;
 	position: relative;
 	&.space-top{margin: 189px 0 40px;}
 	
@@ -512,6 +512,12 @@ header{
 	.row{
 		position: relative;
 		// min-height: 360px;
+	}
+
+	.article{
+		display: block;
+		clear: both;
+		margin-bottom: 15px;
 	}
 
 	&.news-update{
@@ -843,6 +849,7 @@ header{
 			.detail-bio{
 				padding: 20px 10px;
 				display: none;
+				height: 180px;
 
 				&.show-left{
 					position: absolute;
