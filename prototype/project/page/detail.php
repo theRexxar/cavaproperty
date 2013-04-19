@@ -1,5 +1,5 @@
 <div class="container space-top our-project">
-
+	
 	<div class="row">
 		<div class="columns five bgwhite">
 			<section class="sidebar">

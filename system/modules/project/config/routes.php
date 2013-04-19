@@ -37,3 +37,8 @@ $route['project/content/project_property/(:any)/(:any)/(:any)']		= "project_prop
 $route['project/content/project_property/(:any)/(:any)']		= "project_property/$1/$2";
 $route['project/content/project_property/(:any)'] 		= "project_property/$1";
 $route['project/content/project_property']				= "project_property";
+
+
+// Front Page
+$route['project/developer/(:any)'] 						= "project/developer_detail/$1";
+$route['project/detail/(:any)/(:any)'] 					= "project/property_detail/$1/$2";

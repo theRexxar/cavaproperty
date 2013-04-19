@@ -443,6 +443,8 @@ class project_property extends Admin_Controller {
 		$this->form_validation->set_rules('facility','Facility','required|trim|xss_clean');
 		$this->form_validation->set_rules('condition', 'Condition', 'required|trim|xss_clean|max_length[255]|');
 		$this->form_validation->set_rules('additional','Additional','trim|xss_clean');
+		$this->form_validation->set_rules('youtube', 'Youtube ID', 'trim|xss_clean|max_length[255]|');
+		$this->form_validation->set_rules('vimeo', 'Vimeo ID', 'trim|xss_clean|max_length[255]|');
 		$this->form_validation->set_rules('image_id','Image','required|trim');
 
 		if ($this->form_validation->run() === FALSE)
@@ -452,7 +454,8 @@ class project_property extends Admin_Controller {
 
 		// make sure we only pass in the fields we want
         
-		$images = $this->input->post('images');
+		$images 	= $this->input->post('images');
+		$caption 	= $this->input->post('caption');
 		
 		$data = array();
 		$data['type_id']          	  	= $this->input->post('type_id');
@@ -463,6 +466,8 @@ class project_property extends Admin_Controller {
 		$data['facility']          		= $this->input->post('facility');
 		$data['condition']          	= $this->input->post('condition');
 		$data['additional']          	= $this->input->post('additional');
+		$data['youtube']          		= $this->input->post('youtube');
+		$data['vimeo']          		= $this->input->post('vimeo');
 		$data['image_id']             	= $this->input->post('image_id');
 		$data['slug']             	  	= $this->input->post('slug');
 
@@ -487,6 +492,7 @@ class project_property extends Admin_Controller {
                     $data_gallery = array();
             		$data_gallery['property_id']  	= $id;
             		$data_gallery['file_id']  		= $file_id;
+            		$data_gallery['caption']  		= $caption;
                     
                     $this->project_property_gallery_model->insert($data_gallery);
                 }
@@ -511,6 +517,7 @@ class project_property extends Admin_Controller {
                     $data_gallery = array();
             		$data_gallery['property_id']  	= $id;
             		$data_gallery['file_id']  		= $file_id;
+            		$data_gallery['caption']  		= $caption;
                 
                     $this->project_property_gallery_model->insert($data_gallery);
                 }

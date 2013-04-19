@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2013 at 01:12 PM
+-- Generation Time: Apr 19, 2013 at 12:35 PM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -69,11 +69,11 @@ CREATE TABLE IF NOT EXISTS `cv_about_people` (
 --
 
 INSERT INTO `cv_about_people` (`id`, `name`, `position`, `description`, `image_id`, `ordering`, `deleted`, `created_on`, `modified_on`) VALUES
-(1, 'Reynolds Darmadi', 'Founder & CEO', '<p>\r\n Gazing at the skyscrapers while meeting new people around, Reynolds founded &Ccedil;ava in 2010 to bridge those two different interests. His experience in property consultants and developers both in a company and independently gives him insight to combine visions from them to create a better project and to match clients&rsquo; expectations.</p>', 3, 1, 0, '2013-04-14 22:38:13', '2013-04-16 10:56:37'),
-(2, 'Vanessa Natalia', '', '<p>\r\n Dynamic and loves challenge, Vanessa joined &Ccedil;ava in 2012 after building an impressive reputation in Office Advisory and Sole Exclusive Agency Division by handling several big names in her previous works. She knows how to handle clients with different backgrounds and her managerial ability is also exceptional.</p>', 4, 2, 0, '2013-04-16 10:16:52', '2013-04-16 10:56:45'),
-(3, 'Laura Loe', '', '<p>\r\n Graduated as bachelor in Marketing Management from Curtin University, Laura joined &Ccedil;ava in April 2011, soon-after the company was established. Her previous work was in one of the biggest property consultants in this country. Now, Laura is preparing for her third year in this young company.</p>', 5, 99, 0, '2013-04-16 10:58:24', '2013-04-16 11:24:46'),
-(4, 'Benigna Maria', '', '<p>\r\n BENIGNA MARIA is a Mass Communication graduate from Curtin University, Western Australia and one of the company&rsquo;s founders. She looks calm and peaceful when practicing yoga but can be so alive and excited when traveling and socializing. This combination helps her show a personal flexibility toward her clients.</p>', 7, 99, 0, '2013-04-16 10:58:51', '2013-04-16 11:25:03'),
-(5, 'David Tan', '', '<p>\r\n Just joined &Ccedil;ava in September, 2012, David jumped to property business after a short experience in hotel industry. Started as sales marketing and has built his expertise in international property for more than 10 years, he is now very enthusiastic and committed with his new, young and vibrant company.</p>', 6, 99, 0, '2013-04-16 10:59:10', '2013-04-16 11:25:32');
+(1, 'Reynolds Darmadi', 'Founder & CEO', '<p>\r\n Gazing at the skyscrapers while meeting new people around, Reynolds founded &Ccedil;ava in 2010 to bridge those two different interests. His experience in property consultants and developers both in a company and independently gives him insight to combine visions from them to create a better project and to match clients&rsquo; expectations.</p>', 3, 1, 0, '2013-04-14 22:38:13', '2013-04-18 16:54:10'),
+(2, 'Vanessa Natalia', '', '<p>\r\n Dynamic and loves challenge, Vanessa joined &Ccedil;ava in 2012 after building an impressive reputation in Office Advisory and Sole Exclusive Agency Division by handling several big names in her previous works. She knows how to handle clients with different backgrounds and her managerial ability is also exceptional.</p>', 4, 2, 0, '2013-04-16 10:16:52', '2013-04-18 16:54:10'),
+(3, 'Laura Loe', '', '<p>\r\n Graduated as bachelor in Marketing Management from Curtin University, Laura joined &Ccedil;ava in April 2011, soon-after the company was established. Her previous work was in one of the biggest property consultants in this country. Now, Laura is preparing for her third year in this young company.</p>', 5, 4, 0, '2013-04-16 10:58:24', '2013-04-18 16:54:10'),
+(4, 'Benigna Maria', '', '<p>\r\n BENIGNA MARIA is a Mass Communication graduate from Curtin University, Western Australia and one of the company&rsquo;s founders. She looks calm and peaceful when practicing yoga but can be so alive and excited when traveling and socializing. This combination helps her show a personal flexibility toward her clients.</p>', 7, 3, 0, '2013-04-16 10:58:51', '2013-04-18 16:54:10'),
+(5, 'David Tan', '', '<p>\r\n Just joined &Ccedil;ava in September, 2012, David jumped to property business after a short experience in hotel industry. Started as sales marketing and has built his expertise in international property for more than 10 years, he is now very enthusiastic and committed with his new, young and vibrant company.</p>', 6, 5, 0, '2013-04-16 10:59:10', '2013-04-18 16:54:10');
 
 -- --------------------------------------------------------
 
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `cv_activities` (
   `created_on` datetime NOT NULL,
   `deleted` tinyint(12) NOT NULL DEFAULT '0',
   PRIMARY KEY (`activity_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=92 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=103 ;
 
 --
 -- Dumping data for table `cv_activities`
@@ -187,7 +187,18 @@ INSERT INTO `cv_activities` (`activity_id`, `user_id`, `activity`, `module`, `cr
 (88, 1, 'Created record with ID: 5 : ::1', 'about', '2013-04-16 10:59:10', 0),
 (89, 1, 'Updated record with ID: 3 : ::1', 'about', '2013-04-16 11:24:46', 0),
 (90, 1, 'Updated record with ID: 4 : ::1', 'about', '2013-04-16 11:25:03', 0),
-(91, 1, 'Updated record with ID: 5 : ::1', 'about', '2013-04-16 11:25:32', 0);
+(91, 1, 'Updated record with ID: 5 : ::1', 'about', '2013-04-16 11:25:32', 0),
+(92, 1, 'logged in from: ::1', 'users', '2013-04-16 15:45:17', 0),
+(93, 1, 'logged in from: ::1', 'users', '2013-04-18 10:52:49', 0),
+(94, 1, 'Created record with ID: 1 : ::1', 'news', '2013-04-18 16:08:27', 0),
+(95, 1, 'Updated record with ID: 1 : ::1', 'contact', '2013-04-18 11:26:14', 0),
+(96, 1, 'Updated record with ID: 1 : ::1', 'project', '2013-04-18 14:00:12', 0),
+(97, 1, 'logged in from: ::1', 'users', '2013-04-18 16:53:47', 0),
+(98, 1, 'logged in from: ::1', 'users', '2013-04-19 08:53:27', 0),
+(99, 1, 'Updated record with ID: 1 : ::1', 'project', '2013-04-19 09:23:23', 0),
+(100, 1, 'Updated record with ID: 1 : ::1', 'project', '2013-04-19 09:27:09', 0),
+(101, 1, 'logged in from: ::1', 'users', '2013-04-19 10:59:22', 0),
+(102, 1, 'Updated record with ID: 1 : ::1', 'project', '2013-04-19 11:13:39', 0);
 
 -- --------------------------------------------------------
 
@@ -289,14 +300,15 @@ CREATE TABLE IF NOT EXISTS `cv_contact_mail` (
   `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `cv_contact_mail`
 --
 
 INSERT INTO `cv_contact_mail` (`id`, `name`, `email`, `subject`, `message`, `deleted`, `created_on`, `modified_on`) VALUES
-(1, 'Andhika', 'andhikanovandi@gmail.com', 'test', '<p>\r\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ipsum eros, consectetur eu eleifend quis, egestas aliquet massa. Curabitur orci odio, volutpat a vestibulum eu, hendrerit sed nunc. Ut sit amet lacus vitae tortor tincidunt fringilla. In vel sapien ut nisl consectetur tincidunt ut non lorem. Maecenas at ullamcorper metus. Phasellus et odio nec lacus faucibus consectetur sit amet ut turpis. Ut a risus in tellus suscipit malesuada.</p>', 0, '2013-04-14 23:54:26', '0000-00-00 00:00:00');
+(1, 'Andhika', 'andhikanovandi@gmail.com', 'test', '<p>\r\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ipsum eros, consectetur eu eleifend quis, egestas aliquet massa. Curabitur orci odio, volutpat a vestibulum eu, hendrerit sed nunc. Ut sit amet lacus vitae tortor tincidunt fringilla. In vel sapien ut nisl consectetur tincidunt ut non lorem. Maecenas at ullamcorper metus. Phasellus et odio nec lacus faucibus consectetur sit amet ut turpis. Ut a risus in tellus suscipit malesuada.</p>', 0, '2013-04-14 23:54:26', '0000-00-00 00:00:00'),
+(2, 'Andhika', 'andhikanovandi@gmail.com', 'test', 'test', 0, '2013-04-18 11:45:01', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -322,7 +334,7 @@ CREATE TABLE IF NOT EXISTS `cv_contact_office` (
 --
 
 INSERT INTO `cv_contact_office` (`id`, `title`, `address`, `phone`, `fax`, `deleted`, `created_on`, `modified_on`) VALUES
-(1, 'Cava''s Head Office', '<p>\r\n CITYLOFTS SUDIRMAN&nbsp;<br />\r\n #26 floor unit #2623&nbsp;<br />\r\n Jl. KH. Mas Mansyur No. 121&nbsp;<br />\r\n Jakarta 10220</p>', '021 2555 8994 / 021 2991 2845', '021 2991 2844', 0, '2013-04-14 23:29:53', '2013-04-14 23:30:04');
+(1, 'Cava''s Head Office', '<p>\r\n CITYLOFTS SUDIRMAN<br />\r\n #26 floor unit #2623<br />\r\n Jl. KH. Mas Mansyur No. 121<br />\r\n Jakarta 10220</p>', '021 2555 8994 / 021 2991 2845', '021 2991 2844', 0, '2013-04-14 23:29:53', '2013-04-18 11:26:14');
 
 -- --------------------------------------------------------
 
@@ -341,14 +353,15 @@ CREATE TABLE IF NOT EXISTS `cv_contact_phone` (
   `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `cv_contact_phone`
 --
 
 INSERT INTO `cv_contact_phone` (`id`, `name`, `phone`, `other_phone`, `subject`, `deleted`, `created_on`, `modified_on`) VALUES
-(1, 'Andhika', 123456, 654321, 'Test', 0, '2013-04-15 00:07:57', '0000-00-00 00:00:00');
+(1, 'Andhika', 123456, 654321, 'Test', 0, '2013-04-15 00:07:57', '0000-00-00 00:00:00'),
+(2, 'Andhika', 123456, 654321, 'test', 0, '2013-04-18 11:52:23', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -395,7 +408,7 @@ CREATE TABLE IF NOT EXISTS `cv_file` (
   `date_added` int(11) NOT NULL DEFAULT '0',
   `sort` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `cv_file`
@@ -410,7 +423,8 @@ INSERT INTO `cv_file` (`id`, `folder_id`, `user_id`, `type`, `name`, `filename`,
 (6, 3, 1, 'i', 'p-4.jpg', '1365953856_41f568bba0094b20232a725caf979ac7.jpg', '', '.jpg', 'image/jpeg', 180, 180, 11, 1365953856, 0),
 (7, 3, 1, 'i', 'p-5.jpg', '1365953856_4c5a3abbaa482e228229e9a58081ec16.jpg', '', '.jpg', 'image/jpeg', 180, 180, 11, 1365953856, 0),
 (8, 4, 1, 'i', 'slide-1.jpg', '1366098397_ba8defeb3a3c29f314c65ba3d5fe9d19.jpg', '', '.jpg', 'image/jpeg', 900, 360, 93, 1366098397, 0),
-(9, 4, 1, 'i', 'slide-2.jpg', '1366098397_3582e4141094b915b18962e5947ed3b1.jpg', '', '.jpg', 'image/jpeg', 900, 360, 116, 1366098397, 0);
+(9, 4, 1, 'i', 'slide-2.jpg', '1366098397_3582e4141094b915b18962e5947ed3b1.jpg', '', '.jpg', 'image/jpeg', 900, 360, 116, 1366098397, 0),
+(10, 1, 1, 'i', 'news-a.jpg', 'news-a.jpg', '', '.jpg', 'image/jpeg', 680, 360, 99, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -492,11 +506,20 @@ CREATE TABLE IF NOT EXISTS `cv_news` (
   `description` text NOT NULL,
   `image_id` int(11) DEFAULT NULL,
   `slug` varchar(255) NOT NULL,
+  `month` varchar(255) NOT NULL,
+  `year` year(4) NOT NULL,
   `deleted` tinyint(1) NOT NULL DEFAULT '0',
   `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `cv_news`
+--
+
+INSERT INTO `cv_news` (`id`, `title`, `description`, `image_id`, `slug`, `month`, `year`, `deleted`, `created_on`, `modified_on`) VALUES
+(1, 'News 1', '<p>\r\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu metus non diam consectetur accumsan sit amet a lorem. Ut nisl est, tempus eget imperdiet a, convallis at orci. Nullam eu ante odio. Curabitur ut massa nec quam pulvinar laoreet vel ut leo. Sed in tristique nisl. Sed lobortis faucibus pretium. Vestibulum volutpat vehicula elementum. Fusce sed dapibus lectus. Quisque sapien justo, tincidunt in bibendum at, tempus a lectus. Curabitur elit urna, aliquam vel tincidunt a, tincidunt in mauris. Cras tellus tellus, scelerisque ut condimentum ac, feugiat vel lorem. Cras porttitor nisi a augue feugiat sed rhoncus tortor condimentum.</p>', 10, 'news-1', 'April ', 2013, 0, '2013-04-18 16:08:27', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -510,7 +533,14 @@ CREATE TABLE IF NOT EXISTS `cv_news_gallery` (
   `news_id` int(11) NOT NULL,
   `file_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `cv_news_gallery`
+--
+
+INSERT INTO `cv_news_gallery` (`id`, `news_id`, `file_id`) VALUES
+(1, 1, 10);
 
 -- --------------------------------------------------------
 
@@ -684,6 +714,8 @@ CREATE TABLE IF NOT EXISTS `cv_project_property` (
   `facility` text NOT NULL,
   `condition` varchar(255) NOT NULL,
   `additional` text,
+  `youtube` varchar(255) DEFAULT NULL,
+  `vimeo` varchar(255) DEFAULT NULL,
   `image_id` int(11) DEFAULT NULL,
   `slug` varchar(255) NOT NULL,
   `deleted` tinyint(1) NOT NULL DEFAULT '0',
@@ -696,8 +728,8 @@ CREATE TABLE IF NOT EXISTS `cv_project_property` (
 -- Dumping data for table `cv_project_property`
 --
 
-INSERT INTO `cv_project_property` (`id`, `type_id`, `developer_id`, `marketing_id`, `title`, `location`, `size`, `bedroom`, `facility`, `condition`, `additional`, `image_id`, `slug`, `deleted`, `created_on`, `modified_on`) VALUES
-(1, 1, 1, 1, 'One Balmoral 1', 'Balmoral Road (District 10)', '3000 m2', 5, '<p>\r\n Developed by Hong Leong Holdings Ltd, twin blocks of 12 storey apartments comprising of 91 apartments to be built on an approximately 6157m2 land. It offers a choice of 1, 2, 3 and 4 bedrooms, equipped with imported finishings.</p>\r\n<p>\r\n One Balmoral is strategically located at Balmoral Road (District 10) and within the greenery of neighbouring Goodwood Hill. One of Singapore&iacute;s premier schools, Raffles Girls&#39; Secondary School, is a stone&iacute;s throw away and you will be spoilt for choice with the private clubs available nearby, namely The Pines, the Tanglin Club and the American Club. One Balmoral is just minutes&iacute; drive away from ION Orchard and the shopping belt of Orchard Road.</p>\r\n<p>\r\n Currently, the piling is near completion and anticipated handing over is March 2015.</p>\r\n<ul>\r\n <li>\r\n  Total no. of units 91</li>\r\n <li>\r\n  Twin towers of 12 storeys plus attic</li>\r\n <li>\r\n  Car park lots 103, inclusive of 2 handicap lots at basement and first storey</li>\r\n <li>\r\n  Facilities &ntilde; Lap pool, clubhouse, meditation garden, gym, BBQ pavilions amongst others</li>\r\n</ul>', 'New', '<p>\r\n For more questions and inquiries please feel free to contact us in +62817 9999 199 or +62813 1848 9293</p>', 1, 'one-balmoral-1', 0, '2013-04-07 23:47:42', '2013-04-14 18:54:29');
+INSERT INTO `cv_project_property` (`id`, `type_id`, `developer_id`, `marketing_id`, `title`, `location`, `size`, `bedroom`, `facility`, `condition`, `additional`, `youtube`, `vimeo`, `image_id`, `slug`, `deleted`, `created_on`, `modified_on`) VALUES
+(1, 1, 1, 1, 'One Balmoral 1', 'Balmoral Road (District 10)', '3000 m2', 5, '<p>\r\n Developed by Hong Leong Holdings Ltd, twin blocks of 12 storey apartments comprising of 91 apartments to be built on an approximately 6157m2 land. It offers a choice of 1, 2, 3 and 4 bedrooms, equipped with imported finishings.</p>\r\n<p>\r\n One Balmoral is strategically located at Balmoral Road (District 10) and within the greenery of neighbouring Goodwood Hill. One of Singapore&iacute;s premier schools, Raffles Girls&#39; Secondary School, is a stone&iacute;s throw away and you will be spoilt for choice with the private clubs available nearby, namely The Pines, the Tanglin Club and the American Club. One Balmoral is just minutes&iacute; drive away from ION Orchard and the shopping belt of Orchard Road.</p>\r\n<p>\r\n Currently, the piling is near completion and anticipated handing over is March 2015.</p>\r\n<ul>\r\n <li>\r\n  Total no. of units 91</li>\r\n <li>\r\n  Twin towers of 12 storeys plus attic</li>\r\n <li>\r\n  Car park lots 103, inclusive of 2 handicap lots at basement and first storey</li>\r\n <li>\r\n  Facilities &amp; Lap pool, clubhouse, meditation garden, gym, BBQ pavilions amongst others</li>\r\n</ul>', 'New', '<p>\r\n For more questions and inquiries please feel free to contact us in +62817 9999 199 or +62813 1848 9293</p>', 'YJ66_zLvE8k', '', 1, 'one-balmoral-1', 0, '2013-04-07 23:47:42', '2013-04-19 11:13:39');
 
 -- --------------------------------------------------------
 
@@ -710,6 +742,7 @@ CREATE TABLE IF NOT EXISTS `cv_project_property_gallery` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `property_id` int(11) NOT NULL,
   `file_id` int(11) NOT NULL,
+  `caption` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
@@ -717,9 +750,9 @@ CREATE TABLE IF NOT EXISTS `cv_project_property_gallery` (
 -- Dumping data for table `cv_project_property_gallery`
 --
 
-INSERT INTO `cv_project_property_gallery` (`id`, `property_id`, `file_id`) VALUES
-(1, 1, 2),
-(2, 1, 1);
+INSERT INTO `cv_project_property_gallery` (`id`, `property_id`, `file_id`, `caption`) VALUES
+(1, 1, 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'),
+(2, 1, 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
 
 -- --------------------------------------------------------
 
@@ -1041,7 +1074,7 @@ CREATE TABLE IF NOT EXISTS `cv_users` (
 --
 
 INSERT INTO `cv_users` (`id`, `role_id`, `email`, `username`, `password_hash`, `reset_hash`, `salt`, `last_login`, `last_ip`, `created_on`, `deleted`, `banned`, `ban_message`, `reset_by`, `display_name`, `display_name_changed`, `timezone`, `language`, `active`, `activate_hash`) VALUES
-(1, 1, 'andhikanovandi@gmail.com', 'andhika', 'd8db64dfb1062b9200c4e57c51d0b736d5f57692', NULL, 'Seqx4Rm', '2013-04-16 09:39:25', '::1', '0000-00-00 00:00:00', 0, 0, NULL, NULL, 'Andhika Novandi Patria', NULL, 'UM6', 'english', 1, ''),
+(1, 1, 'andhikanovandi@gmail.com', 'andhika', 'd8db64dfb1062b9200c4e57c51d0b736d5f57692', NULL, 'Seqx4Rm', '2013-04-19 10:59:22', '::1', '0000-00-00 00:00:00', 0, 0, NULL, NULL, 'Andhika Novandi Patria', NULL, 'UM6', 'english', 1, ''),
 (2, 1, 'admin@bonfire.com', 'admin', '1d06325762c0707eb40517772e1eafd6838075ac', NULL, 'JoCRMtX', '0000-00-00 00:00:00', '', '2013-04-07 09:59:19', 0, 0, NULL, NULL, 'Administrator', NULL, 'UM6', 'english', 1, '');
 
 -- --------------------------------------------------------

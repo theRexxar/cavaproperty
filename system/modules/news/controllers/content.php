@@ -383,10 +383,16 @@ class content extends Admin_Controller {
 		$images = $this->input->post('images');
 		
 		$data = array();
-		$data['title']                = $this->input->post('title');
-		$data['description']          = $this->input->post('description');
-		$data['image_id']             = $this->input->post('image_id');
-		$data['slug']             	  = $this->input->post('slug');
+		$data['title']              = $this->input->post('title');
+		$data['description']        = $this->input->post('description');
+		$data['image_id']           = $this->input->post('image_id');
+		$data['slug']				= $this->input->post('slug');
+
+
+		date_default_timezone_set('Asia/Jakarta');
+
+		$data['month'] 				= indonesian_date(time(), 'F');
+		$data['year'] 				= indonesian_date(time(), 'Y');
 
 
 		if ($type == 'insert')

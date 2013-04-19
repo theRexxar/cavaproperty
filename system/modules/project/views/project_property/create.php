@@ -151,6 +151,34 @@ $id = isset($project['id']) ? $project['id'] : '';
                 <span class="help-inline"><?php echo form_error('additional'); ?></span>
             </div>
         </div>
+
+        <!-- Youtube -->
+        <div class="control-group <?php echo form_error('youtube') ? 'error' : ''; ?>">
+            <?php echo form_label('Youtube ID', 'youtube', array('class' => "control-label") ); ?>
+            <div class='controls'>
+                http://www.youtube.com/watch?v=
+                <input id="youtube" type="text" name="youtube" maxlength="255" value="<?php echo set_value('youtube', isset($project['youtube']) ? $project['youtube'] : ''); ?>"  />
+                <span class="help-inline"><?php echo form_error('youtube'); ?></span>
+                <br>
+                <span class="help-inline">
+                    <i>Ex: http://www.youtube.com/watch?v=<strong>YJ66_zLvE8k</strong></i>
+                </span>
+            </div>
+        </div>
+
+        <!-- Vimeo -->
+        <div class="control-group <?php echo form_error('vimeo') ? 'error' : ''; ?>">
+            <?php echo form_label('Vimeo ID', 'vimeo', array('class' => "control-label") ); ?>
+            <div class='controls'>
+                http://vimeo.com/
+                <input id="vimeo" type="text" name="vimeo" maxlength="255" value="<?php echo set_value('vimeo', isset($project['vimeo']) ? $project['vimeo'] : ''); ?>"  />
+                <span class="help-inline"><?php echo form_error('vimeo'); ?></span>
+                <br>
+                <span class="help-inline">
+                    <i>Ex: http://vimeo.com/<strong>7102325</strong></i>
+                </span>
+            </div>
+        </div>
         
         <!-- Image -->
         <div class="control-group <?php echo form_error('image_id') ? 'error' : '' ?>">
