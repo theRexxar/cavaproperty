@@ -8,7 +8,7 @@
 							<h5>SEARCH PROJECT</h5>
 							<div class="input">
 								<select name="tipe" id="">
-									<option value="tipe 1">Type Property</option>
+									<option value="tipe 1">Type</option>
 								</select>	
 							</div>
 							<div class="input">
@@ -18,7 +18,7 @@
 							</div>
 							<div class="input">
 								<select name="bedroom" id="">
-									<option value="tipe 1">Beedrooms</option>
+									<option value="tipe 1">Bedroom</option>
 								</select>
 							</div>
 							<div class="input">

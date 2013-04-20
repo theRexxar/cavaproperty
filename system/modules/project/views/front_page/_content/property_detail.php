@@ -8,7 +8,11 @@
 						<h5><?php echo $property->title ?></h5>
 						<div class="article">
 							<span class="text-lg">LOCATION</span><br>
-							<span class="mlr10"><?php echo $property->location ?></span>
+							<span class="mlr10"><?php echo $property->title_location ?></span>
+						</div>
+						<div class="article">
+							<span class="text-lg">ADDRESS</span><br>
+							<span class="mlr10"><?php echo $property->address ?></span>
 						</div>
 						<div class="article">
 							<span class="text-lg">SIZE</span><br>
@@ -19,7 +23,7 @@
 							<span class="mlr10"><?php echo $property->bedroom ?></span>
 						</div>
 						<div class="article">
-							<span class="text-lg">FACILITY</span><br>
+							<span class="text-lg">FACILITIES</span><br>
 							<span class="mlr10">
 								<?php echo $property->facility ?>
 							</span>
@@ -36,7 +40,11 @@
 								<?php echo $property->additional ?>
 							</span>
 						</div>
-						<p class="clear left mt20"><a href="<?php echo base_url().'project/developer/'.$property->slug_developer; ?>" class="right button-more"><span>+</span> MORE PROJECT</a></p>
+						<p class="clear left mt20">
+							<a href="<?php echo base_url().'project/developer/'.$property->slug_developer; ?>" class="right button-more">
+								<span>+</span> MORE PROJECTS
+							</a>
+						</p>
 						<p class="clear left mt20"><a href="#" class="link-button green left">FINDER</a></p>
 					</div>
 				</div>

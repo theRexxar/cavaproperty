@@ -8,7 +8,7 @@
 				<?php foreach($property AS $property_list) : ?>
 					<li class="">
 						<a href="<?php echo base_url().'project/detail/'.$property_list->slug_developer.'/'.$property_list->slug; ?>">
-							<span><?php echo $property_list->title ?> <small>+ MORE DETAIL</small></span>
+							<span><?php echo $property_list->title ?> <small>+ MORE DETAILS</small></span>
 						</a>
 						<img src="<?php echo base_url().'files/large/'.$property_list->image_id.'/200/200/fit' ?>" alt="">
 					</li>
@@ -29,10 +29,12 @@
 						<p>
 						<?php if(isset($developer) && ! empty($developer)) : ?>
 							<?php $i=0; foreach($developer AS $developer_list) : $i++; ?>
-							<a href="<?php echo base_url().'project/developer/'.$developer_list->slug; ?>">
-								<span class="text-lg">
+							<a href="<?php echo base_url().'project/developer/'.$developer_list->slug; ?>" class="<?php echo $this->uri->segment(3) == $developer_list->slug ? 'active' : ''; ?>">
+								<?php if($developer_list->highlight == "yes") : ?>
+									<strong><?php echo strtoupper($developer_list->title); ?></strong>
+								<?php else : ?>
 									<?php echo strtoupper($developer_list->title); ?>
-								</span>
+								<?php endif; ?>
 							</a>
 							<?php if($i != count($developer)) : ?>
 							<br>

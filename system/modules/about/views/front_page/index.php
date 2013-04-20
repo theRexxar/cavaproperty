@@ -24,11 +24,11 @@
 				<?php
 					switch ($i) 
 					{
-						case '1' : $class1 = "columns eight"; $class2 = "columns eight left"; break;
-						case '2' : $class1 = "columns sixteen"; $class2 = "columns sixteen top"; break;
-						case '3' : $class1 = "columns eight right"; $class2 = "columns eight"; break;
-						case '4' : $class1 = "columns sixteen bottom"; $class2 = "columns sixteen"; break;
-						case '5' : $class1 = "columns eight right"; $class2 = "columns eight"; break;
+						case '1' : $class1 = "columns eight"; $class2 = "columns eight left"; $class3 = "detail-bio"; break;
+						case '2' : $class1 = "columns sixteen"; $class2 = "columns sixteen top"; $class3 = "detail-bio show-left"; break;
+						case '3' : $class1 = "columns eight right"; $class2 = "columns eight"; $class3 = "detail-bio"; break;
+						case '4' : $class1 = "columns sixteen bottom"; $class2 = "columns sixteen"; $class3 = "detail-bio show-left"; break;
+						case '5' : $class1 = "columns eight right"; $class2 = "columns eight"; $class3 = "detail-bio"; break;
 					}
 				?>
 				<div class="item<?php echo ($i==1 OR $i==3 OR $i==5) ? ' double' : ''; ?>" data-id="<?php echo $i; ?>">
@@ -55,7 +55,7 @@
 						</div>
 						<?php endif; ?>
 					</div>
-					<div class="detail-bio">
+					<div class="<?php echo $class3; ?>">
 						<strong>BIO</strong>
 						<?php echo $people_list->description; ?>
 						<i class="close"></i>

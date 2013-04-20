@@ -78,11 +78,34 @@ $id = isset($project['id']) ? $project['id'] : '';
         </div>
 
         <!-- Location -->
-        <div class="control-group <?php echo form_error('location') ? 'error' : ''; ?>">
-            <?php echo form_label('Location'. lang('bf_form_label_required'), 'location', array('class' => "control-label") ); ?>
+        <div class="control-group <?php echo form_error('location_id') ? 'error' : ''; ?>">
+            <?php echo form_label('Location'. lang('bf_form_label_required'), 'location_id', array('class' => "control-label") ); ?>
             <div class='controls'>
-                <input id="location" type="text" name="location" maxlength="255" value="<?php echo set_value('location', isset($project['location']) ? $project['location'] : ''); ?>"  />
-                <span class="help-inline"><?php echo form_error('location'); ?></span>
+                <select name="location_id" id="location_id" no_parent="1" style="width: 230px;" >
+                    <?php foreach($location AS $location_list) : ?>
+                    <option value="<?php echo $location_list->id; ?>" <?php echo isset($project['location_id']) && $location_list->id == $project['location_id'] ? 'selected="selected"' : ""; ?> ><?php echo $location_list->title; ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <span class="help-inline"><?php echo form_error('location_id'); ?></span>
+            </div>
+        </div>
+
+        <!-- Address -->
+        <div class="control-group <?php echo form_error('address') ? 'error' : ''; ?>">
+            <?php echo form_label('Address'. lang('bf_form_label_required'), 'address', array('class' => "control-label") ); ?>
+            <div class='controls'>
+                <?php 
+                    echo form_textarea( array( 
+                                                'name'  => 'address', 
+                                                'id'    => 'address', 
+                                                'rows'  => '5', 
+                                                'cols'  => '80', 
+                                                'style' =>  'width: 300px;',
+                                                'value' => set_value('address', isset($project['address']) ? $project['address'] : '') 
+                                                ) 
+                                        )
+                ?>
+                <span class="help-inline"><?php echo form_error('address'); ?></span>
             </div>
         </div>
 
@@ -205,10 +228,11 @@ $id = isset($project['id']) ? $project['id'] : '';
                 <?php if(isset($project['image_gallery']) && $project['image_gallery'] !== false) : ?>
                     <?php foreach($project['image_gallery'] as $image) : ?>
                     <span class="img-gallery">
+                        <input type="hidden" name="gallery_id[]" value="<?php echo $image->id ?>">
                         <img width="100" height="100" src="<?php echo site_url('files/thumb/'.$image->file_id.'/100/100/fit'); ?>" />&nbsp;
                         <a href="#" class="btn btn-danger delete-gallery" rel="<?php echo $image->id; ?>">Remove</a>
                         <br />
-                        <textarea name="caption" placeholder="Caption" style="margin-top: 5px;"><?php echo $image->caption; ?></textarea>
+                        <textarea name="caption[]" placeholder="Caption" style="margin-top: 5px;"><?php echo $image->caption; ?></textarea>
                     </span>
                     <?php endforeach; ?>
                 <?php else: ?>

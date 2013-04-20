@@ -25,7 +25,7 @@ class project extends Front_Controller {
 		$this->load->model('project_developer_model');
 		$this->load->model('project_property_model');
 
-        $developer 	= $this->project_developer_model->order_by('title','desc')->find_all();
+        $developer 	= $this->project_developer_model->order_by('title','asc')->find_all();
         $property 	= $this->project_property_model->order_by('created_on','desc')->find_all();
 
         $vars = array(
@@ -56,10 +56,10 @@ class project extends Front_Controller {
 		$this->load->model('project_property_model');
 
 
-        $developer_list		= $this->project_developer_model->order_by('title','desc')->find_all();
+        $developer_list		= $this->project_developer_model->order_by('title','asc')->find_all();
         $developer_detail 	= $this->project_developer_model->find_by('slug', $slug);
         $property 			= $this->project_property_model->order_by('created_on','desc')->find_all_by('project_property.developer_id', $developer_detail->id);
-        $latest_property	= $this->project_property_model->order_by('created_on','desc')->limit(1)->find_all();
+        $latest_property	= $this->project_property_model->order_by('created_on','desc')->limit(1)->find_all_by('project_property.developer_id', $developer_detail->id);
         
 
         $vars = array(

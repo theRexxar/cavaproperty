@@ -29,9 +29,9 @@
 						<p>
 						<?php if(isset($developer_list) && ! empty($developer_list)) : ?>
 							<?php $i=0; foreach($developer_list AS $developer_lists) : $i++; ?>
-							<span class="text-lg">
+							<a href="<?php echo base_url().'project/developer/'.$developer_lists->slug; ?>" class="<?php echo $this->uri->segment(3) == $developer_lists->slug ? 'active' : ''; ?>">
 								<?php echo strtoupper($developer_lists->title); ?>
-							</span>
+							</a>
 							<?php if($i != count($developer_list)) : ?>
 							<br>
 							<?php endif; ?>

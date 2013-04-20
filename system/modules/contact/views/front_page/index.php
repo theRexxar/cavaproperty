@@ -30,8 +30,8 @@
 			<div class="row scroll-container">
 				<div class="bgwhite ml10" id="contact1">
 					<article>
-						<h5 class="text-green">Mail Service</h5>
-						<p>Please fill the form below, our agent need your short bio to contact you. Thank you.</p>
+						<h5 class="text-green">WE’D LOVE TO HEAR FROM YOU</h5>
+						<p>Please fill in the form below. Our agents would be glad to assist you.</p>
 						<div class="row">
 							<div class="columns twelve">
 
@@ -62,7 +62,7 @@
 										<input type="text" name="subject" placeholder="Subject*" required>
 									</div>
 									<div class="input">
-										<textarea name="message" id="" cols="30" rows="5" required></textarea>
+										<textarea name="message" id="" cols="30" rows="5" placeholder="Message*" required></textarea>
 									</div>
 									<div class="left message">
 										* required field
@@ -109,7 +109,7 @@
 										<input type="text" name="other_phone" placeholder="Other Phone Number*" required>
 									</div>
 									<div class="input">
-										<input type="text" name="subject" placeholder="subject*" required>
+										<input type="text" name="subject" placeholder="Subject*" required>
 									</div>
 									<div class="left message">
 										* required field

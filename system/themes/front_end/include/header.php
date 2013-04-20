@@ -44,11 +44,11 @@
 		</div>
 
 		<nav class="right member">
-			<ul>
+			<!--<ul>
 				<li><a href="../profile/index.php" class="register text-green"><strong>NICKY SEBASTIAN</strong></a></li>
 				<li><a href="" class="register">REGISTER</a></li>
 				<li><a href="" class="login">LOGIN</a></li>
-			</ul>
+			</ul>-->
 		</nav>
 
 		<?php //include('member.php'); ?>

@@ -78,11 +78,34 @@ $id = isset($project['id']) ? $project['id'] : '';
         </div>
 
         <!-- Location -->
-        <div class="control-group <?php echo form_error('location') ? 'error' : ''; ?>">
-            <?php echo form_label('Location'. lang('bf_form_label_required'), 'location', array('class' => "control-label") ); ?>
+        <div class="control-group <?php echo form_error('location_id') ? 'error' : ''; ?>">
+            <?php echo form_label('Location'. lang('bf_form_label_required'), 'location_id', array('class' => "control-label") ); ?>
             <div class='controls'>
-                <input id="location" type="text" name="location" maxlength="255" value="<?php echo set_value('location', isset($project['location']) ? $project['location'] : ''); ?>"  />
-                <span class="help-inline"><?php echo form_error('location'); ?></span>
+                <select name="location_id" id="location_id" no_parent="1" style="width: 230px;" >
+                    <?php foreach($location AS $location_list) : ?>
+                    <option value="<?php echo $location_list->id; ?>" <?php echo isset($project['location_id']) && $location_list->id == $project['location_id'] ? 'selected="selected"' : ""; ?> ><?php echo $location_list->title; ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <span class="help-inline"><?php echo form_error('location_id'); ?></span>
+            </div>
+        </div>
+
+        <!-- Address -->
+        <div class="control-group <?php echo form_error('address') ? 'error' : ''; ?>">
+            <?php echo form_label('Address'. lang('bf_form_label_required'), 'address', array('class' => "control-label") ); ?>
+            <div class='controls'>
+                <?php 
+                    echo form_textarea( array( 
+                                                'name'  => 'address', 
+                                                'id'    => 'address', 
+                                                'rows'  => '5', 
+                                                'cols'  => '80', 
+                                                'style' =>  'width: 300px;',
+                                                'value' => set_value('address', isset($project['address']) ? $project['address'] : '') 
+                                                ) 
+                                        )
+                ?>
+                <span class="help-inline"><?php echo form_error('address'); ?></span>
             </div>
         </div>
 

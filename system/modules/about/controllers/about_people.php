@@ -55,7 +55,7 @@ class About_people extends Admin_Controller {
 			}
 		}
 
-		$records = $this->about_people_model->find_all();
+		$records = $this->about_people_model->order_by('ordering','asc')->find_all();
 
 		Assets::add_js($this->load->view('about_people/js', null, true), 'inline');
 

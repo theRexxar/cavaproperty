@@ -1,5 +1,5 @@
 <div class="admin-box">
-	<h3>Developer</h3>
+	<h3>Location</h3>
 	<?php echo form_open($this->uri->uri_string()); ?>
 		<table class="table table-striped">
 			<thead>
@@ -8,10 +8,8 @@
 					<th class="column-check" width="1%"><input class="check-all" type="checkbox" /></th>
 					<?php endif;?>
 					
-            		<th width="20%">Title</th>
-            		<th width="20%">Description</th>
-            		<th width="20%">Slug</th>
-            		<th width="10%">Highlight</th>
+            		<th width="35%">Title</th>
+            		<th width="35%">Slug</th>
             		<th width="15%">Created</th>
             		<th width="15%"></th>
 				</tr>
@@ -37,19 +35,12 @@
 					<?php endif;?>
 					
 				    <td><?php echo $record->title?></td>
-    				<td>
-                        <?php 
-    						$description = strip_tags($record->description);
-    						echo ( strlen($description) > 200 ) ? substr($description,0,198) . '..' : $description;                        
-    					?>
-                    </td>
 				    <td><?php echo $record->slug?></td>
-				    <td><?php echo ucfirst($record->highlight)?></td>
     				<td><?php echo date('d M Y - H:i:s',strtotime($record->created_on));?></td>
                     <td class="actions">
     					<?php if (has_permission('Project.Content.Edit')): ?>
     					<?php 
-    						echo anchor(SITE_AREA . '/content/project/project_developer/edit/' . $record->id, 
+    						echo anchor(SITE_AREA . '/content/project/project_location/edit/' . $record->id, 
     												'<i class="icon-edit icon-white"></i> <span>Edit</span>', 
     												array('class' => 'btn btn-warning edit edit_file')
 										);
@@ -57,7 +48,7 @@
     					<?php endif; ?>
     					<?php if (has_permission('Project.Content.Delete')): ?>
     					<?php 
-							echo anchor(SITE_AREA . '/content/project/project_developer/delete/' . $record->id, 
+							echo anchor(SITE_AREA . '/content/project/project_location/delete/' . $record->id, 
 													'<i class="icon-trash icon-white"></i> <span>Delete</span>', 
 													array('class' => 'btn btn-danger confirm', "onclick" => "return confirm('".lang("project_delete_confirm")."')")
                                         ); 

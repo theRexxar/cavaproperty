@@ -29,6 +29,9 @@ class Project_property_model extends BF_Model {
                             project_developer.id AS id_developer,
                             project_developer.title AS title_developer,
                             project_developer.slug AS slug_developer,
+                            project_location.id AS id_location,
+                            project_location.title AS title_location,
+                            project_location.slug AS slug_location,
                             marketing_agent.id AS id_marketing,
                             marketing_agent.name AS name_marketing,
                             marketing_agent.phone AS phone_marketing,
@@ -38,6 +41,7 @@ class Project_property_model extends BF_Model {
 
         $this->db->join('project_type', 'project_property.type_id = project_type.id', 'left');
         $this->db->join('project_developer', 'project_property.developer_id = project_developer.id', 'left');
+        $this->db->join('project_location', 'project_property.location_id = project_location.id', 'left');
         $this->db->join('marketing_agent', 'project_property.marketing_id = marketing_agent.id', 'left');
         $this->db->where('project_property.deleted', '0');
 
@@ -55,6 +59,9 @@ class Project_property_model extends BF_Model {
                             project_developer.id AS id_developer,
                             project_developer.title AS title_developer,
                             project_developer.slug AS slug_developer,
+                            project_location.id AS id_location,
+                            project_location.title AS title_location,
+                            project_location.slug AS slug_location,
                             marketing_agent.id AS id_marketing,
                             marketing_agent.name AS name_marketing,
                             marketing_agent.phone AS phone_marketing,
@@ -64,6 +71,7 @@ class Project_property_model extends BF_Model {
 
         $this->db->join('project_type', 'project_property.type_id = project_type.id', 'left');
         $this->db->join('project_developer', 'project_property.developer_id = project_developer.id', 'left');
+        $this->db->join('project_location', 'project_property.location_id = project_location.id', 'left');
         $this->db->join('marketing_agent', 'project_property.marketing_id = marketing_agent.id', 'left');
         $this->db->where('project_property.deleted', '0');
 

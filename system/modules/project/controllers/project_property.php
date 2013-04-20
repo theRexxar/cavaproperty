@@ -15,6 +15,7 @@ class project_property extends Admin_Controller {
 		$this->load->model('project_model');
 		$this->load->model('project_type_model');
 		$this->load->model('project_developer_model');
+		$this->load->model('project_location_model');
 		$this->load->model('marketing/marketing_model');
 		$this->lang->load('project_property');
 		
@@ -108,6 +109,15 @@ class project_property extends Admin_Controller {
 			foreach($developer as $record)
 			{
 				$data["developer"][$record->id] = $record;
+			}
+		}  
+
+		$location = $this->project_location_model->order_by('title','asc')->find_all();
+		if (is_array($location) && count($location)) 
+		{
+			foreach($location as $record)
+			{
+				$data["location"][$record->id] = $record;
 			}
 		}  
 
@@ -240,6 +250,15 @@ class project_property extends Admin_Controller {
 			foreach($developer as $record)
 			{
 				$data["developer"][$record->id] = $record;
+			}
+		} 
+
+		$location = $this->project_location_model->order_by('title','asc')->find_all();
+		if (is_array($location) && count($location)) 
+		{
+			foreach($location as $record)
+			{
+				$data["location"][$record->id] = $record;
 			}
 		} 
 
@@ -435,9 +454,11 @@ class project_property extends Admin_Controller {
 		
 		$this->form_validation->set_rules('type_id','Type','required|trim|xss_clean|is_numeric|max_length[11]');
 		$this->form_validation->set_rules('developer_id','Developer','required|trim|xss_clean|is_numeric|max_length[11]');
+		$this->form_validation->set_rules('location_id','Location','required|trim|xss_clean|is_numeric|max_length[11]');
+		$this->form_validation->set_rules('marketing_id','Marketing Agent','required|trim|xss_clean|is_numeric|max_length[11]');
 		$this->form_validation->set_rules('title','Title','required|trim|xss_clean|max_length[255]|callback__check_title['.$id.']');
 		$this->form_validation->set_rules('slug', 'Slug', 'required|trim|xss_clean|max_length[255]|alpha_dot_dash|callback__check_slug['.$id.']');
-		$this->form_validation->set_rules('location','Location','required|trim|xss_clean');
+		$this->form_validation->set_rules('address','Address','required|trim|xss_clean');
 		$this->form_validation->set_rules('size', 'Size', 'required|trim|xss_clean|max_length[255]|');
 		$this->form_validation->set_rules('bedroom','Bedroom','trim|xss_clean|is_numeric|max_length[11]');
 		$this->form_validation->set_rules('facility','Facility','required|trim|xss_clean');
@@ -454,14 +475,17 @@ class project_property extends Admin_Controller {
 
 		// make sure we only pass in the fields we want
         
-		$images 	= $this->input->post('images');
-		$caption 	= $this->input->post('caption');
+		$gallery_id 	= $this->input->post('gallery_id');
+		$images 		= $this->input->post('images');
+		$caption 		= $this->input->post('caption');
 		
 		$data = array();
 		$data['type_id']          	  	= $this->input->post('type_id');
 		$data['developer_id']          	= $this->input->post('developer_id');
+		$data['location_id']          	= $this->input->post('location_id');
+		$data['marketing_id']          	= $this->input->post('marketing_id');
 		$data['title']                	= $this->input->post('title');
-		$data['location']          		= $this->input->post('location');
+		$data['address']          		= $this->input->post('address');
 		$data['size']          			= $this->input->post('size');
 		$data['facility']          		= $this->input->post('facility');
 		$data['condition']          	= $this->input->post('condition');
@@ -510,16 +534,16 @@ class project_property extends Admin_Controller {
 		}
 		else if ($type == 'update')
 		{
-			if($images != '')
+            $check = $this->project_property_gallery_model->find_by('id', $id);
+
+			if($check != '')
             {
-	            foreach($images as $file_id)
+	            foreach($gallery_id as $key=>$gallery_id_list)
 	            {    			
                     $data_gallery = array();
-            		$data_gallery['property_id']  	= $id;
-            		$data_gallery['file_id']  		= $file_id;
-            		$data_gallery['caption']  		= $caption;
+            		$data_gallery['caption']  = $caption[$key];
                 
-                    $this->project_property_gallery_model->insert($data_gallery);
+                    $this->project_property_gallery_model->update_where('id', $gallery_id_list, $data_gallery);
                 }
             }
 
