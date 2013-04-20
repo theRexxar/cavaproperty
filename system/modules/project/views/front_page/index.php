@@ -42,7 +42,11 @@
 							<?php endforeach; ?>
 						<?php endif; ?>
 						</p>
-						<p class="clear left mt20"><a href="<?php echo $base_url ?>/includes/finder.php" class="link-button green left" id="finder">FINDER</a></p>
+						<p class="clear left mt20">
+							<a href="#" class="link-button green left" id="finder">
+								FINDER
+							</a>
+						</p>
 					</div>
 				</div>
 			</section>	

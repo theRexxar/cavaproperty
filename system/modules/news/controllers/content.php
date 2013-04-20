@@ -62,7 +62,7 @@ class content extends Admin_Controller {
         
         $offset = $this->uri->segment(5);
 
-		$records = $this->news_model->limit($this->limit, $offset)->find_all();
+		$records = $this->news_model->order_by('created_on','desc')->limit($this->limit, $offset)->find_all();
 
                 
         // Pagination
@@ -389,14 +389,14 @@ class content extends Admin_Controller {
 		$data['slug']				= $this->input->post('slug');
 
 
-		date_default_timezone_set('Asia/Jakarta');
-
-		$data['month'] 				= indonesian_date(time(), 'F');
-		$data['year'] 				= indonesian_date(time(), 'Y');
-
 
 		if ($type == 'insert')
 		{
+			date_default_timezone_set('Asia/Jakarta');
+
+			$data['month'] 	= indonesian_date(time(), 'm');
+			$data['year'] 	= indonesian_date(time(), 'Y');
+
 			$id = $this->news_model->insert($data);
 
 			if (is_numeric($id) && $images != '')

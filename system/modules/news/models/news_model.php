@@ -16,6 +16,29 @@ class News_model extends BF_Model {
     {
         $this->db->where('deleted', '0');        
         return parent::find_all();
+    }
+
+    public function find_news_by_date($year,$month)
+    {
+        if (empty($this->selects))
+        {
+            $this->db->select($this->table .'.*');
+        }
+
+        $this->db->from('news');       
+        $this->db->where('year', $year);
+        $this->db->where('month', $month);   
+        
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0)
+        {
+            return $query->result();
+        }
+        else
+        {
+            return FALSE;
+        }
     } 
     
     public function count_all()
