@@ -38,7 +38,7 @@
 		
 	<?php if(isset($news) && ! empty($news)) : ?>
 	<?php foreach($news AS $news_list) : ?>
-	<div class="row mb20">
+	<div class="row mb20" id="<?php echo $news_list->slug; ?>">
 		<div class="columns five">
 			<article class="bgwhite sidebar">
 				<a href="" class="title">

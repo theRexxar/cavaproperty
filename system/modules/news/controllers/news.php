@@ -120,5 +120,25 @@ class news extends Front_Controller {
 
 
 
+	/*
+		Method: news_widget()
+
+		Displays a news widget.
+	*/
+	public function news_widget()
+	{
+		$this->load->model('news_model');
+
+        $data['news'] = $this->news_model->order_by('created_on','desc')->limit(4)->find_all();
+        
+        //print_r($news_date);
+		
+        $this->load->view('front_page/_content/news_widget', $data);
+	}
+
+	//--------------------------------------------------------------------
+
+
+
 
 }

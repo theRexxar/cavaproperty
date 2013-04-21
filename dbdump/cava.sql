@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 21, 2013 at 04:30 AM
+-- Generation Time: Apr 21, 2013 at 04:12 PM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `cv_activities` (
   `created_on` datetime NOT NULL,
   `deleted` tinyint(12) NOT NULL DEFAULT '0',
   PRIMARY KEY (`activity_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=145 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=147 ;
 
 --
 -- Dumping data for table `cv_activities`
@@ -240,7 +240,9 @@ INSERT INTO `cv_activities` (`activity_id`, `user_id`, `activity`, `module`, `cr
 (141, 1, 'Updated record with ID: 1 : ::1', 'news', '2013-04-21 01:32:58', 0),
 (142, 1, 'Updated record with ID: 4 : ::1', 'news', '2013-04-21 03:37:38', 0),
 (143, 1, 'Updated record with ID: 4 : ::1', 'news', '2013-04-21 03:38:09', 0),
-(144, 1, 'Updated record with ID: 4 : ::1', 'news', '2013-04-21 03:40:55', 0);
+(144, 1, 'Updated record with ID: 4 : ::1', 'news', '2013-04-21 03:40:55', 0),
+(145, 1, 'logged in from: ::1', 'users', '2013-04-21 13:33:39', 0),
+(146, 1, 'modified user: Administrator', 'users', '2013-04-21 13:33:54', 0);
 
 -- --------------------------------------------------------
 
@@ -508,7 +510,14 @@ CREATE TABLE IF NOT EXISTS `cv_login_attempts` (
   `login` varchar(50) NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `cv_login_attempts`
+--
+
+INSERT INTO `cv_login_attempts` (`id`, `ip_address`, `login`, `time`) VALUES
+(1, '::1', 'admin', '2013-04-21 06:33:33');
 
 -- --------------------------------------------------------
 
@@ -1153,8 +1162,8 @@ CREATE TABLE IF NOT EXISTS `cv_users` (
 --
 
 INSERT INTO `cv_users` (`id`, `role_id`, `email`, `username`, `password_hash`, `reset_hash`, `salt`, `last_login`, `last_ip`, `created_on`, `deleted`, `banned`, `ban_message`, `reset_by`, `display_name`, `display_name_changed`, `timezone`, `language`, `active`, `activate_hash`) VALUES
-(1, 1, 'andhikanovandi@gmail.com', 'andhika', 'd8db64dfb1062b9200c4e57c51d0b736d5f57692', NULL, 'Seqx4Rm', '2013-04-21 01:04:28', '::1', '0000-00-00 00:00:00', 0, 0, NULL, NULL, 'Andhika Novandi Patria', NULL, 'UM6', 'english', 1, ''),
-(2, 1, 'admin@bonfire.com', 'admin', '1d06325762c0707eb40517772e1eafd6838075ac', NULL, 'JoCRMtX', '0000-00-00 00:00:00', '', '2013-04-07 09:59:19', 0, 0, NULL, NULL, 'Administrator', NULL, 'UM6', 'english', 1, '');
+(1, 1, 'andhikanovandi@gmail.com', 'andhika', 'd8db64dfb1062b9200c4e57c51d0b736d5f57692', NULL, 'Seqx4Rm', '2013-04-21 13:33:39', '::1', '0000-00-00 00:00:00', 0, 0, NULL, NULL, 'Andhika Novandi Patria', NULL, 'UM6', 'english', 1, ''),
+(2, 1, 'admin@bonfire.com', 'admin', '874911bfdde3730f29bcca311401e09f47fb2d4f', NULL, 'uQaZOiU', '0000-00-00 00:00:00', '', '2013-04-07 09:59:19', 0, 0, NULL, NULL, 'Administrator', NULL, 'UM6', 'english', 1, '');
 
 -- --------------------------------------------------------
 

@@ -60,37 +60,8 @@
 						<img src="<?php echo config_item('assets_url'); ?>images/our_project.jpg" alt="Our Project">
 					</div>
 
-					<div class="right bgwhite">
-						<h5>NEWS & UPDATES</h5>
-						<ul class="block-grid one-up mobile-one-up">
-							<li>
-								<a href="">
-									<span>22/11/2012</span><br>
-									Serenia Hills Project Progress as of November 2012
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<span>22/11/2012</span><br>
-									Serenia Hills Project Progress as of November 2012
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<span>22/11/2012</span><br>
-									Serenia Hills Project Progress as of November 2012
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<span>22/11/2012</span><br>
-									Serenia Hills Project Progress as of November 2012
-								</a>
-							</li>
-							<li><a href="" class="button-more">+ MORE NEWS</a></li>
-						</ul>
-					</div>
-
+					<!-- News Widget -->
+                    <?php echo Modules::run('news/news_widget'); ?>
 				</div>
 			</div>
 		</div>

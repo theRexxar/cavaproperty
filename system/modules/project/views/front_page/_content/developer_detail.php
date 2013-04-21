@@ -30,7 +30,11 @@
 						<?php if(isset($developer_list) && ! empty($developer_list)) : ?>
 							<?php $i=0; foreach($developer_list AS $developer_lists) : $i++; ?>
 							<a href="<?php echo base_url().'project/developer/'.$developer_lists->slug; ?>" class="<?php echo $this->uri->segment(3) == $developer_lists->slug ? 'active' : ''; ?>">
-								<?php echo strtoupper($developer_lists->title); ?>
+								<?php if($developer_lists->highlight == "yes") : ?>
+									<strong><?php echo strtoupper($developer_lists->title); ?></strong>
+								<?php else : ?>
+									<?php echo strtoupper($developer_lists->title); ?>
+								<?php endif; ?>
 							</a>
 							<?php if($i != count($developer_list)) : ?>
 							<br>
@@ -56,37 +60,8 @@
 					<?php endif; ?>
 					</div>
 					
-					<div class="right bgwhite">
-						<h5>NEWS & UPDATES</h5>
-						<ul class="block-grid one-up mobile-one-up">
-							<li>
-								<a href="">
-									<span>22/11/2012</span><br>
-									Serenia Hills Project Progress as of November 2012
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<span>22/11/2012</span><br>
-									Serenia Hills Project Progress as of November 2012
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<span>22/11/2012</span><br>
-									Serenia Hills Project Progress as of November 2012
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<span>22/11/2012</span><br>
-									Serenia Hills Project Progress as of November 2012
-								</a>
-							</li>
-							<li><a href="" class="button-more">+ MORE NEWS</a></li>
-						</ul>
-					</div>
-
+					<!-- News Widget -->
+                    <?php echo Modules::run('news/news_widget'); ?>
 				</div>
 			</div>
 		</div>
