@@ -9,6 +9,7 @@
     <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.isotope.min.js"></script>
     <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.tinycarousel.js"></script>
     <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.carousel.js"></script>
+    <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.colorbox.js"></script>
     <script src="<?php echo config_item('assets_url'); ?>js/plugins.js"></script>
     <script src="<?php echo config_item('assets_url'); ?>js/main.js"></script>
 

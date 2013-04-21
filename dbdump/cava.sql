@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 21, 2013 at 04:12 PM
+-- Generation Time: Apr 21, 2013 at 04:31 PM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `cv_activities` (
   `created_on` datetime NOT NULL,
   `deleted` tinyint(12) NOT NULL DEFAULT '0',
   PRIMARY KEY (`activity_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=147 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=149 ;
 
 --
 -- Dumping data for table `cv_activities`
@@ -242,7 +242,9 @@ INSERT INTO `cv_activities` (`activity_id`, `user_id`, `activity`, `module`, `cr
 (143, 1, 'Updated record with ID: 4 : ::1', 'news', '2013-04-21 03:38:09', 0),
 (144, 1, 'Updated record with ID: 4 : ::1', 'news', '2013-04-21 03:40:55', 0),
 (145, 1, 'logged in from: ::1', 'users', '2013-04-21 13:33:39', 0),
-(146, 1, 'modified user: Administrator', 'users', '2013-04-21 13:33:54', 0);
+(146, 1, 'modified user: Administrator', 'users', '2013-04-21 13:33:54', 0),
+(147, 1, 'Updated record with ID: 1 : ::1', 'news', '2013-04-21 16:30:23', 0),
+(148, 1, 'Updated record with ID: 1 : ::1', 'news', '2013-04-21 16:30:53', 0);
 
 -- --------------------------------------------------------
 
@@ -571,7 +573,7 @@ CREATE TABLE IF NOT EXISTS `cv_news` (
 --
 
 INSERT INTO `cv_news` (`id`, `title`, `description`, `image_id`, `slug`, `month`, `year`, `deleted`, `created_on`, `modified_on`) VALUES
-(1, 'News 1', '<p>\r\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu metus non diam consectetur accumsan sit amet a lorem. Ut nisl est, tempus eget imperdiet a, convallis at orci. Nullam eu ante odio. Curabitur ut massa nec quam pulvinar laoreet vel ut leo.</p>\r\n<p>\r\n Sed in tristique nisl. Sed lobortis faucibus pretium. Vestibulum volutpat vehicula elementum. Fusce sed dapibus lectus. Quisque sapien justo, tincidunt in bibendum at, tempus a lectus. Curabitur elit urna, aliquam vel tincidunt a, tincidunt in mauris.</p>\r\n<p>\r\n Cras tellus tellus, scelerisque ut condimentum ac, feugiat vel lorem. Cras porttitor nisi a augue feugiat sed rhoncus tortor condimentum.</p>', 10, 'news-1', 4, 2013, 0, '2013-04-18 16:08:27', '2013-04-21 01:32:58'),
+(1, 'News 1', '<p>\r\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu metus non diam consectetur accumsan sit amet a lorem. Ut nisl est, tempus eget imperdiet a, convallis at orci. Nullam eu ante odio. Curabitur ut massa nec quam pulvinar laoreet vel ut leo.</p>\r\n<p>\r\n Sed in tristique nisl. Sed lobortis faucibus pretium. Vestibulum volutpat vehicula elementum. Fusce sed dapibus lectus. Quisque sapien justo, tincidunt in bibendum at, tempus a lectus. Curabitur elit urna, aliquam vel tincidunt a, tincidunt in mauris.</p>\r\n<p>\r\n Cras tellus tellus, scelerisque ut condimentum ac, feugiat vel lorem. Cras porttitor nisi a augue feugiat sed rhoncus tortor condimentum.</p>', 10, 'news-1', 4, 2013, 0, '2013-04-18 16:08:27', '2013-04-21 16:30:53'),
 (2, 'News 2', '<p>\r\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu metus non diam consectetur accumsan sit amet a lorem. Ut nisl est, tempus eget imperdiet a, convallis at orci. Nullam eu ante odio. Curabitur ut massa nec quam pulvinar laoreet vel ut leo.</p>\r\n<p>\r\n Sed in tristique nisl. Sed lobortis faucibus pretium. Vestibulum volutpat vehicula elementum. Fusce sed dapibus lectus. Quisque sapien justo, tincidunt in bibendum at, tempus a lectus. Curabitur elit urna, aliquam vel tincidunt a, tincidunt in mauris.</p>\r\n<p>\r\n Cras tellus tellus, scelerisque ut condimentum ac, feugiat vel lorem. Cras porttitor nisi a augue feugiat sed rhoncus tortor condimentum.</p>', 10, 'news-2', 5, 2013, 0, '2013-05-19 16:08:27', '2013-04-21 01:32:58'),
 (3, 'News 3', '<p>\r\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu metus non diam consectetur accumsan sit amet a lorem. Ut nisl est, tempus eget imperdiet a, convallis at orci. Nullam eu ante odio. Curabitur ut massa nec quam pulvinar laoreet vel ut leo.</p>\r\n<p>\r\n Sed in tristique nisl. Sed lobortis faucibus pretium. Vestibulum volutpat vehicula elementum. Fusce sed dapibus lectus. Quisque sapien justo, tincidunt in bibendum at, tempus a lectus. Curabitur elit urna, aliquam vel tincidunt a, tincidunt in mauris.</p>\r\n<p>\r\n Cras tellus tellus, scelerisque ut condimentum ac, feugiat vel lorem. Cras porttitor nisi a augue feugiat sed rhoncus tortor condimentum.</p>', 10, 'news-3', 6, 2014, 0, '2014-06-20 16:08:27', '2013-04-21 01:32:58'),
 (4, 'News 4', '<p>\r\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu metus non diam consectetur accumsan sit amet a lorem. Ut nisl est, tempus eget imperdiet a, convallis at orci. Nullam eu ante odio. Curabitur ut massa nec quam pulvinar laoreet vel ut leo.</p>\r\n<p>\r\n Sed in tristique nisl. Sed lobortis faucibus pretium. Vestibulum volutpat vehicula elementum. Fusce sed dapibus lectus. Quisque sapien justo, tincidunt in bibendum at, tempus a lectus. Curabitur elit urna, aliquam vel tincidunt a, tincidunt in mauris.</p>\r\n<p>\r\n Cras tellus tellus, scelerisque ut condimentum ac, feugiat vel lorem. Cras porttitor nisi a augue feugiat sed rhoncus tortor condimentum.</p>', 10, 'news-4', 7, 2014, 0, '2014-07-21 16:08:27', '2013-04-21 03:40:55');
@@ -588,14 +590,15 @@ CREATE TABLE IF NOT EXISTS `cv_news_gallery` (
   `news_id` int(11) NOT NULL,
   `file_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `cv_news_gallery`
 --
 
 INSERT INTO `cv_news_gallery` (`id`, `news_id`, `file_id`) VALUES
-(1, 1, 10);
+(1, 1, 10),
+(2, 1, 8);
 
 -- --------------------------------------------------------
 

@@ -42,7 +42,18 @@
 							<?php endforeach; ?>
 						<?php endif; ?>
 						</p>
-						<p class="clear left mt20"><a href="#" class="link-button green left" id="finder">FINDER</a></p>
+
+						<div id="finder-container">
+							<!-- Search Widget -->
+                        	<?php echo Modules::run('search/search_widget'); ?>
+                        	<a href="#" class="close">x</a>
+						</div>
+
+						<p class="clear left mt20">
+							<a href="#finder" class="link-button green left" id="finder">
+								FINDER
+							</a>
+						</p>
 					</div>
 				</div>
 			</section>	
@@ -57,6 +68,12 @@
 						<?php foreach($latest_property AS $latest_property_list) : ?>
 						<img src="<?php echo base_url().'files/large/'.$latest_property_list->image_id.'/720/360/fit' ?>" alt="">
 						<?php endforeach; ?>
+					<?php else : ?>
+						<div class="columns eleven bgwhite">
+							<article>
+								<h5>EMPTY PROJECT</h5>
+							</article>
+						</div>
 					<?php endif; ?>
 					</div>
 					

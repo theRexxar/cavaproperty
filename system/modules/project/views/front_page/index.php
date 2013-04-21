@@ -42,8 +42,15 @@
 							<?php endforeach; ?>
 						<?php endif; ?>
 						</p>
+
+						<div id="finder-container">
+							<!-- Search Widget -->
+                        	<?php echo Modules::run('search/search_widget'); ?>
+                        	<a href="#" class="close">x</a>
+						</div>
+
 						<p class="clear left mt20">
-							<a href="#" class="link-button green left" id="finder">
+							<a href="#finder" class="link-button green left" id="finder">
 								FINDER
 							</a>
 						</p>
