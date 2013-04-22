@@ -9,13 +9,13 @@
 *{outline: none !important;}
 
 body{
-	background: $mainBackground;
-	display: block;
-	height: 100%;
-	width: 100%;
-	position: relative;
-	font-family: $bodyFontFamily;
-	line-height: 150%;
+	background  : $mainBackground;
+	display     : block;
+	height      : 100%;
+	width       : 100%;
+	position    : relative;
+	font-family : $bodyFontFamily;
+	line-height : 150%;
 }
 
 html{
@@ -24,10 +24,10 @@ html{
 }
 
 #main{
-	width: 1260px;
-	margin: 0 auto;
-	overflow: hidden;
-	position: relative;
+	width    : 1260px;
+	margin   : 0 auto;
+	overflow : hidden;
+	position : relative;
 
 }
 
@@ -60,26 +60,26 @@ h1,h2,h3,h4,h5,h6{
 .f17{font-size: 17px !important;}
 
 .title, .date{
-	text-transform: uppercase;
-	display: block;
-	clear: both;
-	margin-bottom: 10px;
+	text-transform : uppercase;
+	display        : block;
+	clear          : both;
+	margin-bottom  : 10px;
 }
 
 .title{
-	color: $linkColor;
-	font-size: 17px;
+	color     : $linkColor;
+	font-size : 17px;
 }
 
 .date{
-	color: #959595;
-	font-size: 11px;
+	color     : #959595;
+	font-size : 11px;
 }
 
 .more{
-	position: absolute;
-	bottom: 20px;
-	font-size: 10px !important;
+	position  : absolute;
+	bottom    : 20px;
+	font-size : 10px !important;
 
 	span{
 		
@@ -151,21 +151,21 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .clear{
-	width: 100%;
-	display: block;
-	clear: both;
-	margin-bottom: 10px;
+	width         : 100%;
+	display       : block;
+	clear         : both;
+	margin-bottom : 10px;
 }
 
 // button
 .link-button{
-	background: url(../images/sprite.png) no-repeat 0 -67px;
-	height: 42px;
-	width: 85px;
-	display: block;
-	text-indent: -999999px;
-	letter-spacing: -999999px;
-	overflow: hidden;
+	background     : url(../images/sprite.png) no-repeat 0 -67px;
+	height         : 42px;
+	width          : 85px;
+	display        : block;
+	text-indent    : -999999px;
+	letter-spacing : -999999px;
+	overflow       : hidden;
 
 	&:hover{
 		background-position: -100px -67px;
@@ -188,12 +188,12 @@ h1,h2,h3,h4,h5,h6{
 	}
 	
 	span{
-		float: left;
-		text-transform: uppercase;
-		padding: 5px 15px;
-		font-size: 14px;
-		color: #fff;
-		font-weight: bold;
+		float          : left;
+		text-transform : uppercase;
+		padding        : 5px 15px;
+		font-size      : 14px;
+		color          : #fff;
+		font-weight    : bold;
 		@include border-radius(6px);
 		@include text-shadow(rgba(0,0,0, 0.5) -1px 0px 0px);
 		@include box-shadow(0 3px 4px rgba(0,0,0,0.4));
@@ -222,12 +222,12 @@ form{
 	}
 
 	select{
-		-webkit-appearance: none;
-	    -moz-appearance: none;
-	    appearance: none;
-	    border: none;
-		color: #7d7d7d;
-		padding: 7px;
+		-webkit-appearance : none;
+		-moz-appearance    : none;
+		appearance         : none;
+		border             : none;
+		color              : #7d7d7d;
+		padding            : 7px;
 		@include border-radius(6px);
 		@include background(
 			url(../images/icon/drop-arrow.png) no-repeat 97% center,
@@ -237,31 +237,31 @@ form{
 	}	
 
 	input[type="text"], input[type="email"], input[type="number"], textarea, input[type="password"]{
-	    border: none;
-		color: #7d7d7d;
-		padding: 7px;
-		margin-bottom: 0;
-		font-family: $contentFontFamily;
-		font-size: 12px;
+		border        : none;
+		color         : #7d7d7d;
+		padding       : 7px;
+		margin-bottom : 0;
+		font-family   : $contentFontFamily;
+		font-size     : 12px;
 		@include border-radius(6px);
 		@include background(linear-gradient(#e8e8e8, #ebebeb));
 		@include box-shadow(0 2px 7px rgba(0,0,0,0.25) inset);
 	}
 
 	select{
-		font-family: $contentFontFamily;
-		color: #7d7d7d;
-		font-size: 12px;
+		font-family : $contentFontFamily;
+		color       : #7d7d7d;
+		font-size   : 12px;
 	}
 
 	input[type="submit"]{
-		border: none;
-		height: 42px;
-		width: 173px;
-		background: url(../images/sprite.png) no-repeat 0 0;
-		letter-spacing: -999999px;
-		text-indent: -999999px;
-		overflow: hidden;
+		border         : none;
+		height         : 42px;
+		width          : 173px;
+		background     : url(../images/sprite.png) no-repeat 0 0;
+		letter-spacing : -999999px;
+		text-indent    : -999999px;
+		overflow       : hidden;
 
 		&:hover{
 			background-color: transparent;
@@ -299,11 +299,11 @@ header{
 		background: $white;
 
 		&.fix{
-			position: fixed;
-			width: 360px;
-			padding: 24px 0;
-			z-index: 100;
-			top: 0;
+			position : fixed;
+			width    : 360px;
+			padding  : 24px 0;
+			z-index  : 100;
+			top      : 0;
 			
 			//margin-left: -640px;
 
@@ -376,19 +376,19 @@ header{
 #carousel{position: relative}
 
 #carousel ul {
-    position:absolute; /* required */
-    overflow:hidden; /* required */
-    margin:0;
-    padding:0;
-    list-style:none;
+	position   :absolute; /* required */
+	overflow   :hidden; /* required */
+	margin     :0;
+	padding    :0;
+	list-style :none;
 }
  
 #carousel ul li {
-    float:left; /* required */
-    width:720px;
-    height:360px;
-	position: relative;
-	background: #fff;
+	float      :left; /* required */
+	width      :720px;
+	height     :360px;
+	position   : relative;
+	background : #fff;
 
 	&.contact{
 		width: 200px
@@ -518,6 +518,10 @@ header{
 		display: block;
 		clear: both;
 		margin-bottom: 15px;
+		
+		p, li{
+			font: normal 12px/150% "arial","Helvetica Neue","Helvetica",Helvetica,sans-serif;
+		}
 	}
 
 	&.news-update{
