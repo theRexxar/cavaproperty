@@ -52,6 +52,15 @@ $id = isset($news['id']) ? $news['id'] : '';
                 <span class="help-inline"><?php echo form_error('description'); ?></span>
             </div>
         </div>
+
+        <!-- Post Date -->
+        <div class="control-group <?php echo form_error('post_date') ? 'error' : ''; ?>">
+            <?php echo form_label('Post Date'. lang('bf_form_label_required'), 'post_date', array('class' => "control-label") ); ?>
+            <div class="controls">
+                <input id="date" type="text" name="post_date" value="<?php echo (isset($news) && isset($news['post_date']) && !empty($news['post_date'])) ? date('m/d/Y',strtotime($news['post_date'])) : ($this->input->post('post_date') ? set_value(date('m/d/Y',strtotime($this->input->post('post_date')))) : date('m/d/Y',time())); ?>"  />
+                <span class="help-inline"><?php echo form_error('post_date'); ?></span>
+            </div>
+        </div>
         
         <!-- Image -->
     	<div class="control-group <?php echo form_error('image_id') ? 'error' : '' ?>">

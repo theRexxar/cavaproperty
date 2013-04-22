@@ -458,15 +458,17 @@ class project_property extends Admin_Controller {
 		$this->form_validation->set_rules('marketing_id','Marketing Agent','required|trim|xss_clean|is_numeric|max_length[11]');
 		$this->form_validation->set_rules('title','Title','required|trim|xss_clean|max_length[255]|callback__check_title['.$id.']');
 		$this->form_validation->set_rules('slug', 'Slug', 'required|trim|xss_clean|max_length[255]|alpha_dot_dash|callback__check_slug['.$id.']');
-		$this->form_validation->set_rules('address','Address','required|trim|xss_clean');
-		$this->form_validation->set_rules('size', 'Size', 'required|trim|xss_clean|max_length[255]|');
+		$this->form_validation->set_rules('address','Address','trim|xss_clean');
+		$this->form_validation->set_rules('size', 'Size', 'trim|xss_clean|max_length[255]|');
 		$this->form_validation->set_rules('bedroom','Bedroom','trim|xss_clean|is_numeric|max_length[11]');
-		$this->form_validation->set_rules('facility','Facility','required|trim|xss_clean');
-		$this->form_validation->set_rules('condition', 'Condition', 'required|trim|xss_clean|max_length[255]|');
+		$this->form_validation->set_rules('facility','Facility','trim|xss_clean');
+		$this->form_validation->set_rules('condition', 'Condition', 'trim|xss_clean|max_length[255]|');
 		$this->form_validation->set_rules('additional','Additional','trim|xss_clean');
 		$this->form_validation->set_rules('youtube', 'Youtube ID', 'trim|xss_clean|max_length[255]|');
 		$this->form_validation->set_rules('vimeo', 'Vimeo ID', 'trim|xss_clean|max_length[255]|');
 		$this->form_validation->set_rules('image_id','Image','required|trim');
+        
+        $this->form_validation->set_error_delimiters('<p>', '</p>');
 
 		if ($this->form_validation->run() === FALSE)
 		{

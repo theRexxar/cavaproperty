@@ -6,46 +6,77 @@
 				<div class="row">
 					<div class="columns sixteen">
 						<h5><?php echo $property->title ?></h5>
+
 						<div class="article">
 							<span class="text-lg">LOCATION</span><br>
 							<span class="mlr10"><?php echo $property->title_location ?></span>
 						</div>
+
+						<?php if(! empty($property->address)) : ?>
 						<div class="article">
 							<span class="text-lg">ADDRESS</span><br>
 							<span class="mlr10"><?php echo $property->address ?></span>
 						</div>
+						<?php endif; ?>
+
+						<?php if(! empty($property->size)) : ?>
 						<div class="article">
 							<span class="text-lg">SIZE</span><br>
 							<span class="mlr10"><?php echo $property->size ?></span>
 						</div>
+						<?php endif; ?>
+
+						<?php if(! empty($property->bedroom)) : ?>
 						<div class="article">
 							<span class="text-lg">BEDROOM</span><br>
 							<span class="mlr10"><?php echo $property->bedroom ?></span>
 						</div>
+						<?php endif; ?>
+
+						<?php if(! empty($property->facility)) : ?>
 						<div class="article">
 							<span class="text-lg">FACILITIES</span><br>
 							<span class="mlr10">
 								<?php echo $property->facility ?>
 							</span>
 						</div>
+						<?php endif; ?>
+
+						<?php if(! empty($property->condition)) : ?>
 						<div class="article">
 							<span class="text-lg">CONDITION</span><br>
 							<span class="mlr10">
 								<p><?php echo $property->condition ?></p>
 							</span>
-						</p>
+						</div>
+						<?php endif; ?>
+
+						<?php if(! empty($property->additional)) : ?>
 						<div class="article">
 							<span class="text-lg">ADDITIONAL</span><br>
 							<span class="mlr10">
 								<?php echo $property->additional ?>
 							</span>
 						</div>
+						<?php endif; ?>
+
 						<p class="clear left mt20">
 							<a href="<?php echo base_url().'project/developer/'.$property->slug_developer; ?>" class="right button-more">
 								<span>+</span> MORE PROJECTS
 							</a>
 						</p>
-						<p class="clear left mt20"><a href="#" class="link-button green left">FINDER</a></p>
+						
+						<div id="finder-container">
+							<!-- Search Widget -->
+                        	<?php echo Modules::run('search/search_widget'); ?>
+                        	<a href="#" class="close">x</a>
+						</div>
+
+						<p class="clear left mt20">
+							<a href="#finder" class="link-button green left" id="finder">
+								FINDER
+							</a>
+						</p>
 					</div>
 				</div>
 			</section>	
