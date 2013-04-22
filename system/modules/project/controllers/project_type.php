@@ -333,6 +333,8 @@ class project_type extends Admin_Controller {
 		$this->form_validation->set_rules('title','Title','required|trim|xss_clean|max_length[255]|callback__check_title['.$id.']');
 		$this->form_validation->set_rules('slug', 'Slug', 'required|trim|xss_clean|max_length[255]|alpha_dot_dash|callback__check_slug['.$id.']');
 		$this->form_validation->set_rules('description','Description','trim|xss_clean');
+        
+        $this->form_validation->set_error_delimiters('<p>', '</p>');
 
 		if ($this->form_validation->run() === FALSE)
 		{

@@ -11,7 +11,7 @@
 		            <th width="20%">Image</th>
             		<th width="20%">Title</th>
             		<th width="30%">Description</th>
-            		<th width="15%">Created</th>
+            		<th width="15%">Post Date</th>
             		<th width="15%"></th>
 				</tr>
 			</thead>
@@ -45,7 +45,7 @@
     						echo ( strlen($description) > 200 ) ? substr($description,0,198) . '..' : $description;                        
     					?>
                     </td>
-    				<td><?php echo date('d M Y - H:i:s',strtotime($record->created_on));?></td>
+    				<td><?php echo date('d M Y',strtotime($record->post_date));?></td>
                     <td class="actions">
     					<?php if (has_permission('News.Content.Edit')): ?>
     					<?php 
