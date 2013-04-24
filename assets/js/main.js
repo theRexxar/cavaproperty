@@ -171,43 +171,29 @@ $(document).ready(function(){
 	}
 
 	var about_detail = function(param){
-		$(param).click(function(){
+		
+		$(param).toggle(function(){
 			var _this = $(this);
 			var _close = _this.find(".close");
 
-			if(_this.hasClass("active") == false){
-				_this.siblings(".item").append('<div class="overlay"></div>');
-				_this.addClass("active");
-				_this.find(".detail-bio").fadeIn(500);
+			$(".active").removeClass("active").find(".detail-bio").fadeOut();
+			$(".overlay").remove();
 
-				verticalScroll(".detail-bio .desc");
-				
-				//for close click
-				_close.click(function(){
-					$(this).parents(".detail-bio").fadeOut(500);
-					$(".overlay").fadeOut(500);
-					setTimeout(function(){
-						_this.removeClass("active");
-						$(".overlay").remove();
-					},800);
-				});
+			_this.siblings(".item").append('<div class="overlay"></div>');
+			_this.addClass("active");
+			_this.find(".detail-bio").fadeIn(500);
 
-			}else{
-				// $(".item").removeClass("active").append('<div class="overlay"></div>');
-				// $(".detail-bio").fadeOut(500);
-				// _this.find(".overlay").fadeOut(500, function(){
-				// 	_this.find(".overlay").remove();
-				// });
-
-				$(".detail-bio").fadeOut(500);
-				$(".overlay").fadeOut(500);
-				setTimeout(function(){
-					_this.removeClass("active");
-					$(".overlay").remove();
-				},800);
-
-				verticalScroll(".detail-bio .desc");
-			}
+			// run vertical scroll
+			verticalScroll(".detail-bio .desc");
+		}, function(){
+			var _this = $(this);
+			
+			_this.find(".detail-bio").fadeOut(500);
+			$(".overlay").fadeOut(500);
+			setTimeout(function(){
+				_this.removeClass("active");
+				$(".overlay").remove();
+			},800);
 		});
 	}
 

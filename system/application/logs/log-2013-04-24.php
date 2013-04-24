@@ -48,3 +48,5 @@ ERROR - 2013-04-24 09:01:18 --> Severity: Notice  --> Undefined variable: banner
 ERROR - 2013-04-24 09:01:31 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
 ERROR - 2013-04-24 09:04:06 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
 ERROR - 2013-04-24 09:04:22 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-24 10:52:27 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-24 10:53:20 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
