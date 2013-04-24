@@ -87,9 +87,12 @@ $id = isset($news['id']) ? $news['id'] : '';
 				<?php if(isset($news['image_gallery']) && $news['image_gallery'] !== false) : ?>
 					<?php foreach($news['image_gallery'] as $image) : ?>
 					<span class="img-gallery">
-						<img width="100" height="100" src="<?php echo site_url('files/thumb/'.$image->file_id.'/100/100/fit'); ?>" />&nbsp;
-						<a href="#" class="btn btn-danger delete-gallery" rel="<?php echo $image->id; ?>">Remove</a>
-					</span>
+                        <input type="hidden" name="gallery_id[]" value="<?php echo $image->id; ?>">
+                        <img width="100" height="100" src="<?php echo site_url('files/thumb/'.$image->file_id.'/100/100/fit'); ?>" />&nbsp;
+                        <a href="#" class="btn btn-danger delete-gallery" rel="<?php echo $image->id; ?>">Remove</a>
+                        <br />
+                        <textarea name="caption_update[]" placeholder="Caption" style="margin-top: 5px;"><?php echo $image->caption; ?></textarea>
+                    </span>
 					<?php endforeach; ?>
 				<?php else: ?>
 				    <p id="no-image" style="display:block;">

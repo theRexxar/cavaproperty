@@ -5,7 +5,7 @@
 	<?php foreach($news AS $news_list) : ?>
 	<li>
 		<a href="<?php echo base_url().'news#'.$news_list->slug; ?>">
-			<span><?php echo date('d/m/Y',strtotime($news_list->created_on));?></span>
+			<span><?php echo date('d/m/Y',strtotime($news_list->post_date));?></span>
 			<br>
 			<?php echo $news_list->title; ?>
 		</a>

@@ -62,7 +62,7 @@ class content extends Admin_Controller {
         
         $offset = $this->uri->segment(5);
 
-		$records = $this->news_model->order_by('created_on','desc')->limit($this->limit, $offset)->find_all();
+		$records = $this->news_model->order_by('post_date','desc')->limit($this->limit, $offset)->find_all();
 
                 
         // Pagination
@@ -384,7 +384,8 @@ class content extends Admin_Controller {
 
 		// make sure we only pass in the fields we want
         
-		$images = $this->input->post('images');
+		$images 	= $this->input->post('images');
+		$caption 	= $this->input->post('caption');
 		
 		$data = array();
 		$data['title']              = $this->input->post('title');
@@ -426,17 +427,39 @@ class content extends Admin_Controller {
 		}
 		else if ($type == 'update')
 		{		
+            $gallery_id 		= $this->input->post('gallery_id');
+			$caption_update 	= $this->input->post('caption_update');
+
 			if($images != '')
-            {
-	            foreach($images as $file_id)
+            {				                    		
+                foreach($images as $file_id)
 	            {    			
                     $data_gallery = array();
-            		$data_gallery['news_id']  = $id;
-            		$data_gallery['file_id']  = $file_id;
-                
+        			$data_gallery['news_id']  	= $id;
+        			$data_gallery['file_id']  	= $file_id;
+        			$data_gallery['caption']  	= $caption;
+                    
                     $this->news_gallery->insert($data_gallery);
-                }
-            }
+                }	
+
+                foreach($gallery_id as $key=>$gallery_id_list)
+	            {    			
+                    $data_gallery = array();
+            		$data_gallery['caption']  	= $caption_update[$key];
+                    
+                    $this->news_gallery->update_where('id', $gallery_id_list, $data_gallery);
+               	}
+           	}
+        	else
+        	{
+        		foreach($gallery_id as $key=>$gallery_id_list)
+	            {    			
+                    $data_gallery = array();
+            		$data_gallery['caption']  	= $caption_update[$key];
+                    
+                    $this->news_gallery->update_where('id', $gallery_id_list, $data_gallery);
+               	}
+			} 
           
 			$return = $this->news_model->update($id, $data);
 		}

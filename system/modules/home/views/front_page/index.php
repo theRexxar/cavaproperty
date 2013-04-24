@@ -20,7 +20,7 @@
 				    <li>
 				      	<img src="<?php echo base_url().'files/large/'.$banner_list->image_id.'/900' ?>">
 				      	<div class="detail">
-				      		<?php echo $banner_list->title; ?> <a href="<?php echo $banner_list->url; ?>">+ DETAILS</a>
+				      		<?php echo $banner_list->title; ?> <a href="<?php echo base_url().$banner_list->url; ?>">+ DETAILS</a>
 				      	</div>
 				    </li>
 					<?php endforeach; ?>
