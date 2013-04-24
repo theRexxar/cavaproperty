@@ -64,7 +64,25 @@
 			<div class="row">
 				<div class="columns sixteen">
 					<div class="left">
+					<?php if(isset($property_highlight) && ! empty($property_highlight)) : ?>
+						<div class="flexslider">
+							<ul class="slides">
+							<?php foreach($property_highlight AS $property_highlight_list) : ?>
+							    <li>
+							      	<img src="<?php echo base_url().'files/large/'.$property_highlight_list->image_id.'/750/360/fit' ?>" alt="Our Project">
+							      	<div class="detail">
+							      		<?php echo $property_highlight_list->title; ?> 
+							      		<a href="<?php echo base_url().'project/detail/'.$property_highlight_list->slug_developer.'/'.$property_highlight_list->slug; ?>">
+							      			+ DETAILS
+							      		</a>
+							      	</div>
+							    </li>
+							<?php endforeach; ?>
+							</ul>
+						</div>
+					<?php else : ?>
 						<img src="<?php echo config_item('assets_url'); ?>images/our_project.jpg" alt="Our Project">
+					<?php endif; ?>
 					</div>
 
 					<!-- News Widget -->

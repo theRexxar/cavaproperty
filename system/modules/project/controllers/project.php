@@ -25,12 +25,14 @@ class project extends Front_Controller {
 		$this->load->model('project_developer_model');
 		$this->load->model('project_property_model');
 
-        $developer 	= $this->project_developer_model->order_by('title','asc')->find_all();
-        $property 	= $this->project_property_model->order_by('created_on','desc')->find_all();
+        $developer 			= $this->project_developer_model->order_by('title','asc')->find_all();
+        $property 			= $this->project_property_model->order_by('created_on','desc')->find_all();
+        $property_highlight = $this->project_property_model->order_by('created_on','desc')->find_all_by('project_property.highlight','yes');
 
         $vars = array(
-						'developer' => $developer,
-						'property' 	=> $property,
+						'developer' 			=> $developer,
+						'property' 				=> $property,
+						'property_highlight' 	=> $property_highlight,
 					);
         
         //print_r($vars);exit();

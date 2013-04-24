@@ -467,6 +467,7 @@ class project_property extends Admin_Controller {
 		$this->form_validation->set_rules('youtube', 'Youtube ID', 'trim|xss_clean|max_length[255]|');
 		$this->form_validation->set_rules('vimeo', 'Vimeo ID', 'trim|xss_clean|max_length[255]|');
 		$this->form_validation->set_rules('image_id','Image','required|trim');
+		$this->form_validation->set_rules('highlight', 'Highlight', 'required|trim|xss_clean|max_length[255]');
         
         $this->form_validation->set_error_delimiters('<p>', '</p>');
 
@@ -494,6 +495,7 @@ class project_property extends Admin_Controller {
 		$data['youtube']          		= $this->input->post('youtube');
 		$data['vimeo']          		= $this->input->post('vimeo');
 		$data['image_id']             	= $this->input->post('image_id');
+		$data['highlight']          	= $this->input->post('highlight');
 		$data['slug']             	  	= $this->input->post('slug');
 
 		if($this->input->post('bedroom') == "")

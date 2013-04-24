@@ -202,6 +202,22 @@ $id = isset($project['id']) ? $project['id'] : '';
                 </span>
             </div>
         </div>
+
+        <!-- Highlight -->
+        <div class="control-group <?php echo form_error('highlight') ? 'error' : ''; ?>">
+            <?php echo form_label('Highlight'. lang('bf_form_label_required'), 'highlight', array('class' => "control-label") ); ?>
+            <div class='controls'>
+                <label class="radio">
+                    <input id="highlight" type="radio" name="highlight" value="yes" <?php echo $project[highlight] == "yes" ? "checked='checked'" : "" ?> >
+                    <span>Yes</span>
+                </label>
+                <label class="radio">
+                    <input id="highlight" type="radio" name="highlight" value="no" <?php echo $project[highlight] == "no" ? "checked='checked'" : "" ?> >
+                    <span>No</span>
+                </label>
+                <span class="help-inline"><?php echo form_error('highlight'); ?></span>
+            </div>
+        </div>
         
         <!-- Image -->
         <div class="control-group <?php echo form_error('image_id') ? 'error' : '' ?>">
