@@ -172,28 +172,55 @@ $(document).ready(function(){
 
 	var about_detail = function(param){
 		
-		$(param).toggle(function(){
+		// $(param).toggle(function(){
+		// 	var _this = $(this);
+		// 	var _close = _this.find(".close");
+
+		// 	$(".active").find(".detail-bio").fadeOut();
+		// 	$(".active").removeClass("active")
+		// 	$(".overlay").remove();
+
+		// 	_this.siblings(".item").append('<div class="overlay"></div>');
+		// 	_this.addClass("active");
+		// 	_this.find(".detail-bio").fadeIn(500);
+
+		// 	// run vertical scroll
+		// 	verticalScroll(".detail-bio .desc");
+		// }, function(){
+		// 	var _this = $(this);
+			
+		// 	_this.find(".detail-bio").fadeOut(500);
+		// 	$(".overlay").fadeOut(500);
+		// 	setTimeout(function(){
+		// 		_this.removeClass("active");
+		// 		$(".overlay").remove();
+		// 	},800);
+		// });
+
+		$(param).click(function(){
 			var _this = $(this);
 			var _close = _this.find(".close");
 
-			$(".active").removeClass("active").find(".detail-bio").fadeOut();
-			$(".overlay").remove();
-
-			_this.siblings(".item").append('<div class="overlay"></div>');
-			_this.addClass("active");
-			_this.find(".detail-bio").fadeIn(500);
-
-			// run vertical scroll
-			verticalScroll(".detail-bio .desc");
-		}, function(){
-			var _this = $(this);
-			
-			_this.find(".detail-bio").fadeOut(500);
-			$(".overlay").fadeOut(500);
-			setTimeout(function(){
-				_this.removeClass("active");
+			if(_this.hasClass("active")){
+				_this.find(".detail-bio").fadeOut(500);
+				$(".overlay").fadeOut(500);
+				setTimeout(function(){
+					_this.removeClass("active");
+					$(".overlay").remove();
+				},800);
+			}else{
+				$(".active").find(".detail-bio").fadeOut();
+				$(".active").removeClass("active")
 				$(".overlay").remove();
-			},800);
+
+				_this.siblings(".item").append('<div class="overlay"></div>');
+				_this.addClass("active");
+				_this.find(".detail-bio").fadeIn(500);
+
+				// run vertical scroll
+				verticalScroll(".detail-bio .desc");	
+			}
+			
 		});
 	}
 

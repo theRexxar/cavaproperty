@@ -711,6 +711,7 @@ header{
 			background : $white;
 			float      : left;
 			position   : absolute;
+			cursor     : pointer;
 			
 			&:hover{
 				span{
@@ -875,6 +876,10 @@ header{
 					background : #fff;
 					height     : 100%;
 					width      : 100%;
+					
+					.desc{
+						height: 360px;
+					}
 				}
 
 				.desc{

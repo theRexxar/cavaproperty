@@ -9,6 +9,7 @@
  * Contributing author: Tyler Smith (@mbmufffin)
  */
 
+@import "compass/css3";
  
 /* Browser Resets */
 .flex-container a:active,
@@ -71,20 +72,22 @@ html[xmlns] .slides {display: block;}
 .flex-control-thumbs .flex-active {opacity: 1; cursor: default;}
 
 .detail{
-	position: absolute;
-	top: 45%;
-	text-align: center;
-	display: block;
-	width : 100%;
-	font-size: 24px;
-	color: $white;
-	
+	position       : absolute;
+	top            : 45%;
+	text-align     : center;
+	display        : block;
+	width          : 100%;
+	font-size      : 24px;
+	color          : $white;
+	text-transform : uppercase;
+	@include text-shadow(rgba(0,0,0, 0.7) 2px 1px 1px);
 	a{
 		font-size: 12px;
 		color: $white;
 		
 		&:hover{
 			color: $linkColor;
+			@include text-shadow(rgba(255,255,255, 0.7) 2px 1px 1px);
 		}
 	}
 }
