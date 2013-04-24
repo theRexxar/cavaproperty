@@ -477,7 +477,6 @@ class project_property extends Admin_Controller {
 
 		// make sure we only pass in the fields we want
         
-		$gallery_id 	= $this->input->post('gallery_id');
 		$images 		= $this->input->post('images');
 		$caption 		= $this->input->post('caption');
 		
@@ -535,19 +534,40 @@ class project_property extends Admin_Controller {
 			}
 		}
 		else if ($type == 'update')
-		{
-            $check = $this->project_property_gallery_model->find_by('id', $id);
+		{						
+			$gallery_id 		= $this->input->post('gallery_id');
+			$caption_update 	= $this->input->post('caption_update');
 
-			if($check != '')
-            {
-	            foreach($gallery_id as $key=>$gallery_id_list)
+			if($images != '')
+            {				                    		
+                foreach($images as $file_id)
 	            {    			
                     $data_gallery = array();
-            		$data_gallery['caption']  = $caption[$key];
-                
+        			$data_gallery['property_id']  	= $id;
+        			$data_gallery['file_id']  		= $file_id;
+        			$data_gallery['caption']  		= $caption;
+                    
+                    $this->project_property_gallery_model->insert($data_gallery);
+                }	
+
+                foreach($gallery_id as $key=>$gallery_id_list)
+	            {    			
+                    $data_gallery = array();
+            		$data_gallery['caption']  		= $caption_update[$key];
+                    
                     $this->project_property_gallery_model->update_where('id', $gallery_id_list, $data_gallery);
-                }
-            }
+               	}
+           	}
+        	else
+        	{
+        		foreach($gallery_id as $key=>$gallery_id_list)
+	            {    			
+                    $data_gallery = array();
+            		$data_gallery['caption']  		= $caption_update[$key];
+                    
+                    $this->project_property_gallery_model->update_where('id', $gallery_id_list, $data_gallery);
+               	}
+			}           
 
 			$return = $this->project_property_model->update($id, $data);
 		}

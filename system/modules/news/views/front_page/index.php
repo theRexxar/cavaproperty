@@ -45,7 +45,7 @@
 					<?php echo $news_list->title; ?>
 				</a>
 				<span class="date">
-					<?php echo date('d/m/Y',strtotime($news_list->created_on));?>
+					<?php echo date('d/m/Y',strtotime($news_list->post_date));?>
 				</span>
 				<?php
 					$desc = explode("</p>", $news_list->description);
