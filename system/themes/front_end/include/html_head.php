@@ -11,7 +11,7 @@
     <title><?php echo isset($toolbar_title) ? $toolbar_title.' ~ ' : ''; ?>Cava Property</title>
 
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon" href="<?php echo base_url(); ?>favicon.ico">
@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="<?php echo config_item('assets_url'); ?>stylesheets/normalize.css">
     <link rel="stylesheet" href="<?php echo config_item('assets_url'); ?>stylesheets/app.css">
     <script src="<?php echo config_item('assets_url'); ?>js/vendor/modernizr-2.6.2.min.js"></script>
+    <script>
+        var BASE_URL = '<?php echo base_url(); ?>';
+    </script>
 </head>
 <body>
     <div id="main" role="main">
