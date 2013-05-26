@@ -1261,3 +1261,36 @@ ERROR - 2013-04-21 21:39:46 --> Severity: Notice  --> Undefined variable: banner
 ERROR - 2013-04-21 21:40:04 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
 ERROR - 2013-04-21 21:40:09 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
 ERROR - 2013-04-21 21:40:14 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:43:59 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:44:00 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-21 21:44:00 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-21 21:44:00 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-21 21:44:00 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-21 21:44:00 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-21 21:44:01 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:44:02 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:44:03 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:44:04 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:44:05 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:44:06 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:44:10 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:44:11 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:44:12 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:44:22 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 134
+ERROR - 2013-04-21 21:44:22 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 135
+ERROR - 2013-04-21 21:44:22 --> Severity: Notice  --> Undefined variable: bedroom_count C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 137
+ERROR - 2013-04-21 21:44:22 --> Severity: Notice  --> Undefined variable: limit C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 144
+ERROR - 2013-04-21 21:44:22 --> Severity: 4096  --> Object of class CI_DB_mysql_result could not be converted to string C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 172
+ERROR - 2013-04-21 21:44:22 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:44:24 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:44:25 --> Severity: Notice  --> Undefined index: 2014 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 21:44:25 --> Severity: Notice  --> Undefined index: 7 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 21:44:25 --> Severity: Notice  --> Undefined index: 6 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 21:44:25 --> Severity: Notice  --> Undefined index: 2013 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 21:44:25 --> Severity: Notice  --> Undefined index: 5 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 21:44:25 --> Severity: Notice  --> Undefined index: 4 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 21:44:27 --> Severity: Notice  --> Undefined variable: mail_message C:\xampp\htdocs\cavaproperty\system\modules\contact\controllers\contact.php 57
+ERROR - 2013-04-21 21:44:27 --> Severity: Notice  --> Undefined variable: mail_error C:\xampp\htdocs\cavaproperty\system\modules\contact\controllers\contact.php 58
+ERROR - 2013-04-21 21:44:27 --> Severity: Notice  --> Undefined variable: phone_message C:\xampp\htdocs\cavaproperty\system\modules\contact\controllers\contact.php 59
+ERROR - 2013-04-21 21:44:27 --> Severity: Notice  --> Undefined variable: phone_error C:\xampp\htdocs\cavaproperty\system\modules\contact\controllers\contact.php 60
+ERROR - 2013-04-21 21:44:52 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57

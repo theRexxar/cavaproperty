@@ -44,14 +44,21 @@
 		</div>
 
 		<nav class="right member">
-			<!--<ul>
-				<li><a href="../profile/index.php" class="register text-green"><strong>NICKY SEBASTIAN</strong></a></li>
+			<ul>
+				<?php 
+                    $data_user  = $this->session->userdata('data_user');
+                    if($data_user != "") : 
+                ?>
+				<li><a href="#profile" class="register text-green"><strong><?php echo $data_user['name']; ?></strong></a></li>
+				<li><a href="<?php echo base_url().'member/logout' ?>" class="">LOGOUT</a></li>
+				<?php else : ?>
 				<li><a href="" class="register">REGISTER</a></li>
 				<li><a href="" class="login">LOGIN</a></li>
-			</ul>-->
+				<?php endif; ?>
+			</ul>
 		</nav>
 
-		<?php //include('member.php'); ?>
+		<?php include('member.php'); ?>
 	</div>
 
 </header>
