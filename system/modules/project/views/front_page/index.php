@@ -85,8 +85,10 @@
 					<?php endif; ?>
 					</div>
 
-					<!-- News Widget -->
-                    <?php echo Modules::run('news/news_widget'); ?>
+					<div class="right bgwhite">
+						<!-- News Widget -->
+	                    <?php echo Modules::run('news/news_widget'); ?>
+					</div>
 				</div>
 			</div>
 		</div>

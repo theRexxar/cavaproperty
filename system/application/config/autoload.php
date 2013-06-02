@@ -52,7 +52,7 @@ $autoload['packages'] = array(APPPATH.'third_party');
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('database','template', 'assets', 'events', 'settings/settings_lib');
+$autoload['libraries'] = array('database','template', 'assets', 'events', 'settings/settings_lib', 'email');
 
 
 /*
@@ -64,7 +64,7 @@ $autoload['libraries'] = array('database','template', 'assets', 'events', 'setti
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url', 'language', 'application', 'indonesian_date','nextprev', 'date', 'form');
+$autoload['helper'] = array('url', 'language', 'application', 'indonesian_date','nextprev', 'date', 'form', 'get_random_string');
 
 
 /*

@@ -8,14 +8,6 @@ class member extends Front_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-
-		$this->load->library('form_validation');
-		$this->load->model('member_model', null, true);
-		$this->lang->load('member');
-		
-			Assets::add_css('flick/jquery-ui-1.8.13.custom.css');
-			Assets::add_js('jquery-ui-1.8.13.min.js');
-			Assets::add_js(Template::theme_url('js/editors/ckeditor/ckeditor.js'));
 	}
 
 	//--------------------------------------------------------------------
@@ -37,11 +29,49 @@ class member extends Front_Controller {
 
 
 	/*
-		Method: submit_sign_up()
-		
-		Submit sign up form.
+		Method: profile()
+
+		Displays profile page.
 	*/
-	public function submit_sign_up() 
+	public function profile()
+	{
+		$this->load->model('member_model');  
+
+		$data_user = $this->session->userdata('data_user');
+
+		$user = "";
+
+		if($data_user)
+		{
+			$user = $this->member_model->find_by('id', $data_user['user_id']);
+		}
+		else
+		{
+			show_404();
+		}
+
+		$vars = array(
+						'user' => $user,
+					);
+
+		//print_r($vars);exit();
+
+		Template::set('data', $vars);
+        Template::set('toolbar_title', $user->first_name." ".$user->last_name." ~ Member Profile");
+        Template::set_view('front_page/profile');
+		Template::render();
+	}
+
+	//--------------------------------------------------------------------
+
+
+
+	/*
+		Method: submit_form_member()
+		
+		Submit member form.
+	*/
+	public function submit_form_member($type,$id=0) 
 	{
 		$this->load->model('member_model');  
         
@@ -79,18 +109,53 @@ class member extends Front_Controller {
 		$data['phone']                	= $this->input->post('phone');
 		$data['mobile_phone']         	= $this->input->post('mobile_phone');
 		$data['password']             	= md5($this->input->post('password'));
-        
-        $submit = $this->member_model->insert($data);
-        
-        if($submit)
-        {
-        	$data_user['name'] 	= $data['first_name'].' '.$data['last_name'];
-        	$data_user['email'] = $data['email'];
 
-            $this->session->set_userdata('data_user',$data);
 
-            Template::redirect(base_url());
-        }       
+		$new_code 	= get_random_string(4,2,2);
+		$check_code = $this->member_model->find_all_by('forgot_code', $new_code);
+
+		if($check_code != "")
+		{
+			$data['forgot_code']        = get_random_string(4,2,2);
+		}
+		else
+		{
+			$data['forgot_code']        = $new_code;
+		}
+
+
+		if($type == 'insert')
+		{
+			$submit = $this->member_model->insert($data);
+        
+	        if($submit)
+	        {
+	        	$data_user['user_id']  	= $submit;
+	        	$data_user['name'] 		= $data['first_name'].' '.$data['last_name'];
+	        	$data_user['email'] 	= $data['email'];
+
+	            $this->session->set_userdata('data_user',$data_user);
+
+	            Template::redirect(base_url());
+	        }  
+		}
+		elseif($type == 'update')
+		{
+			$submit = $this->member_model->update($id, $data);
+
+			if($submit)
+	        {
+	        	$this->session->unset_userdata('data_user');
+
+	        	$data_user['user_id']  	= $id;
+	        	$data_user['name'] 		= $data['first_name'].' '.$data['last_name'];
+	        	$data_user['email'] 	= $data['email'];
+
+	            $this->session->set_userdata('data_user',$data_user);
+
+	            Template::redirect(base_url());
+	        }  
+		}
 	}
 	
 	//--------------------------------------------------------------------
@@ -183,11 +248,12 @@ class member extends Front_Controller {
             }
             else
             {
-                $data = array();
-        		$data['name']  	= $check->first_name.' '.$check->last_name;
-        		$data['email']  = $check->email;
+                $data_user = array();
+        		$data_user['user_id']  	= $check->id;
+	        	$data_user['name'] 		= $check->first_name.' '.$check->last_name;
+	        	$data_user['email'] 	= $check->email;
                 
-                $this->session->set_userdata('data_user',$data);
+                $this->session->set_userdata('data_user',$data_user);
                 
     			return TRUE;
             }
@@ -236,9 +302,22 @@ class member extends Front_Controller {
 		}
         else
         {
-        	$check_user = $this->member_model->find_all_by('email', $this->input->post('email'));
+        	$new_pass 	= get_random_string(6,2,2);
+        	$user_email = $this->input->post('email');
 
-        	$get_password = 
+        	$check 		= $this->member_model->find_all_by('email', $user_email);
+        	$conf_code 	= $check->forgot_code;
+
+        	//email setting to user
+            $this->email->from('admin@cavaproperty.com', 'Cava Property');
+            $this->email->to($user_email); 
+            //$this->email->cc('andhika.novandi@xmgravity.com'); 
+            //$this->email->bcc('them@their-example.com'); 
+            
+            $this->email->subject('Forgot Password');
+            $this->email->message("Please follow the link below to reset your password. \r\n\r\n\r\n http://cavaproperty.com/member/reset_password?email=".$user_email."&new_pass=".$new_pass."&conf_code=".$conf_code);
+            
+            $email_send = $this->email->send();
 
             Template::redirect(base_url());
         }             

@@ -1,4 +1,3 @@
-<div class="right bgwhite">
 <h5>NEWS & UPDATES</h5>
 <?php if(isset($news) && ! empty($news)) : ?>
 <ul class="block-grid one-up mobile-one-up">
@@ -18,4 +17,3 @@
 	</li>
 </ul>
 <?php endif; ?>
-</div>
