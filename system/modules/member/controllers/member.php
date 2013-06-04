@@ -36,6 +36,8 @@ class member extends Front_Controller {
 	public function profile()
 	{
 		$this->load->model('member_model');  
+		$this->load->model('project/project_type_model');  
+		$this->load->model('project/project_property_model');  
 
 		$data_user = $this->session->userdata('data_user');
 
@@ -44,14 +46,40 @@ class member extends Front_Controller {
 		if($data_user)
 		{
 			$user = $this->member_model->find_by('id', $data_user['user_id']);
+
+			if($user)
+			{
+				$types = explode(",", $user->property_type);
+			}
 		}
 		else
 		{
 			show_404();
 		}
 
+		$property_type = $this->project_type_model->find_all();
+
+
+		$message = "";
+
+		if ($this->input->post('edit_profile'))
+		{
+			if ($this->submit_edit_profile())
+			{
+				$message = "Edit Profile Success";
+			}
+			else
+			{
+				Template::set_message('Edit Profile Failed' . $this->member_model->error, 'error');
+			}
+		}
+
+
 		$vars = array(
-						'user' => $user,
+						'user' 				=> $user,
+						'property_type' 	=> $property_type,
+						//'related_property' 	=> $related_property,
+						'message'   		=> $message,
 					);
 
 		//print_r($vars);exit();
@@ -67,11 +95,56 @@ class member extends Front_Controller {
 
 
 	/*
-		Method: submit_form_member()
-		
-		Submit member form.
+		Method: schedule()
+
+		Displays schedule page.
 	*/
-	public function submit_form_member($type,$id=0) 
+	public function schedule()
+	{
+		$this->load->model('member_model');  
+		$this->load->model('marketing/marketing_calendar_model');  
+
+		$data_user = $this->session->userdata('data_user');
+
+		$user = "";
+
+		if($data_user)
+		{
+			$user = $this->member_model->find_by('id', $data_user['user_id']);
+
+			if($user)
+			{
+				$calendar = $this->marketing_calendar_model->find_all_by('marketing_calendar.member_id', $user->id);
+			}
+		}
+		else
+		{
+			show_404();
+		}
+
+		$vars = array(
+						'user' 		=> $user,
+						'calendar' 	=> $calendar,
+					);
+
+		//print_r($vars);exit();
+
+		Template::set('data', $vars);
+        Template::set('toolbar_title', $user->first_name." ".$user->last_name." ~ Member Schedule");
+        Template::set_view('front_page/schedule');
+		Template::render();
+	}
+
+	//--------------------------------------------------------------------
+
+
+
+	/*
+		Method: submit_sign_up()
+		
+		Submit sign up form.
+	*/
+	public function submit_sign_up() 
 	{
 		$this->load->model('member_model');  
         
@@ -108,7 +181,20 @@ class member extends Front_Controller {
 		$data['email']                	= $this->input->post('email');
 		$data['phone']                	= $this->input->post('phone');
 		$data['mobile_phone']         	= $this->input->post('mobile_phone');
-		$data['password']             	= md5($this->input->post('password'));
+
+
+		if($this->input->post('password') != "")
+		{
+			$data['password']           = md5($this->input->post('password'));
+		}
+
+
+		if($this->input->post('property_type') != "")
+		{
+			$type = implode(",", $this->input->post('property_type'));
+
+			$data['property_type']  		= $type;
+		}
 
 
 		$new_code 	= get_random_string(4,2,2);
@@ -124,38 +210,18 @@ class member extends Front_Controller {
 		}
 
 
-		if($type == 'insert')
-		{
-			$submit = $this->member_model->insert($data);
-        
-	        if($submit)
-	        {
-	        	$data_user['user_id']  	= $submit;
-	        	$data_user['name'] 		= $data['first_name'].' '.$data['last_name'];
-	        	$data_user['email'] 	= $data['email'];
+		$submit = $this->member_model->insert($data);
+    
+        if($submit)
+        {
+        	$data_user['user_id']  	= $submit;
+        	$data_user['name'] 		= $data['first_name'].' '.$data['last_name'];
+        	$data_user['email'] 	= $data['email'];
 
-	            $this->session->set_userdata('data_user',$data_user);
+            $this->session->set_userdata('data_user',$data_user);
 
-	            Template::redirect(base_url());
-	        }  
-		}
-		elseif($type == 'update')
-		{
-			$submit = $this->member_model->update($id, $data);
-
-			if($submit)
-	        {
-	        	$this->session->unset_userdata('data_user');
-
-	        	$data_user['user_id']  	= $id;
-	        	$data_user['name'] 		= $data['first_name'].' '.$data['last_name'];
-	        	$data_user['email'] 	= $data['email'];
-
-	            $this->session->set_userdata('data_user',$data_user);
-
-	            Template::redirect(base_url());
-	        }  
-		}
+            Template::redirect(base_url());
+        }
 	}
 	
 	//--------------------------------------------------------------------
@@ -189,6 +255,88 @@ class member extends Front_Controller {
 
 
 	/*
+		Method: submit_edit_profile()
+		
+		Submit edit profile form.
+	*/
+	public function submit_edit_profile() 
+	{
+		$this->load->model('member_model');  
+        
+		$this->load->library('form_validation');  
+        $this->form_validation->CI =& $this;
+        
+        $this->form_validation->set_rules('title','Title','required|trim|xss_clean|max_length[255]');
+        $this->form_validation->set_rules('first_name','First Name','required|trim|xss_clean|max_length[255]');
+        $this->form_validation->set_rules('last_name','Last Name','required|trim|xss_clean|max_length[255]');
+        $this->form_validation->set_rules('address','Address','required|trim|xss_clean|max_length[255]');
+        $this->form_validation->set_rules('city','City','required|trim|xss_clean|max_length[255]');
+        $this->form_validation->set_rules('postal_code','Postal Code','required|trim|xss_clean|is_numeric|max_length[10]');
+		$this->form_validation->set_rules('email','Email','required|trim|xss_clean|valid_email|max_length[255]');
+        $this->form_validation->set_rules('phone','Phone','required|trim|xss_clean|is_numeric|max_length[20]');
+        $this->form_validation->set_rules('mobile_phone','Mobile Phone','required|trim|xss_clean|is_numeric|max_length[20]');
+        $this->form_validation->set_rules('password','Password','trim|xss_clean');			
+		$this->form_validation->set_rules('re_password','Password Confirmation','trim|xss_clean|matches[password]');
+        
+        $this->form_validation->set_error_delimiters('<p>', '</p>');
+        
+        if ($this->form_validation->run() === FALSE)
+		{
+			return FALSE;
+		}
+        
+        $data = array();
+		$data['title']                	= $this->input->post('title');
+		$data['first_name']             = $this->input->post('first_name');
+		$data['last_name']              = $this->input->post('last_name');
+		$data['dob']              		= $this->input->post('year').'-'.$this->input->post('month').'-'.$this->input->post('day');
+		$data['address']                = $this->input->post('address');
+		$data['city']                	= $this->input->post('city');
+		$data['postal_code']          	= $this->input->post('postal_code');
+		$data['email']                	= $this->input->post('email');
+		$data['phone']                	= $this->input->post('phone');
+		$data['mobile_phone']         	= $this->input->post('mobile_phone');
+
+
+		if($this->input->post('property_type') != "")
+		{
+			$type = implode(",", $this->input->post('property_type'));
+
+			$data['property_type']  		= $type;
+		}
+
+
+		if($this->input->post('password') != "")
+		{
+			$data['password']           = md5($this->input->post('password'));
+		}
+
+
+		$id = $this->input->post('user_id');
+
+		$submit = $this->member_model->update($id, $data);
+
+		if($submit)
+        {
+        	$this->session->unset_userdata('data_user');
+
+        	$data_user['user_id']  	= $id;
+        	$data_user['name'] 		= $data['first_name'].' '.$data['last_name'];
+        	$data_user['email'] 	= $data['email'];
+
+            $this->session->set_userdata('data_user',$data_user);
+
+            Template::redirect(base_url('member/profile'));
+        }  
+
+        return $submit;
+	}
+	
+	//--------------------------------------------------------------------
+
+
+
+	/*
 		Method: submit_login()
 		
 		Submit login form.
@@ -208,6 +356,7 @@ class member extends Front_Controller {
         if($this->form_validation->run() === FALSE)
 		{
 			Template::set_message($this->member_model->error, 'error');
+            Template::redirect(base_url());
 		}
         else
         {

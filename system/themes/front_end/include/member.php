@@ -20,7 +20,7 @@
 
 <div id="forgot-pass" class="member-area bgwhite slide">
 	<i class="close"></i>
-	<form action="#login" class="form">
+	<form action="<?php echo base_url().'member/forgot_password' ?>" class="form" method="post">
 		<div class="input">
 			<input type="email" placeholder="Insert Your Email" value="" id="" name="email" class="" required autofocus>
 		</div>
@@ -31,7 +31,7 @@
 
 <div id="register" class="member-area bgwhite slide">
 	<i class="close"></i>
-	<form action="#login" class="form">
+	<form action="<?php echo base_url().'member/submit_form_member/sign_up' ?>" class="form" method="post">
 		<div class="block titles">
 			<label for="">Title</label>
 			<div class="input">

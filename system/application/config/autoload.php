@@ -64,7 +64,7 @@ $autoload['libraries'] = array('database','template', 'assets', 'events', 'setti
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url', 'language', 'application', 'indonesian_date','nextprev', 'date', 'form', 'get_random_string');
+$autoload['helper'] = array('url', 'language', 'application', 'indonesian_date','nextprev', 'date', 'form', 'get_random_string', 'search_array');
 
 
 /*

@@ -6,8 +6,8 @@
 					<p class="f16 text-g">HELLO, <span class="text-g"><?php echo strtoupper($user->first_name." ".$user->last_name); ?></span></p>
 					
 					<p>
-						<a href="index.php">+ EDIT PROFILE</a><br>
-						<a href="my_schedule.php">+ MY SCHEDULE</a>
+						<a href="<?php echo base_url()."member/profile"; ?>">+ EDIT PROFILE</a><br>
+						<a href="<?php echo base_url()."member/schedule"; ?>">+ MY SCHEDULE</a>
 					</p>
 
 					<div id="finder-container">
@@ -22,49 +22,23 @@
 						</a>
 					</p>
 
+					<?php //if(! empty($related_property)) : ?>
 					<!--<div class="left mt20">
 						<h5>RELATED LISTING</h5>
 						<div class="thumbnail">
 							<ul class="">
+								<?php foreach($related_property AS $related_property_list) : ?>
 								<li class="">
-									<a href="detail.php">
-										<span>SERENIA HILLS <small>+ MORE DETAIL</small></span>
+									<a href="<?php echo base_url().'project/detail/'.$related_property_list->slug_developer.'/'.$related_property_list->slug; ?>">
+										<span><?php echo $related_property_list->title; ?> <small>+ MORE DETAIL</small></span>
 									</a>
-									<img src="images/our-project2.jpg" alt="">
+									<img src="<?php echo base_url().'files/large/'.$related_property_list->image_id.'/200/200/fit' ?>" alt="">
 								</li>
-								<li class="">
-									<a href="detail.php">
-										<span>SERENIA HILLS <small>+ MORE DETAIL</small></span>
-									</a>
-									<img src="images/our-project3.jpg" alt="">
-								</li>
-								<li class="">
-									<a href="detail.php">
-										<span>TAUM SEMINYAK <small>+ MORE DETAIL</small></span>
-									</a>
-									<img src="images/our-project1.jpg" alt="">
-								</li>
-								<li class="">
-									<a href="detail.php">
-										<span>TAUM SEMINYAK <small>+ MORE DETAIL</small></span>
-									</a>
-									<img src="images/our-project4.jpg" alt="">
-								</li>
-								<li class="">
-									<a href="detail.php">
-										<span>SERENIA HILLS <small>+ MORE DETAIL</small></span>
-									</a>
-									<img src="images/our-project3.jpg" alt="">
-								</li>
-								<li class="">
-									<a href="detail.php">
-										<span>TAUM SEMINYAK <small>+ MORE DETAIL</small></span>
-									</a>
-									<img src="images/our-project1.jpg" alt="">
-								</li>
+								<?php endforeach; ?>
 							</ul>
 						</div>
 					</div>-->
+					<?php //endif; ?>
 					
 				</div>
 			</section>	
@@ -72,103 +46,186 @@
 
 		<div class="columns nine end ml10 bgwhite">
 			<nav>
-				<a href="" class="f17">BASIC INFORMATION</a>
-				<span class="text-lg f17">LISTING INFORMATION</span>
+				<span class="text-lg f17">BASIC INFORMATION</span>
+				<a href="<?php echo base_url()."member/schedule"; ?>" class="f17">LISTING INFORMATION</a>
 			</nav>
 
 			<div id="update-profile" class="member-area bgwhite update-profile">
-				<form action="#login" class="form">
+				<?php if (validation_errors()) : ?>
+					<!-- alert message --> 
+			        <div>
+			    	   <?php echo validation_errors(); ?>
+			        </div>
+			    <?php elseif($message != "") : ?>
+	                <!-- success message --> 
+	                <div>
+			    	   <?php echo $message; ?>
+			        </div>
+	            <?php endif; ?> 
+
+				<form action="<?php echo base_url().'member/profile' ?>" class="form" method="post">
+					<input type="hidden" name="user_id" value="<?php echo $user->id; ?>">
+
 					<div class="block titles">
 						<label for="">Title</label>
 						<div class="input">
 							<select name="title" id="">
-								<option value="">Mr</option>
-								<option value="">Mrs</option>
-								<option value="">Miss</option>
+								<option value="Mr" <?php echo $user->title == "Mr" ? "selected='selected'" : ""; ?>>Mr</option>
+								<option value="Mrs" <?php echo $user->title == "Mrs" ? "selected='selected'" : ""; ?>>Mrs</option>
+								<option value="Miss" <?php echo $user->title == "Miss" ? "selected='selected'" : ""; ?>>Miss</option>
 							</select>
 						</div>
 					</div>
+
 					<div class="block">
 						<label for="">First Name</label>
 						<div class="input">
-							<input type="text" name="firstname" class="" required autofocus>
+							<input type="text" name="first_name" class="" value="<?php echo ! empty($user->first_name) ? $user->first_name : ""; ?>" required autofocus>
 						</div>
 					</div>
+
 					<div class="block">
 						<label for="">Last Name</label>
 						<div class="input">
-							<input type="text" name="lastname" class="" required >
+							<input type="text" name="last_name" class="" value="<?php echo ! empty($user->last_name) ? $user->last_name : ""; ?>" required >
 						</div>
 					</div>
+
 					<div class="block dob">
 						<label for="">Date Of Birth</label>
+						<?php
+							$dob 	= explode("-", $user->dob);
+							$year 	= $dob[0];
+							$month 	= $dob[1];
+							$date 	= $dob[2];
+						?>
 						<div class="input date">
-							<select name="date" id="">
-								<option value="">Day</option>
+							<select name="day" id="">
+								<?php for ($i=1; $i<32; $i++):?>
+        							<?php if ($i<10) { $tgl = '0'.$i; } else { $tgl = $i; }?>
+        							<option value="<?php echo $tgl; ?>" <?php echo ! empty($date) && $date == $tgl ? "selected='selected'" : ""; ?> ><?php echo $tgl; ?></option>
+        						<?php endfor;?>
 							</select>
 						</div>
+
 						<div class="input month">
 							<select name="month" id="">
-								<option value="">Month</option>
+								<?php for ($i=1; $i<13; $i++)
+                                    {
+                                        if ($i==1)
+                                            $bln="January";
+                                        elseif ($i==2)
+                                            $bln="February";
+                                        elseif ($i==3)
+                                            $bln="March";
+                                        elseif ($i==4)
+                                            $bln="April";
+                                        elseif ($i==5)
+                                            $bln="May";
+                                        elseif ($i==6)
+                                            $bln="June";
+                                        elseif ($i==7)
+                                            $bln="July";
+                                        elseif ($i==8)
+                                            $bln="August";
+                                        elseif ($i==9)
+                                            $bln="September";
+                                        elseif ($i==10)
+                                            $bln="October";
+                                        elseif ($i==11)
+                                            $bln="November";
+                                        elseif ($i==12)
+                                            $bln="December";
+                                        if ($i<10)
+                                            $ia='0'.$i;
+                                        else
+                                            $ia=$i;
+                                ?>
+                                    <option value="<?php echo $ia; ?>" <?php echo ! empty($month) && $month == $ia ? "selected='selected'" : ""; ?>><?php echo $bln; ?></option>
+                                <?php
+                                    } 
+                                ?>
 							</select>
 						</div>
+
 						<div class="input year">
 							<select name="year" id="">
 								<option value="">Year</option>
+								<?php for ($i=1940; $i< 1996; $i++):?>
+        							<option value="<?php echo $i;?>" <?php echo ! empty($year) && $year == $i ? "selected='selected'" : ""; ?>><?php echo $i;?></option>
+        						<?php endfor;?>
 							</select>
 						</div>
 					</div>
+
 					<div class="block">
 						<label for="">Address</label>
 						<div class="input">
-							<textarea name="address" id=""></textarea>
+							<textarea name="address" id=""><?php echo ! empty($user->address) ? $user->address : ""; ?></textarea>
 						</div>
 					</div>
+
 					<div class="block">
 						<label for="">City</label>
 						<div class="input">
-							<input type="text" name="city" class="" required>
+							<input type="text" name="city" class="" value="<?php echo ! empty($user->city) ? $user->city : ""; ?>" required>
 						</div>
 					</div>
+
 					<div class="block">
 						<label for="">Postal Code</label>
 						<div class="input">
-							<input type="text" name="postal" class="" required >
+							<input type="text" name="postal_code" class="" value="<?php echo ! empty($user->postal_code) ? $user->postal_code : ""; ?>" required >
 						</div>
 					</div>
+
 					<div class="block">
 						<label for="">Email Address</label>
 						<div class="input">
-							<input type="email" name="email" class="" required>
+							<input type="email" name="email" class="" value="<?php echo ! empty($user->email) ? $user->email : ""; ?>" required>
 						</div>
 					</div>
+
 					<div class="block">
 						<label for="">Password</label>
 						<div class="input">
-							<input type="password" name="password" class="" required>
+							<input type="password" name="password" class="">
 						</div>
 					</div>
+
 					<div class="block">
 						<label for="">Re-type Password</label>
 						<div class="input">
-							<input type="password" name="re-password" class="" required>
+							<input type="password" name="re_password" class="">
 						</div>
 					</div>
+
 					<div class="block">
 						<label for="">Phone</label>
 						<div class="input">
-							<input type="text" name="phone" class="" required>
+							<input type="text" name="phone" class="" value="<?php echo ! empty($user->phone) ? $user->phone : ""; ?>" required>
 						</div>
 					</div>
+
 					<div class="block">
 						<label for="">Mobile Phone</label>
 						<div class="input">
-							<input type="text" name="mobile_phone" class="" required>
+							<input type="text" name="mobile_phone" class="" value="<?php echo ! empty($user->mobile_phone) ? $user->mobile_phone : ""; ?>" required>
 						</div>
 					</div>
+
+					<div class="block">
+						<label for="">Property</label>
+						<div class="input">
+							<?php foreach($property_type AS $types) : ?>
+							<input type="checkbox" name="property_type[]" value="<?php echo $types->id ?>"><?php echo $types->title ?><br>
+							<?php endforeach; ?>
+						</div>
+					</div>
+
 					<div class="block">
 						<label for=""></label>
-						<input type="submit" class="left mb20" value="submit">
+						<input type="submit" name="edit_profile" class="left mb20" value="submit">
 					</div>
 					
 				</form>
