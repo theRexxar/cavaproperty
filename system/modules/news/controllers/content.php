@@ -62,7 +62,7 @@ class content extends Admin_Controller {
         
         $offset = $this->uri->segment(5);
 
-		$records = $this->news_model->order_by('created_on','desc')->limit($this->limit, $offset)->find_all();
+		$records = $this->news_model->order_by('post_date','desc')->limit($this->limit, $offset)->find_all();
 
                 
         // Pagination
@@ -119,6 +119,7 @@ class content extends Admin_Controller {
 		Assets::add_module_js('news', 'news.js');
         
         Assets::add_css(array	(
+														Template::theme_url('css/bootstrap-datepicker.css'),
 														Template::theme_url('css/jquery.ui.datepicker.css'),
 														Template::theme_url('css/jquery-iframedialog.css'),
 														Template::theme_url('css/jquery/jquery.plugin.chosen.css'),
@@ -131,6 +132,7 @@ class content extends Admin_Controller {
         Assets::add_js(	array	(
 														Template::theme_url('js/jquery-ui-1.8.13.min.js'),
 														Template::theme_url('js/jquery-iframedialog.js'),
+														Template::theme_url('js/bootstrap-datepicker.js'),
 														Template::theme_url('js/admin.js'),
 														Template::theme_url('js/jquery/jquery.plugin.chosen.js'),
 														Template::theme_url('js/jquery/jquery.plugin.livequery.js'),
@@ -178,7 +180,6 @@ class content extends Admin_Controller {
 				$this->activity_model->log_activity($this->current_user->id, lang('news_act_edit_record').': ' . $id . ' : ' . $this->input->ip_address(), 'news');
 
 				Template::set_message(lang('news_edit_success'), 'success');
-                redirect(SITE_AREA .'/content/news');
 			}
 			else
 			{
@@ -198,6 +199,7 @@ class content extends Admin_Controller {
 		Assets::add_module_js('news', 'news.js');
         
         Assets::add_css(array	(
+														Template::theme_url('css/bootstrap-datepicker.css'),
 														Template::theme_url('css/jquery.ui.datepicker.css'),
 														Template::theme_url('css/jquery-iframedialog.css'),
 														Template::theme_url('css/jquery/jquery.plugin.chosen.css'),
@@ -210,6 +212,7 @@ class content extends Admin_Controller {
         Assets::add_js(	array	(
 														Template::theme_url('js/jquery-ui-1.8.13.min.js'),
 														Template::theme_url('js/jquery-iframedialog.js'),
+														Template::theme_url('js/bootstrap-datepicker.js'),
 														Template::theme_url('js/admin.js'),
 														Template::theme_url('js/jquery/jquery.plugin.chosen.js'),
 														Template::theme_url('js/jquery/jquery.plugin.livequery.js'),
@@ -369,6 +372,7 @@ class content extends Admin_Controller {
 		$this->form_validation->set_rules('title','Title','required|trim|xss_clean|max_length[255]|callback__check_title['.$id.']');
 		$this->form_validation->set_rules('slug', 'Slug', 'required|trim|xss_clean|max_length[255]|alpha_dot_dash|callback__check_slug['.$id.']');
 		$this->form_validation->set_rules('description','Description','required|trim|xss_clean');
+		$this->form_validation->set_rules('post_date','Post Date','required|trim|xss_clean');
 		$this->form_validation->set_rules('image_id','Image','required|trim');
         
         $this->form_validation->set_error_delimiters('<p>', '</p>');
@@ -380,23 +384,23 @@ class content extends Admin_Controller {
 
 		// make sure we only pass in the fields we want
         
-		$images = $this->input->post('images');
+		$images 	= $this->input->post('images');
+		$caption 	= $this->input->post('caption');
 		
 		$data = array();
 		$data['title']              = $this->input->post('title');
 		$data['description']        = $this->input->post('description');
+		$data['post_date']        	= date('Y-m-d', strtotime($this->input->post('post_date')));
 		$data['image_id']           = $this->input->post('image_id');
 		$data['slug']				= $this->input->post('slug');
 
+		date_default_timezone_set('Asia/Jakarta');
 
+		$data['month'] 	= indonesian_date($data['post_date'], 'm');
+		$data['year'] 	= indonesian_date($data['post_date'], 'Y');
 
 		if ($type == 'insert')
 		{
-			date_default_timezone_set('Asia/Jakarta');
-
-			$data['month'] 	= indonesian_date(time(), 'm');
-			$data['year'] 	= indonesian_date(time(), 'Y');
-
 			$id = $this->news_model->insert($data);
 
 			if (is_numeric($id) && $images != '')
@@ -422,18 +426,40 @@ class content extends Admin_Controller {
 			}
 		}
 		else if ($type == 'update')
-		{		  
+		{		
+            $gallery_id 		= $this->input->post('gallery_id');
+			$caption_update 	= $this->input->post('caption_update');
+
 			if($images != '')
-            {
-	            foreach($images as $file_id)
+            {				                    		
+                foreach($images as $file_id)
 	            {    			
                     $data_gallery = array();
-            		$data_gallery['news_id']  = $id;
-            		$data_gallery['file_id']  = $file_id;
-                
+        			$data_gallery['news_id']  	= $id;
+        			$data_gallery['file_id']  	= $file_id;
+        			$data_gallery['caption']  	= $caption;
+                    
                     $this->news_gallery->insert($data_gallery);
-                }
-            }
+                }	
+
+                foreach($gallery_id as $key=>$gallery_id_list)
+	            {    			
+                    $data_gallery = array();
+            		$data_gallery['caption']  	= $caption_update[$key];
+                    
+                    $this->news_gallery->update_where('id', $gallery_id_list, $data_gallery);
+               	}
+           	}
+        	else
+        	{
+        		foreach($gallery_id as $key=>$gallery_id_list)
+	            {    			
+                    $data_gallery = array();
+            		$data_gallery['caption']  	= $caption_update[$key];
+                    
+                    $this->news_gallery->update_where('id', $gallery_id_list, $data_gallery);
+               	}
+			} 
           
 			$return = $this->news_model->update($id, $data);
 		}

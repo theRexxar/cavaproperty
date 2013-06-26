@@ -1,4 +1,4 @@
-<div class="container about-us">
+<div class="container about-us space-top">
 	<div class="row">
 		<div class="columns five bgwhite">
 			<section class="sidebar">
@@ -57,7 +57,9 @@
 					</div>
 					<div class="<?php echo $class3; ?>">
 						<strong>BIO</strong>
-						<?php echo $people_list->description; ?>
+						<div class="desc">
+							<?php echo $people_list->description; ?>	
+						</div>
 						<i class="close"></i>
 					</div>
 				</div>

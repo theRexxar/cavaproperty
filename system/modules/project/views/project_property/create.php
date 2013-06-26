@@ -92,7 +92,7 @@ $id = isset($project['id']) ? $project['id'] : '';
 
         <!-- Address -->
         <div class="control-group <?php echo form_error('address') ? 'error' : ''; ?>">
-            <?php echo form_label('Address'. lang('bf_form_label_required'), 'address', array('class' => "control-label") ); ?>
+            <?php echo form_label('Address', 'address', array('class' => "control-label") ); ?>
             <div class='controls'>
                 <?php 
                     echo form_textarea( array( 
@@ -111,7 +111,7 @@ $id = isset($project['id']) ? $project['id'] : '';
 
         <!-- Size -->
         <div class="control-group <?php echo form_error('size') ? 'error' : ''; ?>">
-            <?php echo form_label('Size'. lang('bf_form_label_required'), 'size', array('class' => "control-label") ); ?>
+            <?php echo form_label('Size', 'size', array('class' => "control-label") ); ?>
             <div class='controls'>
                 <input id="size" type="text" name="size" maxlength="255" value="<?php echo set_value('size', isset($project['size']) ? $project['size'] : ''); ?>"  />
                 <span class="help-inline"><?php echo form_error('size'); ?></span>
@@ -120,7 +120,7 @@ $id = isset($project['id']) ? $project['id'] : '';
 
         <!-- Bedroom -->
         <div class="control-group <?php echo form_error('bedroom') ? 'error' : ''; ?>">
-            <?php echo form_label('Bedroom'. lang('bf_form_label_required'), 'bedroom', array('class' => "control-label") ); ?>
+            <?php echo form_label('Bedroom', 'bedroom', array('class' => "control-label") ); ?>
             <div class='controls'>
                 <input id="bedroom" type="text" name="bedroom" maxlength="3" style="width: 20px;" value="<?php echo set_value('bedroom', isset($project['bedroom']) ? $project['bedroom'] : ''); ?>"  />
                 Bedroom(s)
@@ -130,7 +130,7 @@ $id = isset($project['id']) ? $project['id'] : '';
 
         <!-- Facility -->
         <div class="control-group <?php echo form_error('facility') ? 'error' : ''; ?>">
-            <?php echo form_label('Facility'. lang('bf_form_label_required'), 'facility', array('class' => "control-label") ); ?>
+            <?php echo form_label('Facility', 'facility', array('class' => "control-label") ); ?>
             <div class='controls'>
                 <?php 
                     echo form_textarea( array( 
@@ -149,7 +149,7 @@ $id = isset($project['id']) ? $project['id'] : '';
 
         <!-- Condition -->
         <div class="control-group <?php echo form_error('condition') ? 'error' : ''; ?>">
-            <?php echo form_label('Condition'. lang('bf_form_label_required'), 'condition', array('class' => "control-label") ); ?>
+            <?php echo form_label('Condition', 'condition', array('class' => "control-label") ); ?>
             <div class='controls'>
                 <input id="condition" type="text" name="condition" maxlength="255" value="<?php echo set_value('condition', isset($project['condition']) ? $project['condition'] : ''); ?>"  />
                 <span class="help-inline"><?php echo form_error('condition'); ?></span>
@@ -200,6 +200,22 @@ $id = isset($project['id']) ? $project['id'] : '';
                 <span class="help-inline">
                     <i>Ex: http://vimeo.com/<strong>7102325</strong></i>
                 </span>
+            </div>
+        </div>
+
+        <!-- Highlight -->
+        <div class="control-group <?php echo form_error('highlight') ? 'error' : ''; ?>">
+            <?php echo form_label('Highlight'. lang('bf_form_label_required'), 'highlight', array('class' => "control-label") ); ?>
+            <div class='controls'>
+                <label class="radio">
+                    <input id="highlight" type="radio" name="highlight" value="yes" <?php echo $project[highlight] == "yes" ? "checked='checked'" : "" ?> >
+                    <span>Yes</span>
+                </label>
+                <label class="radio">
+                    <input id="highlight" type="radio" name="highlight" value="no" <?php echo $project[highlight] == "no" ? "checked='checked'" : "" ?> >
+                    <span>No</span>
+                </label>
+                <span class="help-inline"><?php echo form_error('highlight'); ?></span>
             </div>
         </div>
         

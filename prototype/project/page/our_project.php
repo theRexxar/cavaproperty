@@ -40,12 +40,7 @@
 						</a>
 						<img src="images/our-project1.jpg" alt="">
 					</li>
-					<li class="">
-						<a href="detail.php">
-							<span>TAUM SEMINYAK <small>+ MORE DETAIL</small></span>
-						</a>
-						<img src="images/our-project4.jpg" alt="">
-					</li>
+					
 				</ul>
 			</div>
 			<a href="#" class="buttons next">right</a>
@@ -204,7 +199,30 @@
 			<div class="row">
 				<div class="columns sixteen">
 					<div class="left">
-						<img src="images/our_project.jpg" alt="Our Project">
+
+						<div class="flexslider">
+						  <ul class="slides">
+						    <li>
+						      <img src="images/our_project.jpg" alt="Our Project">
+						      <div class="detail">
+						      	HARRIS - NUSA DUA BALI <a href="">+ DETAILS</a>
+						      </div>
+						    </li>
+						    <li>
+						      <img src="images/our_project.jpg" alt="Our Project">
+						      <div class="detail">
+						      	HARRIS I - NUSA BALI <a href="">+ DETAILS</a>
+						      </div>
+						    </li>
+						    <li>
+						      <img src="images/our_project.jpg" alt="Our Project">
+						      <div class="detail">
+						      	HARRIS II - DUA BALI <a href="">+ DETAILS</a>
+						      </div>
+						    </li>
+						  </ul>
+						</div>
+						
 					</div>
 					<div class="right bgwhite">
 						<h5>NEWS & UPDATES</h5>

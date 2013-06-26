@@ -9,13 +9,13 @@
 *{outline: none !important;}
 
 body{
-	background: $mainBackground;
-	display: block;
-	height: 100%;
-	width: 100%;
-	position: relative;
-	font-family: $bodyFontFamily;
-	line-height: 150%;
+	background  : $mainBackground;
+	display     : block;
+	height      : 100%;
+	width       : 100%;
+	position    : relative;
+	font-family : $bodyFontFamily;
+	line-height : 150%;
 }
 
 html{
@@ -24,10 +24,10 @@ html{
 }
 
 #main{
-	width: 1260px;
-	margin: 0 auto;
-	overflow: hidden;
-	position: relative;
+	width    : 1260px;
+	margin   : 0 auto;
+	overflow : hidden;
+	position : relative;
 
 }
 
@@ -60,26 +60,26 @@ h1,h2,h3,h4,h5,h6{
 .f17{font-size: 17px !important;}
 
 .title, .date{
-	text-transform: uppercase;
-	display: block;
-	clear: both;
-	margin-bottom: 10px;
+	text-transform : uppercase;
+	display        : block;
+	clear          : both;
+	margin-bottom  : 10px;
 }
 
 .title{
-	color: $linkColor;
-	font-size: 17px;
+	color     : $linkColor;
+	font-size : 17px;
 }
 
 .date{
-	color: #959595;
-	font-size: 11px;
+	color     : #959595;
+	font-size : 11px;
 }
 
 .more{
-	position: absolute;
-	bottom: 20px;
-	font-size: 10px !important;
+	position  : absolute;
+	bottom    : 20px;
+	font-size : 10px !important;
 
 	span{
 		
@@ -151,21 +151,21 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .clear{
-	width: 100%;
-	display: block;
-	clear: both;
-	margin-bottom: 10px;
+	width         : 100%;
+	display       : block;
+	clear         : both;
+	margin-bottom : 10px;
 }
 
 // button
 .link-button{
-	background: url(../images/sprite.png) no-repeat 0 -67px;
-	height: 42px;
-	width: 85px;
-	display: block;
-	text-indent: -999999px;
-	letter-spacing: -999999px;
-	overflow: hidden;
+	background     : url(../images/sprite.png) no-repeat 0 -67px;
+	height         : 42px;
+	width          : 85px;
+	display        : block;
+	text-indent    : -999999px;
+	letter-spacing : -999999px;
+	overflow       : hidden;
 
 	&:hover{
 		background-position: -100px -67px;
@@ -188,12 +188,12 @@ h1,h2,h3,h4,h5,h6{
 	}
 	
 	span{
-		float: left;
-		text-transform: uppercase;
-		padding: 5px 15px;
-		font-size: 14px;
-		color: #fff;
-		font-weight: bold;
+		float          : left;
+		text-transform : uppercase;
+		padding        : 5px 15px;
+		font-size      : 14px;
+		color          : #fff;
+		font-weight    : bold;
 		@include border-radius(6px);
 		@include text-shadow(rgba(0,0,0, 0.5) -1px 0px 0px);
 		@include box-shadow(0 3px 4px rgba(0,0,0,0.4));
@@ -222,12 +222,12 @@ form{
 	}
 
 	select{
-		-webkit-appearance: none;
-	    -moz-appearance: none;
-	    appearance: none;
-	    border: none;
-		color: #7d7d7d;
-		padding: 7px;
+		-webkit-appearance : none;
+		-moz-appearance    : none;
+		appearance         : none;
+		border             : none;
+		color              : #7d7d7d;
+		padding            : 7px;
 		@include border-radius(6px);
 		@include background(
 			url(../images/icon/drop-arrow.png) no-repeat 97% center,
@@ -237,31 +237,31 @@ form{
 	}	
 
 	input[type="text"], input[type="email"], input[type="number"], textarea, input[type="password"]{
-	    border: none;
-		color: #7d7d7d;
-		padding: 7px;
-		margin-bottom: 0;
-		font-family: $contentFontFamily;
-		font-size: 12px;
+		border        : none;
+		color         : #7d7d7d;
+		padding       : 7px;
+		margin-bottom : 0;
+		font-family   : $contentFontFamily;
+		font-size     : 12px;
 		@include border-radius(6px);
 		@include background(linear-gradient(#e8e8e8, #ebebeb));
 		@include box-shadow(0 2px 7px rgba(0,0,0,0.25) inset);
 	}
 
 	select{
-		font-family: $contentFontFamily;
-		color: #7d7d7d;
-		font-size: 12px;
+		font-family : $contentFontFamily;
+		color       : #7d7d7d;
+		font-size   : 12px;
 	}
 
 	input[type="submit"]{
-		border: none;
-		height: 42px;
-		width: 173px;
-		background: url(../images/sprite.png) no-repeat 0 0;
-		letter-spacing: -999999px;
-		text-indent: -999999px;
-		overflow: hidden;
+		border         : none;
+		height         : 42px;
+		width          : 173px;
+		background     : url(../images/sprite.png) no-repeat 0 0;
+		letter-spacing : -999999px;
+		text-indent    : -999999px;
+		overflow       : hidden;
 
 		&:hover{
 			background-color: transparent;
@@ -299,11 +299,11 @@ header{
 		background: $white;
 
 		&.fix{
-			position: fixed;
-			width: 360px;
-			padding: 24px 0;
-			z-index: 100;
-			top: 0;
+			position : fixed;
+			width    : 360px;
+			padding  : 24px 0;
+			z-index  : 100;
+			top      : 0;
 			
 			//margin-left: -640px;
 
@@ -324,7 +324,7 @@ header{
 			background : none;
 			position   : fixed;
 			z-index    : 20;
-			width      : 100%;
+			width      : 1260px;
 			
 			ul{ 
 				float      : right;
@@ -376,19 +376,19 @@ header{
 #carousel{position: relative}
 
 #carousel ul {
-    position:absolute; /* required */
-    overflow:hidden; /* required */
-    margin:0;
-    padding:0;
-    list-style:none;
+	position   :absolute; /* required */
+	overflow   :hidden; /* required */
+	margin     :0;
+	padding    :0;
+	list-style :none;
 }
  
 #carousel ul li {
-    float:left; /* required */
-    width:720px;
-    height:360px;
-	position: relative;
-	background: #fff;
+	float      :left; /* required */
+	width      :720px;
+	height     :360px;
+	position   : relative;
+	background : #fff;
 
 	&.contact{
 		width: 200px
@@ -518,6 +518,10 @@ header{
 		display: block;
 		clear: both;
 		margin-bottom: 15px;
+		
+		p, li{
+			font: normal 12px/150% "arial","Helvetica Neue","Helvetica",Helvetica,sans-serif;
+		}
 	}
 
 	&.news-update{
@@ -601,30 +605,42 @@ header{
 			top        : 0;
 			left       : -360px;
 			width      : 100%;
+			height     : 100%;
 			background : $white;
 
 			@include transition-property(left);
-			@include transition-duration(2s);
+			@include transition-duration(0.5s);
 			@include transition-timing-function(ease-in-out);
 
 
 			.close{
-				position    : absolute;
-				right       : -18px;
-				top         : -8px;
-				text-align  : center;
-				z-index     : 3;
-				height      : 30px;
-				width       : 30px;
-				line-height : 25px;
-				background  : #000;
-				color       : $white;
-				font-size   : 14px;
-				font-weight : bold;
-				border      : 2px solid $white;
-				cursor      : pointer;
-				@include box-shadow(rgba(0,0,0,0.5) 1px 1px 2px);
-				@include border-radius(50%);
+				// position    : absolute;
+				// right       : -18px;
+				// top         : -8px;
+				// text-align  : center;
+				// z-index     : 3;
+				// height      : 30px;
+				// width       : 30px;
+				// line-height : 25px;
+				// background  : #000;
+				// color       : $white;
+				// font-size   : 14px;
+				// font-weight : bold;
+				// border      : 2px solid $white;
+				// cursor      : pointer;
+				// @include box-shadow(rgba(0,0,0,0.5) 1px 1px 2px);
+				// @include border-radius(50%);
+				
+				width          : 7px;
+				height         : 7px;
+				background     : url(../images/icon/close.png) no-repeat;
+				position       : absolute;
+				top            : 5px;
+				right          : 5px;
+				cursor         : pointer;
+				letter-spacing : -999999px;
+				text-indent    : -99999px;
+				overflow       : hidden;
 			}
 		}
 
@@ -658,8 +674,9 @@ header{
 					font-size      : 12px;
 					color          : #707070;
 					text-transform : uppercase;
-					background     : #fff;
-					@include opacity(.7);
+					background     : rgba(255,255,255,.7);
+					@include text-shadow(rgba(255,255,255, 1) 1px 1px 0px);
+					@include opacity(1);
 					@include transition-property(opacity);
 					@include transition-duration(0.5s);
 					@include transition-timing-function(ease-in-out); 
@@ -694,6 +711,7 @@ header{
 			background : $white;
 			float      : left;
 			position   : absolute;
+			cursor     : pointer;
 			
 			&:hover{
 				span{
@@ -820,25 +838,25 @@ header{
 			}
 
 			span{
-				display: table-cell; 
-				vertical-align: middle; 
-				text-align: center;
-				width: 180px;
-				height: 180px;
-				color: #707070;
-				text-transform: uppercase;
-				font: 600 14px/150% "TwCenMT-Bold","Helvetica Neue", "Helvetica", Helvetica, sans-serif;
+				display        : table-cell; 
+				vertical-align : middle; 
+				text-align     : center;
+				width          : 180px;
+				height         : 180px;
+				color          : #707070;
+				text-transform : uppercase;
+				font           : 600 14px/150% "TwCenMT-Bold","Helvetica Neue", "Helvetica", Helvetica, sans-serif;
 				@include transition-property(color);
 				@include transition-duration(.5s);
 				@include transition-timing-function(ease-in-out);
 
 				small{
-					font-size: 11px;
-					position: absolute;
-					width: 100%;
-					color: #707070;
-					top: 55%;
-					left: 0;
+					font-size : 11px;
+					position  : absolute;
+					width     : 100%;
+					color     : #707070;
+					top       : 55%;
+					left      : 0;
 					@include opacity(0);
 					@include transition-property(opacity);
 					@include transition-duration(.5s);
@@ -847,23 +865,30 @@ header{
 			}
 
 			.detail-bio{
-				padding: 20px 10px;
-				display: none;
-				height: 180px;
+				padding : 20px 10px;
+				display : none;
+				height  : 180px;
 
 				&.show-left{
-					position: absolute;
-					top: 0;
-					left: -180px;
-					background: #fff;
-					height: 100%;
-					width: 100%;
+					position   : absolute;
+					top        : 0;
+					left       : -180px;
+					background : #fff;
+					height     : 100%;
+					width      : 100%;
+					
+					.desc{
+						height: 360px;
+					}
 				}
 
-				p{
-					width: 100%;
-					color: #636363;
-					font-size: 12px;
+				.desc{
+					width     : 98%;
+					color     : #636363;
+					font-size : 12px;
+					height    : auto;
+					margin    : 2% 1%;
+					overflow  : auto;
 				}
 
 				strong{
@@ -877,13 +902,20 @@ header{
 					background: url(../images/icon/close.png) no-repeat;
 					position: absolute;
 					bottom: 5px;
-					right: 5px;
+					right: 10px;
 					cursor: pointer;
 				}
 			}
 
 		}
-		.item.double{width: 360px}
+
+		.item.double{
+			width: 360px;
+			
+			.desc{
+				height: 110px;
+			}
+		}
 
 		.bgwhite{height: 180px;}
 	}
@@ -968,7 +1000,25 @@ header{
 	}
 
 	&.our-project{
-		.left{max-width: 720px;}
+		.left{
+			max-width : 720px;
+		}
+
+		.flexslider{
+			height: 360px;
+			width: 720px;
+		}
+
+		.container-article{
+			height    : 168px;
+			overflow  : auto;
+		}
+	}
+
+	&.about-us{
+		.text-green{
+			font-family: "TwCenMT-Regular","Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+		}
 	}
 
 	&.our-project, &.search, &.profile{
@@ -1005,8 +1055,9 @@ header{
 					font-size: 12px;
 					color: #707070;
 					text-transform: uppercase;
-					background: #fff;
-					@include opacity(.7);
+					background     : rgba(255,255,255,.7);
+					@include text-shadow(rgba(255,255,255, 1) 1px 1px 0px);
+					@include opacity(1);
 					@include transition-property(opacity);
 					@include transition-duration(0.5s);
 					@include transition-timing-function(ease-in-out); 

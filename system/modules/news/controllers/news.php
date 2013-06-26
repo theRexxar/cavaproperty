@@ -24,7 +24,7 @@ class news extends Front_Controller {
 		$this->load->model('news_model');
 		$this->load->model('files/file_model');
 
-        $news = $this->news_model->order_by('created_on','desc')->find_all();
+        $news = $this->news_model->order_by('post_date','desc')->find_all();
 
         foreach($news AS $news_list)
         {
@@ -60,9 +60,9 @@ class news extends Front_Controller {
 		$this->load->model('news_model');
 		$this->load->model('files/file_model');
 
-        $news 			= $this->news_model->order_by('created_on','desc')->find_all();
+        $news 			= $this->news_model->order_by('post_date','desc')->find_all();
 
-        $news_archive 	= $this->news_model->order_by('created_on','desc')->find_news_by_date($year,$month);
+        $news_archive 	= $this->news_model->order_by('post_date','desc')->find_news_by_date($year,$month);
 
         foreach($news AS $news_list)
         {
@@ -129,7 +129,7 @@ class news extends Front_Controller {
 	{
 		$this->load->model('news_model');
 
-        $data['news'] = $this->news_model->order_by('created_on','desc')->limit(4)->find_all();
+        $data['news'] = $this->news_model->order_by('post_date','desc')->limit(4)->find_all();
         
         //print_r($news_date);
 		

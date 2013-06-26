@@ -5,8 +5,10 @@
         <div class="columns five bgwhite">
             <section class="sidebar">
                 <div class="row">
-                    <!-- Search Widget -->
-                    <?php echo Modules::run('home/search_widget'); ?>
+                    <div class="columns sixteen">
+                        <!-- Search Widget -->
+                        <?php echo Modules::run('search/search_widget'); ?>
+                    </div>
                 </div>
             </section>  
         </div>  

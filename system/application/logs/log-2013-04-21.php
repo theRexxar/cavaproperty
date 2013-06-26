@@ -1059,3 +1059,238 @@ ERROR - 2013-04-21 16:11:46 --> Severity: Notice  --> Undefined index: 5 C:\xamp
 ERROR - 2013-04-21 16:11:46 --> Severity: Notice  --> Undefined index: 4 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
 ERROR - 2013-04-21 16:12:01 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\home\controllers\home.php 78
 ERROR - 2013-04-21 16:12:10 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\home\controllers\home.php 78
+ERROR - 2013-04-21 16:14:24 --> Severity: Notice  --> Undefined index: 2014 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:14:24 --> Severity: Notice  --> Undefined index: 7 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:14:24 --> Severity: Notice  --> Undefined index: 6 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:14:24 --> Severity: Notice  --> Undefined index: 2013 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:14:24 --> Severity: Notice  --> Undefined index: 5 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:14:24 --> Severity: Notice  --> Undefined index: 4 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:22:10 --> 404 Page Not Found --> 
+ERROR - 2013-04-21 16:22:54 --> 404 Page Not Found --> 
+ERROR - 2013-04-21 16:24:22 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-21 16:24:23 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-21 16:26:45 --> Severity: Notice  --> Undefined index: 2014 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:26:45 --> Severity: Notice  --> Undefined index: 7 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:26:45 --> Severity: Notice  --> Undefined index: 6 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:26:45 --> Severity: Notice  --> Undefined index: 2013 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:26:45 --> Severity: Notice  --> Undefined index: 5 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:26:45 --> Severity: Notice  --> Undefined index: 4 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:26:48 --> Severity: Notice  --> Undefined index: 2014 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:26:48 --> Severity: Notice  --> Undefined index: 7 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:26:48 --> Severity: Notice  --> Undefined index: 6 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:26:48 --> Severity: Notice  --> Undefined index: 2013 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:26:48 --> Severity: Notice  --> Undefined index: 5 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:26:48 --> Severity: Notice  --> Undefined index: 4 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:26:52 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\xampp\htdocs\cavaproperty\system\modules\news\controllers\news.php 108
+ERROR - 2013-04-21 16:28:20 --> Severity: Notice  --> Undefined index: 2014 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:20 --> Severity: Notice  --> Undefined index: 7 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:20 --> Severity: Notice  --> Undefined index: 6 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:20 --> Severity: Notice  --> Undefined index: 2013 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:20 --> Severity: Notice  --> Undefined index: 5 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:20 --> Severity: Notice  --> Undefined index: 4 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:21 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-21 16:28:22 --> Severity: Notice  --> Undefined index: 2014 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:22 --> Severity: Notice  --> Undefined index: 7 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:22 --> Severity: Notice  --> Undefined index: 6 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:22 --> Severity: Notice  --> Undefined index: 2013 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:22 --> Severity: Notice  --> Undefined index: 5 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:22 --> Severity: Notice  --> Undefined index: 4 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:22 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-21 16:28:23 --> Severity: Notice  --> Undefined index: 2014 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:23 --> Severity: Notice  --> Undefined index: 7 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:23 --> Severity: Notice  --> Undefined index: 6 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:23 --> Severity: Notice  --> Undefined index: 2013 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:23 --> Severity: Notice  --> Undefined index: 5 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:23 --> Severity: Notice  --> Undefined index: 4 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:23 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-21 16:28:24 --> Severity: Notice  --> Undefined index: 2014 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:24 --> Severity: Notice  --> Undefined index: 7 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:24 --> Severity: Notice  --> Undefined index: 6 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:24 --> Severity: Notice  --> Undefined index: 2013 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:24 --> Severity: Notice  --> Undefined index: 5 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:24 --> Severity: Notice  --> Undefined index: 4 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:24 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-21 16:28:26 --> Severity: Notice  --> Undefined index: 2014 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:26 --> Severity: Notice  --> Undefined index: 7 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:26 --> Severity: Notice  --> Undefined index: 6 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:26 --> Severity: Notice  --> Undefined index: 2013 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:26 --> Severity: Notice  --> Undefined index: 5 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:26 --> Severity: Notice  --> Undefined index: 4 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:35 --> Severity: Notice  --> Undefined index: 2014 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:35 --> Severity: Notice  --> Undefined index: 7 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:35 --> Severity: Notice  --> Undefined index: 6 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:35 --> Severity: Notice  --> Undefined index: 2013 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:35 --> Severity: Notice  --> Undefined index: 5 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:35 --> Severity: Notice  --> Undefined index: 4 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:35 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-21 16:28:37 --> Severity: Notice  --> Undefined index: 2014 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:37 --> Severity: Notice  --> Undefined index: 7 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:37 --> Severity: Notice  --> Undefined index: 6 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:37 --> Severity: Notice  --> Undefined index: 2013 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:37 --> Severity: Notice  --> Undefined index: 5 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:37 --> Severity: Notice  --> Undefined index: 4 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:37 --> Severity: Notice  --> Undefined index: 2014 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:37 --> Severity: Notice  --> Undefined index: 7 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:37 --> Severity: Notice  --> Undefined index: 6 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:37 --> Severity: Notice  --> Undefined index: 2013 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:37 --> Severity: Notice  --> Undefined index: 5 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:37 --> Severity: Notice  --> Undefined index: 4 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:38 --> Severity: Notice  --> Undefined index: 2014 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:38 --> Severity: Notice  --> Undefined index: 7 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:38 --> Severity: Notice  --> Undefined index: 6 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:38 --> Severity: Notice  --> Undefined index: 2013 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:38 --> Severity: Notice  --> Undefined index: 5 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:38 --> Severity: Notice  --> Undefined index: 4 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:28:40 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\home\controllers\home.php 78
+ERROR - 2013-04-21 16:28:40 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-21 16:28:40 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-21 16:29:50 --> Severity: Notice  --> Undefined index: 2014 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:29:50 --> Severity: Notice  --> Undefined index: 7 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:29:50 --> Severity: Notice  --> Undefined index: 6 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:29:50 --> Severity: Notice  --> Undefined index: 2013 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:29:50 --> Severity: Notice  --> Undefined index: 5 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:29:50 --> Severity: Notice  --> Undefined index: 4 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:29:59 --> Severity: Notice  --> Undefined index: 2014 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:29:59 --> Severity: Notice  --> Undefined index: 7 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:29:59 --> Severity: Notice  --> Undefined index: 6 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:29:59 --> Severity: Notice  --> Undefined index: 2013 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:29:59 --> Severity: Notice  --> Undefined index: 5 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:29:59 --> Severity: Notice  --> Undefined index: 4 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:30:02 --> Severity: Notice  --> Undefined index: 2014 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:30:02 --> Severity: Notice  --> Undefined index: 7 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:30:02 --> Severity: Notice  --> Undefined index: 6 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:30:02 --> Severity: Notice  --> Undefined index: 2013 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:30:02 --> Severity: Notice  --> Undefined index: 5 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:30:02 --> Severity: Notice  --> Undefined index: 4 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:30:04 --> Severity: Notice  --> Undefined index: 2014 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:30:04 --> Severity: Notice  --> Undefined index: 7 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:30:04 --> Severity: Notice  --> Undefined index: 6 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:30:04 --> Severity: Notice  --> Undefined index: 2013 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:30:04 --> Severity: Notice  --> Undefined index: 5 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:30:04 --> Severity: Notice  --> Undefined index: 4 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:30:18 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-21 16:30:19 --> 404 Page Not Found --> 
+ERROR - 2013-04-21 16:30:21 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-21 16:30:21 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-21 16:30:21 --> 404 Page Not Found --> 
+ERROR - 2013-04-21 16:30:21 --> 404 Page Not Found --> 
+ERROR - 2013-04-21 16:30:23 --> 404 Page Not Found --> 
+ERROR - 2013-04-21 16:30:25 --> 404 Page Not Found --> 
+ERROR - 2013-04-21 16:30:25 --> 404 Page Not Found --> 
+ERROR - 2013-04-21 16:30:27 --> 404 Page Not Found --> 
+ERROR - 2013-04-21 16:30:51 --> 404 Page Not Found --> 
+ERROR - 2013-04-21 16:30:53 --> 404 Page Not Found --> 
+ERROR - 2013-04-21 16:30:56 --> Severity: Notice  --> Undefined index: 2014 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:30:56 --> Severity: Notice  --> Undefined index: 7 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:30:56 --> Severity: Notice  --> Undefined index: 6 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:30:56 --> Severity: Notice  --> Undefined index: 2013 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:30:56 --> Severity: Notice  --> Undefined index: 5 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:30:56 --> Severity: Notice  --> Undefined index: 4 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:30:59 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-21 16:31:29 --> Severity: Notice  --> Undefined index: 2014 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:31:29 --> Severity: Notice  --> Undefined index: 7 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:31:29 --> Severity: Notice  --> Undefined index: 6 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:31:29 --> Severity: Notice  --> Undefined index: 2013 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:31:29 --> Severity: Notice  --> Undefined index: 5 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:31:29 --> Severity: Notice  --> Undefined index: 4 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 16:31:36 --> 404 Page Not Found --> 
+ERROR - 2013-04-21 16:31:38 --> 404 Page Not Found --> 
+ERROR - 2013-04-21 21:15:13 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\home\controllers\home.php 78
+ERROR - 2013-04-21 21:16:51 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:17:16 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:19:12 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:19:15 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 134
+ERROR - 2013-04-21 21:19:15 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 135
+ERROR - 2013-04-21 21:19:15 --> Severity: Notice  --> Undefined variable: bedroom_count C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 137
+ERROR - 2013-04-21 21:19:15 --> Severity: Notice  --> Undefined variable: limit C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 144
+ERROR - 2013-04-21 21:19:15 --> Severity: 4096  --> Object of class CI_DB_mysql_result could not be converted to string C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 172
+ERROR - 2013-04-21 21:19:15 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:19:15 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-21 21:19:18 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 134
+ERROR - 2013-04-21 21:19:18 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 135
+ERROR - 2013-04-21 21:19:18 --> Severity: Notice  --> Undefined variable: bedroom_count C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 137
+ERROR - 2013-04-21 21:19:18 --> Severity: Notice  --> Undefined variable: limit C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 144
+ERROR - 2013-04-21 21:19:18 --> Severity: 4096  --> Object of class CI_DB_mysql_result could not be converted to string C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 172
+ERROR - 2013-04-21 21:19:18 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:19:20 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:30:03 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:30:27 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-21 21:30:47 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-21 21:31:01 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:31:06 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 134
+ERROR - 2013-04-21 21:31:06 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 135
+ERROR - 2013-04-21 21:31:06 --> Severity: Notice  --> Undefined variable: bedroom_count C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 137
+ERROR - 2013-04-21 21:31:06 --> Severity: Notice  --> Undefined variable: limit C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 144
+ERROR - 2013-04-21 21:31:06 --> Severity: 4096  --> Object of class CI_DB_mysql_result could not be converted to string C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 172
+ERROR - 2013-04-21 21:31:06 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:31:14 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 134
+ERROR - 2013-04-21 21:31:14 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 135
+ERROR - 2013-04-21 21:31:14 --> Severity: Notice  --> Undefined variable: bedroom_count C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 137
+ERROR - 2013-04-21 21:31:14 --> Severity: Notice  --> Undefined variable: limit C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 144
+ERROR - 2013-04-21 21:31:14 --> Severity: 4096  --> Object of class CI_DB_mysql_result could not be converted to string C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 172
+ERROR - 2013-04-21 21:31:14 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:31:17 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:32:04 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:33:15 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:34:01 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:34:02 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:34:29 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:34:36 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:34:42 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:36:22 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 135
+ERROR - 2013-04-21 21:36:22 --> Severity: Notice  --> Undefined variable: bedroom_count C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 137
+ERROR - 2013-04-21 21:36:22 --> Severity: Notice  --> Undefined variable: limit C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 144
+ERROR - 2013-04-21 21:36:22 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:36:27 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:36:35 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:38:10 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:38:12 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:38:17 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:38:18 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:38:19 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:38:20 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:38:21 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:39:03 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:39:11 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 135
+ERROR - 2013-04-21 21:39:11 --> Severity: Notice  --> Undefined variable: bedroom_count C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 137
+ERROR - 2013-04-21 21:39:11 --> Severity: Notice  --> Undefined variable: limit C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 144
+ERROR - 2013-04-21 21:39:11 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:39:32 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:39:40 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:39:46 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:40:04 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:40:09 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:40:14 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:43:59 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:44:00 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-21 21:44:00 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-21 21:44:00 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-21 21:44:00 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-21 21:44:00 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\cavaproperty\system\modules\files\controllers\files.php:203) C:\xampp\htdocs\cavaproperty\system\codeigniter\libraries\Session.php 672
+ERROR - 2013-04-21 21:44:01 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:44:02 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:44:03 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:44:04 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:44:05 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:44:06 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:44:10 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:44:11 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:44:12 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:44:22 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 134
+ERROR - 2013-04-21 21:44:22 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 135
+ERROR - 2013-04-21 21:44:22 --> Severity: Notice  --> Undefined variable: bedroom_count C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 137
+ERROR - 2013-04-21 21:44:22 --> Severity: Notice  --> Undefined variable: limit C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 144
+ERROR - 2013-04-21 21:44:22 --> Severity: 4096  --> Object of class CI_DB_mysql_result could not be converted to string C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 172
+ERROR - 2013-04-21 21:44:22 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:44:24 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
+ERROR - 2013-04-21 21:44:25 --> Severity: Notice  --> Undefined index: 2014 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 21:44:25 --> Severity: Notice  --> Undefined index: 7 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 21:44:25 --> Severity: Notice  --> Undefined index: 6 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 21:44:25 --> Severity: Notice  --> Undefined index: 2013 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 21:44:25 --> Severity: Notice  --> Undefined index: 5 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 21:44:25 --> Severity: Notice  --> Undefined index: 4 C:\xampp\htdocs\cavaproperty\system\modules\news\views\front_page\index.php 11
+ERROR - 2013-04-21 21:44:27 --> Severity: Notice  --> Undefined variable: mail_message C:\xampp\htdocs\cavaproperty\system\modules\contact\controllers\contact.php 57
+ERROR - 2013-04-21 21:44:27 --> Severity: Notice  --> Undefined variable: mail_error C:\xampp\htdocs\cavaproperty\system\modules\contact\controllers\contact.php 58
+ERROR - 2013-04-21 21:44:27 --> Severity: Notice  --> Undefined variable: phone_message C:\xampp\htdocs\cavaproperty\system\modules\contact\controllers\contact.php 59
+ERROR - 2013-04-21 21:44:27 --> Severity: Notice  --> Undefined variable: phone_error C:\xampp\htdocs\cavaproperty\system\modules\contact\controllers\contact.php 60
+ERROR - 2013-04-21 21:44:52 --> Severity: Notice  --> Undefined variable: banner C:\xampp\htdocs\cavaproperty\system\modules\search\controllers\search.php 57
