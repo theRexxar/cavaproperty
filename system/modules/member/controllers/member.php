@@ -49,7 +49,16 @@ class member extends Front_Controller {
 
 			if($user)
 			{
-				$types = explode(",", $user->property_type);
+				$user_types = explode(",", $user->property_type);
+
+				$property_list = $this->project_property_model->find_all();
+				foreach($property_list AS $property_lists)
+				{
+					if(in_array($property_lists->type_id, $user_types))
+					{
+						$property_lists->related_property = "1";
+					}
+				}
 			}
 		}
 		else
@@ -57,7 +66,8 @@ class member extends Front_Controller {
 			show_404();
 		}
 
-		$property_type = $this->project_type_model->find_all();
+
+		$property_type = $this->project_type_model->find_all();		
 
 
 		$message = "";
@@ -77,8 +87,9 @@ class member extends Front_Controller {
 
 		$vars = array(
 						'user' 				=> $user,
+						'user_types' 		=> $user_types,
 						'property_type' 	=> $property_type,
-						//'related_property' 	=> $related_property,
+						'property_list' 	=> $property_list,
 						'message'   		=> $message,
 					);
 
@@ -150,6 +161,8 @@ class member extends Front_Controller {
         
 		$this->load->library('form_validation');  
         $this->form_validation->CI =& $this;
+
+        $error = array(); 
         
         $this->form_validation->set_rules('title','Title','required|trim|xss_clean|max_length[255]');
         $this->form_validation->set_rules('first_name','First Name','required|trim|xss_clean|max_length[255]');
@@ -163,65 +176,83 @@ class member extends Front_Controller {
         $this->form_validation->set_rules('password','Password','required|trim|xss_clean');			
 		$this->form_validation->set_rules('re_password','Password Confirmation','required|trim|xss_clean|matches[password]');
         
-        $this->form_validation->set_error_delimiters('<p>', '</p>');
+        $this->form_validation->set_error_delimiters('', '');
         
         if ($this->form_validation->run() === FALSE)
 		{
-			return FALSE;
-		}
-        
-        $data = array();
-		$data['title']                	= $this->input->post('title');
-		$data['first_name']             = $this->input->post('first_name');
-		$data['last_name']              = $this->input->post('last_name');
-		$data['dob']              		= $this->input->post('year').'-'.$this->input->post('month').'-'.$this->input->post('day');
-		$data['address']                = $this->input->post('address');
-		$data['city']                	= $this->input->post('city');
-		$data['postal_code']          	= $this->input->post('postal_code');
-		$data['email']                	= $this->input->post('email');
-		$data['phone']                	= $this->input->post('phone');
-		$data['mobile_phone']         	= $this->input->post('mobile_phone');
-
-
-		if($this->input->post('password') != "")
-		{
-			$data['password']           = md5($this->input->post('password'));
-		}
-
-
-		if($this->input->post('property_type') != "")
-		{
-			$type = implode(",", $this->input->post('property_type'));
-
-			$data['property_type']  		= $type;
-		}
-
-
-		$new_code 	= get_random_string(4,2,2);
-		$check_code = $this->member_model->find_all_by('forgot_code', $new_code);
-
-		if($check_code != "")
-		{
-			$data['forgot_code']        = get_random_string(4,2,2);
+			$error[] = $this->form_validation->error_string();
 		}
 		else
 		{
-			$data['forgot_code']        = $new_code;
+			$data = array();
+			$data['title']                	= $this->input->post('title');
+			$data['first_name']             = $this->input->post('first_name');
+			$data['last_name']              = $this->input->post('last_name');
+			$data['dob']              		= $this->input->post('year').'-'.$this->input->post('month').'-'.$this->input->post('day');
+			$data['address']                = $this->input->post('address');
+			$data['city']                	= $this->input->post('city');
+			$data['postal_code']          	= $this->input->post('postal_code');
+			$data['email']                	= $this->input->post('email');
+			$data['phone']                	= $this->input->post('phone');
+			$data['mobile_phone']         	= $this->input->post('mobile_phone');
+
+
+			if($this->input->post('password') != "")
+			{
+				$data['password']           = md5($this->input->post('password'));
+			}
+
+
+			if($this->input->post('property_type') != "")
+			{
+				$type = implode(",", $this->input->post('property_type'));
+
+				$data['property_type']  	= $type;
+			}
+			else
+			{
+				$data['property_type']  	= "";
+			}
+
+
+			$new_code 	= get_random_string(4,2,2);
+			$check_code = $this->member_model->find_all_by('forgot_code', $new_code);
+
+			if($check_code != "")
+			{
+				$data['forgot_code']        = get_random_string(4,2,2);
+			}
+			else
+			{
+				$data['forgot_code']        = $new_code;
+			}
+
+
+			$submit = $this->member_model->insert($data);
+	    
+	        if($submit)
+	        {
+	        	$data_user['user_id']  	= $submit;
+	        	$data_user['name'] 		= $data['first_name'].' '.$data['last_name'];
+	        	$data_user['email'] 	= $data['email'];
+
+	            $this->session->set_userdata('data_user',$data_user);
+	        }
 		}
 
-
-		$submit = $this->member_model->insert($data);
-    
-        if($submit)
-        {
-        	$data_user['user_id']  	= $submit;
-        	$data_user['name'] 		= $data['first_name'].' '.$data['last_name'];
-        	$data_user['email'] 	= $data['email'];
-
-            $this->session->set_userdata('data_user',$data_user);
-
-            Template::redirect(base_url());
-        }
+		if(!empty($error)) //kondisi kalo ada error alias form submit gagal
+        { 
+			$return['success']   = 0;
+			$return['error']     = $error;
+		}
+		else //kalo gak ada error alias form submit sukses
+        { 
+			$return['success']   = 1;
+		}        
+        
+        $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode($return));       
 	}
 	
 	//--------------------------------------------------------------------
@@ -265,6 +296,8 @@ class member extends Front_Controller {
         
 		$this->load->library('form_validation');  
         $this->form_validation->CI =& $this;
+
+        $error = array();  
         
         $this->form_validation->set_rules('title','Title','required|trim|xss_clean|max_length[255]');
         $this->form_validation->set_rules('first_name','First Name','required|trim|xss_clean|max_length[255]');
@@ -278,58 +311,74 @@ class member extends Front_Controller {
         $this->form_validation->set_rules('password','Password','trim|xss_clean');			
 		$this->form_validation->set_rules('re_password','Password Confirmation','trim|xss_clean|matches[password]');
         
-        $this->form_validation->set_error_delimiters('<p>', '</p>');
+        $this->form_validation->set_error_delimiters('', '');
         
         if ($this->form_validation->run() === FALSE)
 		{
-			return FALSE;
+			$error[] = $this->form_validation->error_string();
+		}
+		else
+		{
+			$data = array();
+			$data['title']                	= $this->input->post('title');
+			$data['first_name']             = $this->input->post('first_name');
+			$data['last_name']              = $this->input->post('last_name');
+			$data['dob']              		= $this->input->post('year').'-'.$this->input->post('month').'-'.$this->input->post('day');
+			$data['address']                = $this->input->post('address');
+			$data['city']                	= $this->input->post('city');
+			$data['postal_code']          	= $this->input->post('postal_code');
+			$data['email']                	= $this->input->post('email');
+			$data['phone']                	= $this->input->post('phone');
+			$data['mobile_phone']         	= $this->input->post('mobile_phone');
+
+
+			if($this->input->post('property_type') != "")
+			{
+				$type = implode(",", $this->input->post('property_type'));
+
+				$data['property_type']  	= $type;
+			}
+			else
+			{
+				$data['property_type']  	= "";
+			}
+
+
+			if($this->input->post('password') != "")
+			{
+				$data['password']           = md5($this->input->post('password'));
+			}
+
+
+			$id = $this->input->post('user_id');
+
+			$submit = $this->member_model->update($id, $data);
+
+			if($submit)
+	        {
+	        	$this->session->unset_userdata('data_user');
+
+	        	$data_user['user_id']  	= $id;
+	        	$data_user['name'] 		= $data['first_name'].' '.$data['last_name'];
+	        	$data_user['email'] 	= $data['email'];
+
+	            $this->session->set_userdata('data_user',$data_user);
+	        }  
 		}
         
-        $data = array();
-		$data['title']                	= $this->input->post('title');
-		$data['first_name']             = $this->input->post('first_name');
-		$data['last_name']              = $this->input->post('last_name');
-		$data['dob']              		= $this->input->post('year').'-'.$this->input->post('month').'-'.$this->input->post('day');
-		$data['address']                = $this->input->post('address');
-		$data['city']                	= $this->input->post('city');
-		$data['postal_code']          	= $this->input->post('postal_code');
-		$data['email']                	= $this->input->post('email');
-		$data['phone']                	= $this->input->post('phone');
-		$data['mobile_phone']         	= $this->input->post('mobile_phone');
-
-
-		if($this->input->post('property_type') != "")
-		{
-			$type = implode(",", $this->input->post('property_type'));
-
-			$data['property_type']  		= $type;
+        if(!empty($error)) //kondisi kalo ada error alias form submit gagal
+        { 
+			$return['success']   = 0;
+			$return['error']     = $error;
 		}
-
-
-		if($this->input->post('password') != "")
-		{
-			$data['password']           = md5($this->input->post('password'));
-		}
-
-
-		$id = $this->input->post('user_id');
-
-		$submit = $this->member_model->update($id, $data);
-
-		if($submit)
-        {
-        	$this->session->unset_userdata('data_user');
-
-        	$data_user['user_id']  	= $id;
-        	$data_user['name'] 		= $data['first_name'].' '.$data['last_name'];
-        	$data_user['email'] 	= $data['email'];
-
-            $this->session->set_userdata('data_user',$data_user);
-
-            Template::redirect(base_url('member/profile'));
-        }  
-
-        return $submit;
+		else //kalo gak ada error alias form submit sukses
+        { 
+			$return['success']   = 1;
+		}        
+        
+        $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode($return));          
 	}
 	
 	//--------------------------------------------------------------------
@@ -347,21 +396,32 @@ class member extends Front_Controller {
         
 		$this->load->library('form_validation');  
         $this->form_validation->CI =& $this;
+
+        $error = array();        
         
         $this->form_validation->set_rules('email','Email','required|trim|xss_clean|max_length[255]');
         $this->form_validation->set_rules('password','Password','callback_password_check|required|trim|xss_clean');	
         
-        $this->form_validation->set_error_delimiters('<p>', '</p>');
+        $this->form_validation->set_error_delimiters('', '');
         
         if($this->form_validation->run() === FALSE)
 		{
-			Template::set_message($this->member_model->error, 'error');
-            Template::redirect(base_url());
+			$error[] = $this->form_validation->error_string();
 		}
-        else
-        {
-            Template::redirect(base_url());
-        }             
+
+		if(!empty($error)) //kondisi kalo ada error alias form submit gagal
+        { 
+			$return['success']   = 0;
+			$return['error']     = $error;
+		}
+		else //kalo gak ada error alias form submit sukses
+        { 
+			$return['success']   = 1;
+		}        
+        
+        $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode($return));                
 	}
 	
 	//--------------------------------------------------------------------
@@ -440,21 +500,23 @@ class member extends Front_Controller {
         
 		$this->load->library('form_validation');  
         $this->form_validation->CI =& $this;
+
+        $error = array();  
         
         $this->form_validation->set_rules('email','Email','callback_forgot_email_check|required|trim|xss_clean|max_length[255]');
         
-        $this->form_validation->set_error_delimiters('<p>', '</p>');
+		$this->form_validation->set_error_delimiters('', '');
         
         if($this->form_validation->run() === FALSE)
 		{
-			Template::set_message($this->member_model->error, 'error');
+			$error[] = $this->form_validation->error_string();
 		}
         else
         {
         	$new_pass 	= get_random_string(6,2,2);
         	$user_email = $this->input->post('email');
 
-        	$check 		= $this->member_model->find_all_by('email', $user_email);
+        	$check 		= $this->member_model->find_by('email', $user_email);
         	$conf_code 	= $check->forgot_code;
 
         	//email setting to user
@@ -467,9 +529,21 @@ class member extends Front_Controller {
             $this->email->message("Please follow the link below to reset your password. \r\n\r\n\r\n http://cavaproperty.com/member/reset_password?email=".$user_email."&new_pass=".$new_pass."&conf_code=".$conf_code);
             
             $email_send = $this->email->send();
+        }
 
-            Template::redirect(base_url());
-        }             
+        if(!empty($error)) //kondisi kalo ada error alias form submit gagal
+        { 
+			$return['success']   = 0;
+			$return['error']     = $error;
+		}
+		else //kalo gak ada error alias form submit sukses
+        { 
+			$return['success']   = 1;
+		}        
+        
+        $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode($return));     
 	}
 	
 	//--------------------------------------------------------------------
@@ -496,6 +570,53 @@ class member extends Front_Controller {
 		{
 			return TRUE;
 		}
+	}
+	
+	//--------------------------------------------------------------------
+
+
+
+	/*
+		Method: reset_password()
+		
+		Submit reset password.
+	*/
+	public function reset_password() 
+	{
+        $this->load->model('member_model');  
+        
+
+    	$email 		= $this->input->get('email');
+    	$new_pass 	= $this->input->get('new_pass');
+        $conf_code 	= $this->input->get('conf_code');      	
+
+        $check_email = $this->member_model->find_by('email', $email);
+        if($check_email)
+        {
+        	if($conf_code == $check_email->forgot_code)
+        	{
+        		$data['password'] = md5($new_pass);
+
+        		$this->member_model->update($check_email->id, $data);
+
+        		$return['success']   = 1;
+        		$return['message']   = "Reset password success, Your new password: ".$new_pass.". Please change your password after logged in.";
+        	}
+        	else
+        	{
+        		$return['success']   = 0;
+        		$return['message']   = "Invalid confirmation code";
+        	}
+        }
+        else
+        {
+        	$return['success']   = 0;
+        	$return['message']   = "Email not registered";
+        }     
+        
+        $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode($return));     
 	}
 	
 	//--------------------------------------------------------------------

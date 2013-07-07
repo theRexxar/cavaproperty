@@ -22,23 +22,25 @@
 						</a>
 					</p>
 
-					<?php //if(! empty($related_property)) : ?>
-					<!--<div class="left mt20">
+					<?php if(! empty($property_list) && $user->property_type != "") : ?>
+					<div class="left mt20">
 						<h5>RELATED LISTING</h5>
 						<div class="thumbnail">
 							<ul class="">
-								<?php foreach($related_property AS $related_property_list) : ?>
+							<?php foreach($property_list AS $property_lists) : ?>
+								<?php if($property_lists->related_property == "1") : ?>
 								<li class="">
-									<a href="<?php echo base_url().'project/detail/'.$related_property_list->slug_developer.'/'.$related_property_list->slug; ?>">
-										<span><?php echo $related_property_list->title; ?> <small>+ MORE DETAIL</small></span>
+									<a href="<?php echo base_url().'project/detail/'.$property_lists->slug_developer.'/'.$property_lists->slug; ?>">
+										<span><?php echo $property_lists->title; ?> <small>+ MORE DETAIL</small></span>
 									</a>
-									<img src="<?php echo base_url().'files/large/'.$related_property_list->image_id.'/200/200/fit' ?>" alt="">
+									<img src="<?php echo base_url().'files/large/'.$property_lists->image_id.'/200/200/fit' ?>" alt="">
 								</li>
-								<?php endforeach; ?>
+								<?php endif; ?>
+							<?php endforeach; ?>
 							</ul>
 						</div>
-					</div>-->
-					<?php //endif; ?>
+					</div>
+					<?php endif; ?>
 					
 				</div>
 			</section>	
@@ -218,7 +220,7 @@
 						<label for="">Property</label>
 						<div class="input">
 							<?php foreach($property_type AS $types) : ?>
-							<input type="checkbox" name="property_type[]" value="<?php echo $types->id ?>"><?php echo $types->title ?><br>
+							<input type="checkbox" name="property_type[]" value="<?php echo $types->id ?>" <?php echo !empty($user->property_type) && in_array($types->id, $user_types) ? 'checked="checked"': ''; ?> ><?php echo $types->title ?><br>
 							<?php endforeach; ?>
 						</div>
 					</div>

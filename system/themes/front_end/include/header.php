@@ -58,7 +58,7 @@
 			</ul>
 		</nav>
 
-		<?php include('member.php'); ?>
+		<?php echo Modules::run('home/member_section'); ?>
 	</div>
 
 </header>
