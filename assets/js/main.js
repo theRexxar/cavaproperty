@@ -426,6 +426,21 @@ $(document).ready(function(){
 		});
 	}
 
+	var finder_select = function(param){
+		$(param).change(function(){
+			var option = $(this).find("option:selected").val();
+			if(option != ""){
+				$("#finder-form").find(".default, .active").fadeOut();
+				$("#finder-form .active").removeClass("active");
+				setTimeout(function(){
+					$("#finder-form").find("." + option).addClass("active").fadeIn();
+				}, 500);
+					
+				
+			}
+		});
+	}
+
 	function INIT(){
 		//initial(".sidebar", "nav.fix");
 		//window_resize(".sidebar","nav.fix");
@@ -447,6 +462,7 @@ $(document).ready(function(){
 
 		verticalScroll(".container-article");
 
+		finder_select("#type-property");
 		//DIS_R_CLICK(BASE_URL);
 	}
 

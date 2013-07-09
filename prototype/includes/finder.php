@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="columns sixteen">
 			<form action="">
-				<h5>SEARCH PROJECT</h5>
+				<h5>SEARCH PROJECT <span class="right"><a href="#primary" class="primary">PRIMARY</a> | <a href="#secodary" class="secondary">SECONDARY</a></span></h5>
 				<div class="input">
 					<select name="tipe" id="">
 						<option value="tipe 1">Type Property</option>
