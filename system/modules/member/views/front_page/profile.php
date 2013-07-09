@@ -220,7 +220,7 @@
 						<label for="">Property</label>
 						<div class="input">
 							<?php foreach($property_type AS $types) : ?>
-							<input type="checkbox" name="property_type[]" value="<?php echo $types->id ?>" <?php echo !empty($user->property_type) && in_array($types->id, $user_types) ? 'checked="checked"': ''; ?> ><?php echo $types->title ?><br>
+							<input type="checkbox" name="property_type[]" value="<?php echo $types->id ?>" <?php echo !empty($user->property_type) && in_array($types->id, $user_types) ? 'checked="checked"': ''; ?> > <?php echo $types->title ?><br>
 							<?php endforeach; ?>
 						</div>
 					</div>

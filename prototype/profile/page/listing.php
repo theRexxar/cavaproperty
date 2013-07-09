@@ -65,92 +65,77 @@
 
 			<div id="update-profile" class="member-area bgwhite update-profile">
 				<form action="#login" class="form">
-					<div class="block titles">
-						<label for="">Title</label>
+					<div class="block">
+						<label for="">Property Type</label>
 						<div class="input">
 							<select name="title" id="">
-								<option value="">Mr</option>
-								<option value="">Mrs</option>
+								<option value="">House</option>
+								<option value="">Apartement</option>
+								<option value="">Office</option>
+							</select>
+						</div>
+					</div>
+					<div class="block titles">
+						<label for="">Property Status</label>
+						<div class="input">
+							<select name="title" id="">
+								<option value="">Buy</option>
+								<option value="">Rent</option>
+							</select>
+						</div>
+					</div>
+					<div class="block">
+						<label for="">Location</label>
+						<div class="input">
+							<select name="title" id="">
+								<option value="">Singapore</option>
+								<option value="">Indonesia</option>
 								<option value="">Miss</option>
 							</select>
 						</div>
 					</div>
 					<div class="block">
-						<label for="">First Name</label>
+						<label for="">Province</label>
 						<div class="input">
-							<input type="text" name="firstname" class="" required autofocus>
-						</div>
-					</div>
-					<div class="block">
-						<label for="">Last Name</label>
-						<div class="input">
-							<input type="text" name="lastname" class="" required >
-						</div>
-					</div>
-					<div class="block dob">
-						<label for="">Date Of Birth</label>
-						<div class="input date">
-							<select name="date" id="">
-								<option value="">Day</option>
+							<select name="title" id="">
+								<option value="">Jakarta</option>
+								<option value="">Jawa Barat</option>
+								<option value="">Bali</option>
 							</select>
-						</div>
-						<div class="input month">
-							<select name="month" id="">
-								<option value="">Month</option>
-							</select>
-						</div>
-						<div class="input year">
-							<select name="year" id="">
-								<option value="">Year</option>
-							</select>
-						</div>
-					</div>
-					<div class="block">
-						<label for="">Address</label>
-						<div class="input">
-							<textarea name="address" id=""></textarea>
 						</div>
 					</div>
 					<div class="block">
 						<label for="">City</label>
 						<div class="input">
-							<input type="text" name="city" class="" required>
+							<select name="title" id="">
+								<option value="">Jakarta Utara</option>
+								<option value="">Jakarta Barat</option>
+							</select>
 						</div>
 					</div>
 					<div class="block">
-						<label for="">Postal Code</label>
+						<label for="">Bedrooms</label>
 						<div class="input">
-							<input type="text" name="postal" class="" required >
+							<select name="title" id="">
+								<option value="">One</option>
+								<option value="">Two</option>
+							</select>
 						</div>
 					</div>
 					<div class="block">
-						<label for="">Email Address</label>
+						<label for="">Minimum Price</label>
 						<div class="input">
-							<input type="email" name="email" class="" required>
+							<select name="title" id="">
+								<option value="">1.000.000 - 2.000.000</option>
+							</select>
 						</div>
 					</div>
 					<div class="block">
-						<label for="">Password</label>
+						<label for="">Maximum Price</label>
 						<div class="input">
-							<input type="password" name="password" class="" required>
-						</div>
-					</div>
-					<div class="block">
-						<label for="">Re-type Password</label>
-						<div class="input">
-							<input type="password" name="re-password" class="" required>
-						</div>
-					</div>
-					<div class="block">
-						<label for="">Phone</label>
-						<div class="input">
-							<input type="text" name="phone" class="" required>
-						</div>
-					</div>
-					<div class="block">
-						<label for="">Mobile Phone</label>
-						<div class="input">
-							<input type="text" name="mobile_phone" class="" required>
+							<select name="title" id="">
+								<option value="">10.000.000 - 20.000.000</option>
+							</select>
 						</div>
 					</div>
 					<div class="block">

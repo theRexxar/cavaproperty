@@ -240,6 +240,10 @@ $(document).ready(function(){
 			$("#" + get_id).addClass("active");
 			close_member_area(".close");
 
+			validate_register("#register-form");
+			validate_login("#log-in-form");
+			validate_forgot("#fg-pass-form");
+
 			$(".forgot-pass").click(function(){
 				$("#forgot-pass").addClass("active");
 				close_member_area(".close");
@@ -282,6 +286,146 @@ $(document).ready(function(){
 
 	}
 
+	var validate_forgot = function(param){
+		$(param).validate({
+			rules: {
+				"email": {
+					required: true,
+					email: true
+				}
+			},
+			submitHandler: function(form) {
+				$(param).find(".submit").addClass("loading");
+				$(param + " .submit").find("input").attr("disabled","");
+				$(form).ajaxSubmit({
+					type: "POST",
+					success: function(data){
+						if(data.success == 0){
+					 		$(param).siblings(".alert-box").fadeIn();
+					 		$(param).siblings(".alert-box").find("p").append(data.error[0]);
+					 		$(param + " .submit").find("input").attr("disabled",false);
+					 		$(param).find(".submit").removeClass("loading");
+					 	}else{
+					 		$(param + " .submit").find("input").attr("disabled",false);
+					 		$(param).find(".submit").removeClass("loading");
+					 		$(param).siblings(".alert-box").removeClass("error");
+					 		$(param).siblings(".alert-box").find("p").append("Forgot password berhasil, silahkan cek email anda untuk reset passowrd!");
+					 	}
+					}
+				});
+			}
+		});
+	}
+
+	var validate_login = function(param){
+		$(param).validate({
+			rules: {
+				"email": {
+					required: true,
+					email: true
+				},
+				"password": {
+					required: true
+				}
+			},
+			submitHandler: function(form) {
+				$(param).find(".submit").addClass("loading");
+				$(param + " .submit").find("input").attr("disabled","");
+				$(form).ajaxSubmit({
+					type: "POST",
+					success: function(data){
+						if(data.success == 0){
+					 		$(param).siblings(".alert-box").fadeIn();
+					 		$(param).siblings(".alert-box").find("p").append(data.error[0]);
+					 		$(param + " .submit").find("input").attr("disabled",false);
+					 		$(param).find(".submit").removeClass("loading");
+					 	}else{
+					 		$(param + " .submit").find("input").attr("disabled",false);
+					 		$(param).find(".submit").removeClass("loading");
+					 		$(param).siblings(".alert-box").removeClass("error");
+					 		$(param).siblings(".alert-box").find("p").append("Anda Berhasil Login!");
+					 		setTimeout(function(){
+					 			window.location.reload();
+					 		}, 1500);
+					 	}
+					}
+				});
+			}
+		});
+	}
+
+	var validate_register = function(param){
+		$(param).validate({
+			rules: {
+				"first_name": {
+					required: true
+				},
+				"last_name": {
+					required: true
+				},
+				"address": {
+					required: true
+				},
+				"city": {
+					required: true
+				},
+				"postal_code": {
+					required: true,
+					number: true
+				},
+				"email": {
+					required : true,
+					email    : true
+				},
+				"password": {
+					required: true
+				},
+				"re_password": {
+					required: true,
+					equalTo: '.pass'
+				},
+				"phone": {
+					required: true,
+					number: true,
+					minlength: 5,
+					maxlength: 10
+				}
+				,
+				"mobile_phone": {
+					required: true,
+					number: true,
+					minlength: 5,
+					maxlength: 10
+				}
+			},
+			submitHandler: function(form) {
+				$("#register").find(".submit").addClass("loading");
+				$("#register .submit").find("input").attr("disabled","");
+				$(form).ajaxSubmit({
+					type: "POST",
+					success: function(data){
+						console.log(data);
+
+						if(data.success == 0){
+					 		$("#register").find(".alert-box").fadeIn();
+					 		$("#register").find(".alert-box p").append(data.error[0]);
+					 		$("#register .submit").find("input").attr("disabled",false);
+					 		$("#register").find(".submit").removeClass("loading");
+					 	}else{
+					 		$("#register .submit").find("input").attr("disabled",false);
+					 		$("#register").find(".submit").removeClass("loading");
+					 		$("#register").find(".alert-box").removeClass("error");
+					 		$("#register").find(".alert-box p").append("Anda Berhasil Registrasi, silahkan Login!");
+					 		setTimeout(function(){
+					 			window.location.reload();
+					 		}, 1500);
+					 	}
+					}
+				});
+			}
+		});
+	}
+
 	function INIT(){
 		//initial(".sidebar", "nav.fix");
 		//window_resize(".sidebar","nav.fix");
@@ -295,7 +439,7 @@ $(document).ready(function(){
 
 		about_detail(".item");
 
-		member_area(".member a");
+		member_area(".member a.register, .member a.login");
 
 		acordion_menu(".acordion span");
 
