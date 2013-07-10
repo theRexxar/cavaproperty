@@ -10,6 +10,9 @@
         <script src="../../assets/js/vendor/jquery.tinycarousel.js"></script>
         <script src="../../assets/js/vendor/jquery.carousel.js"></script>
         <script src="../../assets/js/vendor/jquery.colorbox.js"></script>
+        <script src="../../assets/js/vendor/jquery.ui.core.js"></script>
+        <script src="../../assets/js/vendor/jquery.ui.widget.js"></script>
+        <script src="../../assets/js/vendor/jquery.ui.datepicker.js"></script>
         <script src="../../assets/js/plugins.js"></script>
         <script src="../../assets/js/main.js"></script>
 

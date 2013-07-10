@@ -432,13 +432,23 @@ $(document).ready(function(){
 			if(option != ""){
 				$("#finder-form").find(".default, .active").fadeOut();
 				$("#finder-form .active").removeClass("active");
+				$("#finder-form .submit").fadeOut();
 				setTimeout(function(){
 					$("#finder-form").find("." + option).addClass("active").fadeIn();
+					$("#finder-form .submit").fadeIn();
 				}, 500);
-					
-				
+			}else{
+				$("#finder-form .submit").fadeOut().fadeIn(500);
+				$("#finder-form").find(".active").fadeOut();
+				$("#finder-form").find(".default").fadeIn();
 			}
 		});
+	}
+
+	var select_disable = function(param){
+		$(param).click(function(){
+			alert("Please Choose Type Property First");
+		})
 	}
 
 	function INIT(){
@@ -463,6 +473,8 @@ $(document).ready(function(){
 		verticalScroll(".container-article");
 
 		finder_select("#type-property");
+
+		select_disable("select.disabled");
 		//DIS_R_CLICK(BASE_URL);
 	}
 
