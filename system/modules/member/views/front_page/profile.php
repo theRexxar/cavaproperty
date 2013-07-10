@@ -22,20 +22,18 @@
 						</a>
 					</p>
 
-					<?php if(! empty($property_list) && $user->property_type != "") : ?>
+					<?php if(! empty($related_property)) : ?>
 					<div class="left mt20">
 						<h5>RELATED LISTING</h5>
 						<div class="thumbnail">
 							<ul class="">
-							<?php foreach($property_list AS $property_lists) : ?>
-								<?php if($property_lists->related_property == "1") : ?>
+							<?php foreach($related_property AS $related_property_list) : ?>
 								<li class="">
-									<a href="<?php echo base_url().'project/detail/'.$property_lists->slug_developer.'/'.$property_lists->slug; ?>">
-										<span><?php echo $property_lists->title; ?> <small>+ MORE DETAIL</small></span>
+									<a href="<?php echo base_url().'project/detail/'.$related_property_list->slug_developer.'/'.$related_property_list->slug; ?>">
+										<span><?php echo $related_property_list->title; ?> <small>+ MORE DETAIL</small></span>
 									</a>
-									<img src="<?php echo base_url().'files/large/'.$property_lists->image_id.'/200/200/fit' ?>" alt="">
+									<img src="<?php echo base_url().'files/large/'.$related_property_list->image_id.'/200/200/fit' ?>" alt="">
 								</li>
-								<?php endif; ?>
 							<?php endforeach; ?>
 							</ul>
 						</div>
@@ -49,7 +47,7 @@
 		<div class="columns nine end ml10 bgwhite">
 			<nav>
 				<span class="text-lg f17">BASIC INFORMATION</span>
-				<a href="<?php echo base_url()."member/schedule"; ?>" class="f17">LISTING INFORMATION</a>
+				<a href="<?php echo base_url()."member/listing"; ?>" class="f17">LISTING INFORMATION</a>
 			</nav>
 
 			<div id="update-profile" class="member-area bgwhite update-profile">
@@ -58,14 +56,9 @@
 			        <div>
 			    	   <?php echo validation_errors(); ?>
 			        </div>
-			    <?php elseif($message != "") : ?>
-	                <!-- success message --> 
-	                <div>
-			    	   <?php echo $message; ?>
-			        </div>
 	            <?php endif; ?> 
 
-				<form action="<?php echo base_url().'member/profile' ?>" class="form" method="post">
+				<form action="<?php echo base_url().'member/submit_edit_profile' ?>" class="form" method="post">
 					<input type="hidden" name="user_id" value="<?php echo $user->id; ?>">
 
 					<div class="block titles">
@@ -216,14 +209,14 @@
 						</div>
 					</div>
 
-					<div class="block">
+					<!--<div class="block">
 						<label for="">Property</label>
 						<div class="input">
 							<?php foreach($property_type AS $types) : ?>
 							<input type="checkbox" name="property_type[]" value="<?php echo $types->id ?>" <?php echo !empty($user->property_type) && in_array($types->id, $user_types) ? 'checked="checked"': ''; ?> > <?php echo $types->title ?><br>
 							<?php endforeach; ?>
 						</div>
-					</div>
+					</div>-->
 
 					<div class="block">
 						<label for=""></label>

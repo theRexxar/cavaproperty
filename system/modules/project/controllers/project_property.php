@@ -16,6 +16,7 @@ class project_property extends Admin_Controller {
 		$this->load->model('project_type_model');
 		$this->load->model('project_developer_model');
 		$this->load->model('project_location_model');
+		$this->load->model('project_city_model');
 		$this->load->model('marketing/marketing_model');
 		$this->lang->load('project_property');
 		
@@ -118,6 +119,8 @@ class project_property extends Admin_Controller {
 			foreach($location as $record)
 			{
 				$data["location"][$record->id] = $record;
+
+				$data["location"][$record->id]->city = $this->project_city_model->order_by('title','asc')->find_all_by('project_city.location_id', $record->id);
 			}
 		}  
 
@@ -259,8 +262,10 @@ class project_property extends Admin_Controller {
 			foreach($location as $record)
 			{
 				$data["location"][$record->id] = $record;
+
+				$data["location"][$record->id]->city = $this->project_city_model->order_by('title','asc')->find_all_by('project_city.location_id', $record->id);
 			}
-		} 
+		}  
 
 		$marketing = $this->marketing_model->order_by('name','asc')->find_all();
 		if (is_array($marketing) && count($marketing)) 
@@ -454,7 +459,7 @@ class project_property extends Admin_Controller {
 		
 		$this->form_validation->set_rules('type_id','Type','required|trim|xss_clean|is_numeric|max_length[11]');
 		$this->form_validation->set_rules('developer_id','Developer','required|trim|xss_clean|is_numeric|max_length[11]');
-		$this->form_validation->set_rules('location_id','Location','required|trim|xss_clean|is_numeric|max_length[11]');
+		$this->form_validation->set_rules('city_id','City','required|trim|xss_clean|is_numeric|max_length[11]');
 		$this->form_validation->set_rules('marketing_id','Marketing Agent','required|trim|xss_clean|is_numeric|max_length[11]');
 		$this->form_validation->set_rules('title','Title','required|trim|xss_clean|max_length[255]|callback__check_title['.$id.']');
 		$this->form_validation->set_rules('slug', 'Slug', 'required|trim|xss_clean|max_length[255]|alpha_dot_dash|callback__check_slug['.$id.']');
@@ -468,6 +473,7 @@ class project_property extends Admin_Controller {
 		$this->form_validation->set_rules('vimeo', 'Vimeo ID', 'trim|xss_clean|max_length[255]|');
 		$this->form_validation->set_rules('image_id','Image','required|trim');
 		$this->form_validation->set_rules('highlight', 'Highlight', 'required|trim|xss_clean|max_length[255]');
+		$this->form_validation->set_rules('status[]', 'Status', 'required|trim|xss_clean');
         
         $this->form_validation->set_error_delimiters('<p>', '</p>');
 
@@ -478,13 +484,14 @@ class project_property extends Admin_Controller {
 
 		// make sure we only pass in the fields we want
         
+		$status 		= $this->input->post('status');
 		$images 		= $this->input->post('images');
 		$caption 		= $this->input->post('caption');
 		
 		$data = array();
 		$data['type_id']          	  	= $this->input->post('type_id');
 		$data['developer_id']          	= $this->input->post('developer_id');
-		$data['location_id']          	= $this->input->post('location_id');
+		$data['city_id']          		= $this->input->post('city_id');
 		$data['marketing_id']          	= $this->input->post('marketing_id');
 		$data['title']                	= $this->input->post('title');
 		$data['address']          		= $this->input->post('address');
@@ -505,6 +512,18 @@ class project_property extends Admin_Controller {
 		else
 		{
 			$data['bedroom']          	= $this->input->post('bedroom');
+		}
+
+		if(! empty($status))
+		{
+			if(count($status) == 1)
+			{
+				$data['status'] 		= $status[0];
+			}
+			else
+			{
+				$data['status'] 		= "all";
+			}
 		}
 
 
