@@ -31,7 +31,7 @@ html{
 
 }
 
-.columns.five{width: 360px;}
+.columns.five{width: 360px; z-index: 0}
 .columns.eleven{width: 900px;}
 
 a{
@@ -424,14 +424,17 @@ header{
 
 	&.contact{
 		width: 200px;
-
-		article p{
-			cursor: pointer;
-		}
+		text-align: center;
 	}
 
 	img{
 		min-height: 360px;
+
+		&.ui-datepicker-trigger{
+			min-height: auto !important;
+			margin-bottom: 10px;
+			cursor: pointer;
+		}
 	}
 
 	&.video{
@@ -494,9 +497,8 @@ header{
 
 		p{
 			text-align: center;
-			padding-top: 20px;
 			margin-bottom: 10px;
-			background: url(../images/icon/calendar.png) no-repeat top center;
+			
 		}
 
 		a, span{

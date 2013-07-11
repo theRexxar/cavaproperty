@@ -451,6 +451,21 @@ $(document).ready(function(){
 		})
 	}
 
+	// make schedule to the sales
+
+	var schedule = function(param){
+		$(param).datepicker({
+			beforeShow: function(input, inst){
+			    inst.dpDiv.css({marginTop: -input.offsetHeight + 'px', marginLeft: input.offsetWidth + 'px'});
+			},
+			showOn: 'button', 
+			buttonImage: BASE_URL +'/assets/images/icon/calendar.png', 
+			buttonImageOnly: true,
+			showOtherMonths: true,
+      		selectOtherMonths: true
+		});
+	}
+
 	function INIT(){
 		//initial(".sidebar", "nav.fix");
 		//window_resize(".sidebar","nav.fix");
@@ -475,6 +490,9 @@ $(document).ready(function(){
 		finder_select("#type-property");
 
 		select_disable("select.disabled");
+
+		schedule(".schedule");
+
 		//DIS_R_CLICK(BASE_URL);
 	}
 

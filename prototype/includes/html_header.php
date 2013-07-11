@@ -1,4 +1,4 @@
-<?php $base_url = 'http://'.$_SERVER['SERVER_NAME'].'/cava/prototype'; ?>
+<?php $base_url = 'http://'.$_SERVER['SERVER_NAME'].'/cavaproperty/'; ?>
 
 
 <!DOCTYPE html>
@@ -18,6 +18,10 @@
         <link rel="stylesheet" href="../../assets/stylesheets/normalize.css">
         <link rel="stylesheet" href="../../assets/stylesheets/app.css">
         <script src="../../assets/js/vendor/modernizr-2.6.2.min.js"></script>
+
+        <script type="text/javascript">
+            var BASE_URL = '<?php echo $base_url ?>';
+        </script>
     </head>
     <body>
         <div id="main" role="main">
