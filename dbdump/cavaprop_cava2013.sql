@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.5
+-- version 3.5.8
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 25, 2013 at 07:54 PM
--- Server version: 5.1.68-cll-lve
+-- Generation Time: Jul 11, 2013 at 02:17 PM
+-- Server version: 5.5.32-cll-lve
 -- PHP Version: 5.3.17
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `cv_activities` (
   `created_on` datetime NOT NULL,
   `deleted` tinyint(12) NOT NULL DEFAULT '0',
   PRIMARY KEY (`activity_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=516 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=536 ;
 
 --
 -- Dumping data for table `cv_activities`
@@ -611,7 +611,27 @@ INSERT INTO `cv_activities` (`activity_id`, `user_id`, `activity`, `module`, `cr
 (512, 2, 'Updated record with ID: 2 : 103.2.146.20', 'career', '2013-05-01 11:14:25', 0),
 (513, 2, 'Updated record with ID: 1 : 103.2.146.20', 'career', '2013-05-01 11:17:32', 0),
 (514, 2, 'Updated record with ID: 1 : 103.2.146.20', 'career', '2013-05-01 12:26:45', 0),
-(515, 2, 'logged in from: 118.99.82.37', 'users', '2013-05-15 13:39:02', 0);
+(515, 2, 'logged in from: 118.99.82.37', 'users', '2013-05-15 13:39:02', 0),
+(516, 2, 'logged in from: 139.0.4.146', 'users', '2013-06-03 19:37:43', 0),
+(517, 2, 'logged in from: 110.138.103.139', 'users', '2013-06-04 09:56:07', 0),
+(518, 2, 'Deleted record with ID: 3 : 110.138.103.139', 'career', '2013-06-04 09:56:48', 0),
+(519, 2, 'Deleted record with ID: 2 : 110.138.103.139', 'career', '2013-06-04 09:57:25', 0),
+(520, 2, 'Created record with ID: 9 : 110.138.103.139', 'project', '2013-06-04 10:38:26', 0),
+(521, 2, 'Created record with ID: 10 : 110.138.103.139', 'project', '2013-06-04 10:45:30', 0),
+(522, 2, 'Updated record with ID: 10 : 110.138.103.139', 'project', '2013-06-04 10:51:40', 0),
+(523, 2, 'Updated record with ID: 3 : 110.138.103.139', 'marketing', '2013-06-04 11:19:37', 0),
+(524, 2, 'Updated record with ID: 4 : 110.138.103.139', 'marketing', '2013-06-04 11:20:02', 0),
+(525, 2, 'logged in from: 139.192.32.190', 'users', '2013-06-09 20:21:05', 0),
+(526, 2, 'Updated record with ID: 10 : 139.192.32.190', 'project', '2013-06-09 20:26:43', 0),
+(527, 2, 'Updated record with ID: 10 : 139.192.32.190', 'project', '2013-06-09 20:28:44', 0),
+(528, 2, 'logged in from: 110.138.103.139', 'users', '2013-06-27 12:08:04', 0),
+(529, 2, 'Created record with ID: 10 : 110.138.103.139', 'project', '2013-06-27 12:11:15', 0),
+(530, 2, 'Updated record with ID: 10 : 110.138.103.139', 'project', '2013-06-27 12:11:42', 0),
+(531, 2, 'Created record with ID: 11 : 110.138.103.139', 'project', '2013-06-27 12:24:09', 0),
+(532, 2, 'logged in from: 202.137.25.130', 'users', '2013-07-09 15:31:57', 0),
+(533, 2, 'logged in from: 110.138.103.139', 'users', '2013-07-11 09:36:06', 0),
+(534, 2, 'Created record with ID: 33 : 110.138.103.139', 'news', '2013-07-11 09:41:39', 0),
+(535, 2, 'Updated record with ID: 33 : 110.138.103.139', 'news', '2013-07-11 09:43:50', 0);
 
 -- --------------------------------------------------------
 
@@ -694,8 +714,8 @@ CREATE TABLE IF NOT EXISTS `cv_career` (
 
 INSERT INTO `cv_career` (`id`, `title`, `summary`, `description`, `qualification`, `slug`, `deleted`, `created_on`, `modified_on`) VALUES
 (1, 'Marketing Executive', '<p>\n -</p>', '<p>\n -</p>', '<ol>\n <li>\n  <div background="" div="" font-size:="" marketing="" memerlukan="" tidak="">\n   Any background of marketing experience&nbsp;are welcome to apply</div>\n </li>\n <li>\n  <div background="" div="" font-size:="" marketing="" memerlukan="" tidak="">\n   Minimum&nbsp;S1 from any major university</div>\n </li>\n <li>\n  <div background="" div="" font-size:="" marketing="" memerlukan="" tidak="">\n   <span 27="" background="" berusia="" div="" font-size:="" marketing="" max="" memerlukan="" min="" pendidikan="" span="" tidak="">Maximum age: 27 years old</span></div>\n </li>\n <li>\n  <div 27="" berusia="" div="" font-size:="" max="">\n   Fluent in English both oral and written</div>\n </li>\n <li>\n  <div berpenampilan="" div="" font-size:="">\n   Good looking and interactive</div>\n </li>\n <li>\n  <div berpenampilan="" div="" font-size:="">\n   Good communication and interpersonal skills</div>\n </li>\n</ol>\n<div berpenampilan="" div="" font-size:="">\n Submit CV &amp; Photo to career@cavaproperty.com</div>\n<p>\n &nbsp;</p>', 'marketing-executive', 0, '2013-04-14 23:03:49', '2013-05-01 12:26:45'),
-(2, 'Junior Accounting / Finance', '<p>\n -</p>', '<p>\n -</p>', '<ol>\n <li>\n  <div 1="" berpengalaman="" div="" font-size:="">\n   Minimum 1 year&nbsp;work experience</div>\n </li>\n <li>\n  <div 1="" berpengalaman="" div="" font-size:="">\n   Minimum S1 Accounting</div>\n </li>\n <li>\n  <div 1="" berpengalaman="" div="" font-size:="">\n   Maximum age: 25&nbsp;years old</div>\n </li>\n <li>\n  <div 25="" berusia="" div="" font-size:="" maximum="">\n   Fluent in English both oral and written</div>\n </li>\n <li>\n  Good interpersonal skill</li>\n</ol>\n<p>\n <span a="" color:="" cv="" font-size:="" href="mailto:career@cavaproperty.com" photo="" submit="" target="_blank">Submit CV &amp; Photo to career@cavaproperty.com</span></p>', 'junior-accounting-finance', 0, '2013-04-14 23:04:49', '2013-05-01 11:14:25'),
-(3, 'Senior Accounting / Finance', '<p>\n -</p>', '<p>\n -</p>', '<ol>\n <li>\n  <div 5="" div="" experience="" font-size:="" min="">\n   Minimum 5 years work experience</div>\n </li>\n <li>\n  <div 5="" div="" experience="" font-size:="" min="">\n   Minimum S1 Accounting</div>\n </li>\n <li>\n  <div 30="" div="" font-size:="" max="" usia="">\n   Maximum age: 30 years old</div>\n </li>\n <li>\n  <div 30="" div="" font-size:="" max="" usia="">\n   Fluent in English both oral and written</div>\n </li>\n <li>\n  Good interpersonal skill</li>\n</ol>\n<p>\n <span a="" color:="" cv="" font-size:="" href="mailto:career@cavaproperty.com" photo="" submit="" target="_blank">Submit CV &amp; Photo to career@cavaproperty.com</span></p>', 'senior-accounting-finance', 0, '2013-04-14 23:05:49', '2013-05-01 11:13:03');
+(2, 'Junior Accounting / Finance', '<p>\n -</p>', '<p>\n -</p>', '<ol>\n <li>\n  <div 1="" berpengalaman="" div="" font-size:="">\n   Minimum 1 year&nbsp;work experience</div>\n </li>\n <li>\n  <div 1="" berpengalaman="" div="" font-size:="">\n   Minimum S1 Accounting</div>\n </li>\n <li>\n  <div 1="" berpengalaman="" div="" font-size:="">\n   Maximum age: 25&nbsp;years old</div>\n </li>\n <li>\n  <div 25="" berusia="" div="" font-size:="" maximum="">\n   Fluent in English both oral and written</div>\n </li>\n <li>\n  Good interpersonal skill</li>\n</ol>\n<p>\n <span a="" color:="" cv="" font-size:="" href="mailto:career@cavaproperty.com" photo="" submit="" target="_blank">Submit CV &amp; Photo to career@cavaproperty.com</span></p>', 'junior-accounting-finance', 1, '2013-04-14 23:04:49', '2013-05-01 11:14:25'),
+(3, 'Senior Accounting / Finance', '<p>\n -</p>', '<p>\n -</p>', '<ol>\n <li>\n  <div 5="" div="" experience="" font-size:="" min="">\n   Minimum 5 years work experience</div>\n </li>\n <li>\n  <div 5="" div="" experience="" font-size:="" min="">\n   Minimum S1 Accounting</div>\n </li>\n <li>\n  <div 30="" div="" font-size:="" max="" usia="">\n   Maximum age: 30 years old</div>\n </li>\n <li>\n  <div 30="" div="" font-size:="" max="" usia="">\n   Fluent in English both oral and written</div>\n </li>\n <li>\n  Good interpersonal skill</li>\n</ol>\n<p>\n <span a="" color:="" cv="" font-size:="" href="mailto:career@cavaproperty.com" photo="" submit="" target="_blank">Submit CV &amp; Photo to career@cavaproperty.com</span></p>', 'senior-accounting-finance', 1, '2013-04-14 23:05:49', '2013-05-01 11:13:03');
 
 -- --------------------------------------------------------
 
@@ -714,7 +734,7 @@ CREATE TABLE IF NOT EXISTS `cv_contact_mail` (
   `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `cv_contact_mail`
@@ -725,7 +745,9 @@ INSERT INTO `cv_contact_mail` (`id`, `name`, `email`, `subject`, `message`, `del
 (2, 'Andhika', 'andhikanovandi@gmail.com', 'test', 'test', 0, '2013-04-18 11:45:01', '0000-00-00 00:00:00'),
 (3, 'reynolds', 'reynoldsdarmadi@gmail.com', 'testing', 'testing', 0, '2013-04-25 20:35:30', '0000-00-00 00:00:00'),
 (4, 'sisca afriany sari', 'sisca.a.sari@gmail.com', 'brochure n pricelist izzara n cassamora', 'Dear Sir/ Madam,\n\nI would like to know more about the izzara apartment n cassamora units, would you pls send me their brochures n pricelists? \n\nThanks a lot', 0, '2013-05-24 10:37:42', '0000-00-00 00:00:00'),
-(5, 'Denny', 'denny@pthree.co.id', 'Kerjasama Project Property Villatel @ Nusa 2 Bali & Condotel @ Benoa Bali', 'Kepada Yth.\nCAVA PROPERTY\ndi tempat.\n\nSalam Sejahtera,\n\nSaya Denny Planner & Event Marketing Manager  dari PT. Prima Propertindo Group, mau menawarkan kerjasama penjualan project yang sedang kami bangun.\n\nApabila tertarik dan bisa bertemu untuk berkenalan mohon saya di hubungi kembali di alamat :\n\nWISMA ADR PLUIT\nJln. Pluit Raya 1 No. 1 Jakarta Utara 14440\n021 669308 / 0856 888 4959\ndenny@pthree.co.id\nwww.primapropertindogroup.com\n\nDemikian email dari saya atas perhatiannya saya ucapkan terima kasih.', 0, '2013-05-24 13:37:41', '0000-00-00 00:00:00');
+(5, 'Denny', 'denny@pthree.co.id', 'Kerjasama Project Property Villatel @ Nusa 2 Bali & Condotel @ Benoa Bali', 'Kepada Yth.\nCAVA PROPERTY\ndi tempat.\n\nSalam Sejahtera,\n\nSaya Denny Planner & Event Marketing Manager  dari PT. Prima Propertindo Group, mau menawarkan kerjasama penjualan project yang sedang kami bangun.\n\nApabila tertarik dan bisa bertemu untuk berkenalan mohon saya di hubungi kembali di alamat :\n\nWISMA ADR PLUIT\nJln. Pluit Raya 1 No. 1 Jakarta Utara 14440\n021 669308 / 0856 888 4959\ndenny@pthree.co.id\nwww.primapropertindogroup.com\n\nDemikian email dari saya atas perhatiannya saya ucapkan terima kasih.', 0, '2013-05-24 13:37:41', '0000-00-00 00:00:00'),
+(6, 'Edward Kusma', 'edward.kusma@incasi.co.id', 'Project in Bekasi', 'Dear Cava,\n\nWe are looking for a project marketing company to market our 40 ha project in Bekasi. Can somebody call me back at 081316888811. thanks\n\nEdward', 0, '2013-06-26 09:17:24', '0000-00-00 00:00:00'),
+(7, 'senta', 'dsentadwina4@gmail.com', 'property  bali', 'saya  tertarik untuk  rumah  yang di  uluwatu  bali\n\ntolong  hubungin  saya  di nomor rumah  62-21-7355069\n\nthx\n\nsenta  jakarta', 0, '2013-06-27 15:50:40', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -825,7 +847,7 @@ CREATE TABLE IF NOT EXISTS `cv_file` (
   `date_added` int(11) NOT NULL DEFAULT '0',
   `sort` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=266 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=276 ;
 
 --
 -- Dumping data for table `cv_file`
@@ -1090,7 +1112,17 @@ INSERT INTO `cv_file` (`id`, `folder_id`, `user_id`, `type`, `name`, `filename`,
 (262, 4, 2, 'i', 'Setiabudi Sky Garden 2.jpg', 'Setiabudi_Sky_Garden_21.jpg', '', '.jpg', 'image/jpeg', 900, 360, 177, 0, 0),
 (263, 4, 2, 'i', 'Setiabudi Sky Garden 1.jpg', 'Setiabudi_Sky_Garden_1.jpg', '', '.jpg', 'image/jpeg', 900, 360, 180, 0, 0),
 (264, 4, 2, 'i', 'Setiabudi Sky Garden.jpg', 'Setiabudi_Sky_Garden.jpg', '', '.jpg', 'image/jpeg', 900, 360, 130, 0, 0),
-(265, 4, 2, 'i', 'RasunaSkyGarden_Playground_R4.jpg', 'RasunaSkyGarden_Playground_R4.jpg', '', '.jpg', 'image/jpeg', 900, 360, 226, 0, 0);
+(265, 4, 2, 'i', 'RasunaSkyGarden_Playground_R4.jpg', 'RasunaSkyGarden_Playground_R4.jpg', '', '.jpg', 'image/jpeg', 900, 360, 226, 0, 0),
+(266, 4, 2, 'i', 'Cavana', '130313_townhouse_ext_QR03C-.jpg', '', '.jpg', 'image/jpeg', 1280, 720, 184, 0, 0),
+(267, 2, 2, 'i', 'Cavana1', 'kolase_bathroom.jpg', '', '.jpg', 'image/jpeg', 1883, 995, 309, 0, 0),
+(268, 4, 2, 'i', 'Cavana2', 'kolase_bedroom.jpg', '', '.jpg', 'image/jpeg', 1883, 995, 283, 0, 0),
+(269, 4, 2, 'i', 'Cavana3', 'kolase_exterior.jpg', '', '.jpg', 'image/jpeg', 2000, 1000, 387, 0, 0),
+(270, 4, 2, 'i', 'Cavana4', 'kolase_livingroom.jpg', '', '.jpg', 'image/jpeg', 1883, 995, 326, 0, 0),
+(271, 4, 2, 'i', '...', 'W_Singapore_-_Sentosa_Cove_entrance.jpg', '', '.jpg', 'image/jpeg', 800, 534, 150, 0, 0),
+(272, 4, 2, 'i', 'W sing 1', 'prop-img-full-h9s2hfwn-zkl03in1n9c0.jpg', '', '.jpg', 'image/jpeg', 700, 600, 83, 0, 0),
+(273, 4, 2, 'i', 'W sing 2', 'w-singapore-5.jpg', '', '.jpg', 'image/jpeg', 960, 738, 209, 0, 0),
+(274, 4, 2, 'i', 'W sing 2', 'w-singapore-51.jpg', '', '.jpg', 'image/jpeg', 960, 738, 209, 0, 0),
+(275, 4, 2, 'i', 'W sing', 'W_sing.jpg', '', '.jpg', 'image/jpeg', 879, 1240, 339, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1141,7 +1173,7 @@ CREATE TABLE IF NOT EXISTS `cv_login_attempts` (
   `login` varchar(50) NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -1168,8 +1200,8 @@ CREATE TABLE IF NOT EXISTS `cv_marketing_agent` (
 INSERT INTO `cv_marketing_agent` (`id`, `name`, `phone`, `email`, `deleted`, `created_on`, `modified_on`) VALUES
 (1, 'Agent 1', '+62812 3456 789', 'agent1@cavaproperty.com', 1, '2013-04-14 19:35:09', '0000-00-00 00:00:00'),
 (2, 'Agent 2', '+62812 3456 789', 'agent2@cavaproperty.com', 1, '2013-04-14 19:36:09', '0000-00-00 00:00:00'),
-(3, 'Reynolds Darmadi', '081381404040', 'Reynolds.Darmadi@cavaproperty.com', 0, '2013-04-22 16:10:39', '0000-00-00 00:00:00'),
-(4, 'Benigna Maria', '081381404040', 'Benigna.Maria@cavaproperty.com', 0, '2013-04-22 16:11:44', '0000-00-00 00:00:00'),
+(3, 'Reynolds Darmadi', '08128280280', 'Reynolds.Darmadi@cavaproperty.com', 0, '2013-04-22 16:10:39', '2013-06-04 11:19:37'),
+(4, 'Benigna Maria', '081513600524', 'Benigna.Maria@cavaproperty.com', 0, '2013-04-22 16:11:44', '2013-06-04 11:20:02'),
 (5, 'Vanessa Natalia', '0812 1063 103 / 021 25558994', 'vanessa@cavaproperty.com', 0, '2013-04-22 16:12:28', '2013-04-26 14:02:22'),
 (6, 'Laura Loe', '0815 8356 568 / 021 2555 8994', 'laura.loe@cavaproperty.com', 0, '2013-04-22 16:13:07', '2013-04-26 13:57:48'),
 (7, 'David Tan', '0817 999 199 / 021 2555 8994', 'david@cavaproperty.com', 0, '2013-04-22 16:13:39', '2013-04-26 13:50:04'),
@@ -1195,7 +1227,7 @@ CREATE TABLE IF NOT EXISTS `cv_news` (
   `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34 ;
 
 --
 -- Dumping data for table `cv_news`
@@ -1233,7 +1265,8 @@ INSERT INTO `cv_news` (`id`, `title`, `description`, `image_id`, `slug`, `month`
 (29, 'setiabudi sky garden agent gathering november 2011', '<p>\n Setiabudi Sky Garden Agent Gathering Friday, November 11th, 2011 02.00 pm onwards</p>\n<p>\n Sky lounge Setiabudi Residences Apartment, Tower 2, 30th floor</p>', 189, 'setiabudi-sky-garden-agent-gathering-november-2011', 11, 2011, '2011-11-01', 0, '2013-04-22 15:25:27', '2013-04-22 15:29:48'),
 (30, 'Soft Launching Serenia Hills Townhouse at Lebak Bulus 10 2011', '<p>\n We invite all prospective buyers to come and join our Soft Launching event on the project&rsquo;s site (Villa Delima).</p>\n<p>\n The event will be held on 9 October 2011 at 10.00 am &ndash; 04.00 pm. All prospective buyers are required to bring invitation,</p>\n<p>\n please call us for further information at +62 815 13600524</p>', 195, 'soft-launching-serenia-hills-townhouse-at-lebak-bulus-10-2011', 11, 2011, '2011-11-01', 0, '2013-04-22 15:29:33', '0000-00-00 00:00:00'),
 (31, 'Setiabudi Sky Garden Show Unit', '<p>\n Marketing Gallery and show unit for Setiabudi Sky Garden now is open for public. Prospective buyers can find 3 show units consist of 2 units of 2 bedroom and 1 unit of 3 bedroom.</p>\n<p>\n The marketing gallery is open for public from Monday &ndash; Sunday on 09.00 &ndash; 19.00.</p>\n<p>\n For show unit visit, please make your appointment at 0812-8280280</p>', 206, 'setiabudi-sky-garden-show-unit', 10, 2011, '2011-10-01', 0, '2013-04-22 15:33:03', '2013-04-22 15:33:36'),
-(32, 'Landscape concept at Serenia Hills', '<p>\n Landscape concept at Serenia Hills. For further information,</p>\n<p>\n please call: +62-815-13600524 +62-813-14511111 +62-857-15761617 +62-817-0818124 For further information</p>\n<p>\n &nbsp;</p>', 209, 'landscape-concept-at-serenia-hills', 10, 2011, '2011-10-01', 0, '2013-04-22 15:36:01', '0000-00-00 00:00:00');
+(32, 'Landscape concept at Serenia Hills', '<p>\n Landscape concept at Serenia Hills. For further information,</p>\n<p>\n please call: +62-815-13600524 +62-813-14511111 +62-857-15761617 +62-817-0818124 For further information</p>\n<p>\n &nbsp;</p>', 209, 'landscape-concept-at-serenia-hills', 10, 2011, '2011-10-01', 0, '2013-04-22 15:36:01', '0000-00-00 00:00:00'),
+(33, 'Invitation The Residences at W, Sentosa Cove, Singapore', '<p>\n <img alt="W sing" class="admin-image" src="{ site_url }files/thumb/275/200" /></p>\n<p>\n Invitation for The Residence at W Singapore.</p>\n<p>\n Please come and visit our exhibition at Bromo Room, Grand Hyatt on 13-14 July 2013</p>', 275, 'invitation-the-residences-at-w-sentosa-cove-singapore', 7, 2013, '2013-07-11', 0, '2013-07-11 09:41:39', '2013-07-11 09:43:50');
 
 -- --------------------------------------------------------
 
@@ -1534,7 +1567,7 @@ CREATE TABLE IF NOT EXISTS `cv_project_developer` (
   `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `cv_project_developer`
@@ -1548,7 +1581,9 @@ INSERT INTO `cv_project_developer` (`id`, `title`, `description`, `highlight`, `
 (5, 'Serenia Hills', '<p>\r\n Serenia Hills</p>', 'no', 'serenia-hills', 0, '2013-04-20 15:38:52', '2013-04-24 10:56:16'),
 (6, 'Alila Bintan', '<p>\n Alila Bintan</p>', 'no', 'alila-bintan', 0, '2013-04-20 15:39:04', '2013-04-26 11:40:17'),
 (7, 'Harris', '<p>\r\n Harris</p>', 'no', 'harris', 0, '2013-04-20 15:39:17', '0000-00-00 00:00:00'),
-(8, 'Alila Uluwatu', '<p>\n Alila Uluwatu</p>', 'no', 'alila-uluwatu', 0, '2013-04-25 13:48:18', '2013-04-26 11:40:26');
+(8, 'Alila Uluwatu', '<p>\n Alila Uluwatu</p>', 'no', 'alila-uluwatu', 0, '2013-04-25 13:48:18', '2013-04-26 11:40:26'),
+(9, 'Cavana', '', 'no', 'cavana', 0, '2013-06-04 10:38:26', '0000-00-00 00:00:00'),
+(10, 'W Sentosa Cove', '<p>\n W Sentosa Cove</p>', 'no', 'w-sentosa-cove', 0, '2013-06-27 12:11:15', '2013-06-27 12:11:42');
 
 -- --------------------------------------------------------
 
@@ -1604,7 +1639,7 @@ CREATE TABLE IF NOT EXISTS `cv_project_property` (
   `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `cv_project_property`
@@ -1619,7 +1654,9 @@ INSERT INTO `cv_project_property` (`id`, `type_id`, `developer_id`, `location_id
 (6, 1, 1, 2, 7, 'One Balmoral', 'Balmoral Road (District 10)', '6157m2', 4, '<p>\n Developed by Hong Leong Holdings Ltd, twin blocks of 12 storey apartments comprising of 91 apartments to be built on an approximately 6157m2 land. It offers a choice of 1, 2, 3 and 4 bedrooms, equipped with imported finishings.</p>\n<p>\n One Balmoral is strategically located at Balmoral Road (District 10) and within the greenery of neighbouring Goodwood Hill. One of Singapore&rsquo;s premier schools, Raffles Girls&#39; Secondary School, is a stone&rsquo;s throw away and you will be spoilt for choice with the private clubs available nearby, namely The Pines, the Tanglin Club and the American Club. One Balmoral is just minutes&rsquo; drive away from ION Orchard and the shopping belt of Orchard Road.</p>\n<p>\n Currently, the piling is near completion and anticipated handing over is March 2015.</p>\n<p>\n Brief details on the project as follows:</p>\n<ul>\n <li>\n  Total no. of units &ndash; 91</li>\n <li>\n  Twin towers of 12 storeys plus attic</li>\n <li>\n  Car park lots &ndash; 103, inclusive of 2 handicap lots at basement and first storey</li>\n <li>\n  Facilities &ndash; Lap pool, clubhouse, meditation garden, gym, BBQ pavilions amongst others.</li>\n</ul>', '', '<p>\n <span  rgb(99, 99, 99); font-family: arial, ''Helvetica Neue'', Helvetica, Helvetica, sans-serif; line-height: 18px;">For more detail, please contact David Tan 0817 999 199 / 021 2555 8994 or email david@cavaproperty.com</span></p>', '', '', 220, 'yes', 'one-balmoral', 0, '2013-04-22 13:20:14', '2013-04-26 13:52:08'),
 (7, 4, 6, 1, 7, 'Alila Bintan', 'Pulau Bintan, Riau', '14.4–hectare', 2, '<p>\n Alila Villas Bintan presents the opportunity to own your dream home within an integrated residential, resort and village community on the beautiful Indonesian island of Bintan, in a secure zone along the northern coast. Imagine a tropical retreat less than an hour from Singapore, a world away from the busy metropolis yet close enough to be your regular weekend home.</p>\n<p>\n At its scenic hillside location, meandering down towards sandy white beaches, this 14.4&ndash;hectare gated development comprises of 12 beach&ndash;front residences available for sale, and a luxury 52&ndash;villa boutique hotel, designed and constructed to EarthCheck&#39;s rigorous environmental standards. In addition, another four hectares are devoted to a village with a museum, gallery, spa, and retail and dining locations. An unprecedented concept, Alila Villas Bintan is centered on celebrating Asia&#39;s rich arts and cultural heritage, superb hospitality and contemporary lifestyle.</p>', '', '<p>\n <span  rgb(99, 99, 99); font-family: arial, ''Helvetica Neue'', Helvetica, Helvetica, sans-serif; line-height: 18px;">For more detail, please contact David Tan 0817 999 199 / 021 2555 8994 or email david@cavaproperty.com</span></p>', '', '', 226, 'yes', 'alila-bintan', 0, '2013-04-25 13:26:33', '2013-04-26 13:54:15'),
 (8, 4, 8, 1, 7, 'Alila Uluwatu', 'Uluwatu, Bali', '', 2, '<p>\n Designed by award-winning architectural firm, WOHA, in accordance with Green Globe 21 standards, the resort is a stunning expression of contemporary sustainable design inspired by the savannah landscape that is unique to this region of Bali.</p>\n<p 15px="" 40px="" align="justify" alila="" and="" background-color:="" border:="" boutique="" by="" color:="" complete="" comprises="" development="" facilities.="" five-star="" font-family:="" font-size:="" guest="" hotel="" hotels="" is="" it="" leading="" line-height:="" maintained="" managed="" management="" of="" one-bedroom="" outline:="" p="" padding:="" private="" professionally="" residential="" resort="" s="" the="" three-bedroom="" villas="">\n Indulge in the creative culinary delights of CIRE fine dining restaurant, plus the authentic Indonesian and Balinese cuisine in The Warung. Discover pure relaxation at the spectacular clifftop pool and sunset cabana, and in the sanctuary of Spa Alila. Relish the attention of a personal butler to cater to your every whim.</p>', '', '<p>\n <span  rgb(99, 99, 99); font-family: arial, ''Helvetica Neue'', Helvetica, Helvetica, sans-serif; line-height: 18px;">For more detail, please contact David Tan 0817 999 199 / 021 2555 8994 or email david@cavaproperty.com</span></p>', '', '', 230, 'yes', 'alila-uluwatu', 0, '2013-04-25 13:52:58', '2013-04-26 13:55:09'),
-(9, 3, 4, 1, 8, 'Casamora', 'Jagakarsa, Jakarta Selatan', '', 2, '<p>\n Choose from two house designs,&nbsp;Tranquil living in a shaded woodland.&nbsp;Our green philosophy creates a healthy living environment. Well laid out walk-ways and a well shaded jogging track.&nbsp;Escape the hustle and bustle of city life and the ever increasing pollution.</p>\n<p>\n Various shops, cafes and restaurants are planned nearby to fulfill the different needs of each family member.&nbsp;A SAFE INVESTMENT.</p>\n<p>\n Cinere - Jagorawi. Easy access to Jakarta&#39;s growing business areas in south Jakarta,&nbsp;a strategic investment go hand-in-hand.</p>', '', '<p>\n <span  rgb(99, 99, 99); font-family: arial, ''Helvetica Neue'', Helvetica, Helvetica, sans-serif; line-height: 18px;">For more detail, please contact Andi 0817 0818 124</span><span  rgb(99, 99, 99); font-family: arial, ''Helvetica Neue'', Helvetica, Helvetica, sans-serif; line-height: 18px;">&nbsp;/ 021 2555 8994 or email andi@cavaproperty.com</span></p>', '', '', 238, 'yes', 'casamora', 0, '2013-04-26 07:00:52', '2013-04-26 14:04:40');
+(9, 3, 4, 1, 8, 'Casamora', 'Jagakarsa, Jakarta Selatan', '', 2, '<p>\n Choose from two house designs,&nbsp;Tranquil living in a shaded woodland.&nbsp;Our green philosophy creates a healthy living environment. Well laid out walk-ways and a well shaded jogging track.&nbsp;Escape the hustle and bustle of city life and the ever increasing pollution.</p>\n<p>\n Various shops, cafes and restaurants are planned nearby to fulfill the different needs of each family member.&nbsp;A SAFE INVESTMENT.</p>\n<p>\n Cinere - Jagorawi. Easy access to Jakarta&#39;s growing business areas in south Jakarta,&nbsp;a strategic investment go hand-in-hand.</p>', '', '<p>\n <span  rgb(99, 99, 99); font-family: arial, ''Helvetica Neue'', Helvetica, Helvetica, sans-serif; line-height: 18px;">For more detail, please contact Andi 0817 0818 124</span><span  rgb(99, 99, 99); font-family: arial, ''Helvetica Neue'', Helvetica, Helvetica, sans-serif; line-height: 18px;">&nbsp;/ 021 2555 8994 or email andi@cavaproperty.com</span></p>', '', '', 238, 'yes', 'casamora', 0, '2013-04-26 07:00:52', '2013-04-26 14:04:40'),
+(10, 3, 9, 1, 3, 'Cavana', 'Madrasah - Jakarta Selatan', '', 4, '', 'Under Construction', '<p>\n &nbsp;</p>\n<p>\n Cavana is an exclusive residence, which is located in Kemang, an important and well known area in southern Jakarta.</p>\n<p>\n Designed with a modern concept, making Cavanaa comfort residence that has an exquisite taste. Without leaving a touch of elegance in every aspect, Cavana presents an architectural design that maximizes open space.</p>', '', '', 266, 'yes', 'cavana', 0, '2013-06-04 10:45:30', '2013-06-09 20:28:44'),
+(11, 1, 10, 2, 7, 'The Residence at W - Sentosa Cove', '1, 3, 5, 7, 9, 11, 13 Ocean Way, Sentosa Cove, District 4', '1227 - 6297 sqft', 0, '<p>\n Bar, swimming pool, WET Bar, Whenever / Wherever Services, SPA, Restaurant</p>\n<p>\n &nbsp;</p>', '', '<p>\n Bedroom : 2 Bedroom (1.227-1.292 sqft)</p>\n<p>\n 3 Bedroom (1.625 - 2.616 sqft)</p>\n<p>\n 4 Bedroom (2.067 - 2.486 sqft)</p>\n<p>\n Penthouses (2.217 - 6.297 sqft)</p>\n<p>\n &nbsp;</p>\n<p>\n Ultimate, Iconic, Glamorous. The Residence at W Singapore - Sentosa Cove is a Coveted address integrated with W Singapore- Sentosa Cove and Quayside Isle.</p>\n<p>\n Developed by Singapore&#39;s property pioneer since 1963, City Development Limited (CDL).Listed in the Singapore Exchange (SGX). CDL&#39;s attention to detail and quality is proven with an award winning track record for high standards of excellence and innovation.</p>\n<p>\n All homes features the finest accessory names : Hansgrohe Axor Stark X Collection, Catalano and Halfro fixtures, GIRA lighting systems, Miele Cooker Hood, Hob, Oven, Dishwaser, Wine Cooler, Refrigerator &amp; Coffee Maker</p>\n<p>\n With the best neighbours on Sentosa Island and Singapore&#39;s Central Bussiness District just 10 minutes away, nothing is out of reach.</p>\n<p>\n Retreat, Recharge, Release. The Residences at W Singapore-Sentosa Cove is your escape from the unusual (W lounge, WET@, FIRE, THE GYM, YATCH BERTH, SUNKEN LOUNGE, W KIDS, CHANGING/STEAM ROOMS, BUGGY SERVICE.</p>', '', '', 271, 'yes', 'the-residence-at-w-sentosa-cove', 0, '2013-06-27 12:24:09', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1634,7 +1671,7 @@ CREATE TABLE IF NOT EXISTS `cv_project_property_gallery` (
   `file_id` int(11) NOT NULL,
   `caption` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=70 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=76 ;
 
 --
 -- Dumping data for table `cv_project_property_gallery`
@@ -1681,7 +1718,13 @@ INSERT INTO `cv_project_property_gallery` (`id`, `property_id`, `file_id`, `capt
 (66, 1, 261, 'Setiabudi Sky Garden'),
 (67, 1, 263, 'Setiabudi Sky Garden'),
 (68, 1, 264, 'Setiabudi Sky Garden'),
-(69, 1, 265, 'Setiabudi Sky Garden - Playground');
+(69, 1, 265, 'Setiabudi Sky Garden - Playground'),
+(70, 10, 267, ''),
+(71, 10, 268, ''),
+(72, 10, 269, ''),
+(73, 10, 270, ''),
+(74, 11, 272, ''),
+(75, 11, 273, '');
 
 -- --------------------------------------------------------
 
@@ -2036,7 +2079,7 @@ CREATE TABLE IF NOT EXISTS `cv_users` (
 
 INSERT INTO `cv_users` (`id`, `role_id`, `email`, `username`, `password_hash`, `reset_hash`, `salt`, `last_login`, `last_ip`, `created_on`, `deleted`, `banned`, `ban_message`, `reset_by`, `display_name`, `display_name_changed`, `timezone`, `language`, `active`, `activate_hash`) VALUES
 (1, 1, 'andhikanovandi@gmail.com', 'andhika', 'd8db64dfb1062b9200c4e57c51d0b736d5f57692', NULL, 'Seqx4Rm', '2013-04-29 18:30:55', '103.2.146.20', '0000-00-00 00:00:00', 0, 0, NULL, NULL, 'Andhika Novandi Patria', NULL, 'UM6', 'english', 1, ''),
-(2, 2, 'admin@bonfire.com', 'admin', '874911bfdde3730f29bcca311401e09f47fb2d4f', NULL, 'uQaZOiU', '2013-05-15 13:39:02', '118.99.82.37', '2013-04-07 09:59:19', 0, 0, NULL, NULL, 'Administrator', NULL, 'UM6', 'english', 1, '');
+(2, 2, 'admin@bonfire.com', 'admin', '874911bfdde3730f29bcca311401e09f47fb2d4f', NULL, 'uQaZOiU', '2013-07-11 09:36:06', '110.138.103.139', '2013-04-07 09:59:19', 0, 0, NULL, NULL, 'Administrator', NULL, 'UM6', 'english', 1, '');
 
 -- --------------------------------------------------------
 
@@ -2051,6 +2094,14 @@ CREATE TABLE IF NOT EXISTS `cv_user_cookies` (
   `created_on` datetime NOT NULL,
   KEY `token` (`token`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `cv_user_cookies`
+--
+
+INSERT INTO `cv_user_cookies` (`user_id`, `token`, `created_on`) VALUES
+(2, 'Yf63MbMtOkKezAFA705I1dBHbSnQLPVsZlf688dlH2xGtwsrlI8OdqAAhvz7PN4n4orAgw4ZfAP4w9UZ2J1Sd3USkSrWJ3ye7jM5H5nVKCkUUWjnDajZ0fqibbv29ix9', '2013-06-05 11:12:21'),
+(2, 'fMs8w3ETXduCxyetZ6rK66Itd5SWJaYb9SDclt0W3w6z8gUq8ohjJagkcN6xHkzXCZjE92ity3Wpp0GdV8YasY47Y3szJKBHJRGy0bht3TQN2E6BKwV0nf1Vw1YckqyX', '2013-07-11 14:01:58');
 
 -- --------------------------------------------------------
 
