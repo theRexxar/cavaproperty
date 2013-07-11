@@ -456,7 +456,7 @@ $(document).ready(function(){
 	var schedule = function(param){
 		$(param).datepicker({
 			beforeShow: function(input, inst){
-			    inst.dpDiv.css({marginTop: -input.offsetHeight + 'px', marginLeft: input.offsetWidth + 'px'});
+			    inst.dpDiv.css({marginTop: '-100px', marginLeft: '-220px'});
 			},
 			showOn: 'button', 
 			buttonImage: BASE_URL +'/assets/images/icon/calendar.png', 
