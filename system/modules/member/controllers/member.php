@@ -36,6 +36,7 @@ class member extends Front_Controller {
 	public function profile()
 	{
 		$this->load->model('member_model');  
+		$this->load->model('member_listing_model');  
 		$this->load->model('project/project_type_model');  
 		$this->load->model('project/project_property_model');  
 
@@ -45,21 +46,9 @@ class member extends Front_Controller {
 
 		if($data_user)
 		{
-			$user = $this->member_model->find_by('id', $data_user['user_id']);
-
-			if($user)
-			{
-				$user_types = explode(",", $user->property_type);
-
-				$property_list = $this->project_property_model->find_all();
-				foreach($property_list AS $property_lists)
-				{
-					if(in_array($property_lists->type_id, $user_types))
-					{
-						$property_lists->related_property = "1";
-					}
-				}
-			}
+			$user 				= $this->member_model->find_by('id', $data_user['user_id']);
+			$user_listing 		= $this->member_listing_model->find_by('member_id', $user->id);
+			$related_property 	= $this->project_property_model->search_listing($user_listing->type_id,$user_listing->status,$user_listing->city_id,$user_listing->bedroom);
 		}
 		else
 		{
@@ -70,27 +59,10 @@ class member extends Front_Controller {
 		$property_type = $this->project_type_model->find_all();		
 
 
-		$message = "";
-
-		if ($this->input->post('edit_profile'))
-		{
-			if ($this->submit_edit_profile())
-			{
-				$message = "Edit Profile Success";
-			}
-			else
-			{
-				Template::set_message('Edit Profile Failed' . $this->member_model->error, 'error');
-			}
-		}
-
-
 		$vars = array(
-						'user' 				=> $user,
-						'user_types' 		=> $user_types,
-						'property_type' 	=> $property_type,
-						'property_list' 	=> $property_list,
-						'message'   		=> $message,
+						'user' 					=> $user,
+						'property_type' 		=> $property_type,
+						'related_property'   	=> $related_property,
 					);
 
 		//print_r($vars);exit();
@@ -98,6 +70,62 @@ class member extends Front_Controller {
 		Template::set('data', $vars);
         Template::set('toolbar_title', $user->first_name." ".$user->last_name." ~ Member Profile");
         Template::set_view('front_page/profile');
+		Template::render();
+	}
+
+	//--------------------------------------------------------------------
+
+
+
+	/*
+		Method: listing()
+
+		Displays listing page.
+	*/
+	public function listing()
+	{
+		$this->load->model('member_model');  
+		$this->load->model('member_listing_model');  
+		$this->load->model('project/project_type_model');  
+		$this->load->model('project/project_location_model');  
+		$this->load->model('project/project_city_model');  
+		$this->load->model('project/project_property_model');  
+
+		$data_user = $this->session->userdata('data_user');
+
+		$user = "";
+
+		if($data_user)
+		{
+			$user 				= $this->member_model->find_by('id', $data_user['user_id']);
+			$user_listing 		= $this->member_listing_model->find_by('member_id', $user->id);
+			$related_property 	= $this->project_property_model->search_listing($user_listing->type_id,$user_listing->status,$user_listing->city_id,$user_listing->bedroom);
+		}
+		else
+		{
+			show_404();
+		}
+
+
+		$property_type 		= $this->project_type_model->order_by('title','asc')->find_all();	
+		$property_location 	= $this->project_location_model->order_by('title','asc')->find_all();	
+		$property_city 		= $this->project_city_model->order_by('title','asc')->find_all();		
+
+
+		$vars = array(
+						'user' 					=> $user,
+						'user_listing' 			=> $user_listing,
+						'property_type' 		=> $property_type,
+						'property_location' 	=> $property_location,
+						'property_city' 		=> $property_city,
+						'related_property'   	=> $related_property,
+					);
+
+		//print_r($vars);exit();
+
+		Template::set('data', $vars);
+        Template::set('toolbar_title', $user->first_name." ".$user->last_name." ~ Member Listing");
+        Template::set_view('front_page/listing');
 		Template::render();
 	}
 
@@ -374,6 +402,78 @@ class member extends Front_Controller {
 		else //kalo gak ada error alias form submit sukses
         { 
 			$return['success']   = 1;
+			$return['message']   = "Edit Profile Success";
+		}        
+        
+        $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode($return));          
+	}
+	
+	//--------------------------------------------------------------------
+
+
+
+	/*
+		Method: submit_edit_listing()
+		
+		Submit edit listing form.
+	*/
+	public function submit_edit_listing() 
+	{
+		$this->load->model('member_listing_model');  
+        
+		$this->load->library('form_validation');  
+        $this->form_validation->CI =& $this;
+
+        $error 		= array();  
+
+        $id_member 	= $this->input->post('user_id');
+        
+        $this->form_validation->set_rules('type_id','Type','required|trim|xss_clean|is_numeric|max_length[11]');
+        $this->form_validation->set_rules('status','Status','required|trim|xss_clean|max_length[255]');
+        $this->form_validation->set_rules('location_id','Location','required|trim|xss_clean|is_numeric|max_length[11]');
+        $this->form_validation->set_rules('city_id','City','required|trim|xss_clean|is_numeric|max_length[11]');
+        $this->form_validation->set_rules('bedroom','Bedroom','required|trim|xss_clean|is_numeric|max_length[11]');
+        
+        $this->form_validation->set_error_delimiters('', '');
+        
+        if ($this->form_validation->run() === FALSE)
+		{
+			$error[] = $this->form_validation->error_string();
+		}
+		else
+		{
+			$data = array();
+			$data['member_id'] 		= $id_member;
+			$data['type_id'] 		= $this->input->post('type_id');
+			$data['status'] 		= $this->input->post('status');
+			$data['location_id']	= $this->input->post('location_id');
+			$data['city_id'] 		= $this->input->post('city_id');
+			$data['bedroom']		= $this->input->post('bedroom');
+
+
+			$check = $this->member_listing_model->find_by('member_id', $id_member);
+			if($check)
+			{
+				$this->member_listing_model->update_where('member_id', $id_member, $data);
+			}
+			else
+			{
+				$this->member_listing_model->insert($data);
+			}
+		}
+
+        
+        if(!empty($error)) //kondisi kalo ada error alias form submit gagal
+        { 
+			$return['success']   = 0;
+			$return['error']     = $error;
+		}
+		else //kalo gak ada error alias form submit sukses
+        { 
+			$return['success']   = 1;
+			$return['message']   = "Edit Listing Success";
 		}        
         
         $this->output

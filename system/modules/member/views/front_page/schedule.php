@@ -46,8 +46,7 @@
 
 		<div class="columns nine end ml10 bgwhite">
 			<nav>
-				<a href="<?php echo base_url()."member/profile"; ?>" class="f17">BASIC INFORMATION</a>
-				<span class="text-lg f17">LISTING INFORMATION</span>
+				<span class="text-lg f17">MY SCHEDULE</span>
 			</nav>
 
 			<article>

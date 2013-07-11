@@ -77,16 +77,20 @@ $id = isset($project['id']) ? $project['id'] : '';
             </div>
         </div>
 
-        <!-- Location -->
-        <div class="control-group <?php echo form_error('location_id') ? 'error' : ''; ?>">
-            <?php echo form_label('Location'. lang('bf_form_label_required'), 'location_id', array('class' => "control-label") ); ?>
+        <!-- City -->
+        <div class="control-group <?php echo form_error('city_id') ? 'error' : ''; ?>">
+            <?php echo form_label('City'. lang('bf_form_label_required'), 'city_id', array('class' => "control-label") ); ?>
             <div class='controls'>
-                <select name="location_id" id="location_id" no_parent="1" style="width: 230px;" >
+                <select name="city_id" id="city_id" no_parent="1" style="width: 230px;" >
                     <?php foreach($location AS $location_list) : ?>
-                    <option value="<?php echo $location_list->id; ?>" <?php echo isset($project['location_id']) && $location_list->id == $project['location_id'] ? 'selected="selected"' : ""; ?> ><?php echo $location_list->title; ?></option>
+                    <optgroup label="<?php echo $location_list->title; ?>">
+                        <?php foreach($location_list->city AS $city_list) : ?>
+                        <option value="<?php echo $city_list->id; ?>" <?php echo isset($project['city_id']) && $city_list->id == $project['city_id'] ? 'selected="selected"' : ""; ?> ><?php echo $city_list->title; ?></option>
+                        <?php endforeach; ?>
+                    </optgroup>
                     <?php endforeach; ?>
                 </select>
-                <span class="help-inline"><?php echo form_error('location_id'); ?></span>
+                <span class="help-inline"><?php echo form_error('city_id'); ?></span>
             </div>
         </div>
 
@@ -216,6 +220,23 @@ $id = isset($project['id']) ? $project['id'] : '';
                     <span>No</span>
                 </label>
                 <span class="help-inline"><?php echo form_error('highlight'); ?></span>
+            </div>
+        </div>
+
+        <!-- Status -->
+        <div class="control-group <?php echo form_error('status[]') ? 'error' : ''; ?>">
+            <?php echo form_label('Status'. lang('bf_form_label_required'), 'status', array('class' => "control-label") ); ?>
+            <div class='controls'>
+                <label class="checkbox">
+                    <input type="checkbox" name="status[]" id="status" value="buy" <?php echo ($project[status] == "buy" OR $project[status] == "all") ? "checked" : "" ?>>
+                    Buy
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" name="status[]" id="status" value="rent" <?php echo ($project[status] == "rent" OR $project[status] == "all") ? "checked" : "" ?>>
+                    Rent
+                </label>
+
+                <span class="help-inline"><?php echo form_error('status[]'); ?></span>
             </div>
         </div>
         
