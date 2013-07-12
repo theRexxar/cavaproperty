@@ -6,10 +6,12 @@
     <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.easing.js"></script>
     <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.mousewheel.js"></script>
     <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.jscrollpane.min.js"></script>
-    <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.isotope.min.js"></script>
+    
     <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.tinycarousel.js"></script>
     <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.carousel.js"></script>
-    <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.colorbox.js"></script>
+    <script src="<?php echo config_item('assets_url'); ?>js/mylibs/jquery.validate.min.js"></script>
+    <script src="<?php echo config_item('assets_url'); ?>js/mylibs/jquery.form.js"></script>
+    
     <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.ui.core.js"></script>
     <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.ui.widget.js"></script>
     <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.ui.datepicker.js"></script>

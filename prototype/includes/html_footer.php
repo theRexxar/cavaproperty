@@ -6,10 +6,12 @@
         <script src="../../assets/js/vendor/jquery.easing.js"></script>
         <script src="../../assets/js/vendor/jquery.mousewheel.js"></script>
         <script src="../../assets/js/vendor/jquery.jscrollpane.min.js"></script>
-        <script src="../../assets/js/vendor/jquery.isotope.min.js"></script>
+        
         <script src="../../assets/js/vendor/jquery.tinycarousel.js"></script>
         <script src="../../assets/js/vendor/jquery.carousel.js"></script>
-        <script src="../../assets/js/vendor/jquery.colorbox.js"></script>
+        <script src="../../assets/js/mylibs/jquery.validate.min.js"></script>
+        <script src="../../assets/js/mylibs/jquery.form.js"></script>
+        
         <script src="../../assets/js/vendor/jquery.ui.core.js"></script>
         <script src="../../assets/js/vendor/jquery.ui.widget.js"></script>
         <script src="../../assets/js/vendor/jquery.ui.datepicker.js"></script>
