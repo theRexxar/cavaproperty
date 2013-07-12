@@ -95,6 +95,13 @@ class project extends Front_Controller {
 		$this->load->model('project_property_gallery_model');
 
 
+		$data_user 	= $this->session->userdata('data_user');
+		$user 		= "";
+		if($data_user)
+		{
+			$user = $this->member_model->find_by('id', $data_user['user_id']);
+		}
+
         $developer 		= $this->project_developer_model->find_by('slug', $cat_slug);
         $property_list 	= $this->project_property_model->order_by('created_on','desc')->find_all_by('project_property.developer_id', $developer->id);
 
@@ -105,6 +112,7 @@ class project extends Front_Controller {
         }
 
         $vars = array(
+						'user' 				=> $user,
 						'developer' 		=> $developer,
 						'property' 			=> $property,
 						'property_list' 	=> $property_list,
@@ -135,10 +143,10 @@ class project extends Front_Controller {
         $this->load->model('project/project_property_model');  
         
 
-        $marketing_id 	= $this->input->post('marketing_id');
-        $member_id 		= $this->input->post('member_id');
-        $property_id 	= $this->input->post('property_id');
-        $date 			= $this->input->post('date');
+        $marketing_id 	= $this->input->get('marketing_id');
+        $member_id 		= $this->input->get('member_id');
+        $property_id 	= $this->input->get('property_id');
+        $date 			= $this->input->get('date');
     	
         $data_user = $this->session->userdata('data_user');
 
