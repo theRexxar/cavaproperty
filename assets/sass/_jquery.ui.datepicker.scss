@@ -80,4 +80,12 @@
 		border: 1px solid #d0d4d9;
 		@include opacity(1);
 	}
+
+    .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
+        background: #16aa9a; color: #fff; 
+    }
+
+    .ui-datepicker-week-end, .ui-datepicker-week-end a{
+        color: #ff0000;
+    }
 }
