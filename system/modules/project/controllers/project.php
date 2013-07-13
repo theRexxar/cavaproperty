@@ -90,6 +90,7 @@ class project extends Front_Controller {
 	*/
 	public function property_detail($cat_slug=NULL,$slug=NULL)
 	{
+		$this->load->model('member/member_model');
 		$this->load->model('project_developer_model');
 		$this->load->model('project_property_model');
 		$this->load->model('project_property_gallery_model');
