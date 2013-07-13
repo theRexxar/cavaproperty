@@ -456,13 +456,17 @@ $(document).ready(function(){
 	var schedule = function(param){
 		$(param).datepicker({
 			beforeShow: function(input, inst){
-			    inst.dpDiv.css({marginTop: '-100px', marginLeft: '-220px'});
+			    inst.dpDiv.css({marginTop: '190px', marginLeft: '-180px'});
 			},
-			showOn: 'button', 
-			buttonImage: BASE_URL +'/assets/images/icon/calendar.png', 
-			buttonImageOnly: true,
-			showOtherMonths: true,
-      		selectOtherMonths: true
+			dateFormat        : 'yy-mm-dd',
+			showOn            : 'button', 
+			buttonImage       : BASE_URL +'/assets/images/icon/calendar.png', 
+			buttonImageOnly   : true,
+			showOtherMonths   : true,
+			selectOtherMonths : true,
+      		onSelect: function(){
+      			alert($(".schedule").val());
+      		}
 		});
 	}
 
