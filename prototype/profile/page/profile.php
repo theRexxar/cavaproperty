@@ -59,8 +59,8 @@
 
 		<div class="columns nine end ml10 bgwhite">
 			<nav>
-				<a href="" class="f17">BASIC INFORMATION</a>
-				<span class="text-lg f17">LISTING INFORMATION</span>
+				<a href="index.php" class="f17">BASIC INFORMATION</a>
+				<a href="listing.php" class="text-lg f17">LISTING INFORMATION</a>
 			</nav>
 
 			<div id="update-profile" class="member-area bgwhite update-profile">
@@ -155,7 +155,7 @@
 					</div>
 					<div class="block">
 						<label for=""></label>
-						<input type="submit" class="left mb20" value="submit">
+						<input type="submit" class="left mb20" value="Save">
 					</div>
 					
 				</form>

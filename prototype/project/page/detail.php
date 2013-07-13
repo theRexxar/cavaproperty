@@ -151,6 +151,7 @@
 					        
 					        <li class="contact">
 					        	<article>
+					        		<input type="hidden" id="date-pick" class="schedule">
 					        		<p>Make Appoinment <br>or Contact Our Agent</p>
 					        		<a href="" class="people">Riefky Sutedja</a>
 					        		<span class="">+6286281542</span>
