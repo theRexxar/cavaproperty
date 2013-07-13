@@ -111,7 +111,9 @@ class Search extends Front_Controller {
 		$this->load->model('project/project_type_model');
 		$this->load->model('project/project_location_model');
 
+	    $status       	= $this->input->get('status');
 	    $type       	= $this->input->get('type');
+	    $name       	= $this->input->get('name');
 	    $location       = $this->input->get('location');
 	    $bedroom     	= $this->input->get('bedroom');
 
@@ -131,7 +133,9 @@ class Search extends Front_Controller {
 	    }
 
         
+		$options['status']   		= $status;
 		$options['type']   			= $type_id->id;
+		$options['name']   			= $name;
 		$options['location']   		= $location_id->id;
 		$options['bedroom'] 		= $bedroom;
 		$options['bedroom_count'] 	= $bedroom_count;

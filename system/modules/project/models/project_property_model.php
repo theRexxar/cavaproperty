@@ -29,9 +29,9 @@ class Project_property_model extends BF_Model {
                             project_developer.id AS id_developer,
                             project_developer.title AS title_developer,
                             project_developer.slug AS slug_developer,
-                            project_location.id AS id_location,
-                            project_location.title AS title_location,
-                            project_location.slug AS slug_location,
+                            project_city.id AS id_city,
+                            project_city.title AS title_city,
+                            project_city.slug AS slug_city,
                             marketing_agent.id AS id_marketing,
                             marketing_agent.name AS name_marketing,
                             marketing_agent.phone AS phone_marketing,
@@ -41,7 +41,7 @@ class Project_property_model extends BF_Model {
 
         $this->db->join('project_type', 'project_property.type_id = project_type.id', 'left');
         $this->db->join('project_developer', 'project_property.developer_id = project_developer.id', 'left');
-        $this->db->join('project_location', 'project_property.location_id = project_location.id', 'left');
+        $this->db->join('project_city', 'project_property.city_id = project_city.id', 'left');
         $this->db->join('marketing_agent', 'project_property.marketing_id = marketing_agent.id', 'left');
         $this->db->where('project_property.deleted', '0');
 
@@ -59,9 +59,9 @@ class Project_property_model extends BF_Model {
                             project_developer.id AS id_developer,
                             project_developer.title AS title_developer,
                             project_developer.slug AS slug_developer,
-                            project_location.id AS id_location,
-                            project_location.title AS title_location,
-                            project_location.slug AS slug_location,
+                            project_city.id AS id_city,
+                            project_city.title AS title_city,
+                            project_city.slug AS slug_city,
                             marketing_agent.id AS id_marketing,
                             marketing_agent.name AS name_marketing,
                             marketing_agent.phone AS phone_marketing,
@@ -71,11 +71,51 @@ class Project_property_model extends BF_Model {
 
         $this->db->join('project_type', 'project_property.type_id = project_type.id', 'left');
         $this->db->join('project_developer', 'project_property.developer_id = project_developer.id', 'left');
-        $this->db->join('project_location', 'project_property.location_id = project_location.id', 'left');
+        $this->db->join('project_city', 'project_property.city_id = project_city.id', 'left');
         $this->db->join('marketing_agent', 'project_property.marketing_id = marketing_agent.id', 'left');
         $this->db->where('project_property.deleted', '0');
 
         return parent::find_by($field,$value);
+    }
+
+    public function search_listing($type_id,$status,$city_id,$bedroom)
+    {
+        if (empty($this->selects))
+        {
+            $this->db->select($this->table .'.*,
+                            project_developer.id AS id_developer,
+                            project_developer.title AS title_developer,
+                            project_developer.slug AS slug_developer,
+                            ');
+        }
+
+        $this->db->from('project_property');
+        $this->db->join('project_developer', 'project_property.developer_id = project_developer.id', 'left');
+
+        $this->db->where('type_id', $type_id);
+        $this->db->where('city_id', $city_id);
+
+        if($bedroom == "4")
+        {
+            $this->db->where('bedroom >', '3');
+        }
+        else
+        {
+            $this->db->where('bedroom', $bedroom);
+        }
+
+        $this->db->where('status', $status);
+
+        $query =  $this->db->get();
+
+        if ($query->num_rows() > 0)
+        {
+            return $query->result();
+        }
+        else
+        {
+            return FALSE;
+        }
     }
     
     public function count_all()

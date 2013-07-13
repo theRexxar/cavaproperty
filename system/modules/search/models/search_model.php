@@ -7,14 +7,14 @@ class Search_model extends CI_Model {
         $where = array(); 
 
         if(isset($options['bedroom']) && $options['bedroom'] != "") 
-            { 
-                switch($options['bedroom'])
-                {
-                    case '2'        : $bedroom_field  = 'project_property.bedroom'; break;
-                    case '3'        : $bedroom_field  = 'project_property.bedroom'; break;
-                    case '3plus'    : $bedroom_field  = 'project_property.bedroom >'; break;
-                }
+        { 
+            switch($options['bedroom'])
+            {
+                case '2'        : $bedroom_field  = 'project_property.bedroom'; break;
+                case '3'        : $bedroom_field  = 'project_property.bedroom'; break;
+                case '3plus'    : $bedroom_field  = 'project_property.bedroom >'; break;
             }
+        }
 
         if(isset($options['table'])) 
         { 
@@ -23,6 +23,10 @@ class Search_model extends CI_Model {
                 $this->db->select('project_property.*, project_developer.id AS id_developer, project_developer.title AS title_developer, project_developer.slug AS slug_developer');
                 $this->db->join('project_developer', 'project_property.developer_id = project_developer.id', 'left');
                 $this->db->where('project_property.deleted', '0');
+                if(isset($options['name']) && $options['name'] != "") 
+                {                     
+                    $this->db->where('match(cv_project_property.title) against('.$this->db->escape($options['name']).' IN BOOLEAN MODE)',NULL,false); 
+                }                            
                 if(isset($options['type']) && $options['type'] != "") 
                 { 
                     $this->db->where('project_property.type_id',$options['type']);
@@ -35,6 +39,7 @@ class Search_model extends CI_Model {
                 { 
                     $this->db->where($bedroom_field,$options['bedroom_count']);
                 }
+                $this->db->where('project_property.status',$options['status']);
             }
         }         
 

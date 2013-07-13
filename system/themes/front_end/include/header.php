@@ -49,7 +49,7 @@
                     $data_user  = $this->session->userdata('data_user');
                     if($data_user != "") : 
                 ?>
-				<li><a href="<?php echo base_url().'member/profile' ?>" class="register text-green"><strong><?php echo $data_user['name']; ?></strong></a></li>
+				<li><a href="<?php echo base_url().'member/profile' ?>" class="text-green"><strong><?php echo strtoupper($data_user['name']); ?></strong></a></li>
 				<li><a href="<?php echo base_url().'member/logout' ?>" class="">LOGOUT</a></li>
 				<?php else : ?>
 				<li><a href="" class="register">REGISTER</a></li>
@@ -58,7 +58,7 @@
 			</ul>
 		</nav>
 
-		<?php include('member.php'); ?>
+		<?php echo Modules::run('home/member_section'); ?>
 	</div>
 
 </header>

@@ -1,15 +1,32 @@
     </div>
     <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
     <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery-1.7.1.min.js"><\/script>')</script>-->
+    <?php if(isset($user->id) && !empty($user->id)) : ?>
+    <script type="text/javascript">
+        var member_id = '<?php echo $user->id ?>';
+        var marketing_id = '<?php echo $property->id_marketing; ?>';
+        var property_id = '<?php echo $property->id; ?>';
+
+        // URL -> ../project/set_calendar?marketing_id= &member_id= &property_id= &date=
+        // date = YYYY-MM-DD
+    </script>
+    <?php endif; ?>
+    
+
     <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery-1.7.1.min.js"></script>
     <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.flexslider.js"></script>
     <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.easing.js"></script>
     <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.mousewheel.js"></script>
     <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.jscrollpane.min.js"></script>
-    <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.isotope.min.js"></script>
+    
     <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.tinycarousel.js"></script>
     <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.carousel.js"></script>
-    <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.colorbox.js"></script>
+    <script src="<?php echo config_item('assets_url'); ?>js/mylibs/jquery.validate.min.js"></script>
+    <script src="<?php echo config_item('assets_url'); ?>js/mylibs/jquery.form.js"></script>
+    
+    <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.ui.core.js"></script>
+    <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.ui.widget.js"></script>
+    <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.ui.datepicker.js"></script>
     <script src="<?php echo config_item('assets_url'); ?>js/plugins.js"></script>
     <script src="<?php echo config_item('assets_url'); ?>js/main.js"></script>
 

@@ -50,6 +50,29 @@ class Home extends Front_Controller {
 	}
     
     //--------------------------------------------------------------------
+	
+
+	/*
+		Method: member_section()
+		
+		Displays member section.
+	*/
+	public function member_section()
+	{
+		$this->load->model('project/project_type_model');  
+
+        $property_type = $this->project_type_model->find_all();		
+
+        $vars = array(
+						'property_type'  => $property_type,
+					);
+        
+        //print_r($vars);exit();
+		
+        $this->load->view("front_page/_content/member_section", $vars);
+	}
+    
+    //--------------------------------------------------------------------
 }
 /* End of file home.php */
 /* Location: ./modules/home/controllers/home.php */

@@ -53,7 +53,7 @@
 
     					<?php 
 							echo anchor(SITE_AREA . '/content/member/detail/' . $record->id, 
-													'<i class="icon-trash icon-white"></i> <span>Detail</span>', 
+													'<span>Detail</span>', 
 													array('class' => 'btn confirm', 'style' => 'margin-bottom: 5px')
                                         ); 
     					?>

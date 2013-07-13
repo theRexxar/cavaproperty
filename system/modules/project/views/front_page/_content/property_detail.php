@@ -119,6 +119,7 @@
 					        
 					        <li class="contact">
 					        	<article>
+					        		<input type="hidden" id="date-pick" class="schedule">
 					        		<p>Make Appoinment <br>or Contact Our Agent</p>
 					        		<span><?php echo $property->name_marketing; ?></span>
 					        		<span class=""><?php echo $property->phone_marketing; ?></span>
