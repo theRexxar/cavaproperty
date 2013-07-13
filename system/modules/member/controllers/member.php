@@ -55,14 +55,32 @@ class member extends Front_Controller {
 			show_404();
 		}
 
-
 		$property_type = $this->project_type_model->find_all();		
+
+
+		if ($this->input->post('edit_profile'))
+		{
+			if ($this->submit_edit_profile())
+			{              
+                $message = "Edit Profile Success";
+
+                $page = base_url('member/profile');
+                $sec = "1.5";
+                header("Refresh: $sec; url=$page");
+			}
+			else
+			{
+				$error = validation_errors();
+			}
+		}
 
 
 		$vars = array(
 						'user' 					=> $user,
 						'property_type' 		=> $property_type,
 						'related_property'   	=> $related_property,
+						'message'   			=> $message,
+						'error'   				=> $error,
 					);
 
 		//print_r($vars);exit();
@@ -112,6 +130,23 @@ class member extends Front_Controller {
 		$property_city 		= $this->project_city_model->order_by('title','asc')->find_all();		
 
 
+		if ($this->input->post('edit_listing'))
+		{
+			if ($this->submit_edit_listing())
+			{              
+                $message = "Edit Listing Information Success";
+
+                $page = base_url('member/listing');
+                $sec = "1.5";
+                header("Refresh: $sec; url=$page");
+			}
+			else
+			{
+				$error = validation_errors();
+			}
+		}
+
+
 		$vars = array(
 						'user' 					=> $user,
 						'user_listing' 			=> $user_listing,
@@ -119,6 +154,8 @@ class member extends Front_Controller {
 						'property_location' 	=> $property_location,
 						'property_city' 		=> $property_city,
 						'related_property'   	=> $related_property,
+						'message'   			=> $message,
+						'error'   				=> $error,
 					);
 
 		//print_r($vars);exit();
@@ -339,11 +376,11 @@ class member extends Front_Controller {
         $this->form_validation->set_rules('password','Password','trim|xss_clean');			
 		$this->form_validation->set_rules('re_password','Password Confirmation','trim|xss_clean|matches[password]');
         
-        $this->form_validation->set_error_delimiters('', '');
+        $this->form_validation->set_error_delimiters('<p>', '</p>');
         
         if ($this->form_validation->run() === FALSE)
 		{
-			$error[] = $this->form_validation->error_string();
+			return FALSE;
 		}
 		else
 		{
@@ -391,23 +428,16 @@ class member extends Front_Controller {
 	        	$data_user['email'] 	= $data['email'];
 
 	            $this->session->set_userdata('data_user',$data_user);
+
+	            $return = $submit;
 	        }  
+	        else
+	        {
+	            $return = FALSE;
+	        }
 		}
         
-        if(!empty($error)) //kondisi kalo ada error alias form submit gagal
-        { 
-			$return['success']   = 0;
-			$return['error']     = $error;
-		}
-		else //kalo gak ada error alias form submit sukses
-        { 
-			$return['success']   = 1;
-			$return['message']   = "Edit Profile Success";
-		}        
-        
-        $this->output
-                ->set_content_type('application/json')
-                ->set_output(json_encode($return));          
+       return $return;
 	}
 	
 	//--------------------------------------------------------------------
@@ -436,11 +466,11 @@ class member extends Front_Controller {
         $this->form_validation->set_rules('city_id','City','required|trim|xss_clean|is_numeric|max_length[11]');
         $this->form_validation->set_rules('bedroom','Bedroom','required|trim|xss_clean|is_numeric|max_length[11]');
         
-        $this->form_validation->set_error_delimiters('', '');
+        $this->form_validation->set_error_delimiters('<p>', '</p>');
         
         if ($this->form_validation->run() === FALSE)
 		{
-			$error[] = $this->form_validation->error_string();
+			return FALSE;
 		}
 		else
 		{
@@ -456,29 +486,24 @@ class member extends Front_Controller {
 			$check = $this->member_listing_model->find_by('member_id', $id_member);
 			if($check)
 			{
-				$this->member_listing_model->update_where('member_id', $id_member, $data);
+				$submit = $this->member_listing_model->update_where('member_id', $id_member, $data);
 			}
 			else
 			{
-				$this->member_listing_model->insert($data);
+				$submit = $this->member_listing_model->insert($data);
 			}
-		}
 
-        
-        if(!empty($error)) //kondisi kalo ada error alias form submit gagal
-        { 
-			$return['success']   = 0;
-			$return['error']     = $error;
+			if($submit)
+	        {
+	            $return = $submit;
+	        }
+	        else
+	        {
+	            $return = FALSE;
+	        }
 		}
-		else //kalo gak ada error alias form submit sukses
-        { 
-			$return['success']   = 1;
-			$return['message']   = "Edit Listing Success";
-		}        
         
-        $this->output
-                ->set_content_type('application/json')
-                ->set_output(json_encode($return));          
+        return $return;         
 	}
 	
 	//--------------------------------------------------------------------

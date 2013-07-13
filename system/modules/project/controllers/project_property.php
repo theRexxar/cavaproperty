@@ -514,7 +514,7 @@ class project_property extends Admin_Controller {
 			$data['bedroom']          	= $this->input->post('bedroom');
 		}
 
-		if(! empty($status))
+		/*if(! empty($status))
 		{
 			if(count($status) == 1)
 			{
@@ -524,7 +524,9 @@ class project_property extends Admin_Controller {
 			{
 				$data['status'] 		= "all";
 			}
-		}
+		}*/
+
+		$data['status'] 				= $status;
 
 
 		if ($type == 'insert')

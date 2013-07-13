@@ -51,14 +51,22 @@
 			</nav>
 
 			<div id="update-profile" class="member-area bgwhite update-profile">
-				<?php if (validation_errors()) : ?>
-					<!-- alert message --> 
-			        <div>
-			    	   <?php echo validation_errors(); ?>
-			        </div>
-	            <?php endif; ?> 
+				<?php if (isset($error)) : ?>
+                    <!-- error message --> 
+                    <div class="alert-box secondary">
+		                <?php echo $error; ?>
+		                <a href="" class="close"></a>
+		            </div>
+                <?php endif; ?>
 
-				<form action="<?php echo base_url().'member/submit_edit_profile' ?>" class="form" method="post">
+                <?php if(! empty($message)) : ?>
+                     <!-- success message --> 
+                    <div class="alert-box success">
+		                <?php echo $message; ?>
+		            </div>
+                <?php endif; ?> 
+
+				<form action="<?php echo base_url().'member/profile' ?>" class="form" method="post">
 					<input type="hidden" name="user_id" value="<?php echo $user->id; ?>">
 
 					<div class="block titles">

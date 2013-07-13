@@ -200,14 +200,15 @@
 			</div>
 		</div>
 
-		<div class="block">
+		<!--<div class="block">
 			<label for="">Property</label>
 			<div class="input">
 				<?php foreach($property_type AS $types) : ?>
 				<input type="checkbox" name="property_type[]" value="<?php echo $types->id ?>" <?php echo isset($_POST['property_type']) && $_POST['property_type'] == $types->id ? 'checked="checked"': ''; ?> > <?php echo $types->title ?><br>
 				<?php endforeach; ?>
 			</div>
-		</div>
+		</div>-->
+		
 		<div class="block submit">
 			<input type="submit" class="right" value="submit">
 		</div>

@@ -224,7 +224,7 @@ $id = isset($project['id']) ? $project['id'] : '';
         </div>
 
         <!-- Status -->
-        <div class="control-group <?php echo form_error('status[]') ? 'error' : ''; ?>">
+        <!--<div class="control-group <?php echo form_error('status[]') ? 'error' : ''; ?>">
             <?php echo form_label('Status'. lang('bf_form_label_required'), 'status', array('class' => "control-label") ); ?>
             <div class='controls'>
                 <label class="checkbox">
@@ -235,7 +235,22 @@ $id = isset($project['id']) ? $project['id'] : '';
                     <input type="checkbox" name="status[]" id="status" value="rent" <?php echo ($project[status] == "rent" OR $project[status] == "all") ? "checked" : "" ?>>
                     Rent
                 </label>
+                <span class="help-inline"><?php echo form_error('status[]'); ?></span>
+            </div>
+        </div>-->
 
+        <!-- Status -->
+        <div class="control-group <?php echo form_error('status[]') ? 'error' : ''; ?>">
+            <?php echo form_label('Status'. lang('bf_form_label_required'), 'status', array('class' => "control-label") ); ?>
+            <div class='controls'>
+                <label class="radio">
+                    <input id="status" type="radio" name="status" value="buy" <?php echo $project[status] == "buy" ? "checked='checked'" : "" ?> >
+                    <span>Buy</span>
+                </label>
+                <label class="radio">
+                    <input id="status" type="radio" name="status" value="rent" <?php echo $project[status] == "rent" ? "checked='checked'" : "" ?> >
+                    <span>Rent</span>
+                </label>
                 <span class="help-inline"><?php echo form_error('status[]'); ?></span>
             </div>
         </div>
