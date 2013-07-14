@@ -454,10 +454,13 @@ $(document).ready(function(){
 	// make schedule to the sales
 
 	var schedule = function(param){
+		var dateToday = new Date();
+
 		$(param).datepicker({
 			beforeShow: function(input, inst){
-			    inst.dpDiv.css({marginTop: '190px', marginLeft: '-180px'});
+			    inst.dpDiv.css({marginTop: '190px', marginLeft: '-180px', 'height' : '360px'});
 			},
+			minDate			  : dateToday,
 			dateFormat        : 'yy-mm-dd',
 			showOn            : 'button', 
 			buttonImage       : BASE_URL +'/assets/images/icon/calendar.png', 
@@ -465,7 +468,32 @@ $(document).ready(function(){
 			showOtherMonths   : true,
 			selectOtherMonths : true,
       		onSelect: function(){
-      			alert($(".schedule").val());
+      			// alert($(".schedule").val());
+      			var choose_date = $(".schedule").val();
+      			
+      			
+      			if(member_id != 0){
+      				url = BASE_URL + 'project/set_calendar?marketing_id=' + marketing_id + '&member_id=' + member_id + '&property_id=' + property_id + '&date=' + choose_date;
+      				// URL -> ../project/set_calendar?marketing_id= &member_id= &property_id= &date=
+      				$.ajax({
+					  url: url,
+					  dataType : 'json',
+					  beforeSend : function() {
+					  	$("#carousel li.contact").addClass("loading");
+					  },
+					  success : function(data){
+					  	if(data.success == 1){
+					  		$("#carousel li.contact").removeClass("loading");
+					  		alert("Perimintaan jadwal anda sedang diproses, tunggu konfirmasinya lewat email");
+					  	}else{
+					  		$("#carousel li.contact").removeClass("loading");
+					  		alert(data.message);
+					  	}
+					  }
+					});
+      			}else{
+      				alert("Please register / login to make an appointment");
+      			}
       		}
 		});
 	}

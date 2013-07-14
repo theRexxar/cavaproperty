@@ -138,7 +138,7 @@ class project extends Front_Controller {
 	*/
 	public function set_calendar() 
 	{
-        $this->load->model('member_model');  
+        $this->load->model('member/member_model');  
         $this->load->model('marketing/marketing_model'); 
         $this->load->model('marketing/marketing_calendar_model'); 
         $this->load->model('project/project_property_model');  

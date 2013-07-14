@@ -31,7 +31,7 @@ html{
 
 }
 
-.columns.five{width: 360px; z-index: 0}
+.columns.five{width: 360px;}
 .columns.eleven{width: 900px;}
 
 a{
@@ -425,13 +425,17 @@ header{
 	&.contact{
 		width: 200px;
 		text-align: center;
+
+		&.loading{
+			background: #fff url(../images/preloader.gif) no-repeat center 60px;
+		}
 	}
 
 	img{
 		min-height: 360px;
 
 		&.ui-datepicker-trigger{
-			min-height: auto !important;
+			min-height: 10px;
 			margin-bottom: 10px;
 			cursor: pointer;
 		}

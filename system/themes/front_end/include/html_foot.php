@@ -9,7 +9,15 @@
 
         // URL -> ../project/set_calendar?marketing_id= &member_id= &property_id= &date=
         // date = YYYY-MM-DD
+        console.log(member_id, marketing_id, property_id);
     </script>
+    
+    <?php else : ?>
+    
+    <script type="text/javascript">
+        var member_id = 0;
+    </script>
+    
     <?php endif; ?>
     
 
