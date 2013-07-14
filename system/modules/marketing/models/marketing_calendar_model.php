@@ -46,6 +46,35 @@ class Marketing_calendar_model extends BF_Model {
         return parent::find_all();
     }
 
+    public function find_by($field,$value)
+    {
+        if (empty($this->selects))
+        {
+            $this->db->select($this->table .'.*,
+                            project_property.id AS id_property,
+                            project_property.title AS title_property,
+                            project_property.slug AS slug_property,
+                            marketing_agent.name AS name_marketing,
+                            marketing_agent.phone AS phone_marketing,
+                            marketing_agent.email AS email_marketing,
+                            member.title AS title_member,
+                            member.first_name AS first_name_member,
+                            member.last_name AS last_name_member,
+                            member.phone AS phone_member,
+                            member.mobile_phone AS mobile_phone_member,
+                            member.email AS email_member,
+                            ');
+        }
+
+        $this->db->join('project_property', 'marketing_calendar.property_id = project_property.id', 'left');
+        $this->db->join('marketing_agent', 'marketing_calendar.marketing_id = marketing_agent.id', 'left');
+        $this->db->join('member', 'marketing_calendar.member_id = member.id', 'left');
+
+        $this->db->where('marketing_calendar.deleted', '0');
+
+        return parent::find_by($field,$value);
+    }
+
     public function find_detail($id)
     {
         if (empty($this->selects))

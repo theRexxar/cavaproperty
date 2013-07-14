@@ -72,17 +72,14 @@
     					<br>
 
     					<?php 
-    						if($record->status == 'pending' OR $record->status == 'reject')
+    						if($record->status == 'pending')
     						{
     							echo anchor(SITE_AREA . '/content/marketing/marketing_calendar/confirm/' . $record->id, 
     												'<i class="icon-edit icon-white"></i> <span>Confirm</span>', 
     												array('class' => 'btn btn-warning', 'style' => 'margin-top: 5px;', "onclick" => "return confirm('".lang("marketing_confirm_confirm")."')")
 										);
-    						}
-    						
-    						if($record->status == 'pending' OR $record->status == 'confirm')
-    						{
-	    						echo anchor(SITE_AREA . '/content/marketing/marketing_calendar/reject/' . $record->id, 
+
+    							echo anchor(SITE_AREA . '/content/marketing/marketing_calendar/reject/' . $record->id, 
 	    												'<i class="icon-trash icon-white"></i> <span>Reject</span>', 
 	    												array('class' => 'btn btn-danger', 'style' => 'margin-top: 5px;', "onclick" => "return confirm('".lang("marketing_reject_confirm")."')")
 											);

@@ -54,7 +54,7 @@ class Marketing_calendar extends Admin_Controller {
 
 		$offset = $this->uri->segment(6);
 
-		$records = $this->marketing_calendar_model->limit($this->limit, $offset)->find_by_status('confirm');
+		$records = $this->marketing_calendar_model->order_by('date','asc')->limit($this->limit, $offset)->find_by_status('confirm');
 
                 
         // Pagination
@@ -458,6 +458,27 @@ class Marketing_calendar extends Admin_Controller {
 			{
 				// Log the activity
 				$this->activity_model->log_activity($this->auth->user_id(), lang('marketing_act_confirm_record').': ' . $id . ' : ' . $this->input->ip_address(), 'marketing');
+
+				$check_calendar = $this->marketing_calendar_model->find_by('marketing_calendar.id', $id);
+
+				$member_name 		= $check_calendar->title_member.". ".$check_calendar->first_name_member." ".$check_calendar->last_name_member;
+				$member_email 		= $check_calendar->email_member;
+				$marketing_name 	= $check_calendar->name_marketing;
+				$marketing_email 	= $check_calendar->email_marketing;
+				$marketing_phone 	= $check_calendar->phone_marketing;
+				$property_name 		= $check_calendar->title_property;
+				$date 				= date('d F Y',strtotime($check_calendar->date));
+
+
+				//email setting to user
+	            $this->email->from('admin@cavaproperty.com', 'Cava Property');
+	            $this->email->to($member_email); 
+	            //$this->email->cc('andhika.novandi@xmgravity.com'); 
+	            //$this->email->bcc('them@their-example.com'); 
+	            
+	            $this->email->subject('Your Appointment Confirmation for '.$property_name);
+	            $this->email->message("Dear ".$member_name.", \r\n\r\n Your appointment on ".$date." has been Confirmed. Please contact ".$marketing_name." (Email: ".$marketing_email." / Phone: ".$marketing_phone.") for further information. \r\n\r\n Thank you. \r\n\r\n\r\n Cava Property \r\n CityLofts Sudirman, #26 Floor, Unit #2623 \r\n Jl. KH. Mas Mansyur No. 121 Jakarta 10220, Indonesia \r\n Ph: 021 2555 8994 / 021 2991 2845 \r\n Fax: 021 2991 2844 \r\n www.cavaproperty.com");
+
 					
 				Template::set_message(lang('marketing_confirm_success'), 'success');
 			} else
@@ -484,6 +505,28 @@ class Marketing_calendar extends Admin_Controller {
 			{
 				// Log the activity
 				$this->activity_model->log_activity($this->auth->user_id(), lang('marketing_act_confirm_record').': ' . $id . ' : ' . $this->input->ip_address(), 'marketing');
+
+
+				$check_calendar = $this->marketing_calendar_model->find_by('marketing_calendar.id', $id);
+
+				$member_name 		= $check_calendar->title_member.". ".$check_calendar->first_name_member." ".$check_calendar->last_name_member;
+				$member_email 		= $check_calendar->email_member;
+				$marketing_name 	= $check_calendar->name_marketing;
+				$marketing_email 	= $check_calendar->email_marketing;
+				$marketing_phone 	= $check_calendar->phone_marketing;
+				$property_name 		= $check_calendar->title_property;
+				$date 				= date('d F Y',strtotime($check_calendar->date));
+
+
+				//email setting to user
+	            $this->email->from('admin@cavaproperty.com', 'Cava Property');
+	            $this->email->to($member_email); 
+	            //$this->email->cc('andhika.novandi@xmgravity.com'); 
+	            //$this->email->bcc('them@their-example.com'); 
+	            
+	            $this->email->subject('Your Appointment Confirmation for '.$property_name);
+	            $this->email->message("Dear ".$member_name.", \r\n\r\n Your appointment on ".$date." has been Rejected. Please make another appointment or contact ".$marketing_name." (Email: ".$marketing_email." Phone: ".$marketing_phone.") for further information. \r\n\r\n Thank you. \r\n\r\n\r\n Cava Property \r\n CityLofts Sudirman, #26 Floor, Unit #2623 \r\n Jl. KH. Mas Mansyur No. 121 Jakarta 10220, Indonesia \r\n Ph: 021 2555 8994 / 021 2991 2845 \r\n Fax: 021 2991 2844 \r\n www.cavaproperty.com");
+
 					
 				Template::set_message(lang('marketing_confirm_success'), 'success');
 			} else
