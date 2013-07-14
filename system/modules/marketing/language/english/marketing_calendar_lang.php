@@ -29,7 +29,7 @@ $lang['marketing_reject_confirm']				= 'Are you sure you want to reject this cal
 $lang['marketing_confirm_success']				= 'Calendar successfully confirmed.';
 $lang['marketing_confirm_failure']				= 'We could not confirm the calendar: ';
 $lang['marketing_confirm_error']			    = 'You have not select any calendar to confirm.';
-$lang['marketing_reject_success']				= 'Calendar successfully rejectd.';
+$lang['marketing_reject_success']				= 'Calendar successfully rejected.';
 $lang['marketing_reject_failure']				= 'We could not reject the calendar: ';
 $lang['marketing_reject_error']					= 'You have not selected any calendar to reject.';
 

@@ -528,10 +528,10 @@ class Marketing_calendar extends Admin_Controller {
 	            $this->email->message("Dear ".$member_name.", \r\n\r\n Your appointment on ".$date." has been Rejected. Please make another appointment or contact ".$marketing_name." (Email: ".$marketing_email." Phone: ".$marketing_phone.") for further information. \r\n\r\n Thank you. \r\n\r\n\r\n Cava Property \r\n CityLofts Sudirman, #26 Floor, Unit #2623 \r\n Jl. KH. Mas Mansyur No. 121 Jakarta 10220, Indonesia \r\n Ph: 021 2555 8994 / 021 2991 2845 \r\n Fax: 021 2991 2844 \r\n www.cavaproperty.com");
 
 					
-				Template::set_message(lang('marketing_confirm_success'), 'success');
+				Template::set_message(lang('marketing_reject_success'), 'success');
 			} else
 			{
-				Template::set_message(lang('marketing_confirm_failure') . $this->marketing_calendar_model->error, 'error');
+				Template::set_message(lang('marketing_reject_failure') . $this->marketing_calendar_model->error, 'error');
 			}
 		}
 		
