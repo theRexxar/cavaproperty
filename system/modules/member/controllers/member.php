@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class member extends Front_Controller {
+class Member extends Front_Controller {
 
 	//--------------------------------------------------------------------
 
@@ -709,39 +709,76 @@ class member extends Front_Controller {
 	public function reset_password() 
 	{
         $this->load->model('member_model');  
+		$this->load->model('member_listing_model');  
+		$this->load->model('project/project_property_model');  
         
-
+        
     	$email 		= $this->input->get('email');
     	$new_pass 	= $this->input->get('new_pass');
-        $conf_code 	= $this->input->get('conf_code');      	
+        $conf_code 	= $this->input->get('conf_code');    
 
-        $check_email = $this->member_model->find_by('email', $email);
-        if($check_email)
+
+        $status = "";
+        $check_member = $this->member_model->find_by('email', $email);
+        if($check_member)
         {
-        	if($conf_code == $check_email->forgot_code)
+        	if($conf_code == $check_member->forgot_code)
         	{
         		$data['password'] = md5($new_pass);
 
-        		$this->member_model->update($check_email->id, $data);
+        		$this->member_model->update($check_member->id, $data);
 
-        		$return['success']   = 1;
-        		$return['message']   = "Reset password success, Your new password: ".$new_pass.". Please change your password after logged in.";
+
+        		$this->session->unset_userdata('data_user');
+
+	        	$data_user['user_id']  	= $check_member->id;
+	        	$data_user['name'] 		= $check_member->first_name.' '.$check_member->last_name;
+	        	$data_user['email'] 	= $email;
+
+	            $this->session->set_userdata('data_user',$data_user);
+
+
+        		$status 	= "1";
         	}
         	else
         	{
-        		$return['success']   = 0;
-        		$return['message']   = "Invalid confirmation code";
+        		$status = "2";
         	}
         }
         else
         {
-        	$return['success']   = 0;
-        	$return['message']   = "Email not registered";
+        	$status = "3";
         }     
+
+
+        $data_user = $this->session->userdata('data_user');
+
+		$user = "";
+
+		if($data_user)
+		{
+			$user 				= $this->member_model->find_by('id', $data_user['user_id']);
+			$user_listing 		= $this->member_listing_model->find_by('member_id', $user->id);
+			$related_property 	= $this->project_property_model->search_listing($user_listing->type_id,$user_listing->status,$user_listing->city_id,$user_listing->bedroom);
+		}
+		else
+		{
+			show_404();
+		}
+
+
+        $vars = array(
+						'user' 					=> $user,
+						'user_listing' 			=> $user_listing,
+						'related_property'   	=> $related_property,
+						'status'   				=> $status,
+						'new_pass'   			=> $new_pass,
+					);
         
-        $this->output
-                ->set_content_type('application/json')
-                ->set_output(json_encode($return));     
+        Template::set('data', $vars);
+        Template::set('toolbar_title', "Reset Password");
+        Template::set_view('front_page/reset_password');
+		Template::render();
 	}
 	
 	//--------------------------------------------------------------------
