@@ -423,9 +423,14 @@ header{
 	background : #fff;
 
 	&.contact{
-		width: 220px;
+		width: 210px;
 		padding-right: 30px;
 		text-align: center;
+
+		article{
+			width: 100%;
+			word-break: break-word;
+		}
 
 		&.loading{
 			background: #fff url(../images/preloader.gif) no-repeat center 60px;

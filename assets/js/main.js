@@ -388,14 +388,14 @@ $(document).ready(function(){
 					required: true,
 					number: true,
 					minlength: 5,
-					maxlength: 10
+					maxlength: 15
 				}
 				,
 				"mobile_phone": {
 					required: true,
 					number: true,
 					minlength: 5,
-					maxlength: 10
+					maxlength: 15
 				}
 			},
 			submitHandler: function(form) {
@@ -458,7 +458,7 @@ $(document).ready(function(){
 
 		$(param).datepicker({
 			beforeShow: function(input, inst){
-			    inst.dpDiv.css({marginTop: '190px', marginLeft: '-180px', 'height' : '360px'});
+			    inst.dpDiv.css({marginTop: '-100px', marginLeft: '-220px', 'height' : '360px', 'top' : '0px'});
 			},
 			minDate			  : dateToday,
 			dateFormat        : 'yy-mm-dd',
