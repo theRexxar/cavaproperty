@@ -681,8 +681,8 @@ header{
 				// @include box-shadow(rgba(0,0,0,0.5) 1px 1px 2px);
 				// @include border-radius(50%);
 				
-				width          : 7px;
-				height         : 7px;
+				width          : -10px;
+				height         : -10px;
 				background     : url(../images/icon/close.png) no-repeat;
 				position       : absolute;
 				top            : 5px;
@@ -1377,4 +1377,11 @@ footer{
 		padding     : 4px;
 		line-height : 17px;
 	}
+}
+
+.sidebar .top{
+	display: block;
+	clear: both;
+
+	h5{display: inline-block;}
 }

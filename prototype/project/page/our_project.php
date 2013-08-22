@@ -104,14 +104,16 @@
 
 						<div id="finder-container">
 
-							<h5>SEARCH PROJECT</h5>
-							<!-- <span class="right"><a href="#primary" class="primary">PRIMARY</a> | <a href="#secodary" class="secondary">SECONDARY</a></span> -->
+							<div class="top">
+								<h5>SEARCH PROJECT</h5>
+								<span class="right"><a href="#primary" id="primary" class="method active">PRIMARY</a> | <a href="#secodary" id="secondary" class="method">SECONDARY</a></span>	
+							</div>
 							<section class="search primary">
 								<form action="" id="finder-form">
 									<div class="input">
-										<select name="" id="">
-											<option value="rent">Rent</option>
-											<option value="buy">Buy</option>
+										<select name="method" id="method" disabled>
+											<option value="buy" class="primary">Buy</option>
+											<option value="rent" class="secondary" >Rent</option>
 										</select>	
 									</div>
 									<div class="input">

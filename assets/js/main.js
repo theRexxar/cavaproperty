@@ -498,6 +498,28 @@ $(document).ready(function(){
 		});
 	}
 
+	var PM_search = function(param){
+		$(param).click(function(){
+			var _this = $(this);
+			var _target = _this.attr("id");
+			
+			// console.log(_target);
+
+			if(!_this.hasClass("active")) {
+				_this.addClass("active").siblings("a").removeClass("active");
+
+			    var select = $('#method');
+			    var option_to_select = $('option[class="' + _target + '"]', select);
+			    select.val(option_to_select.val()).change();
+
+				// $("option."+ _target).removeClass("hide").siblings("option").addClass("hide");
+				// $("option."+ _target).siblings("option").addClass("hide");
+			}
+
+			return false;
+		});
+	}
+
 	function INIT(){
 		//initial(".sidebar", "nav.fix");
 		//window_resize(".sidebar","nav.fix");
@@ -524,6 +546,8 @@ $(document).ready(function(){
 		select_disable("select.disabled");
 
 		schedule(".schedule");
+
+		PM_search(".method");
 
 		//DIS_R_CLICK(BASE_URL);
 	}
