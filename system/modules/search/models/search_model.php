@@ -22,7 +22,9 @@ class Search_model extends CI_Model {
             { 
                 $this->db->select('project_property.*, project_developer.id AS id_developer, project_developer.title AS title_developer, project_developer.slug AS slug_developer');
                 $this->db->join('project_developer', 'project_property.developer_id = project_developer.id', 'left');
-                $this->db->where('project_property.deleted', '0');
+                $this->db->where('project_property.deleted', '0');                
+                $this->db->where('project_property.category',$options['category']);
+                $this->db->where('project_property.status',$options['status']);
                 if(isset($options['name']) && $options['name'] != "") 
                 {                     
                     $this->db->where('match(cv_project_property.title) against('.$this->db->escape($options['name']).' IN BOOLEAN MODE)',NULL,false); 
@@ -39,7 +41,6 @@ class Search_model extends CI_Model {
                 { 
                     $this->db->where($bedroom_field,$options['bedroom_count']);
                 }
-                $this->db->where('project_property.status',$options['status']);
             }
         }         
 

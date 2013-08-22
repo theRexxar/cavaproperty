@@ -1,10 +1,19 @@
-<h5>SEARCH PROJECT</h5>
-<section class="search primary">
+<div class="top">
+	<h5>SEARCH PROJECT</h5>
+	<span class="right">
+		<a href="#primary" id="primary" class="method <?php echo ($this->input->get('category') == "" OR $this->input->get('category') ==  "primary") ? "active" : ""; ?>">PRIMARY</a> | 
+		<a href="#secondary" id="secondary" class="method <?php echo $this->input->get('category') ==  "secondary" ? "active" : ""; ?>">SECONDARY</a>
+	</span>	
+</div>
+
+<section class="search">
 	<form action="<?php echo base_url().'search'; ?>" method="get" name="search" id="finder-form">
+		<input type="hidden" name="category" class="category-method" value="<?php echo $this->input->get('category') == "" ? "primary" : $this->input->get('category'); ?>">
+
 		<div class="input">
-			<select name="status" id="">
-				<option value="buy" <?php echo $this->input->get('status') ==  "buy" ? 'selected="selected"' : ""; ?>>Buy</option>
-				<option value="rent" <?php echo $this->input->get('status') ==  "rent" ? 'selected="selected"' : ""; ?>>Rent</option>
+			<select name="status" id="method">
+				<option value="buy" class="primary" <?php echo $this->input->get('status') ==  "buy" ? 'selected="selected"' : ""; ?>>Buy</option>
+				<option value="rent" class="secondary <?php echo ($this->input->get('category') == "" OR $this->input->get('category') == "primary") ? "hide" : ""; ?>" <?php echo $this->input->get('status') ==  "rent" ? 'selected="selected"' : ""; ?>>Rent</option>
 			</select>	
 		</div>
 

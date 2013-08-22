@@ -111,6 +111,7 @@ class Search extends Front_Controller {
 		$this->load->model('project/project_type_model');
 		$this->load->model('project/project_location_model');
 
+	    $category       = $this->input->get('category');
 	    $status       	= $this->input->get('status');
 	    $type       	= $this->input->get('type');
 	    $name       	= $this->input->get('name');
@@ -133,6 +134,7 @@ class Search extends Front_Controller {
 	    }
 
         
+		$options['category']   		= $category;
 		$options['status']   		= $status;
 		$options['type']   			= $type_id->id;
 		$options['name']   			= $name;
@@ -185,7 +187,7 @@ class Search extends Front_Controller {
                 
 				if($options['table'] === 'project_property') //Module Project
 				{
-					$row['link_detail']  = base_url().'project/detail/'.$row['slug_developer'].'/'.$row['slug'].$from_search;
+					$row['link_detail']  = base_url().'project/detail/'.$row['category'].'/'.$row['slug'].$from_search;
 					$row['module_name']  = 'Project';
 					$row['archive_slug'] = 'project';
 				}
