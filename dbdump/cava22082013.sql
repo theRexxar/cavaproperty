@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 22, 2013 at 12:58 PM
+-- Generation Time: Aug 22, 2013 at 04:04 PM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `cv_activities` (
   `created_on` datetime NOT NULL,
   `deleted` tinyint(12) NOT NULL DEFAULT '0',
   PRIMARY KEY (`activity_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=555 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=559 ;
 
 --
 -- Dumping data for table `cv_activities`
@@ -650,7 +650,11 @@ INSERT INTO `cv_activities` (`activity_id`, `user_id`, `activity`, `module`, `cr
 (551, 1, 'Updated record with ID: 6 : ::1', 'project', '2013-08-22 12:56:35', 0),
 (552, 1, 'Updated record with ID: 4 : ::1', 'project', '2013-08-22 12:56:51', 0),
 (553, 1, 'Updated record with ID: 11 : ::1', 'project', '2013-08-22 12:57:16', 0),
-(554, 1, 'Updated record with ID: 5 : ::1', 'project', '2013-08-22 12:57:50', 0);
+(554, 1, 'Updated record with ID: 5 : ::1', 'project', '2013-08-22 12:57:50', 0),
+(555, 1, 'logged in from: ::1', 'users', '2013-08-22 16:01:55', 0),
+(556, 1, 'Updated record with ID: 1 : ::1', 'banner', '2013-08-22 16:03:29', 0),
+(557, 1, 'Updated record with ID: 2 : ::1', 'banner', '2013-08-22 16:03:40', 0),
+(558, 1, 'Updated record with ID: 3 : ::1', 'banner', '2013-08-22 16:03:49', 0);
 
 -- --------------------------------------------------------
 
@@ -679,9 +683,9 @@ CREATE TABLE IF NOT EXISTS `cv_banner` (
 --
 
 INSERT INTO `cv_banner` (`id`, `group_id`, `title`, `summary`, `image_id`, `url`, `position`, `publish`, `deleted`, `created_on`, `modified_on`) VALUES
-(1, 1, 'Setiabudi Sky Garden', '<p>\n Setiabudi Sky Gardens</p>', 219, 'project/detail/setia-budi-sky-garden/setiabudi-sky-garden', 1, 'Y', 0, '2013-04-16 09:47:05', '2013-04-25 12:38:23'),
-(2, 1, 'One Balmoral', '<p>\n One Balmoral</p>', 220, 'project/detail/one-balmoral/one-balmoral', 2, 'Y', 0, '2013-04-16 09:58:18', '2013-04-25 12:39:53'),
-(3, 1, 'Izzara', '<p>\n Izzaras</p>', 239, 'project/detail/izzara/izzara', 99, 'Y', 0, '2013-04-22 19:02:32', '2013-04-26 07:26:41');
+(1, 1, 'Setiabudi Sky Garden', '<p>\r\n Setiabudi Sky Gardens</p>', 219, 'project/detail/secondary/setiabudi-sky-garden', 1, 'Y', 0, '2013-04-16 09:47:05', '2013-08-22 16:03:29'),
+(2, 1, 'One Balmoral', '<p>\r\n One Balmoral</p>', 220, 'project/detail/primary/one-balmoral', 2, 'Y', 0, '2013-04-16 09:58:18', '2013-08-22 16:03:40'),
+(3, 1, 'Izzara', '<p>\r\n Izzaras</p>', 239, 'project/detail/secondary/izzara', 99, 'Y', 0, '2013-04-22 19:02:32', '2013-08-22 16:03:49');
 
 -- --------------------------------------------------------
 
@@ -2223,7 +2227,7 @@ CREATE TABLE IF NOT EXISTS `cv_users` (
 --
 
 INSERT INTO `cv_users` (`id`, `role_id`, `email`, `username`, `password_hash`, `reset_hash`, `salt`, `last_login`, `last_ip`, `created_on`, `deleted`, `banned`, `ban_message`, `reset_by`, `display_name`, `display_name_changed`, `timezone`, `language`, `active`, `activate_hash`) VALUES
-(1, 1, 'andhikanovandi@gmail.com', 'andhika', 'd8db64dfb1062b9200c4e57c51d0b736d5f57692', NULL, 'Seqx4Rm', '2013-08-22 11:21:13', '::1', '0000-00-00 00:00:00', 0, 0, NULL, NULL, 'Andhika Novandi Patria', NULL, 'UM6', 'english', 1, ''),
+(1, 1, 'andhikanovandi@gmail.com', 'andhika', 'd8db64dfb1062b9200c4e57c51d0b736d5f57692', NULL, 'Seqx4Rm', '2013-08-22 16:01:55', '::1', '0000-00-00 00:00:00', 0, 0, NULL, NULL, 'Andhika Novandi Patria', NULL, 'UM6', 'english', 1, ''),
 (2, 2, 'admin@bonfire.com', 'admin', '874911bfdde3730f29bcca311401e09f47fb2d4f', NULL, 'uQaZOiU', '2013-07-11 09:36:06', '110.138.103.139', '2013-04-07 09:59:19', 0, 0, NULL, NULL, 'Administrator', NULL, 'UM6', 'english', 1, '');
 
 -- --------------------------------------------------------
