@@ -16,6 +16,34 @@ $id = isset($project['id']) ? $project['id'] : '';
 
     <?php echo form_open($this->uri->uri_string(), 'class="form-horizontal"'); ?>
     <fieldset>
+        <!-- Category -->
+        <div class="control-group <?php echo form_error('category') ? 'error' : ''; ?>">
+            <?php echo form_label('Category'. lang('bf_form_label_required'), 'category', array('class' => "control-label") ); ?>
+            <div class='controls'>
+                <select name="category" id="category" no_parent="1" style="width: 230px;" >
+                    <option value="primary" <?php echo isset($project['category']) && $project['category'] == "primary" ? 'selected="selected"' : ""; ?> >Primary</option>
+                    <option value="secondary" <?php echo isset($project['category']) && $project['category'] == "secondary" ? 'selected="selected"' : ""; ?> >Secondary</option>
+                </select>
+                <span class="help-inline"><?php echo form_error('category'); ?></span>
+            </div>
+        </div>
+
+        <!-- Status -->
+        <div class="control-group <?php echo form_error('status[]') ? 'error' : ''; ?>">
+            <?php echo form_label('Status'. lang('bf_form_label_required'), 'status', array('class' => "control-label") ); ?>
+            <div class='controls'>
+                <label class="radio">
+                    <input id="status" type="radio" name="status" value="buy" <?php echo $project[status] == "buy" ? "checked='checked'" : "" ?> >
+                    <span>Buy</span>
+                </label>
+                <label class="radio">
+                    <input id="status" type="radio" name="status" value="rent" <?php echo $project[status] == "rent" ? "checked='checked'" : "" ?> >
+                    <span>Rent</span>
+                </label>
+                <span class="help-inline"><?php echo form_error('status[]'); ?></span>
+            </div>
+        </div>
+        
         <!-- Type -->
         <div class="control-group <?php echo form_error('type_id') ? 'error' : ''; ?>">
             <?php echo form_label('Type'. lang('bf_form_label_required'), 'type_id', array('class' => "control-label") ); ?>
@@ -239,22 +267,6 @@ $id = isset($project['id']) ? $project['id'] : '';
                 <span class="help-inline"><?php echo form_error('status[]'); ?></span>
             </div>
         </div>-->
-
-        <!-- Status -->
-        <div class="control-group <?php echo form_error('status[]') ? 'error' : ''; ?>">
-            <?php echo form_label('Status'. lang('bf_form_label_required'), 'status', array('class' => "control-label") ); ?>
-            <div class='controls'>
-                <label class="radio">
-                    <input id="status" type="radio" name="status" value="buy" <?php echo $project[status] == "buy" ? "checked='checked'" : "" ?> >
-                    <span>Buy</span>
-                </label>
-                <label class="radio">
-                    <input id="status" type="radio" name="status" value="rent" <?php echo $project[status] == "rent" ? "checked='checked'" : "" ?> >
-                    <span>Rent</span>
-                </label>
-                <span class="help-inline"><?php echo form_error('status[]'); ?></span>
-            </div>
-        </div>
         
         <!-- Image -->
         <div class="control-group <?php echo form_error('image_id') ? 'error' : '' ?>">

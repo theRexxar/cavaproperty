@@ -7,8 +7,8 @@
 				<ul class="overview">
 				<?php foreach($property AS $property_list) : ?>
 					<li class="">
-						<a href="<?php echo base_url().'project/detail/'.$property_list->slug_developer.'/'.$property_list->slug; ?>">
-							<span><?php echo $property_list->title ?> <small>+ MORE DETAILS</small></span>
+						<a href="<?php echo base_url().'project/detail/'.$category.'/'.$property_list->slug; ?>">
+							<span><?php echo $property_list->title ?> <small>+ MORE DETAIL</small></span>
 						</a>
 						<img src="<?php echo base_url().'files/large/'.$property_list->image_id.'/200/200/fit' ?>" alt="">
 					</li>
@@ -53,21 +53,20 @@
 				</div>
 			</section>	
 		</div>	
-		
-		
+
 		<div class="columns eleven">
 			<div class="row">
 				<div class="columns sixteen">
 					<div class="left">
-					<?php if(isset($property_highlight) && ! empty($property_highlight)) : ?>
+					<?php if(isset($latest_property) && ! empty($latest_property)) : ?>
 						<div class="flexslider">
 							<ul class="slides">
-							<?php foreach($property_highlight AS $property_highlight_list) : ?>
+							<?php foreach($latest_property AS $latest_property_list) : ?>
 							    <li>
-							      	<img src="<?php echo base_url().'files/large/'.$property_highlight_list->image_id.'/750/360/fit' ?>" alt="Our Project">
+							      	<img src="<?php echo base_url().'files/large/'.$latest_property_list->image_id.'/750/360/fit' ?>" alt="Our Project">
 							      	<div class="detail">
-							      		<?php echo $property_highlight_list->title; ?> 
-							      		<a href="<?php echo base_url().'project/detail/'.$property_highlight_list->slug_developer.'/'.$property_highlight_list->slug; ?>">
+							      		<?php echo $latest_property_list->title; ?> 
+							      		<a href="<?php echo base_url().'project/detail/'.$category.'/'.$latest_property_list->slug; ?>">
 							      			+ DETAILS
 							      		</a>
 							      	</div>
@@ -87,5 +86,6 @@
 				</div>
 			</div>
 		</div>
+
 	</div>
 </div>
