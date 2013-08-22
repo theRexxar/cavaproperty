@@ -111,7 +111,7 @@
 							<section class="search primary">
 								<form action="" id="finder-form">
 									<div class="input">
-										<select name="method" id="method" disabled>
+										<select name="method" id="method">
 											<option value="buy" class="primary">Buy</option>
 											<option value="rent" class="secondary" >Rent</option>
 										</select>	

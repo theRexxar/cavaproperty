@@ -511,7 +511,11 @@ $(document).ready(function(){
 			    var select = $('#method');
 			    var option_to_select = $('option[class="' + _target + '"]', select);
 			    select.val(option_to_select.val()).change();
-
+			    if(_target == "primary"){
+			    	$("option.secondary").addClass("hide");	
+			    } else {
+			    	$("option.secondary").removeClass("hide");	
+			    }
 				// $("option."+ _target).removeClass("hide").siblings("option").addClass("hide");
 				// $("option."+ _target).siblings("option").addClass("hide");
 			}
