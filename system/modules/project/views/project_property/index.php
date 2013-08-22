@@ -1,4 +1,17 @@
 <div class="admin-box">
+
+	<div style="float: right; clear: both; margin-top: 5px; margin-right: 10px;">
+		<form method="get" action="<?php echo site_url('admin/content/project/project_property'); ?>"> 
+            <select name="category" style="margin-bottom: 10px; width: 150px;">
+            	<option value="">-Select Category-</option>
+				<option value="primary" <?php if($this->input->get('category') == "primary") { echo "selected='selected'"; } ?>>Primary</option>
+				<option value="secondary" <?php if($this->input->get('category') == "secondary") { echo "selected='selected'"; } ?>>Secondary</option>
+			</select>
+			<input type="submit" value="Search" style="margin-bottom: 10px;" />
+			<input type="button" value="Clear" onclick="parent.location='<?php echo site_url('admin/content/project/project_property') ?>'" />
+		</form>
+	</div>
+
 	<h3>Property List</h3>
 	<?php echo form_open($this->uri->uri_string()); ?>
 		<table class="table table-striped">
@@ -37,7 +50,13 @@
 					<td><input type="checkbox" name="checked[]" value="<?php echo $record->id ?>" /></td>
 					<?php endif;?>
 					
-				    <td><?php echo $record->title_type?></td>
+				    <td>
+				    	<?php echo $record->title_type?>
+				    	<br />
+				    	<strong>
+				    		<em>(<?php echo ucfirst($record->category); ?>)</em>
+				    	</strong>
+				    </td>
 				    <td><?php echo $record->title_developer?></td>
 				    <td>
                         <img src="<?php echo base_url().'files/large/'.$record->image_id.'/200/200' ?>" />

@@ -27,15 +27,20 @@
 					<div class="columns sixteen">
 						<h5>OUR PROJECT</h5>
 						<p>
-							<a href="<?php echo base_url().'project/category/primary' ?>" class="<?php echo $this->uri->segment(3) == 'primary' ? 'active' : ''; ?>">
-								PRIMARY PROJECT
+						<?php if(isset($developer) && ! empty($developer)) : ?>
+							<?php $i=0; foreach($developer AS $developer_list) : $i++; ?>
+							<a href="<?php echo base_url().'project/developer/'.$developer_list->slug; ?>" class="<?php echo $this->uri->segment(3) == $developer_list->slug ? 'active' : ''; ?>">
+								<?php if($developer_list->highlight == "yes") : ?>
+									<strong><?php echo strtoupper($developer_list->title); ?></strong>
+								<?php else : ?>
+									<?php echo strtoupper($developer_list->title); ?>
+								<?php endif; ?>
 							</a>
-
-							<br />
-
-							<a href="<?php echo base_url().'project/category/secondary' ?>" class="<?php echo $this->uri->segment(3) == 'secondary' ? 'active' : ''; ?>">
-								SECONDARY PROJECT
-							</a>
+							<?php if($i != count($developer)) : ?>
+							<br>
+							<?php endif; ?>
+							<?php endforeach; ?>
+						<?php endif; ?>
 						</p>
 
 						<div id="finder-container">

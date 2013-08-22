@@ -48,6 +48,45 @@ class project extends Front_Controller {
 
 
 	/*
+		Method: category_detail()
+
+		Displays a list property per category.
+	*/
+	public function category_detail($slug=NULL)
+	{
+		$this->load->model('project_property_model');
+
+
+		if($slug == "primary" OR $slug == "secondary")
+		{
+			$property 			= $this->project_property_model->order_by('created_on','desc')->find_all_by('project_property.category', $slug);
+        	$latest_property	= $this->project_property_model->order_by('created_on','desc')->limit(3)->find_all_by('project_property.category', $slug);
+		}
+		else
+		{
+			show_404();	
+		}
+        
+
+        $vars = array(
+						'property' 			=> $property,
+						'latest_property' 	=> $latest_property,
+						'category'  		=> $slug,
+					);
+        
+        //print_r($vars);exit();
+		
+        Template::set('data', $vars);
+		Template::set('toolbar_title', ucfirst($slug)." ~ Our Projects");
+        Template::set_view('front_page/_content/category_detail');
+		Template::render();
+	}
+
+	//--------------------------------------------------------------------
+
+
+
+	/*
 		Method: developer_detail()
 
 		Displays a list property per developer.
@@ -88,7 +127,61 @@ class project extends Front_Controller {
 
 		Displays detail property.
 	*/
-	public function property_detail($cat_slug=NULL,$slug=NULL)
+	public function property_detail($category=NULL,$slug=NULL)
+	{
+		$this->load->model('member/member_model');
+		$this->load->model('project_property_model');
+		$this->load->model('project_property_gallery_model');
+
+
+		$data_user 	= $this->session->userdata('data_user');
+		$user 		= "";
+		if($data_user)
+		{
+			$user = $this->member_model->find_by('id', $data_user['user_id']);
+		}
+
+		if($category == "primary" OR $category == "secondary")
+		{
+			$property_list 	= $this->project_property_model->order_by('created_on','desc')->find_all_by('project_property.category', $category);
+
+	        $property 		= $this->project_property_model->find_by('project_property.slug', $slug);
+	        if($property)
+	        {
+	        	$property->gallery = $this->project_property_gallery_model->find_all_by('property_id', $property->id);
+	        }
+		}
+		else
+		{
+			show_404();
+		}
+        
+
+        $vars = array(
+						'user' 				=> $user,
+						'property' 			=> $property,
+						'property_list' 	=> $property_list,
+						'category' 			=> $category,
+					);
+        
+        //print_r($vars);exit();
+		
+        Template::set('data', $vars);
+		Template::set('toolbar_title', $property->title." ~ ".ucfirst($category)." ~ Our Projects");
+        Template::set_view('front_page/_content/property_detail');
+		Template::render();
+	}
+
+	//--------------------------------------------------------------------
+
+
+
+	/*
+		Method: property_detail()
+
+		Displays detail property.
+	*/
+	public function property_detail_old($cat_slug=NULL,$slug=NULL)
 	{
 		$this->load->model('member/member_model');
 		$this->load->model('project_developer_model');

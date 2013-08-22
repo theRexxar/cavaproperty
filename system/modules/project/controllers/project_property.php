@@ -59,19 +59,39 @@ class project_property extends Admin_Controller {
 			}
 		}
 
-		$offset = $this->uri->segment(6);
+		$offset = $this->input->get('page');
 
-		$records = $this->project_property_model->order_by('category_id', 'asc')->order_by('title', 'asc')->limit($this->limit, $offset)->find_all();
-        
+		if ($this->input->get('category') && strlen($this->input->get('category')) > 0)
+		{
+			$records = $this->project_property_model->order_by('title', 'asc')->limit($this->limit, $offset)->find_by_category($this->input->get('category'));
+		}
+		else
+		{
+			$records = $this->project_property_model->order_by('category', 'asc')->order_by('title', 'asc')->limit($this->limit, $offset)->find_all();
+		}
+
+
+		
         // Pagination
 		$this->load->library('pagination');
 
-		$total_article = $this->project_property_model->count_all();
+		if ($this->input->get('category') && strlen($this->input->get('category')) > 0)
+		{
+			$total_property = $this->project_property_model->count_by_category($this->input->get('category'));
+			$search_key 	= "&category=".$this->input->get('category');
+		}
+		else
+		{
+			$total_property = $this->project_property_model->count_all();
+			$search_key 	= "";
+		}
 
-		$this->pager['base_url'] 		= site_url(SITE_AREA .'/content/project/project_property/index');
-		$this->pager['total_rows'] 		= $total_article;
-		$this->pager['per_page'] 		= $this->limit;
-		$this->pager['uri_segment']		= 6;
+		$this->pager['base_url'] 				= site_url(SITE_AREA .'/content/project/project_property?'.$search_key);
+		$this->pager['total_rows'] 				= $total_property;
+		$this->pager['per_page'] 				= $this->limit;
+		$this->pager['enable_query_strings'] 	= TRUE;
+		$this->pager['page_query_string'] 		= TRUE;
+		$this->pager['query_string_segment'] 	= "page";
 
 		$this->pagination->initialize($this->pager);
 
@@ -457,6 +477,8 @@ class project_property extends Admin_Controller {
 		}
 
 		
+		$this->form_validation->set_rules('category', 'Category', 'required|trim|xss_clean|max_length[11]');
+		$this->form_validation->set_rules('status', 'Status', 'required|trim|xss_clean');
 		$this->form_validation->set_rules('type_id','Type','required|trim|xss_clean|is_numeric|max_length[11]');
 		$this->form_validation->set_rules('developer_id','Developer','required|trim|xss_clean|is_numeric|max_length[11]');
 		$this->form_validation->set_rules('city_id','City','required|trim|xss_clean|is_numeric|max_length[11]');
@@ -473,7 +495,6 @@ class project_property extends Admin_Controller {
 		$this->form_validation->set_rules('vimeo', 'Vimeo ID', 'trim|xss_clean|max_length[255]|');
 		$this->form_validation->set_rules('image_id','Image','required|trim');
 		$this->form_validation->set_rules('highlight', 'Highlight', 'required|trim|xss_clean|max_length[255]');
-		$this->form_validation->set_rules('status[]', 'Status', 'required|trim|xss_clean');
         
         $this->form_validation->set_error_delimiters('<p>', '</p>');
 
@@ -489,6 +510,7 @@ class project_property extends Admin_Controller {
 		$caption 		= $this->input->post('caption');
 		
 		$data = array();
+		$data['category']          	  	= $this->input->post('category');
 		$data['type_id']          	  	= $this->input->post('type_id');
 		$data['developer_id']          	= $this->input->post('developer_id');
 		$data['city_id']          		= $this->input->post('city_id');
