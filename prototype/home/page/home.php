@@ -10,10 +10,11 @@
 						</div>
 						<section class="search">
 							<form action="" id="finder-form">
+								<input type="hidden" name="category" class="category-method" value="primary">
 								<div class="input">
 									<select name="method" id="method">
 										<option value="buy" class="primary">Buy</option>
-										<option value="rent" class="secondary" >Rent</option>
+										<option value="rent" class="secondary">Rent</option>
 									</select>	
 								</div>
 								<div class="input">

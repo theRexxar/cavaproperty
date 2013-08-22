@@ -110,6 +110,7 @@
 							</div>
 							<section class="search primary">
 								<form action="" id="finder-form">
+									<input type="hidden" name="category" class="category-method" value="primary">
 									<div class="input">
 										<select name="method" id="method">
 											<option value="buy" class="primary">Buy</option>

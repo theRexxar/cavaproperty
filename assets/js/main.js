@@ -503,7 +503,9 @@ $(document).ready(function(){
 			var _this = $(this);
 			var _target = _this.attr("id");
 			
-			// console.log(_target);
+			$("option.secondary").removeClass("hide");	
+
+			console.log(_target);
 
 			if(!_this.hasClass("active")) {
 				_this.addClass("active").siblings("a").removeClass("active");
@@ -513,7 +515,9 @@ $(document).ready(function(){
 			    select.val(option_to_select.val()).change();
 			    if(_target == "primary"){
 			    	$("option.secondary").addClass("hide");	
+			    	$(".category-method").val(_target);
 			    } else {
+			    	$(".category-method").val(_target);
 			    	$("option.secondary").removeClass("hide");	
 			    }
 				// $("option."+ _target).removeClass("hide").siblings("option").addClass("hide");
