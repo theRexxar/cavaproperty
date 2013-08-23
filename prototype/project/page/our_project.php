@@ -90,7 +90,11 @@
 
 					<!-- replace for landing -->
 					<div class="columns sixteen">
-						<h5>OUR PROJECT</h5>
+						
+						<div class="top">
+							<h5>OUR PROJECT</h5>
+							<span class="right"><a href="#primary"  class="active">PRIMARY</a> | <a href="#secodary" class="">SECONDARY</a></span>	
+						</div>
 						<p>
 							<a href="detail.php" class="active">SETIA BUDI SKY GARDEN</a><br>
 							<a href="detail.php">IZZARA</a><br>
