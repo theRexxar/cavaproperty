@@ -22,17 +22,16 @@ class project extends Front_Controller {
 	*/
 	public function index()
 	{
-		$this->load->model('project_developer_model');
 		$this->load->model('project_property_model');
 
-        $developer 			= $this->project_developer_model->order_by('title','asc')->find_all();
         $property 			= $this->project_property_model->order_by('created_on','desc')->find_all();
         $property_highlight = $this->project_property_model->order_by('created_on','desc')->find_all_by('project_property.highlight','yes');
+        $primary 			= $this->project_property_model->order_by('title', 'asc')->find_all_by('project_property.category','primary');
 
         $vars = array(
-						'developer' 			=> $developer,
 						'property' 				=> $property,
 						'property_highlight' 	=> $property_highlight,
+						'primary' 				=> $primary,
 					);
         
         //print_r($vars);exit();
@@ -60,6 +59,7 @@ class project extends Front_Controller {
 		if($slug == "primary" OR $slug == "secondary")
 		{
 			$property 			= $this->project_property_model->order_by('created_on','desc')->find_all_by('project_property.category', $slug);
+			$property_listing 	= $this->project_property_model->order_by('title','asc')->find_all_by('project_property.category', $slug);
         	$latest_property	= $this->project_property_model->order_by('created_on','desc')->limit(3)->find_all_by('project_property.category', $slug);
 		}
 		else
@@ -69,9 +69,10 @@ class project extends Front_Controller {
         
 
         $vars = array(
-						'property' 			=> $property,
-						'latest_property' 	=> $latest_property,
-						'category'  		=> $slug,
+						'property' 				=> $property,
+						'property_listing' 		=> $property_listing,
+						'latest_property' 		=> $latest_property,
+						'category'  			=> $slug,
 					);
         
         //print_r($vars);exit();

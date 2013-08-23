@@ -25,17 +25,29 @@
 				<div class="row">
 					<!-- replace for landing -->
 					<div class="columns sixteen">
-						<h5>OUR PROJECT</h5>
+						<div class="top">
+							<h5>OUR PROJECT</h5>
+							<span class="right">
+								<a href="<?php echo base_url().'project/category/primary'; ?>"  class="<?php echo ($this->uri->segment(3) == "" OR $this->uri->segment(3) == "primary") ? "active" : ""; ?>">PRIMARY</a> | 
+								<a href="<?php echo base_url().'project/category/secondary'; ?>" class="<?php echo ($this->uri->segment(3) == "secondary") ? "active" : ""; ?>">SECONDARY</a>
+							</span>	
+						</div>
+
 						<p>
-							<a href="<?php echo base_url().'project/category/primary' ?>" class="<?php echo $this->uri->segment(3) == 'primary' ? 'active' : ''; ?>">
-								PRIMARY PROJECT
+							<?php if(isset($property_listing) && ! empty($property_listing)) : ?>
+							<?php $i=0; foreach($property_listing AS $property_listing_list) : $i++; ?>
+							<a href="<?php echo base_url().'project/detail/'.$category.'/'.$property_listing_list->slug; ?>" class="<?php echo $this->uri->segment(3) == $property_listing_list->slug ? 'active' : ''; ?>">
+								<?php if($property_listing_list->highlight == "yes") : ?>
+									<strong><?php echo strtoupper($property_listing_list->title); ?></strong>
+								<?php else : ?>
+									<?php echo strtoupper($property_listing_list->title); ?>
+								<?php endif; ?>
 							</a>
-
-							<br />
-
-							<a href="<?php echo base_url().'project/category/secondary' ?>" class="<?php echo $this->uri->segment(3) == 'secondary' ? 'active' : ''; ?>">
-								SECONDARY PROJECT
-							</a>
+							<?php if($i != count($property_listing)) : ?>
+							<br>
+							<?php endif; ?>
+							<?php endforeach; ?>
+						<?php endif; ?>
 						</p>
 
 						<div id="finder-container">

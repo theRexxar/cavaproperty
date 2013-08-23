@@ -25,17 +25,29 @@
 				<div class="row">
 					<!-- replace for landing -->
 					<div class="columns sixteen">
-						<h5>OUR PROJECT</h5>
+						<div class="top">
+							<h5>OUR PROJECT</h5>
+							<span class="right">
+								<a href="<?php echo base_url().'project/category/primary'; ?>"  class="<?php echo ($this->uri->segment(3) == "" OR $this->uri->segment(3) == "primary") ? "active" : ""; ?>">PRIMARY</a> | 
+								<a href="<?php echo base_url().'project/category/secondary'; ?>" class="<?php echo ($this->uri->segment(3) == "secondary") ? "active" : ""; ?>">SECONDARY</a>
+							</span>	
+						</div>
+
 						<p>
-							<a href="<?php echo base_url().'project/category/primary' ?>" class="<?php echo $this->uri->segment(3) == 'primary' ? 'active' : ''; ?>">
-								PRIMARY PROJECT
+							<?php if(isset($primary) && ! empty($primary)) : ?>
+							<?php $i=0; foreach($primary AS $primary_list) : $i++; ?>
+							<a href="<?php echo base_url().'project/detail/primary/'.$primary_list->slug; ?>" class="<?php echo $this->uri->segment(3) == $primary_list->slug ? 'active' : ''; ?>">
+								<?php if($primary_list->highlight == "yes") : ?>
+									<strong><?php echo strtoupper($primary_list->title); ?></strong>
+								<?php else : ?>
+									<?php echo strtoupper($primary_list->title); ?>
+								<?php endif; ?>
 							</a>
-
-							<br />
-
-							<a href="<?php echo base_url().'project/category/secondary' ?>" class="<?php echo $this->uri->segment(3) == 'secondary' ? 'active' : ''; ?>">
-								SECONDARY PROJECT
-							</a>
+							<?php if($i != count($primary)) : ?>
+							<br>
+							<?php endif; ?>
+							<?php endforeach; ?>
+						<?php endif; ?>
 						</p>
 
 						<div id="finder-container">
