@@ -649,7 +649,11 @@ header{
 		ul{
 			list-style: inside;
 		}
+		
+		.sub-head{margin-bottom: 5px}
 
+		.sub-head~a{margin-left: 10px}
+		
 		#finder-container{
 			position   : absolute;
 			top        : 0;

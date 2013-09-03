@@ -96,14 +96,26 @@
 							<span class="right"><a href="#primary"  class="active">PRIMARY</a> | <a href="#secodary" class="">SECONDARY</a></span>	
 						</div>
 						<p>
-							<a href="detail.php" class="active">SETIA BUDI SKY GARDEN</a><br>
-							<a href="detail.php">IZZARA</a><br>
-							<a href="detail.php">CASSAMORA</a><br>
-							<a href="detail.php">SERENA HILLS</a><br>
-							<a href="detail.php">ONE BALMORAL</a><br>
-							<a href="detail.php">ALILA</a><br>
-							<a href="detail.php">WUKU</a><br>
-							<a href="detail.php">HARRIS</a>
+							<h6 class="sub-head">Apartment</h6>
+								<a href="detail.php" class="active">SETIA BUDI SKY GARDEN</a><br>
+								<a href="detail.php">IZZARA</a><br>
+								<a href="detail.php">CASSAMORA</a><br>
+						</p>
+						<p>
+							<h6 class="sub-head">Housing</h6>
+								<a href="detail.php">SERENA HILLS</a><br>
+								<a href="detail.php">ONE BALMORAL</a><br>
+								<a href="detail.php">ALILA</a><br>
+						</p>
+						<p>
+							<h6 class="sub-head">Villa and Condotel</h6>
+								<a href="detail.php">WUKU</a><br>
+								<a href="detail.php">HARRIS</a>
+						</p>
+						<p>
+							<h6 class="sub-head">Office</h6>
+								<a href="detail.php">WUKU</a><br>
+								<a href="detail.php">HARRIS</a>
 						</p>
 
 						<div id="finder-container">
