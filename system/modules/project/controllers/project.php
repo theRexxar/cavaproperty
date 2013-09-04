@@ -23,18 +23,26 @@ class project extends Front_Controller {
 	public function index()
 	{
 		$this->load->model('project_property_model');
+		$this->load->model('project_type_model');
 
         $property 			= $this->project_property_model->order_by('created_on','desc')->find_all();
         $property_highlight = $this->project_property_model->order_by('created_on','desc')->find_all_by('project_property.highlight','yes');
-        $primary 			= $this->project_property_model->order_by('title', 'asc')->find_all_by('project_property.category','primary');
+        
+        $property_types   	= $this->project_type_model->order_by('title','asc')->find_all();
+        foreach($property_types AS $property_types_list)
+        {
+        	$property_types_list->list_property = $this->project_property_model->order_by('title', 'asc')->find_by_type_and_category($property_types_list->id,'primary');
+        }
+
 
         $vars = array(
 						'property' 				=> $property,
 						'property_highlight' 	=> $property_highlight,
-						'primary' 				=> $primary,
+						'property_types' 		=> $property_types,
+						'property_developer' 	=> $property_developer,
 					);
         
-        //print_r($vars);exit();
+        //print_r($property_type);exit();
 		
         Template::set('data', $vars);
 		Template::set('toolbar_title', "Our Projects");
@@ -54,13 +62,19 @@ class project extends Front_Controller {
 	public function category_detail($slug=NULL)
 	{
 		$this->load->model('project_property_model');
+		$this->load->model('project_type_model');
 
 
 		if($slug == "primary" OR $slug == "secondary")
 		{
 			$property 			= $this->project_property_model->order_by('created_on','desc')->find_all_by('project_property.category', $slug);
-			$property_listing 	= $this->project_property_model->order_by('title','asc')->find_all_by('project_property.category', $slug);
         	$latest_property	= $this->project_property_model->order_by('created_on','desc')->limit(3)->find_all_by('project_property.category', $slug);
+
+			$property_types   	= $this->project_type_model->order_by('title','asc')->find_all();
+	        foreach($property_types AS $property_types_list)
+	        {
+	        	$property_types_list->list_property = $this->project_property_model->order_by('title', 'asc')->find_by_type_and_category($property_types_list->id,$slug);
+	        }
 		}
 		else
 		{
@@ -70,7 +84,7 @@ class project extends Front_Controller {
 
         $vars = array(
 						'property' 				=> $property,
-						'property_listing' 		=> $property_listing,
+						'property_types' 		=> $property_types,
 						'latest_property' 		=> $latest_property,
 						'category'  			=> $slug,
 					);
@@ -165,7 +179,7 @@ class project extends Front_Controller {
 						'category' 			=> $category,
 					);
         
-        //print_r($vars);exit();
+        //print_r($property);exit();
 		
         Template::set('data', $vars);
 		Template::set('toolbar_title', $property->title." ~ ".ucfirst($category)." ~ Our Projects");

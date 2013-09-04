@@ -33,22 +33,21 @@
 							</span>	
 						</div>
 
+						<?php foreach($property_types AS $property_types_list) : ?>
+						<?php if(! empty($property_types_list->list_property)) : ?>
 						<p>
-							<?php if(isset($property_listing) && ! empty($property_listing)) : ?>
-							<?php $i=0; foreach($property_listing AS $property_listing_list) : $i++; ?>
-							<a href="<?php echo base_url().'project/detail/'.$category.'/'.$property_listing_list->slug; ?>" class="<?php echo $this->uri->segment(3) == $property_listing_list->slug ? 'active' : ''; ?>">
-								<?php if($property_listing_list->highlight == "yes") : ?>
-									<strong><?php echo strtoupper($property_listing_list->title); ?></strong>
-								<?php else : ?>
-									<?php echo strtoupper($property_listing_list->title); ?>
-								<?php endif; ?>
-							</a>
-							<?php if($i != count($property_listing)) : ?>
-							<br>
-							<?php endif; ?>
+							<h6 class="sub-head">
+								<?php echo $property_types_list->title; ?>
+							</h6>
+							<?php foreach($property_types_list->list_property AS $property_list) : ?>
+								<a href="<?php echo base_url().'project/detail/'.$property_list->category.'/'.$property_list->slug; ?>">
+									<?php echo $property_list->title; ?>
+								</a>
+								<br>
 							<?php endforeach; ?>
-						<?php endif; ?>
 						</p>
+						<?php endif; ?>
+						<?php endforeach; ?>
 
 						<div id="finder-container">
 							<!-- Search Widget -->

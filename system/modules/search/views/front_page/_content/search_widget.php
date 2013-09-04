@@ -12,7 +12,7 @@
 
 		<div class="input">
 			<select name="status" id="method">
-				<option value="buy" class="primary" <?php echo $this->input->get('status') ==  "buy" ? 'selected="selected"' : ""; ?>>Buy</option>
+				<option value="sale" class="primary" <?php echo $this->input->get('status') ==  "sale" ? 'selected="selected"' : ""; ?>>Sale</option>
 				<option value="rent" class="secondary <?php echo ($this->input->get('category') == "" OR $this->input->get('category') == "primary") ? "hide" : ""; ?>" <?php echo $this->input->get('status') ==  "rent" ? 'selected="selected"' : ""; ?>>Rent</option>
 			</select>	
 		</div>
@@ -35,6 +35,11 @@
 		<div class="default">
 			<div class="input">
 				<select class="disabled" disabled>
+					<option>Building Name</option>
+				</select>
+			</div>
+			<div class="input">
+				<select class="disabled" disabled>
 					<option>Location</option>
 				</select>
 			</div>
@@ -43,11 +48,11 @@
 					<option>Number of Beedrooms</option>
 				</select>
 			</div>
-			<div class="input">
+			<!--<div class="input">
 				<select class="disabled" disabled>
 					<option>Additional</option>
 				</select>
-			</div>
+			</div>-->
 		</div>
 
 		<!-- Display Apartement Type -->

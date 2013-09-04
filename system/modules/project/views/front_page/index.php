@@ -7,7 +7,7 @@
 				<ul class="overview">
 				<?php foreach($property AS $property_list) : ?>
 					<li class="">
-						<a href="<?php echo base_url().'project/detail/'.$property_list->slug_developer.'/'.$property_list->slug; ?>">
+						<a href="<?php echo base_url().'project/detail/'.$property_list->category.'/'.$property_list->slug; ?>">
 							<span><?php echo $property_list->title ?> <small>+ MORE DETAILS</small></span>
 						</a>
 						<img src="<?php echo base_url().'files/large/'.$property_list->image_id.'/200/200/fit' ?>" alt="">
@@ -33,22 +33,21 @@
 							</span>	
 						</div>
 
+						<?php foreach($property_types AS $property_types_list) : ?>
+						<?php if(! empty($property_types_list->list_property)) : ?>
 						<p>
-							<?php if(isset($primary) && ! empty($primary)) : ?>
-							<?php $i=0; foreach($primary AS $primary_list) : $i++; ?>
-							<a href="<?php echo base_url().'project/detail/primary/'.$primary_list->slug; ?>" class="<?php echo $this->uri->segment(3) == $primary_list->slug ? 'active' : ''; ?>">
-								<?php if($primary_list->highlight == "yes") : ?>
-									<strong><?php echo strtoupper($primary_list->title); ?></strong>
-								<?php else : ?>
-									<?php echo strtoupper($primary_list->title); ?>
-								<?php endif; ?>
-							</a>
-							<?php if($i != count($primary)) : ?>
-							<br>
-							<?php endif; ?>
+							<h6 class="sub-head">
+								<?php echo $property_types_list->title; ?>
+							</h6>
+							<?php foreach($property_types_list->list_property AS $property_list) : ?>
+								<a href="<?php echo base_url().'project/detail/'.$property_list->category.'/'.$property_list->slug; ?>">
+									<?php echo $property_list->title; ?>
+								</a>
+								<br>
 							<?php endforeach; ?>
-						<?php endif; ?>
 						</p>
+						<?php endif; ?>
+						<?php endforeach; ?>
 
 						<div id="finder-container">
 							<!-- Search Widget -->

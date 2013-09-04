@@ -39,7 +39,7 @@ class Search extends Front_Controller {
 	*/
 	public function search_widget()
 	{		
-		$this->load->model('project/project_model');
+		/*$this->load->model('project/project_model');
 		$this->load->model('project/project_type_model');
 		$this->load->model('project/project_location_model');
 
@@ -58,8 +58,9 @@ class Search extends Front_Controller {
 						'category'		=> $category,
 						'location'		=> $location,
 					);
+		*/
 
-		$this->load->view('front_page/_content/search_widget', $vars);
+		$this->load->view('front_page/_content/search_widget');
 	}
 
 	//--------------------------------------------------------------------
@@ -113,8 +114,8 @@ class Search extends Front_Controller {
 
 	    $category       = $this->input->get('category');
 	    $status       	= $this->input->get('status');
-	    $type       	= $this->input->get('type');
 	    $name       	= $this->input->get('name');
+	    $type       	= $this->input->get('type');
 	    $location       = $this->input->get('location');
 	    $bedroom     	= $this->input->get('bedroom');
 
@@ -136,8 +137,8 @@ class Search extends Front_Controller {
         
 		$options['category']   		= $category;
 		$options['status']   		= $status;
-		$options['type']   			= $type_id->id;
 		$options['name']   			= $name;
+		$options['type']   			= $type_id->id;
 		$options['location']   		= $location_id->id;
 		$options['bedroom'] 		= $bedroom;
 		$options['bedroom_count'] 	= $bedroom_count;

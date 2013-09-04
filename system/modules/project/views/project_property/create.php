@@ -33,8 +33,8 @@ $id = isset($project['id']) ? $project['id'] : '';
             <?php echo form_label('Status'. lang('bf_form_label_required'), 'status', array('class' => "control-label") ); ?>
             <div class='controls'>
                 <label class="radio">
-                    <input id="status" type="radio" name="status" value="buy" <?php echo $project[status] == "buy" ? "checked='checked'" : "" ?> >
-                    <span>Buy</span>
+                    <input id="status" type="radio" name="status" value="sale" <?php echo $project[status] == "sale" ? "checked='checked'" : "" ?> >
+                    <span>Sale</span>
                 </label>
                 <label class="radio">
                     <input id="status" type="radio" name="status" value="rent" <?php echo $project[status] == "rent" ? "checked='checked'" : "" ?> >
@@ -256,8 +256,8 @@ $id = isset($project['id']) ? $project['id'] : '';
             <?php echo form_label('Status'. lang('bf_form_label_required'), 'status', array('class' => "control-label") ); ?>
             <div class='controls'>
                 <label class="checkbox">
-                    <input type="checkbox" name="status[]" id="status" value="buy" <?php echo ($project[status] == "buy" OR $project[status] == "all") ? "checked" : "" ?>>
-                    Buy
+                    <input type="checkbox" name="status[]" id="status" value="sale" <?php echo ($project[status] == "sale" OR $project[status] == "all") ? "checked" : "" ?>>
+                    Sale
                 </label>
                 <label class="checkbox">
                     <input type="checkbox" name="status[]" id="status" value="rent" <?php echo ($project[status] == "rent" OR $project[status] == "all") ? "checked" : "" ?>>

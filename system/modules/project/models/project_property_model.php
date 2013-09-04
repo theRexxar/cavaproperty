@@ -110,6 +110,36 @@ class Project_property_model extends BF_Model {
         return parent::find_by($field,$value);
     }
 
+    public function find_by_type_and_category($type_id,$category)
+    {
+        if (empty($this->selects))
+        {
+            $this->db->select('
+                            id,
+                            type_id,
+                            title,
+                            category,
+                            slug,
+                            ');
+        }
+
+        $this->db->from('project_property');
+
+        $this->db->where('type_id', $type_id);
+        $this->db->where('category', $category);
+
+        $query =  $this->db->get();
+
+        if ($query->num_rows() > 0)
+        {
+            return $query->result();
+        }
+        else
+        {
+            return FALSE;
+        }
+    }
+
     public function search_listing($type_id,$status,$city_id,$bedroom)
     {
         if (empty($this->selects))
