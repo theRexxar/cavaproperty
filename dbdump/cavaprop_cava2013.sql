@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.8
+-- version 4.0.5
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 11, 2013 at 02:17 PM
+-- Generation Time: Sep 05, 2013 at 01:56 PM
 -- Server version: 5.5.32-cll-lve
 -- PHP Version: 5.3.17
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `cavaprop_cava2013`
 --
+CREATE DATABASE IF NOT EXISTS `cavaprop_cava2013` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `cavaprop_cava2013`;
 
 -- --------------------------------------------------------
 
@@ -90,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `cv_activities` (
   `created_on` datetime NOT NULL,
   `deleted` tinyint(12) NOT NULL DEFAULT '0',
   PRIMARY KEY (`activity_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=536 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=587 ;
 
 --
 -- Dumping data for table `cv_activities`
@@ -631,7 +633,58 @@ INSERT INTO `cv_activities` (`activity_id`, `user_id`, `activity`, `module`, `cr
 (532, 2, 'logged in from: 202.137.25.130', 'users', '2013-07-09 15:31:57', 0),
 (533, 2, 'logged in from: 110.138.103.139', 'users', '2013-07-11 09:36:06', 0),
 (534, 2, 'Created record with ID: 33 : 110.138.103.139', 'news', '2013-07-11 09:41:39', 0),
-(535, 2, 'Updated record with ID: 33 : 110.138.103.139', 'news', '2013-07-11 09:43:50', 0);
+(535, 2, 'Updated record with ID: 33 : 110.138.103.139', 'news', '2013-07-11 09:43:50', 0),
+(536, 1, 'logged in from: ::1', 'users', '2013-07-13 14:10:42', 0),
+(537, 1, 'Updated record with ID: 7 : ::1', 'project', '2013-07-13 14:42:33', 0),
+(538, 1, 'logged in from: ::1', 'users', '2013-07-14 02:48:04', 0),
+(539, 1, 'Updated record with ID: 33 : 139.228.152.166', 'news', '2013-07-14 13:45:56', 0),
+(540, 1, ': 3 : 139.228.152.166', 'marketing', '2013-07-14 14:19:14', 0),
+(541, 1, ': 2 : 139.228.152.166', 'marketing', '2013-07-14 14:28:53', 0),
+(542, 1, ': 1 : 139.228.152.166', 'marketing', '2013-07-14 14:29:26', 0),
+(543, 2, 'logged in from: 103.29.151.130', 'users', '2013-07-19 16:56:01', 0),
+(544, 2, 'logged in from: 103.29.151.130', 'users', '2013-07-19 16:56:05', 0),
+(545, 2, 'logged in from: 103.29.151.130', 'users', '2013-07-19 16:57:02', 0),
+(546, 2, 'Updated record with ID: 2 : 103.29.151.130', 'project', '2013-07-19 16:58:50', 0),
+(547, 2, 'Updated record with ID: 1 : 103.29.151.130', 'project', '2013-07-19 17:04:42', 0),
+(548, 2, 'Updated record with ID: 1 : 103.29.151.130', 'project', '2013-07-19 17:04:49', 0),
+(549, 2, 'Updated record with ID: 1 : 103.29.151.130', 'project', '2013-07-19 17:04:55', 0),
+(550, 2, 'Created record with ID: 3 : 103.29.151.130', 'project', '2013-07-19 17:05:15', 0),
+(551, 2, 'Updated record with ID: 1 : 103.29.151.130', 'project', '2013-07-19 17:06:10', 0),
+(552, 2, 'Updated record with ID: 1 : 103.29.151.130', 'project', '2013-07-19 17:06:16', 0),
+(553, 2, 'Updated record with ID: 2 : 103.29.151.130', 'project', '2013-07-19 17:08:05', 0),
+(554, 2, 'Updated record with ID: 1 : 103.29.151.130', 'project', '2013-07-19 17:08:30', 0),
+(555, 2, 'Deleted record with ID: 1 : 103.29.151.130', 'project', '2013-07-19 17:08:53', 0),
+(556, 2, 'Updated record with ID: 8 : 103.29.151.130', 'project', '2013-07-19 17:10:00', 0),
+(557, 2, 'Updated record with ID: 1 : 103.29.151.130', 'project', '2013-07-19 17:11:34', 0),
+(558, 2, 'Updated record with ID: 1 : 103.29.151.130', 'project', '2013-07-19 17:11:35', 0),
+(559, 2, 'Updated record with ID: 5 : 103.29.151.130', 'project', '2013-07-19 17:12:11', 0),
+(560, 2, 'Updated record with ID: 6 : 103.29.151.130', 'project', '2013-07-19 17:12:35', 0),
+(561, 2, 'Updated record with ID: 11 : 103.29.151.130', 'project', '2013-07-19 17:13:07', 0),
+(562, 2, 'Deleted record with ID: 7 : 103.29.151.130', 'project', '2013-07-19 17:13:37', 0),
+(563, 2, 'Deleted record with ID: 6 : 103.29.151.130', 'project', '2013-07-19 17:13:46', 0),
+(564, 2, 'Deleted record with ID: 5 : 103.29.151.130', 'project', '2013-07-19 17:13:52', 0),
+(565, 2, 'Updated record with ID: 8 : 103.29.151.130', 'project', '2013-07-19 17:14:15', 0),
+(566, 2, 'Updated record with ID: 11 : 103.29.151.130', 'project', '2013-07-19 17:14:29', 0),
+(567, 2, 'Deleted record with ID: 4 : 103.29.151.130', 'project', '2013-07-19 17:15:46', 0),
+(568, 2, 'Updated record with ID: 3 : 103.29.151.130', 'project', '2013-07-19 17:17:25', 0),
+(569, 2, 'Updated record with ID: 4 : 103.29.151.130', 'project', '2013-07-19 17:18:44', 0),
+(570, 2, 'Updated record with ID: 4 : 103.29.151.130', 'project', '2013-07-19 17:20:33', 0),
+(571, 2, 'Updated record with ID: 10 : 103.29.151.130', 'project', '2013-07-19 17:21:56', 0),
+(572, 2, 'Updated record with ID: 10 : 103.29.151.130', 'project', '2013-07-19 17:22:55', 0),
+(573, 2, 'Updated record with ID: 9 : 103.29.151.130', 'project', '2013-07-19 17:23:25', 0),
+(574, 2, 'Updated record with ID: 7 : 103.29.151.130', 'project', '2013-07-19 17:23:57', 0),
+(575, 2, 'Updated record with ID: 8 : 103.29.151.130', 'project', '2013-07-19 17:24:20', 0),
+(576, 2, 'Updated record with ID: 2 : 103.29.151.130', 'project', '2013-07-19 17:24:51', 0),
+(577, 2, 'logged out from: 103.29.151.130', 'users', '2013-07-19 17:25:15', 0),
+(578, 2, 'logged in from: 103.29.151.130', 'users', '2013-07-19 17:26:17', 0),
+(579, 2, 'logged in from: 103.29.151.130', 'users', '2013-07-19 17:27:06', 0),
+(580, 1, 'logged in from: 205.251.141.123', 'users', '2013-09-04 16:11:15', 0),
+(581, 1, 'logged in from: 205.251.141.123', 'users', '2013-09-05 13:42:56', 0),
+(582, 1, 'Updated record with ID: 5 : 205.251.141.123', 'project', '2013-09-05 13:50:15', 0),
+(583, 1, 'Updated record with ID: 1 : 205.251.141.123', 'project', '2013-09-05 13:50:28', 0),
+(584, 1, 'Updated record with ID: 1 : 205.251.141.123', 'banner', '2013-09-05 13:53:57', 0),
+(585, 1, 'Updated record with ID: 2 : 205.251.141.123', 'banner', '2013-09-05 13:54:11', 0),
+(586, 1, 'Updated record with ID: 3 : 205.251.141.123', 'banner', '2013-09-05 13:54:19', 0);
 
 -- --------------------------------------------------------
 
@@ -660,9 +713,9 @@ CREATE TABLE IF NOT EXISTS `cv_banner` (
 --
 
 INSERT INTO `cv_banner` (`id`, `group_id`, `title`, `summary`, `image_id`, `url`, `position`, `publish`, `deleted`, `created_on`, `modified_on`) VALUES
-(1, 1, 'Setiabudi Sky Garden', '<p>\n Setiabudi Sky Gardens</p>', 219, 'project/detail/setia-budi-sky-garden/setiabudi-sky-garden', 1, 'Y', 0, '2013-04-16 09:47:05', '2013-04-25 12:38:23'),
-(2, 1, 'One Balmoral', '<p>\n One Balmoral</p>', 220, 'project/detail/one-balmoral/one-balmoral', 2, 'Y', 0, '2013-04-16 09:58:18', '2013-04-25 12:39:53'),
-(3, 1, 'Izzara', '<p>\n Izzaras</p>', 239, 'project/detail/izzara/izzara', 99, 'Y', 0, '2013-04-22 19:02:32', '2013-04-26 07:26:41');
+(1, 1, 'Setiabudi Sky Garden', '<p>\n Setiabudi Sky Gardens</p>', 219, 'project/detail/setiabudi-sky-garden', 1, 'Y', 0, '2013-04-16 09:47:05', '2013-09-05 13:53:57'),
+(2, 1, 'One Balmoral', '<p>\n One Balmoral</p>', 220, 'project/detail/one-balmoral', 2, 'Y', 0, '2013-04-16 09:58:18', '2013-09-05 13:54:11'),
+(3, 1, 'Izzara', '<p>\n Izzaras</p>', 239, 'project/detail/izzara', 99, 'Y', 0, '2013-04-22 19:02:32', '2013-09-05 13:54:19');
 
 -- --------------------------------------------------------
 
@@ -734,7 +787,7 @@ CREATE TABLE IF NOT EXISTS `cv_contact_mail` (
   `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `cv_contact_mail`
@@ -747,7 +800,8 @@ INSERT INTO `cv_contact_mail` (`id`, `name`, `email`, `subject`, `message`, `del
 (4, 'sisca afriany sari', 'sisca.a.sari@gmail.com', 'brochure n pricelist izzara n cassamora', 'Dear Sir/ Madam,\n\nI would like to know more about the izzara apartment n cassamora units, would you pls send me their brochures n pricelists? \n\nThanks a lot', 0, '2013-05-24 10:37:42', '0000-00-00 00:00:00'),
 (5, 'Denny', 'denny@pthree.co.id', 'Kerjasama Project Property Villatel @ Nusa 2 Bali & Condotel @ Benoa Bali', 'Kepada Yth.\nCAVA PROPERTY\ndi tempat.\n\nSalam Sejahtera,\n\nSaya Denny Planner & Event Marketing Manager  dari PT. Prima Propertindo Group, mau menawarkan kerjasama penjualan project yang sedang kami bangun.\n\nApabila tertarik dan bisa bertemu untuk berkenalan mohon saya di hubungi kembali di alamat :\n\nWISMA ADR PLUIT\nJln. Pluit Raya 1 No. 1 Jakarta Utara 14440\n021 669308 / 0856 888 4959\ndenny@pthree.co.id\nwww.primapropertindogroup.com\n\nDemikian email dari saya atas perhatiannya saya ucapkan terima kasih.', 0, '2013-05-24 13:37:41', '0000-00-00 00:00:00'),
 (6, 'Edward Kusma', 'edward.kusma@incasi.co.id', 'Project in Bekasi', 'Dear Cava,\n\nWe are looking for a project marketing company to market our 40 ha project in Bekasi. Can somebody call me back at 081316888811. thanks\n\nEdward', 0, '2013-06-26 09:17:24', '0000-00-00 00:00:00'),
-(7, 'senta', 'dsentadwina4@gmail.com', 'property  bali', 'saya  tertarik untuk  rumah  yang di  uluwatu  bali\n\ntolong  hubungin  saya  di nomor rumah  62-21-7355069\n\nthx\n\nsenta  jakarta', 0, '2013-06-27 15:50:40', '0000-00-00 00:00:00');
+(7, 'senta', 'dsentadwina4@gmail.com', 'property  bali', 'saya  tertarik untuk  rumah  yang di  uluwatu  bali\n\ntolong  hubungin  saya  di nomor rumah  62-21-7355069\n\nthx\n\nsenta  jakarta', 0, '2013-06-27 15:50:40', '0000-00-00 00:00:00'),
+(8, 'Andhika', 'andhikanovandi@gmail.com', 'test', 'test', 0, '2013-07-13 14:27:45', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1173,7 +1227,7 @@ CREATE TABLE IF NOT EXISTS `cv_login_attempts` (
   `login` varchar(50) NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -1206,6 +1260,101 @@ INSERT INTO `cv_marketing_agent` (`id`, `name`, `phone`, `email`, `deleted`, `cr
 (6, 'Laura Loe', '0815 8356 568 / 021 2555 8994', 'laura.loe@cavaproperty.com', 0, '2013-04-22 16:13:07', '2013-04-26 13:57:48'),
 (7, 'David Tan', '0817 999 199 / 021 2555 8994', 'david@cavaproperty.com', 0, '2013-04-22 16:13:39', '2013-04-26 13:50:04'),
 (8, 'Andi', '0817 0818 124 / 021 25558994', 'andi@cavaproperty.com', 0, '2013-04-26 14:03:29', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cv_marketing_calendar`
+--
+
+DROP TABLE IF EXISTS `cv_marketing_calendar`;
+CREATE TABLE IF NOT EXISTS `cv_marketing_calendar` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `marketing_id` int(11) NOT NULL,
+  `member_id` int(11) NOT NULL,
+  `property_id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `status` enum('confirm','reject','pending') NOT NULL DEFAULT 'pending',
+  `deleted` tinyint(1) NOT NULL DEFAULT '0',
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `cv_marketing_calendar`
+--
+
+INSERT INTO `cv_marketing_calendar` (`id`, `marketing_id`, `member_id`, `property_id`, `date`, `status`, `deleted`, `created_on`, `modified_on`) VALUES
+(1, 7, 2, 8, '2013-12-04', 'pending', 0, '2013-07-15 00:11:16', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cv_member`
+--
+
+DROP TABLE IF EXISTS `cv_member`;
+CREATE TABLE IF NOT EXISTS `cv_member` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `dob` date NOT NULL DEFAULT '0000-00-00',
+  `address` text NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `postal_code` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` bigint(20) NOT NULL,
+  `mobile_phone` bigint(20) NOT NULL,
+  `property_type` varchar(255) DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `forgot_code` varchar(255) NOT NULL,
+  `block` enum('Y','N') NOT NULL DEFAULT 'N',
+  `deleted` tinyint(1) NOT NULL DEFAULT '0',
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `cv_member`
+--
+
+INSERT INTO `cv_member` (`id`, `title`, `first_name`, `last_name`, `dob`, `address`, `city`, `postal_code`, `email`, `phone`, `mobile_phone`, `property_type`, `password`, `forgot_code`, `block`, `deleted`, `created_on`, `modified_on`) VALUES
+(1, 'Mr', 'Lorem', 'Ipsum', '1989-11-08', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Jakarta', 15145, 'andhikanovandi@gmail.com', 123456, 12345678901234, '', '6ef95621c960af17372d1145d69af6c8', 'kMyw0y4D', 'N', 0, '2013-05-25 21:03:00', '2013-07-15 12:57:43'),
+(2, 'Mr', 'acionk', 'arifin', '1985-04-05', 'tanjung duren', 'jakarta', 11470, 'acionk_arifin@yahoo.com', 2111, 818073473, '', '3f7c4756e067384eb19e87dcff2baec9', 'Y6ibs1tV', 'N', 0, '2013-07-15 00:10:06', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cv_member_listing`
+--
+
+DROP TABLE IF EXISTS `cv_member_listing`;
+CREATE TABLE IF NOT EXISTS `cv_member_listing` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `member_id` int(11) NOT NULL,
+  `type_id` int(11) NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `location_id` int(11) NOT NULL,
+  `province` varchar(255) DEFAULT NULL,
+  `city_id` int(11) NOT NULL,
+  `bedroom` int(11) NOT NULL,
+  `min_price` bigint(20) NOT NULL DEFAULT '0',
+  `max_price` bigint(20) NOT NULL DEFAULT '0',
+  `deleted` tinyint(1) NOT NULL DEFAULT '0',
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `cv_member_listing`
+--
+
+INSERT INTO `cv_member_listing` (`id`, `member_id`, `type_id`, `status`, `location_id`, `province`, `city_id`, `bedroom`, `min_price`, `max_price`, `deleted`, `created_on`, `modified_on`) VALUES
+(1, 1, 1, 'buy', 1, NULL, 2, 4, 0, 0, 0, '2013-07-10 16:11:13', '2013-07-13 15:00:51');
 
 -- --------------------------------------------------------
 
@@ -1266,7 +1415,7 @@ INSERT INTO `cv_news` (`id`, `title`, `description`, `image_id`, `slug`, `month`
 (30, 'Soft Launching Serenia Hills Townhouse at Lebak Bulus 10 2011', '<p>\n We invite all prospective buyers to come and join our Soft Launching event on the project&rsquo;s site (Villa Delima).</p>\n<p>\n The event will be held on 9 October 2011 at 10.00 am &ndash; 04.00 pm. All prospective buyers are required to bring invitation,</p>\n<p>\n please call us for further information at +62 815 13600524</p>', 195, 'soft-launching-serenia-hills-townhouse-at-lebak-bulus-10-2011', 11, 2011, '2011-11-01', 0, '2013-04-22 15:29:33', '0000-00-00 00:00:00'),
 (31, 'Setiabudi Sky Garden Show Unit', '<p>\n Marketing Gallery and show unit for Setiabudi Sky Garden now is open for public. Prospective buyers can find 3 show units consist of 2 units of 2 bedroom and 1 unit of 3 bedroom.</p>\n<p>\n The marketing gallery is open for public from Monday &ndash; Sunday on 09.00 &ndash; 19.00.</p>\n<p>\n For show unit visit, please make your appointment at 0812-8280280</p>', 206, 'setiabudi-sky-garden-show-unit', 10, 2011, '2011-10-01', 0, '2013-04-22 15:33:03', '2013-04-22 15:33:36'),
 (32, 'Landscape concept at Serenia Hills', '<p>\n Landscape concept at Serenia Hills. For further information,</p>\n<p>\n please call: +62-815-13600524 +62-813-14511111 +62-857-15761617 +62-817-0818124 For further information</p>\n<p>\n &nbsp;</p>', 209, 'landscape-concept-at-serenia-hills', 10, 2011, '2011-10-01', 0, '2013-04-22 15:36:01', '0000-00-00 00:00:00'),
-(33, 'Invitation The Residences at W, Sentosa Cove, Singapore', '<p>\n <img alt="W sing" class="admin-image" src="{ site_url }files/thumb/275/200" /></p>\n<p>\n Invitation for The Residence at W Singapore.</p>\n<p>\n Please come and visit our exhibition at Bromo Room, Grand Hyatt on 13-14 July 2013</p>', 275, 'invitation-the-residences-at-w-sentosa-cove-singapore', 7, 2013, '2013-07-11', 0, '2013-07-11 09:41:39', '2013-07-11 09:43:50');
+(33, 'Invitation The Residences at W, Sentosa Cove, Singapore', '<p>\n <img alt="W sing" class="admin-image" src="http://www.cavaproperty.com/files/thumb/275/200" /></p>\n<p>\n Invitation for The Residence at W Singapore.</p>\n<p>\n Please come and visit our exhibition at Bromo Room, Grand Hyatt on 13-14 July 2013</p>', 275, 'invitation-the-residences-at-w-sentosa-cove-singapore', 7, 2013, '2013-07-11', 0, '2013-07-11 09:41:39', '2013-07-14 13:45:56');
 
 -- --------------------------------------------------------
 
@@ -1553,6 +1702,35 @@ INSERT INTO `cv_project_category` (`id`, `title`, `description`, `slug`, `delete
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `cv_project_city`
+--
+
+DROP TABLE IF EXISTS `cv_project_city`;
+CREATE TABLE IF NOT EXISTS `cv_project_city` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `location_id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `deleted` tinyint(1) NOT NULL DEFAULT '0',
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `cv_project_city`
+--
+
+INSERT INTO `cv_project_city` (`id`, `location_id`, `title`, `slug`, `deleted`, `created_on`, `modified_on`) VALUES
+(1, 1, 'Jakarta Utara', 'jakarta-utara', 0, '2013-07-10 13:06:05', '0000-00-00 00:00:00'),
+(2, 1, 'Jakarta Barat', 'jakarta-barat', 0, '2013-07-10 13:06:22', '0000-00-00 00:00:00'),
+(3, 1, 'Jakarta Pusat', 'jakarta-pusat', 0, '2013-07-10 13:06:50', '2013-07-10 13:09:52'),
+(4, 1, 'Jakarta Timur', 'jakarta-timur', 0, '2013-07-10 13:06:58', '0000-00-00 00:00:00'),
+(5, 1, 'Jakarta Selatan', 'jakarta-selatan', 0, '2013-07-10 13:07:07', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `cv_project_developer`
 --
 
@@ -1621,7 +1799,7 @@ CREATE TABLE IF NOT EXISTS `cv_project_property` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `type_id` int(11) NOT NULL,
   `developer_id` int(11) NOT NULL,
-  `location_id` int(11) NOT NULL,
+  `city_id` int(11) NOT NULL,
   `marketing_id` int(11) NOT NULL DEFAULT '1',
   `title` varchar(255) NOT NULL,
   `address` text,
@@ -1634,29 +1812,31 @@ CREATE TABLE IF NOT EXISTS `cv_project_property` (
   `vimeo` varchar(255) DEFAULT NULL,
   `image_id` int(11) DEFAULT NULL,
   `highlight` enum('yes','no') NOT NULL DEFAULT 'no',
+  `status` enum('sale','rent') NOT NULL DEFAULT 'sale',
+  `category` enum('primary','secondary') NOT NULL DEFAULT 'primary',
   `slug` varchar(255) NOT NULL,
   `deleted` tinyint(1) NOT NULL DEFAULT '0',
   `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `cv_project_property`
 --
 
-INSERT INTO `cv_project_property` (`id`, `type_id`, `developer_id`, `location_id`, `marketing_id`, `title`, `address`, `size`, `bedroom`, `facility`, `condition`, `additional`, `youtube`, `vimeo`, `image_id`, `highlight`, `slug`, `deleted`, `created_on`, `modified_on`) VALUES
-(1, 1, 2, 1, 6, 'Setiabudi Sky Garden', 'Jl. HR. Rasuna Said Kav. 62, Kuningan, Jakarta Selatan', '19,775 sqm', 0, '<p>\n Setiabudi Sky Garden is strategically located in Setiabudi area, which has now become one of the most developed neighborhood community in CBD area.</p>\n<p>\n Providing you with fast and easy access to CBD main roads (Jl. Sudirman, Jl. Gatot Subroto, Jl. MH Thamrin) and complete sorruonding amenities (major office towers, shopping malls, hotels, hospitals, and &nbsp;schools)</p>\n<p>\n The brilliant collaboration of PT Jakarta Setiabudi International, Tbk (JSI) and TOKYULAND , one of the biggest international property developer from Japan, with architectual design by SHIMIZU, world&rsquo;s renowned design and construction company known for its earthquake resistant structural design, and FRASER HOSPITALITY, one of the most successful service operator of first-class residential world wide.</p>\n<p>\n A residential comprising of 2 luxurious condominiumm towers adjacent to a service apartment. Featuring the largest Open Air are in Jakarta CBD, where nature integrates as a vital part of quality living.</p>\n<p>\n Designed with an advance earthquake-prove structural model, built along international standard, making it a safe place to live.</p>\n<p>\n Complimented with complete set of health &amp; leisure facilities, so you can enjoy your personal and family time in comfort</p>\n<p>\n &nbsp;</p>\n<p>\n Please visit our marketing gallery&nbsp;in &ldquo; SETIABUDI ATRIUM&nbsp; 8TH FLOOR.</p>\n<p>\n Jl. HR. Rasuna Said Kav. 62, Kuningan, Jakarta Selatan</p>\n<p>\n &nbsp;</p>\n<p>\n <strong>Facilities:</strong></p>\n<ul>\n <li>\n  Swimming pool</li>\n <li>\n  Children pool</li>\n <li>\n  Jogging track</li>\n <li>\n  Gym</li>\n <li>\n  Children indoor &amp; outdoor playground</li>\n <li>\n  BBQ area</li>\n <li>\n  Thematic garden</li>\n <li>\n  Basketball court</li>\n <li>\n  Restaurants</li>\n <li>\n  Open terraace</li>\n <li>\n  Function &amp; meeting room</li>\n <li>\n  Business center</li>\n <li>\n  ATM Center</li>\n <li>\n  Mini Market</li>\n <li>\n  Laundry</li>\n <li>\n  Concierge</li>\n</ul>\n<p>\n &nbsp;</p>\n<p>\n <strong>Total units :</strong></p>\n<ul>\n <li>\n  SKY TOWER : 426 unit</li>\n <li>\n  GARDEN TOWER : 160 unit</li>\n <li>\n  FRASERS TOWER : 151 unit</li>\n</ul>', '', '<p>\n <span  rgb(99, 99, 99); font-family: arial, ''Helvetica Neue'', Helvetica, Helvetica, sans-serif; line-height: 18px;">For more detail, please contact Laura Loe 0815 8356 568 / 021 2555 8994 or email laura.loe@cavaproperty.com</span></p>', '', '', 257, 'yes', 'setiabudi-sky-garden', 0, '2013-04-22 11:08:20', '2013-04-26 13:59:03'),
-(2, 1, 7, 1, 6, 'Harris Nusa Dua', 'Nusa Dua, Bali', '', 0, '', '', '<p>\n <span  rgb(99, 99, 99); font-family: arial, ''Helvetica Neue'', Helvetica, Helvetica, sans-serif; line-height: 18px;">For more detail, please contact Laura Loe 0815 8356 568 / 021 2555 8994 or email laura.loe@cavaproperty.com</span></p>\n<p>\n &nbsp;</p>', '', '', 67, 'no', 'harris-nusa-dua', 0, '2013-04-22 11:11:36', '2013-04-26 13:57:31'),
-(3, 1, 2, 1, 4, 'Senopati Suites 2', '', '', 0, '<p>\r\n Coming Soon-for more details.</p>', '', '<p>\r\n Please contact us at +62 815 13600524.</p>', '', '', 218, 'no', 'senopati-suites-2', 1, '2013-04-22 13:11:09', '2013-04-24 10:35:33'),
-(4, 3, 5, 1, 7, 'Serenia Hills', 'South Jakarta', 'Serenia Hills 1: 10 Ha, Serenia Hills 2: 12 Ha', 0, '<p>\n Enter Serenia Hills, enter a world of peace and serenity. A place that offers none other than the very best in living and memorable experience.</p>\n<p>\n Nestled in a secluded part of South Jakarta, Serenia Hills is a luxury gated community. Serenia Hills offers the very essence of living in a peaceful suburban environment, that is perfect to spend the quality of living with your family. Situated minutes from TB Simatupang, with its numerous shopping centrres, hospitals and other essential amenities, that make living in Serenia Hills so remarkable.</p>\n<ul>\n <li>\n  Concept : Urban Resort Design</li>\n <li>\n  Total Land Size : 10 Ha</li>\n <li>\n  Type : Regent (phase 1), Signature (phase 2) and Future Development (apartment &ndash; phase 3)</li>\n <li>\n  Regent Type (LS/BS) : 160/170, 162/180, 200/200, 276/230</li>\n <li>\n  Features : Center Park, basket ball court, mini soccer, walkable neighborhood, gated cluster, CCTV, Club house &amp; mini club house, swimming pool</li>\n</ul>\n<p>\n <strong>TYPE:</strong></p>\n<ul>\n <li>\n  <strong>Serenia Hills 1: </strong>Regent, Signature</li>\n <li>\n  <strong>Serenia HIlls 2:&nbsp;</strong>Titan (153/145), Ultimate (LT/LB: 162/145, 180/185, 200/220)</li>\n</ul>', '', '<p>\n For more detail, please contact David Tan 0817 999 199 / 021 2555 8994 or email david@cavaproperty.com</p>\n<p>\n &nbsp;</p>', '', '', 250, 'yes', 'serenia-hills', 0, '2013-04-22 13:14:50', '2013-04-26 13:53:33'),
-(5, 1, 3, 1, 5, 'Izzara', 'Jl. TB. Simatupang, intersection of Antasari - Simatupang, South Jakarta.', '', 0, '<p>\n Presenting IZZARA, a top - notch residential investment opportunity in Jl. TB. Simatupang, intersection of Antasari - Simatupang, South Jakarta.</p>\n<p>\n IZZARA is surrounded by commercial buildings of mostly oil &amp; gas companies and every convenience you can think of, such as supermarkets, medical clinics, hospitals, and international schools.</p>\n<p>\n Developed by the same developer for luxury and superb hotels &amp; villas Alila Uluwatu Bali, Alila Ubud Bali, Alila Manggis Bali, Hotel Amanjiwo Yogyakarta, Amankila Bali, IZZARA fuses all the elements of quality lifestyle and investment in the most sought-after locations.</p>\n<p>\n They offer a versatile choice of one, two or three bedroom apartments, as follows:</p>\n<ul>\n <li>\n  1 bedroom : 64 - 71 sqm</li>\n <li>\n  2 bedroom : 99 - 147 sqm</li>\n <li>\n  3 bedroom : 176 - 199 sqm</li>\n</ul>\n<p>\n Supported by the following high calibre international team behind the development : IAW (Bangkok), Mitani (Japan), LPA (Japan), Shimizu Corporation (Japan).</p>\n<p>\n &nbsp;</p>', '', '<p>\n <span  rgb(99, 99, 99); font-family: arial, ''Helvetica Neue'', Helvetica, Helvetica, sans-serif; line-height: 18px;">For more detail, please contact Vanessa 0812 1063 103 / 021 2555 8994 or email vanessa@cavaproperty.com</span></p>\n<p>\n &nbsp;</p>\n<div>\n &nbsp;</div>', '', '', 239, 'yes', 'izzara', 0, '2013-04-22 13:17:44', '2013-04-26 14:01:30'),
-(6, 1, 1, 2, 7, 'One Balmoral', 'Balmoral Road (District 10)', '6157m2', 4, '<p>\n Developed by Hong Leong Holdings Ltd, twin blocks of 12 storey apartments comprising of 91 apartments to be built on an approximately 6157m2 land. It offers a choice of 1, 2, 3 and 4 bedrooms, equipped with imported finishings.</p>\n<p>\n One Balmoral is strategically located at Balmoral Road (District 10) and within the greenery of neighbouring Goodwood Hill. One of Singapore&rsquo;s premier schools, Raffles Girls&#39; Secondary School, is a stone&rsquo;s throw away and you will be spoilt for choice with the private clubs available nearby, namely The Pines, the Tanglin Club and the American Club. One Balmoral is just minutes&rsquo; drive away from ION Orchard and the shopping belt of Orchard Road.</p>\n<p>\n Currently, the piling is near completion and anticipated handing over is March 2015.</p>\n<p>\n Brief details on the project as follows:</p>\n<ul>\n <li>\n  Total no. of units &ndash; 91</li>\n <li>\n  Twin towers of 12 storeys plus attic</li>\n <li>\n  Car park lots &ndash; 103, inclusive of 2 handicap lots at basement and first storey</li>\n <li>\n  Facilities &ndash; Lap pool, clubhouse, meditation garden, gym, BBQ pavilions amongst others.</li>\n</ul>', '', '<p>\n <span  rgb(99, 99, 99); font-family: arial, ''Helvetica Neue'', Helvetica, Helvetica, sans-serif; line-height: 18px;">For more detail, please contact David Tan 0817 999 199 / 021 2555 8994 or email david@cavaproperty.com</span></p>', '', '', 220, 'yes', 'one-balmoral', 0, '2013-04-22 13:20:14', '2013-04-26 13:52:08'),
-(7, 4, 6, 1, 7, 'Alila Bintan', 'Pulau Bintan, Riau', '14.4–hectare', 2, '<p>\n Alila Villas Bintan presents the opportunity to own your dream home within an integrated residential, resort and village community on the beautiful Indonesian island of Bintan, in a secure zone along the northern coast. Imagine a tropical retreat less than an hour from Singapore, a world away from the busy metropolis yet close enough to be your regular weekend home.</p>\n<p>\n At its scenic hillside location, meandering down towards sandy white beaches, this 14.4&ndash;hectare gated development comprises of 12 beach&ndash;front residences available for sale, and a luxury 52&ndash;villa boutique hotel, designed and constructed to EarthCheck&#39;s rigorous environmental standards. In addition, another four hectares are devoted to a village with a museum, gallery, spa, and retail and dining locations. An unprecedented concept, Alila Villas Bintan is centered on celebrating Asia&#39;s rich arts and cultural heritage, superb hospitality and contemporary lifestyle.</p>', '', '<p>\n <span  rgb(99, 99, 99); font-family: arial, ''Helvetica Neue'', Helvetica, Helvetica, sans-serif; line-height: 18px;">For more detail, please contact David Tan 0817 999 199 / 021 2555 8994 or email david@cavaproperty.com</span></p>', '', '', 226, 'yes', 'alila-bintan', 0, '2013-04-25 13:26:33', '2013-04-26 13:54:15'),
-(8, 4, 8, 1, 7, 'Alila Uluwatu', 'Uluwatu, Bali', '', 2, '<p>\n Designed by award-winning architectural firm, WOHA, in accordance with Green Globe 21 standards, the resort is a stunning expression of contemporary sustainable design inspired by the savannah landscape that is unique to this region of Bali.</p>\n<p 15px="" 40px="" align="justify" alila="" and="" background-color:="" border:="" boutique="" by="" color:="" complete="" comprises="" development="" facilities.="" five-star="" font-family:="" font-size:="" guest="" hotel="" hotels="" is="" it="" leading="" line-height:="" maintained="" managed="" management="" of="" one-bedroom="" outline:="" p="" padding:="" private="" professionally="" residential="" resort="" s="" the="" three-bedroom="" villas="">\n Indulge in the creative culinary delights of CIRE fine dining restaurant, plus the authentic Indonesian and Balinese cuisine in The Warung. Discover pure relaxation at the spectacular clifftop pool and sunset cabana, and in the sanctuary of Spa Alila. Relish the attention of a personal butler to cater to your every whim.</p>', '', '<p>\n <span  rgb(99, 99, 99); font-family: arial, ''Helvetica Neue'', Helvetica, Helvetica, sans-serif; line-height: 18px;">For more detail, please contact David Tan 0817 999 199 / 021 2555 8994 or email david@cavaproperty.com</span></p>', '', '', 230, 'yes', 'alila-uluwatu', 0, '2013-04-25 13:52:58', '2013-04-26 13:55:09'),
-(9, 3, 4, 1, 8, 'Casamora', 'Jagakarsa, Jakarta Selatan', '', 2, '<p>\n Choose from two house designs,&nbsp;Tranquil living in a shaded woodland.&nbsp;Our green philosophy creates a healthy living environment. Well laid out walk-ways and a well shaded jogging track.&nbsp;Escape the hustle and bustle of city life and the ever increasing pollution.</p>\n<p>\n Various shops, cafes and restaurants are planned nearby to fulfill the different needs of each family member.&nbsp;A SAFE INVESTMENT.</p>\n<p>\n Cinere - Jagorawi. Easy access to Jakarta&#39;s growing business areas in south Jakarta,&nbsp;a strategic investment go hand-in-hand.</p>', '', '<p>\n <span  rgb(99, 99, 99); font-family: arial, ''Helvetica Neue'', Helvetica, Helvetica, sans-serif; line-height: 18px;">For more detail, please contact Andi 0817 0818 124</span><span  rgb(99, 99, 99); font-family: arial, ''Helvetica Neue'', Helvetica, Helvetica, sans-serif; line-height: 18px;">&nbsp;/ 021 2555 8994 or email andi@cavaproperty.com</span></p>', '', '', 238, 'yes', 'casamora', 0, '2013-04-26 07:00:52', '2013-04-26 14:04:40'),
-(10, 3, 9, 1, 3, 'Cavana', 'Madrasah - Jakarta Selatan', '', 4, '', 'Under Construction', '<p>\n &nbsp;</p>\n<p>\n Cavana is an exclusive residence, which is located in Kemang, an important and well known area in southern Jakarta.</p>\n<p>\n Designed with a modern concept, making Cavanaa comfort residence that has an exquisite taste. Without leaving a touch of elegance in every aspect, Cavana presents an architectural design that maximizes open space.</p>', '', '', 266, 'yes', 'cavana', 0, '2013-06-04 10:45:30', '2013-06-09 20:28:44'),
-(11, 1, 10, 2, 7, 'The Residence at W - Sentosa Cove', '1, 3, 5, 7, 9, 11, 13 Ocean Way, Sentosa Cove, District 4', '1227 - 6297 sqft', 0, '<p>\n Bar, swimming pool, WET Bar, Whenever / Wherever Services, SPA, Restaurant</p>\n<p>\n &nbsp;</p>', '', '<p>\n Bedroom : 2 Bedroom (1.227-1.292 sqft)</p>\n<p>\n 3 Bedroom (1.625 - 2.616 sqft)</p>\n<p>\n 4 Bedroom (2.067 - 2.486 sqft)</p>\n<p>\n Penthouses (2.217 - 6.297 sqft)</p>\n<p>\n &nbsp;</p>\n<p>\n Ultimate, Iconic, Glamorous. The Residence at W Singapore - Sentosa Cove is a Coveted address integrated with W Singapore- Sentosa Cove and Quayside Isle.</p>\n<p>\n Developed by Singapore&#39;s property pioneer since 1963, City Development Limited (CDL).Listed in the Singapore Exchange (SGX). CDL&#39;s attention to detail and quality is proven with an award winning track record for high standards of excellence and innovation.</p>\n<p>\n All homes features the finest accessory names : Hansgrohe Axor Stark X Collection, Catalano and Halfro fixtures, GIRA lighting systems, Miele Cooker Hood, Hob, Oven, Dishwaser, Wine Cooler, Refrigerator &amp; Coffee Maker</p>\n<p>\n With the best neighbours on Sentosa Island and Singapore&#39;s Central Bussiness District just 10 minutes away, nothing is out of reach.</p>\n<p>\n Retreat, Recharge, Release. The Residences at W Singapore-Sentosa Cove is your escape from the unusual (W lounge, WET@, FIRE, THE GYM, YATCH BERTH, SUNKEN LOUNGE, W KIDS, CHANGING/STEAM ROOMS, BUGGY SERVICE.</p>', '', '', 271, 'yes', 'the-residence-at-w-sentosa-cove', 0, '2013-06-27 12:24:09', '0000-00-00 00:00:00');
+INSERT INTO `cv_project_property` (`id`, `type_id`, `developer_id`, `city_id`, `marketing_id`, `title`, `address`, `size`, `bedroom`, `facility`, `condition`, `additional`, `youtube`, `vimeo`, `image_id`, `highlight`, `status`, `category`, `slug`, `deleted`, `created_on`, `modified_on`) VALUES
+(1, 1, 2, 1, 6, 'Setiabudi Sky Garden', 'Jl. HR. Rasuna Said Kav. 62, Kuningan, Jakarta Selatan', '19,775 sqm', 0, '<p>\n Setiabudi Sky Garden is strategically located in Setiabudi area, which has now become one of the most developed neighborhood community in CBD area.</p>\n<p>\n Providing you with fast and easy access to CBD main roads (Jl. Sudirman, Jl. Gatot Subroto, Jl. MH Thamrin) and complete sorruonding amenities (major office towers, shopping malls, hotels, hospitals, and &nbsp;schools)</p>\n<p>\n The brilliant collaboration of PT Jakarta Setiabudi International, Tbk (JSI) and TOKYULAND , one of the biggest international property developer from Japan, with architectual design by SHIMIZU, world&rsquo;s renowned design and construction company known for its earthquake resistant structural design, and FRASER HOSPITALITY, one of the most successful service operator of first-class residential world wide.</p>\n<p>\n A residential comprising of 2 luxurious condominiumm towers adjacent to a service apartment. Featuring the largest Open Air are in Jakarta CBD, where nature integrates as a vital part of quality living.</p>\n<p>\n Designed with an advance earthquake-prove structural model, built along international standard, making it a safe place to live.</p>\n<p>\n Complimented with complete set of health &amp; leisure facilities, so you can enjoy your personal and family time in comfort</p>\n<p>\n &nbsp;</p>\n<p>\n Please visit our marketing gallery&nbsp;in &ldquo; SETIABUDI ATRIUM&nbsp; 8TH FLOOR.</p>\n<p>\n Jl. HR. Rasuna Said Kav. 62, Kuningan, Jakarta Selatan</p>\n<p>\n &nbsp;</p>\n<p>\n <strong>Facilities:</strong></p>\n<ul>\n <li>\n  Swimming pool</li>\n <li>\n  Children pool</li>\n <li>\n  Jogging track</li>\n <li>\n  Gym</li>\n <li>\n  Children indoor &amp; outdoor playground</li>\n <li>\n  BBQ area</li>\n <li>\n  Thematic garden</li>\n <li>\n  Basketball court</li>\n <li>\n  Restaurants</li>\n <li>\n  Open terraace</li>\n <li>\n  Function &amp; meeting room</li>\n <li>\n  Business center</li>\n <li>\n  ATM Center</li>\n <li>\n  Mini Market</li>\n <li>\n  Laundry</li>\n <li>\n  Concierge</li>\n</ul>\n<p>\n &nbsp;</p>\n<p>\n <strong>Total units :</strong></p>\n<ul>\n <li>\n  SKY TOWER : 426 unit</li>\n <li>\n  GARDEN TOWER : 160 unit</li>\n <li>\n  FRASERS TOWER : 151 unit</li>\n</ul>', '', '<p>\n For more detail, please contact Laura Loe 0815 8356 568 / 021 2555 8994 or email laura.loe@cavaproperty.com</p>', '', '', 257, 'yes', 'rent', 'primary', 'setiabudi-sky-garden', 0, '2013-04-22 11:08:20', '2013-09-05 13:50:28'),
+(2, 4, 7, 1, 6, 'Harris Nusa Dua', 'Nusa Dua, Bali', '', 0, '', '', '<p>\r\n For more detail, please contact Laura Loe 0815 8356 568 / 021 2555 8994 or email laura.loe@cavaproperty.com</p>', '', '', 67, 'no', 'sale', 'primary', 'harris-nusa-dua', 0, '2013-04-22 11:11:36', '2013-09-04 15:03:39'),
+(3, 1, 2, 1, 4, 'Senopati Suites 2', '', '', 0, '<p>\r\n Coming Soon-for more details.</p>', '', '<p>\r\n Please contact us at +62 815 13600524.</p>', '', '', 218, 'no', 'sale', 'primary', 'senopati-suites-2', 1, '2013-04-22 13:11:09', '2013-04-24 10:35:33'),
+(4, 3, 5, 1, 7, 'Serenia Hills', 'South Jakarta', 'Serenia Hills 1: 10 Ha, Serenia Hills 2: 12 Ha', 0, '<p>\r\n Enter Serenia Hills, enter a world of peace and serenity. A place that offers none other than the very best in living and memorable experience.</p>\r\n<p>\r\n Nestled in a secluded part of South Jakarta, Serenia Hills is a luxury gated community. Serenia Hills offers the very essence of living in a peaceful suburban environment, that is perfect to spend the quality of living with your family. Situated minutes from TB Simatupang, with its numerous shopping centrres, hospitals and other essential amenities, that make living in Serenia Hills so remarkable.</p>\r\n<ul>\r\n <li>\r\n  Concept : Urban Resort Design</li>\r\n <li>\r\n  Total Land Size : 10 Ha</li>\r\n <li>\r\n  Type : Regent (phase 1), Signature (phase 2) and Future Development (apartment &ndash; phase 3)</li>\r\n <li>\r\n  Regent Type (LS/BS) : 160/170, 162/180, 200/200, 276/230</li>\r\n <li>\r\n  Features : Center Park, basket ball court, mini soccer, walkable neighborhood, gated cluster, CCTV, Club house &amp; mini club house, swimming pool</li>\r\n</ul>\r\n<p>\r\n <strong>TYPE:</strong></p>\r\n<ul>\r\n <li>\r\n  <strong>Serenia Hills 1: </strong>Regent, Signature</li>\r\n <li>\r\n  <strong>Serenia HIlls 2:&nbsp;</strong>Titan (153/145), Ultimate (LT/LB: 162/145, 180/185, 200/220)</li>\r\n</ul>', '', '<p>\r\n For more detail, please contact David Tan 0817 999 199 / 021 2555 8994 or email david@cavaproperty.com</p>', '', '', 250, 'yes', 'sale', 'primary', 'serenia-hills', 0, '2013-04-22 13:14:50', '2013-08-22 12:56:51'),
+(5, 1, 3, 1, 5, 'Izzara', 'Jl. TB. Simatupang, intersection of Antasari - Simatupang, South Jakarta.', '', 0, '<p>\n Presenting IZZARA, a top - notch residential investment opportunity in Jl. TB. Simatupang, intersection of Antasari - Simatupang, South Jakarta.</p>\n<p>\n IZZARA is surrounded by commercial buildings of mostly oil &amp; gas companies and every convenience you can think of, such as supermarkets, medical clinics, hospitals, and international schools.</p>\n<p>\n Developed by the same developer for luxury and superb hotels &amp; villas Alila Uluwatu Bali, Alila Ubud Bali, Alila Manggis Bali, Hotel Amanjiwo Yogyakarta, Amankila Bali, IZZARA fuses all the elements of quality lifestyle and investment in the most sought-after locations.</p>\n<p>\n They offer a versatile choice of one, two or three bedroom apartments, as follows:</p>\n<ul>\n <li>\n  1 bedroom : 64 - 71 sqm</li>\n <li>\n  2 bedroom : 99 - 147 sqm</li>\n <li>\n  3 bedroom : 176 - 199 sqm</li>\n</ul>\n<p>\n Supported by the following high calibre international team behind the development : IAW (Bangkok), Mitani (Japan), LPA (Japan), Shimizu Corporation (Japan).</p>', '', '<p>\n For more detail, please contact Vanessa 0812 1063 103 / 021 2555 8994 or email vanessa@cavaproperty.com</p>', '', '', 239, 'yes', 'sale', 'primary', 'izzara', 0, '2013-04-22 13:17:44', '2013-09-05 13:50:15'),
+(6, 1, 1, 2, 7, 'One Balmoral', 'Balmoral Road (District 10)', '6157m2', 4, '<p>\r\n Developed by Hong Leong Holdings Ltd, twin blocks of 12 storey apartments comprising of 91 apartments to be built on an approximately 6157m2 land. It offers a choice of 1, 2, 3 and 4 bedrooms, equipped with imported finishings.</p>\r\n<p>\r\n One Balmoral is strategically located at Balmoral Road (District 10) and within the greenery of neighbouring Goodwood Hill. One of Singapore&rsquo;s premier schools, Raffles Girls&#39; Secondary School, is a stone&rsquo;s throw away and you will be spoilt for choice with the private clubs available nearby, namely The Pines, the Tanglin Club and the American Club. One Balmoral is just minutes&rsquo; drive away from ION Orchard and the shopping belt of Orchard Road.</p>\r\n<p>\r\n Currently, the piling is near completion and anticipated handing over is March 2015.</p>\r\n<p>\r\n Brief details on the project as follows:</p>\r\n<ul>\r\n <li>\r\n  Total no. of units &ndash; 91</li>\r\n <li>\r\n  Twin towers of 12 storeys plus attic</li>\r\n <li>\r\n  Car park lots &ndash; 103, inclusive of 2 handicap lots at basement and first storey</li>\r\n <li>\r\n  Facilities &ndash; Lap pool, clubhouse, meditation garden, gym, BBQ pavilions amongst others.</li>\r\n</ul>', '', '<p>\r\n For more detail, please contact David Tan 0817 999 199 / 021 2555 8994 or email david@cavaproperty.com</p>', '', '', 220, 'yes', 'sale', 'primary', 'one-balmoral', 0, '2013-04-22 13:20:14', '2013-08-22 12:56:35'),
+(7, 4, 6, 1, 7, 'Alila Bintan', 'Pulau Bintan, Riau', '14.4–hectare', 2, '<p>\r\n Alila Villas Bintan presents the opportunity to own your dream home within an integrated residential, resort and village community on the beautiful Indonesian island of Bintan, in a secure zone along the northern coast. Imagine a tropical retreat less than an hour from Singapore, a world away from the busy metropolis yet close enough to be your regular weekend home.</p>\r\n<p>\r\n At its scenic hillside location, meandering down towards sandy white beaches, this 14.4&ndash;hectare gated development comprises of 12 beach&ndash;front residences available for sale, and a luxury 52&ndash;villa boutique hotel, designed and constructed to EarthCheck&#39;s rigorous environmental standards. In addition, another four hectares are devoted to a village with a museum, gallery, spa, and retail and dining locations. An unprecedented concept, Alila Villas Bintan is centered on celebrating Asia&#39;s rich arts and cultural heritage, superb hospitality and contemporary lifestyle.</p>', '', '<p>\r\n For more detail, please contact David Tan 0817 999 199 / 021 2555 8994 or email david@cavaproperty.com</p>', '', '', 226, 'yes', 'sale', 'primary', 'alila-bintan', 0, '2013-04-25 13:26:33', '2013-09-04 15:17:40'),
+(8, 4, 8, 1, 7, 'Alila Uluwatu', 'Uluwatu, Bali', '', 2, '<p>\r\n Designed by award-winning architectural firm, WOHA, in accordance with Green Globe 21 standards, the resort is a stunning expression of contemporary sustainable design inspired by the savannah landscape that is unique to this region of Bali.</p>\r\n<p 15px="" 40px="" align="justify" alila="" and="" background-color:="" border:="" boutique="" by="" color:="" complete="" comprises="" development="" facilities.="" five-star="" font-family:="" font-size:="" guest="" hotel="" hotels="" is="" it="" leading="" line-height:="" maintained="" managed="" management="" of="" one-bedroom="" outline:="" p="" padding:="" private="" professionally="" residential="" resort="" s="" the="" three-bedroom="" villas="">\r\n Indulge in the creative culinary delights of CIRE fine dining restaurant, plus the authentic Indonesian and Balinese cuisine in The Warung. Discover pure relaxation at the spectacular clifftop pool and sunset cabana, and in the sanctuary of Spa Alila. Relish the attention of a personal butler to cater to your every whim.</p>', '', '<p>\r\n For more detail, please contact David Tan 0817 999 199 / 021 2555 8994 or email david@cavaproperty.com</p>', '', '', 230, 'yes', 'sale', 'primary', 'alila-uluwatu', 0, '2013-04-25 13:52:58', '2013-08-22 12:54:26'),
+(9, 3, 4, 1, 8, 'Casamora', 'Jagakarsa, Jakarta Selatan', '', 2, '<p>\r\n Choose from two house designs,&nbsp;Tranquil living in a shaded woodland.&nbsp;Our green philosophy creates a healthy living environment. Well laid out walk-ways and a well shaded jogging track.&nbsp;Escape the hustle and bustle of city life and the ever increasing pollution.</p>\r\n<p>\r\n Various shops, cafes and restaurants are planned nearby to fulfill the different needs of each family member.&nbsp;A SAFE INVESTMENT.</p>\r\n<p>\r\n Cinere - Jagorawi. Easy access to Jakarta&#39;s growing business areas in south Jakarta,&nbsp;a strategic investment go hand-in-hand.</p>', '', '<p>\r\n For more detail, please contact Andi 021 2555 8994 or email andi@cavaproperty.com</p>', '', '', 238, 'yes', 'sale', 'primary', 'casamora', 0, '2013-04-26 07:00:52', '2013-08-22 12:55:11'),
+(10, 3, 9, 1, 3, 'Cavana', 'Madrasah - Jakarta Selatan', '', 4, '', 'Under Construction', '<p>\r\n Cavana is an exclusive residence, which is located in Kemang, an important and well known area in southern Jakarta.</p>\r\n<p>\r\n Designed with a modern concept, making Cavanaa comfort residence that has an exquisite taste. Without leaving a touch of elegance in every aspect, Cavana presents an architectural design that maximizes open space.</p>', '', '', 266, 'yes', 'sale', 'primary', 'cavana', 0, '2013-06-04 10:45:30', '2013-08-22 12:55:42'),
+(11, 1, 10, 2, 7, 'The Residence at W - Sentosa Cove', '1, 3, 5, 7, 9, 11, 13 Ocean Way, Sentosa Cove, District 4', '1227 - 6297 sqft', 0, '<p>\r\n Bar, swimming pool, WET Bar, Whenever / Wherever Services, SPA, Restaurant</p>', '', '<p>\r\n Bedroom : 2 Bedroom (1.227-1.292 sqft)</p>\r\n<p>\r\n 3 Bedroom (1.625 - 2.616 sqft)</p>\r\n<p>\r\n 4 Bedroom (2.067 - 2.486 sqft)</p>\r\n<p>\r\n Penthouses (2.217 - 6.297 sqft)</p>\r\n<p>\r\n &nbsp;</p>\r\n<p>\r\n Ultimate, Iconic, Glamorous. The Residence at W Singapore - Sentosa Cove is a Coveted address integrated with W Singapore- Sentosa Cove and Quayside Isle.</p>\r\n<p>\r\n Developed by Singapore&#39;s property pioneer since 1963, City Development Limited (CDL).Listed in the Singapore Exchange (SGX). CDL&#39;s attention to detail and quality is proven with an award winning track record for high standards of excellence and innovation.</p>\r\n<p>\r\n All homes features the finest accessory names : Hansgrohe Axor Stark X Collection, Catalano and Halfro fixtures, GIRA lighting systems, Miele Cooker Hood, Hob, Oven, Dishwaser, Wine Cooler, Refrigerator &amp; Coffee Maker</p>\r\n<p>\r\n With the best neighbours on Sentosa Island and Singapore&#39;s Central Bussiness District just 10 minutes away, nothing is out of reach.</p>\r\n<p>\r\n Retreat, Recharge, Release. The Residences at W Singapore-Sentosa Cove is your escape from the unusual (W lounge, WET@, FIRE, THE GYM, YATCH BERTH, SUNKEN LOUNGE, W KIDS, CHANGING/STEAM ROOMS, BUGGY SERVICE.</p>', '', '', 271, 'yes', 'sale', 'primary', 'the-residence-at-w-sentosa-cove', 0, '2013-06-27 12:24:09', '2013-08-22 12:57:16');
 
 -- --------------------------------------------------------
 
@@ -2078,8 +2258,8 @@ CREATE TABLE IF NOT EXISTS `cv_users` (
 --
 
 INSERT INTO `cv_users` (`id`, `role_id`, `email`, `username`, `password_hash`, `reset_hash`, `salt`, `last_login`, `last_ip`, `created_on`, `deleted`, `banned`, `ban_message`, `reset_by`, `display_name`, `display_name_changed`, `timezone`, `language`, `active`, `activate_hash`) VALUES
-(1, 1, 'andhikanovandi@gmail.com', 'andhika', 'd8db64dfb1062b9200c4e57c51d0b736d5f57692', NULL, 'Seqx4Rm', '2013-04-29 18:30:55', '103.2.146.20', '0000-00-00 00:00:00', 0, 0, NULL, NULL, 'Andhika Novandi Patria', NULL, 'UM6', 'english', 1, ''),
-(2, 2, 'admin@bonfire.com', 'admin', '874911bfdde3730f29bcca311401e09f47fb2d4f', NULL, 'uQaZOiU', '2013-07-11 09:36:06', '110.138.103.139', '2013-04-07 09:59:19', 0, 0, NULL, NULL, 'Administrator', NULL, 'UM6', 'english', 1, '');
+(1, 1, 'andhikanovandi@gmail.com', 'andhika', 'd8db64dfb1062b9200c4e57c51d0b736d5f57692', NULL, 'Seqx4Rm', '2013-09-05 13:42:56', '205.251.141.123', '0000-00-00 00:00:00', 0, 0, NULL, NULL, 'Andhika Novandi Patria', NULL, 'UM6', 'english', 1, ''),
+(2, 2, 'admin@bonfire.com', 'admin', '874911bfdde3730f29bcca311401e09f47fb2d4f', NULL, 'uQaZOiU', '2013-07-19 17:27:06', '103.29.151.130', '2013-04-07 09:59:19', 0, 0, NULL, NULL, 'Administrator', NULL, 'UM6', 'english', 1, '');
 
 -- --------------------------------------------------------
 

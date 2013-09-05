@@ -7,7 +7,7 @@
 				<ul class="overview">
 				<?php foreach($property AS $property_list) : ?>
 					<li class="">
-						<a href="<?php echo base_url().'project/detail/'.$property_list->category.'/'.$property_list->slug; ?>">
+						<a href="<?php echo base_url().'project/detail/'.$property_list->slug; ?>">
 							<span><?php echo $property_list->title ?> <small>+ MORE DETAILS</small></span>
 						</a>
 						<img src="<?php echo base_url().'files/large/'.$property_list->image_id.'/200/200/fit' ?>" alt="">
@@ -27,10 +27,10 @@
 					<div class="columns sixteen">
 						<div class="top">
 							<h5>OUR PROJECT</h5>
-							<span class="right">
+							<!--<span class="right">
 								<a href="<?php echo base_url().'project/category/primary'; ?>"  class="<?php echo ($this->uri->segment(3) == "" OR $this->uri->segment(3) == "primary") ? "active" : ""; ?>">PRIMARY</a> | 
 								<a href="<?php echo base_url().'project/category/secondary'; ?>" class="<?php echo ($this->uri->segment(3) == "secondary") ? "active" : ""; ?>">SECONDARY</a>
-							</span>	
+							</span>	-->
 						</div>
 
 						<?php foreach($property_types AS $property_types_list) : ?>
@@ -40,7 +40,7 @@
 								<?php echo $property_types_list->title; ?>
 							</h6>
 							<?php foreach($property_types_list->list_property AS $property_list) : ?>
-								<a href="<?php echo base_url().'project/detail/'.$property_list->category.'/'.$property_list->slug; ?>">
+								<a href="<?php echo base_url().'project/detail/'.$property_list->slug; ?>">
 									<?php echo $property_list->title; ?>
 								</a>
 								<br>
@@ -78,7 +78,7 @@
 							      	<img src="<?php echo base_url().'files/large/'.$property_highlight_list->image_id.'/750/360/fit' ?>" alt="Our Project">
 							      	<div class="detail">
 							      		<?php echo $property_highlight_list->title; ?> 
-							      		<a href="<?php echo base_url().'project/detail/'.$property_highlight_list->slug_developer.'/'.$property_highlight_list->slug; ?>">
+							      		<a href="<?php echo base_url().'project/detail/'.$property_highlight_list->slug; ?>">
 							      			+ DETAILS
 							      		</a>
 							      	</div>

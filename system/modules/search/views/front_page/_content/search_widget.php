@@ -1,9 +1,9 @@
 <div class="top">
 	<h5>SEARCH PROJECT</h5>
-	<span class="right">
+	<!--<span class="right">
 		<a href="#primary" id="primary" class="method <?php echo ($this->input->get('category') == "" OR $this->input->get('category') ==  "primary") ? "active" : ""; ?>">PRIMARY</a> | 
 		<a href="#secondary" id="secondary" class="method <?php echo $this->input->get('category') ==  "secondary" ? "active" : ""; ?>">SECONDARY</a>
-	</span>	
+	</span>	-->
 </div>
 
 <section class="search">
@@ -13,7 +13,7 @@
 		<div class="input">
 			<select name="status" id="method">
 				<option value="sale" class="primary" <?php echo $this->input->get('status') ==  "sale" ? 'selected="selected"' : ""; ?>>Sale</option>
-				<option value="rent" class="secondary <?php echo ($this->input->get('category') == "" OR $this->input->get('category') == "primary") ? "hide" : ""; ?>" <?php echo $this->input->get('status') ==  "rent" ? 'selected="selected"' : ""; ?>>Rent</option>
+				<option value="rent" class="secondary <?php //echo ($this->input->get('category') == "" OR $this->input->get('category') == "primary") ? "hide" : ""; ?>" <?php echo $this->input->get('status') ==  "rent" ? 'selected="selected"' : ""; ?>>Rent</option>
 			</select>	
 		</div>
 

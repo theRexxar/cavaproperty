@@ -31,8 +31,8 @@
             		<th width="30%">Summary</th>
 					<th width="10%">URL</th>
 					<th width="5%">Publish</th>
-            		<th width="15%">Created</th>
-            		<th width="15%"></th>
+            		<th width="10%">Created</th>
+            		<th width="20%"></th>
 				</tr>
 			</thead>
             
@@ -73,8 +73,8 @@
                             echo $publish;
                         ?>
                     </td>
-    				<td width="15%"><?php echo date('d M Y - H:i:s',strtotime($record->created_on));?></td>
-                    <td width="15%" class="actions">
+    				<td width="10%"><?php echo date('d M Y - H:i:s',strtotime($record->created_on));?></td>
+                    <td width="20%" class="actions">
     					<?php if (has_permission('Banner.Content.Edit')): ?>
     					<?php 
     						echo anchor(SITE_AREA . '/content/banner/edit/' . $record->id, 

@@ -63,7 +63,7 @@
 						</div>
 						
 						<p class="clear left mt20">
-							<a href="<?php echo base_url().'project/category/'.$category; ?>" class="right button-more">
+							<a href="<?php echo base_url().'project'; ?>" class="right button-more">
 								<span>+</span> MORE PROJECTS
 							</a>
 						</p>
