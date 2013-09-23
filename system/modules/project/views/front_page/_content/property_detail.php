@@ -8,9 +8,16 @@
 						<h5><?php echo $property->title ?></h5>
 						
 						<div class="container-article">
+							<?php if($property->posting_date != "0000-00-00") : ?>
+							<div class="article">
+								<span class="text-lg">POSTING DATE</span><br>
+								<span class="mlr10"><?php echo date('d F Y',strtotime($property->posting_date)) ?></span>
+							</div>
+							<?php endif; ?>
+
 							<div class="article">
 								<span class="text-lg">LOCATION</span><br>
-								<span class="mlr10"><?php echo $property->title_location ?></span>
+								<span class="mlr10"><?php echo $property->title_city ?></span>
 							</div>
 
 							<?php if(! empty($property->address)) : ?>
@@ -34,20 +41,27 @@
 							</div>
 							<?php endif; ?>
 
+							<?php if(! empty($property->condition) && $property->category == "secondary") : ?>
+							<div class="article">
+								<span class="text-lg">CONDITION</span><br>
+								<span class="mlr10">
+									<p><?php echo $property->condition ?></p>
+								</span>
+							</div>
+							<?php endif; ?>
+
+							<?php if(! empty($property->price) && $property->category == "secondary") : ?>
+							<div class="article">
+								<span class="text-lg">Price</span><br>
+								<span class="mlr10"><?php echo $property->price ?></span>
+							</div>
+							<?php endif; ?>
+
 							<?php if(! empty($property->facility)) : ?>
 							<div class="article">
 								<span class="text-lg">FACILITIES</span><br>
 								<span class="mlr10">
 									<?php echo $property->facility ?>
-								</span>
-							</div>
-							<?php endif; ?>
-
-							<?php if(! empty($property->condition)) : ?>
-							<div class="article">
-								<span class="text-lg">CONDITION</span><br>
-								<span class="mlr10">
-									<p><?php echo $property->condition ?></p>
 								</span>
 							</div>
 							<?php endif; ?>

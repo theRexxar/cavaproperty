@@ -2,7 +2,7 @@
 	<div class="input">
 		<input type="text" name="name" <?php echo $this->input->get('name') ? 'selected="selected"' : ""; ?> placeholder="Building Name">
 	</div>
-	<div class="input">
+	<!--<div class="input">
 		<select name="location" id="">
 			<option value="">Location</option>
 			<?php foreach($location AS $location_list) : ?>
@@ -12,7 +12,7 @@
 			<?php endforeach; ?>
 		</select>
 	</div>
-	<!--<div class="input">
+	<div class="input">
 		<select name="additional" id="">
 			<option value="">Additional</option>
 			<option value="furnished" <?php echo $this->input->get('additional') ==  "furnished" ? 'selected="selected"' : ""; ?> >Furnished</option>

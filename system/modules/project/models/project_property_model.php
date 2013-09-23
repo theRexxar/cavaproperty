@@ -43,6 +43,7 @@ class Project_property_model extends BF_Model {
         $this->db->join('project_developer', 'project_property.developer_id = project_developer.id', 'left');
         $this->db->join('project_city', 'project_property.city_id = project_city.id', 'left');
         $this->db->join('marketing_agent', 'project_property.marketing_id = marketing_agent.id', 'left');
+
         $this->db->where('project_property.deleted', '0');
 
         return parent::find_all();
@@ -120,6 +121,7 @@ class Project_property_model extends BF_Model {
                             title,
                             category,
                             slug,
+                            deleted,
                             ');
         }
 
@@ -127,6 +129,7 @@ class Project_property_model extends BF_Model {
 
         $this->db->where('type_id', $type_id);
         $this->db->where('category', $category);
+        $this->db->where('deleted', '0');
 
         $query =  $this->db->get();
 

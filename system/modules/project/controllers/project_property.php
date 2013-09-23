@@ -483,10 +483,12 @@ class project_property extends Admin_Controller {
 		$this->form_validation->set_rules('developer_id','Developer','required|trim|xss_clean|is_numeric|max_length[11]');
 		$this->form_validation->set_rules('city_id','City','required|trim|xss_clean|is_numeric|max_length[11]');
 		$this->form_validation->set_rules('marketing_id','Marketing Agent','required|trim|xss_clean|is_numeric|max_length[11]');
+		$this->form_validation->set_rules('posting_date', 'Posting Date', 'trim|xss_clean|max_length[255]|');
 		$this->form_validation->set_rules('title','Title','required|trim|xss_clean|max_length[255]|callback__check_title['.$id.']');
 		$this->form_validation->set_rules('slug', 'Slug', 'required|trim|xss_clean|max_length[255]|alpha_dot_dash|callback__check_slug['.$id.']');
 		$this->form_validation->set_rules('address','Address','trim|xss_clean');
 		$this->form_validation->set_rules('size', 'Size', 'trim|xss_clean|max_length[255]|');
+		$this->form_validation->set_rules('price', 'Price', 'trim|xss_clean|max_length[255]|');
 		$this->form_validation->set_rules('bedroom','Bedroom','trim|xss_clean|is_numeric|max_length[11]');
 		$this->form_validation->set_rules('facility','Facility','trim|xss_clean');
 		$this->form_validation->set_rules('condition', 'Condition', 'trim|xss_clean|max_length[255]|');
@@ -518,14 +520,33 @@ class project_property extends Admin_Controller {
 		$data['title']                	= $this->input->post('title');
 		$data['address']          		= $this->input->post('address');
 		$data['size']          			= $this->input->post('size');
+		$data['price']          		= $this->input->post('price');
 		$data['facility']          		= $this->input->post('facility');
-		$data['condition']          	= $this->input->post('condition');
 		$data['additional']          	= $this->input->post('additional');
 		$data['youtube']          		= $this->input->post('youtube');
 		$data['vimeo']          		= $this->input->post('vimeo');
 		$data['image_id']             	= $this->input->post('image_id');
 		$data['highlight']          	= $this->input->post('highlight');
 		$data['slug']             	  	= $this->input->post('slug');
+
+		if($this->input->post('posting_date') != "")
+		{
+			$post_date = explode('/', $this->input->post('posting_date'));
+			$tgl = $post_date[1];
+			$bln = $post_date[0];
+			$thn = $post_date[2];
+
+			$data['posting_date']       = $thn.'-'.$bln.'-'.$tgl;
+		}
+
+		if($this->input->post('condition') == "")
+		{
+			$data['condition']          = "Unfurnished";
+		}
+		else
+		{
+			$data['condition']          = $this->input->post('condition');
+		}
 
 		if($this->input->post('bedroom') == "")
 		{

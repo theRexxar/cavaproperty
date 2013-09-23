@@ -12,7 +12,7 @@
 
 		<div class="input">
 			<select name="status" id="method">
-				<option value="sale" class="primary" <?php echo $this->input->get('status') ==  "sale" ? 'selected="selected"' : ""; ?>>Sale</option>
+				<option value="buy" class="primary" <?php echo $this->input->get('status') ==  "buy" ? 'selected="selected"' : ""; ?>>Buy</option>
 				<option value="rent" class="secondary <?php //echo ($this->input->get('category') == "" OR $this->input->get('category') == "primary") ? "hide" : ""; ?>" <?php echo $this->input->get('status') ==  "rent" ? 'selected="selected"' : ""; ?>>Rent</option>
 			</select>	
 		</div>

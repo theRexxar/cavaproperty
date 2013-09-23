@@ -33,8 +33,8 @@ $id = isset($project['id']) ? $project['id'] : '';
             <?php echo form_label('Status'. lang('bf_form_label_required'), 'status', array('class' => "control-label") ); ?>
             <div class='controls'>
                 <label class="radio">
-                    <input id="status" type="radio" name="status" value="sale" <?php echo $project[status] == "sale" ? "checked='checked'" : "" ?> >
-                    <span>Sale</span>
+                    <input id="status" type="radio" name="status" value="buy" <?php echo $project[status] == "buy" ? "checked='checked'" : "" ?> >
+                    <span>Buy</span>
                 </label>
                 <label class="radio">
                     <input id="status" type="radio" name="status" value="rent" <?php echo $project[status] == "rent" ? "checked='checked'" : "" ?> >
@@ -84,6 +84,15 @@ $id = isset($project['id']) ? $project['id'] : '';
                     <?php endforeach; ?>
                 </select>
                 <span class="help-inline"><?php echo form_error('marketing_id'); ?></span>
+            </div>
+        </div>
+
+        <!-- Posting Date -->
+        <div class="control-group <?php echo form_error('posting_date') ? 'error' : ''; ?>">
+            <?php echo form_label('Posting Date', 'posting_date', array('class' => "control-label") ); ?>
+            <div class='controls'>
+                <input id="date" type="text" name="posting_date" maxlength="255" value="<?php echo set_value('posting_date', isset($project['posting_date']) && $project['posting_date'] != '0000-00-00' ? date('d F Y',strtotime($project['posting_date'])) : ''); ?>"  />
+                <span class="help-inline"><?php echo form_error('posting_date'); ?></span>
             </div>
         </div>
 
@@ -143,10 +152,23 @@ $id = isset($project['id']) ? $project['id'] : '';
 
         <!-- Size -->
         <div class="control-group <?php echo form_error('size') ? 'error' : ''; ?>">
-            <?php echo form_label('Size', 'size', array('class' => "control-label") ); ?>
+            <?php echo form_label('Size (Land / Building)', 'size', array('class' => "control-label") ); ?>
             <div class='controls'>
                 <input id="size" type="text" name="size" maxlength="255" value="<?php echo set_value('size', isset($project['size']) ? $project['size'] : ''); ?>"  />
                 <span class="help-inline"><?php echo form_error('size'); ?></span>
+            </div>
+        </div>
+
+        <!-- Price -->
+        <div class="control-group <?php echo form_error('price') ? 'error' : ''; ?>">
+            <?php echo form_label('Price', 'price', array('class' => "control-label") ); ?>
+            <div class='controls'>
+                <input id="price" type="text" name="price" maxlength="255" value="<?php echo set_value('price', isset($project['price']) ? $project['price'] : ''); ?>"  />
+                <span class="help-inline"><?php echo form_error('price'); ?></span>
+                <br />
+                <span class="help-inline">
+                    <em>Ex: US$ 5000 / Rp 50.000.000</em>
+                </span>
             </div>
         </div>
 
@@ -183,7 +205,18 @@ $id = isset($project['id']) ? $project['id'] : '';
         <div class="control-group <?php echo form_error('condition') ? 'error' : ''; ?>">
             <?php echo form_label('Condition', 'condition', array('class' => "control-label") ); ?>
             <div class='controls'>
-                <input id="condition" type="text" name="condition" maxlength="255" value="<?php echo set_value('condition', isset($project['condition']) ? $project['condition'] : ''); ?>"  />
+                <label class="radio">
+                    <input id="condition" type="radio" name="condition" value="Furnished" <?php echo $project[condition] == "Furnished" ? "checked='checked'" : "" ?> >
+                    <span>Furnished</span>
+                </label>
+                <label class="radio">
+                    <input id="condition" type="radio" name="condition" value="Semi-Furnished" <?php echo $project[condition] == "Semi-Furnished" ? "checked='checked'" : "" ?> >
+                    <span>Semi-Furnished</span>
+                </label>
+                <label class="radio">
+                    <input id="condition" type="radio" name="condition" value="Unfurnished" <?php echo $project[condition] == "Unfurnished" ? "checked='checked'" : "" ?> >
+                    <span>Unfurnished</span>
+                </label>
                 <span class="help-inline"><?php echo form_error('condition'); ?></span>
             </div>
         </div>
@@ -244,7 +277,7 @@ $id = isset($project['id']) ? $project['id'] : '';
                     <span>Yes</span>
                 </label>
                 <label class="radio">
-                    <input id="highlight" type="radio" name="highlight" value="no" <?php echo $project[highlight] == "no" ? "checked='checked'" : "" ?> >
+                    <input id="highlight" type="radio" name="highlight" value="no" checked='checked' >
                     <span>No</span>
                 </label>
                 <span class="help-inline"><?php echo form_error('highlight'); ?></span>
@@ -256,8 +289,8 @@ $id = isset($project['id']) ? $project['id'] : '';
             <?php echo form_label('Status'. lang('bf_form_label_required'), 'status', array('class' => "control-label") ); ?>
             <div class='controls'>
                 <label class="checkbox">
-                    <input type="checkbox" name="status[]" id="status" value="sale" <?php echo ($project[status] == "sale" OR $project[status] == "all") ? "checked" : "" ?>>
-                    Sale
+                    <input type="checkbox" name="status[]" id="status" value="buy" <?php echo ($project[status] == "buy" OR $project[status] == "all") ? "checked" : "" ?>>
+                    Buy
                 </label>
                 <label class="checkbox">
                     <input type="checkbox" name="status[]" id="status" value="rent" <?php echo ($project[status] == "rent" OR $project[status] == "all") ? "checked" : "" ?>>

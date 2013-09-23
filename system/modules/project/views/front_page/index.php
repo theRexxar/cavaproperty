@@ -33,19 +33,21 @@
 							</span>	-->
 						</div>
 
-						<?php foreach($property_types AS $property_types_list) : ?>
+						<?php $i=0; foreach($property_types AS $property_types_list) : $i++; ?>
 						<?php if(! empty($property_types_list->list_property)) : ?>
-						<p>
+						<section class="category-property <?php echo $i == 1 ? "active" : ""; ?>">
 							<h6 class="sub-head">
 								<?php echo $property_types_list->title; ?>
 							</h6>
+							<p>
 							<?php foreach($property_types_list->list_property AS $property_list) : ?>
 								<a href="<?php echo base_url().'project/detail/'.$property_list->slug; ?>">
 									<?php echo $property_list->title; ?>
 								</a>
 								<br>
 							<?php endforeach; ?>
-						</p>
+							</p>
+						</section>
 						<?php endif; ?>
 						<?php endforeach; ?>
 
