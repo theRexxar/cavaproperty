@@ -95,28 +95,36 @@
 							<h5>OUR PROJECT</h5>
 							<span class="right"><a href="#primary"  class="active">PRIMARY</a> | <a href="#secodary" class="">SECONDARY</a></span>	
 						</div>
-						<p>
+						<section class="category-property active">
 							<h6 class="sub-head">Apartment</h6>
-								<a href="detail.php" class="active">SETIA BUDI SKY GARDEN</a><br>
-								<a href="detail.php">IZZARA</a><br>
-								<a href="detail.php">CASSAMORA</a><br>
-						</p>
-						<p>
+								<p>
+									<a href="detail.php" class="active">SETIA BUDI SKY GARDEN</a><br>
+									<a href="detail.php">IZZARA</a><br>
+									<a href="detail.php">CASSAMORA</a><br>
+								</p>
+						</section>
+						<section class="category-property">
 							<h6 class="sub-head">Housing</h6>
-								<a href="detail.php">SERENA HILLS</a><br>
-								<a href="detail.php">ONE BALMORAL</a><br>
-								<a href="detail.php">ALILA</a><br>
-						</p>
-						<p>
+								<p>
+									<a href="detail.php">SERENA HILLS</a><br>
+									<a href="detail.php">ONE BALMORAL</a><br>
+									<a href="detail.php">ALILA</a><br>
+								</p>
+						</section>
+						<section class="category-property">
 							<h6 class="sub-head">Villa and Condotel</h6>
-								<a href="detail.php">WUKU</a><br>
-								<a href="detail.php">HARRIS</a>
-						</p>
-						<p>
+								<p>
+									<a href="detail.php">WUKU</a><br>
+									<a href="detail.php">HARRIS</a>
+								</p>									
+						</section>
+						<section class="category-property">
 							<h6 class="sub-head">Office</h6>
-								<a href="detail.php">WUKU</a><br>
-								<a href="detail.php">HARRIS</a>
-						</p>
+								<p>
+									<a href="detail.php">WUKU</a><br>
+									<a href="detail.php">HARRIS</a>
+								</p>									
+						</section>
 
 						<div id="finder-container">
 
@@ -310,19 +318,19 @@
 						<div class="flexslider">
 						  <ul class="slides">
 						    <li>
-						      <img src="images/our_project.jpg" alt="Our Project">
+						      <a href=""><img src="images/our_project.jpg" alt="Our Project"></a>
 						      <div class="detail">
 						      	HARRIS - NUSA DUA BALI <a href="">+ DETAILS</a>
 						      </div>
 						    </li>
 						    <li>
-						      <img src="images/our_project.jpg" alt="Our Project">
+						      <a href=""><img src="images/our_project.jpg" alt="Our Project"></a>
 						      <div class="detail">
 						      	HARRIS I - NUSA BALI <a href="">+ DETAILS</a>
 						      </div>
 						    </li>
 						    <li>
-						      <img src="images/our_project.jpg" alt="Our Project">
+						      <a href=""><img src="images/our_project.jpg" alt="Our Project"></a>
 						      <div class="detail">
 						      	HARRIS II - DUA BALI <a href="">+ DETAILS</a>
 						      </div>

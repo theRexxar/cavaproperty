@@ -528,6 +528,18 @@ $(document).ready(function(){
 		});
 	}
 
+	var category_toggle = function(param, target){
+		$(param).click(function(){
+			var _this = $(this);
+
+			if(!_this.parents(target).hasClass("active")){
+				$(target).removeClass("active");
+				_this.parents(target).addClass("active");
+			}
+
+		});
+	}
+
 	function INIT(){
 		//initial(".sidebar", "nav.fix");
 		//window_resize(".sidebar","nav.fix");
@@ -558,6 +570,8 @@ $(document).ready(function(){
 		PM_search(".method");
 
 		//DIS_R_CLICK(BASE_URL);
+
+		category_toggle(".sub-head", ".category-property");
 	}
 
 	INIT();

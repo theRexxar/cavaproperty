@@ -1389,3 +1389,42 @@ footer{
 
 	h5{display: inline-block;}
 }
+
+.category-property p{
+	margin-left: 15px;
+}
+
+
+.category-property{
+	margin-bottom: 15px;
+	.sub-head{
+		cursor: pointer;
+		background: url(../images/icon/drop-arrow.png) no-repeat right center;
+	}
+
+	p{
+		overflow: hidden;
+		height: 0px;
+		@include opacity(0);
+		@include transition-property(all);
+		@include transition-duration(.5s);
+		@include transition-timing-function(ease-in-out);
+	}
+
+	&.active{
+		.sub-head{
+			background: url(../images/icon/up-arrow.png) no-repeat right center;		
+		}
+
+		p{
+			height: auto;
+			@include opacity(1);
+			@include transition-property(all);
+			@include transition-duration(.5s);
+			@include transition-timing-function(ease-in-out);
+		}
+	}
+}
+
+
+
