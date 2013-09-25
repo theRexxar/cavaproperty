@@ -77,7 +77,9 @@
 							<ul class="slides">
 							<?php foreach($property_highlight AS $property_highlight_list) : ?>
 							    <li>
-							      	<img src="<?php echo base_url().'files/large/'.$property_highlight_list->image_id.'/750/360/fit' ?>" alt="Our Project">
+							      	<a href="<?php echo base_url().'project/detail/'.$property_highlight_list->slug; ?>">
+							      		<img src="<?php echo base_url().'files/large/'.$property_highlight_list->image_id.'/750/360/fit' ?>" alt="Our Project">
+							      	</a>
 							      	<div class="detail">
 							      		<?php echo $property_highlight_list->title; ?> 
 							      		<a href="<?php echo base_url().'project/detail/'.$property_highlight_list->slug; ?>">

@@ -45,7 +45,7 @@
 			</div>
 			<div class="input">
 				<select class="disabled" disabled>
-					<option>Number of Beedrooms</option>
+					<option>Number of Bedrooms</option>
 				</select>
 			</div>
 			<!--<div class="input">
