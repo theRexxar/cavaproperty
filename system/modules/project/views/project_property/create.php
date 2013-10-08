@@ -40,7 +40,7 @@ $id = isset($project['id']) ? $project['id'] : '';
                     <input id="status" type="radio" name="status" value="rent" <?php echo $project[status] == "rent" ? "checked='checked'" : "" ?> >
                     <span>Rent</span>
                 </label>
-                <span class="help-inline"><?php echo form_error('status[]'); ?></span>
+                <span class="help-inline"><?php echo form_error('status'); ?></span>
             </div>
         </div>
 

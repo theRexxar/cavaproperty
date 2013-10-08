@@ -578,12 +578,12 @@ class project_property extends Admin_Controller {
 
 			if (is_numeric($id) && $images != '')
 			{
-                foreach($images as $file_id)
+                foreach($images as $key=>$file_id)
                 {                    
                     $data_gallery = array();
             		$data_gallery['property_id']  	= $id;
             		$data_gallery['file_id']  		= $file_id;
-            		$data_gallery['caption']  		= $caption;
+            		$data_gallery['caption']  		= $caption[$key];
                     
                     $this->project_property_gallery_model->insert($data_gallery);
                 }
@@ -606,12 +606,12 @@ class project_property extends Admin_Controller {
 
 			if($images != '')
             {				                    		
-                foreach($images as $file_id)
+                foreach($images as $key=>$file_id)
 	            {    			
                     $data_gallery = array();
         			$data_gallery['property_id']  	= $id;
         			$data_gallery['file_id']  		= $file_id;
-        			$data_gallery['caption']  		= $caption;
+        			$data_gallery['caption']  		= $caption[$key];
                     
                     $this->project_property_gallery_model->insert($data_gallery);
                 }	

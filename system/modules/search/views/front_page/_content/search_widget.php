@@ -8,7 +8,7 @@
 
 <section class="search">
 	<form action="<?php echo base_url().'search'; ?>" method="get" name="search" id="finder-form">
-		<input type="hidden" name="category" class="category-method" value="<?php echo $this->input->get('category') == "" ? "primary" : $this->input->get('category'); ?>">
+		<!--<input type="hidden" name="category" class="category-method" value="<?php echo $this->input->get('category') == "" ? "secondary" : $this->input->get('category'); ?>">-->
 
 		<div class="input">
 			<select name="status" id="method">

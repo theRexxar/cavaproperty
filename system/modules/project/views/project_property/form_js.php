@@ -136,7 +136,7 @@
 														'<input type="hidden" name="images[]" value="'+image_id+'" />' +
 														'<img width="100" height="100" src="'+BASE_URL+'files/thumb/'+image_id+'/100/100/fit" />&nbsp;'+
 														'<a href="#" class="btn btn-danger remove-image">Remove</a><br />' +
-														'<textarea name="caption" placeholder="Caption" style="margin-top: 5px;"></textarea>'+
+														'<textarea name="caption[]" placeholder="Caption" style="margin-top: 5px;"></textarea>'+
 														'</span>';
 					$('#'+target).append(img_gallery);
 					img_ids.push(image_id);
