@@ -96,7 +96,7 @@
 							<span class="right"><a href="#primary"  class="active">PRIMARY</a> | <a href="#secodary" class="">SECONDARY</a></span>	
 						</div>
 						<section class="category-property active">
-							<h6 class="sub-head">Apartment</h6>
+							<h6 class="sub-head" data-target="apartement-list">Apartment</h6>
 								<p>
 									<a href="detail.php" class="active">SETIA BUDI SKY GARDEN</a><br>
 									<a href="detail.php">IZZARA</a><br>
@@ -104,14 +104,14 @@
 								</p>
 						</section>
 						<section class="category-property">
-							<h6 class="sub-head">Housing</h6>
+							<h6 class="sub-head" data-target="housing-list">Housing</h6>
 								<p>
 									<a href="detail.php">SERENA HILLS</a><br>
 									<a href="detail.php">ONE BALMORAL</a><br>
 									<a href="detail.php">ALILA</a><br>
 								</p>
 						</section>
-						<section class="category-property">
+						<section class="category-property" data-target="villa-list">
 							<h6 class="sub-head">Villa and Condotel</h6>
 								<p>
 									<a href="detail.php">WUKU</a><br>
@@ -119,7 +119,7 @@
 								</p>									
 						</section>
 						<section class="category-property">
-							<h6 class="sub-head">Office</h6>
+							<h6 class="sub-head" data-target="office-list">Office</h6>
 								<p>
 									<a href="detail.php">WUKU</a><br>
 									<a href="detail.php">HARRIS</a>
@@ -315,7 +315,7 @@
 				<div class="columns sixteen">
 					<div class="left">
 
-						<div class="flexslider">
+						<!-- <div class="flexslider">
 						  <ul class="slides">
 						    <li>
 						      <a href=""><img src="images/our_project.jpg" alt="Our Project"></a>
@@ -336,8 +336,59 @@
 						      </div>
 						    </li>
 						  </ul>
-						</div>
-						
+						</div> -->
+
+
+						<ul class="block-grid four-up list-property">
+							<li class="apartement-list">
+								<a href="detail.php">
+									<span>SERENIA HILLS <small>+ MORE DETAIL</small></span>
+								</a>
+								<img src="images/our-project2.jpg" alt="">
+							</li>
+							<li class="apartement-list">
+								<a href="detail.php">
+									<span>SERENIA HILLS <small>+ MORE DETAIL</small></span>
+								</a>
+								<img src="images/our-project3.jpg" alt="">
+							</li>
+							<li class="apartement-list">
+								<a href="detail.php">
+									<span>TAUM SEMINYAK <small>+ MORE DETAIL</small></span>
+								</a>
+								<img src="images/our-project1.jpg" alt="">
+							</li>
+							<li class="apartement-list">
+								<a href="detail.php">
+									<span>TAUM SEMINYAK <small>+ MORE DETAIL</small></span>
+								</a>
+								<img src="images/our-project4.jpg" alt="">
+							</li>
+							<li class="housing-list" style="display:none">
+								<a href="detail.php">
+									<span>SERENIA HILLS <small>+ MORE DETAIL</small></span>
+								</a>
+								<img src="images/our-project3.jpg" alt="">
+							</li>
+							<li class="housing-list" style="display:none">
+								<a href="detail.php">
+									<span>TAUM SEMINYAK <small>+ MORE DETAIL</small></span>
+								</a>
+								<img src="images/our-project1.jpg" alt="">
+							</li>
+							<li class="housing-list" style="display:none">
+								<a href="detail.php">
+									<span>SERENIA HILLS <small>+ MORE DETAIL</small></span>
+								</a>
+								<img src="images/our-project3.jpg" alt="">
+							</li>
+							<li class="office-list" style="display:none">
+								<a href="detail.php">
+									<span>TAUM SEMINYAK <small>+ MORE DETAIL</small></span>
+								</a>
+								<img src="images/our-project1.jpg" alt="">
+							</li>
+						</ul>						
 					</div>
 					<div class="right bgwhite">
 						<h5>NEWS & UPDATES</h5>

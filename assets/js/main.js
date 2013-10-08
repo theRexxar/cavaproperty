@@ -530,11 +530,19 @@ $(document).ready(function(){
 
 	var category_toggle = function(param, target){
 		$(param).click(function(){
-			var _this = $(this);
+			var _this = $(this),
+				list = _this.attr("data-target");
 
+				console.log(list);
 			if(!_this.parents(target).hasClass("active")){
 				$(target).removeClass("active");
 				_this.parents(target).addClass("active");
+
+				$(".list-property").find("li").fadeOut(500, function(){
+					setTimeout(function(){
+						$(".list-property").find("." + list).fadeIn(500);	
+					}, 500);
+				});
 			}
 
 		});

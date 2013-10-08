@@ -1056,6 +1056,7 @@ header{
 	&.our-project{
 		.left{
 			max-width : 720px;
+			width     : 100%;
 		}
 
 		.flexslider{
@@ -1066,6 +1067,62 @@ header{
 		.container-article{
 			height    : 168px;
 			overflow  : auto;
+		}
+
+		.list-property{
+			margin: 0;
+
+			li{
+				margin   : 0;
+				padding  : 0;
+				position : relative;
+			}
+
+			img{
+				width: 100%;
+				height: 100%;
+			}
+
+			a{
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 180px;
+				height: 180px;
+				display: block;
+
+				span{
+					display: table-cell; 
+					vertical-align: middle; 
+					text-align: center;
+					width: 180px;
+					height: 180px;
+					font-size: 12px;
+					color: #707070;
+					text-transform: uppercase;
+					background     : rgba(255,255,255,.7);
+					@include text-shadow(rgba(255,255,255, 1) 1px 1px 0px);
+					@include opacity(1);
+					@include transition-property(opacity);
+					@include transition-duration(0.5s);
+					@include transition-timing-function(ease-in-out); 
+					
+					small{
+						font-size: 11px;
+						display: block;
+						clear: both;
+					}
+				}
+
+				&:hover, &.active{
+					span{
+						@include opacity(0);
+						@include transition-property(opacity);
+						@include transition-duration(0.5s);
+						@include transition-timing-function(ease-in-out);
+					}
+				}
+			}
 		}
 	}
 
@@ -1396,7 +1453,12 @@ footer{
 
 
 .category-property{
-	margin-bottom: 15px;
+	margin-bottom : 15px;
+	min-height    : 20px;
+	@include transition-property(all);
+	@include transition-duration(1s);
+	@include transition-timing-function(ease-in-out);
+
 	.sub-head{
 		cursor: pointer;
 		background: url(../images/icon/drop-arrow.png) no-repeat right center;
@@ -1407,20 +1469,25 @@ footer{
 		height: 0px;
 		@include opacity(0);
 		@include transition-property(all);
-		@include transition-duration(.5s);
+		@include transition-duration(1s);
 		@include transition-timing-function(ease-in-out);
 	}
 
 	&.active{
+		min-height : 50px;
+		@include transition-property(all);
+		@include transition-duration(1s);
+		@include transition-timing-function(ease-in-out);
+
 		.sub-head{
 			background: url(../images/icon/up-arrow.png) no-repeat right center;		
 		}
 
 		p{
-			height: auto;
+			min-height : 50px;
 			@include opacity(1);
 			@include transition-property(all);
-			@include transition-duration(.5s);
+			@include transition-duration(1s);
 			@include transition-timing-function(ease-in-out);
 		}
 	}
