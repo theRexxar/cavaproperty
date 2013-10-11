@@ -120,6 +120,7 @@ class Project_property_model extends BF_Model {
                             type_id,
                             title,
                             category,
+                            image_id,
                             slug,
                             deleted,
                             ');

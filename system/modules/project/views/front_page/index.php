@@ -36,7 +36,7 @@
 						<?php $i=0; foreach($property_types AS $property_types_list) : $i++; ?>
 						<?php if(! empty($property_types_list->list_property)) : ?>
 						<section class="category-property <?php echo $i == 1 ? "active" : ""; ?>">
-							<h6 class="sub-head">
+							<h6 class="sub-head" data-target="<?php echo $property_types_list->slug; ?>-list">
 								<?php echo $property_types_list->title; ?>
 							</h6>
 							<p>
@@ -72,27 +72,31 @@
 			<div class="row">
 				<div class="columns sixteen">
 					<div class="left">
-					<?php if(isset($property_highlight) && ! empty($property_highlight)) : ?>
-						<div class="flexslider">
-							<ul class="slides">
-							<?php foreach($property_highlight AS $property_highlight_list) : ?>
-							    <li>
-							      	<a href="<?php echo base_url().'project/detail/'.$property_highlight_list->slug; ?>">
-							      		<img src="<?php echo base_url().'files/large/'.$property_highlight_list->image_id.'/750/360/fit' ?>" alt="Our Project">
-							      	</a>
-							      	<div class="detail">
-							      		<?php echo $property_highlight_list->title; ?> 
-							      		<a href="<?php echo base_url().'project/detail/'.$property_highlight_list->slug; ?>">
-							      			+ DETAILS
-							      		</a>
-							      	</div>
-							    </li>
+
+					<?php $ii=0; foreach($property_types AS $property_types_list) : $ii++; ?>
+					<?php 
+						$style = "";
+						if($property_types_list->slug != "apartement")
+						{
+							$style = 'style="display:none"';
+						} 
+					?>
+						<?php if(! empty($property_types_list->list_property)) : ?>
+						<ul class="block-grid four-up list-property">
+							<?php foreach($property_types_list->list_property AS $property_list) : ?>
+							<li class="<?php echo $property_types_list->slug; ?>-list" <?php echo $style; ?> >
+								<a href="<?php echo base_url().'project/detail/'.$property_list->slug; ?>">
+									<span>
+										<?php echo $property_list->title; ?> <small>+ MORE DETAIL</small>
+									</span>
+								</a>
+								<img src="<?php echo base_url().'files/large/'.$property_list->image_id.'/200/200/fit' ?>" alt="">
+							</li>
 							<?php endforeach; ?>
-							</ul>
-						</div>
-					<?php else : ?>
-						<img src="<?php echo config_item('assets_url'); ?>images/our_project.jpg" alt="Our Project">
-					<?php endif; ?>
+						</ul>
+						<?php endif; ?>
+					<?php endforeach; ?>
+
 					</div>
 
 					<div class="right bgwhite">

@@ -25,7 +25,7 @@ class project extends Front_Controller {
 		$this->load->model('project_property_model');
 		$this->load->model('project_type_model');
 
-        $property 			= $this->project_property_model->order_by('created_on','desc')->find_all();
+        $property 			= $this->project_property_model->order_by('created_on','desc')->find_all_by('project_property.category', 'primary');
         $property_highlight = $this->project_property_model->order_by('created_on','desc')->find_all_by('project_property.highlight','yes');
         
         $property_types   	= $this->project_type_model->order_by('title','asc')->find_all();
@@ -42,7 +42,7 @@ class project extends Front_Controller {
 						'property_developer' 	=> $property_developer,
 					);
         
-        //print_r($property_type);exit();
+        //print_r($property_types);exit();
 		
         Template::set('data', $vars);
 		Template::set('toolbar_title', "Our Projects");
