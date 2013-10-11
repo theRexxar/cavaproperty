@@ -1474,7 +1474,7 @@ footer{
 	}
 
 	&.active{
-		min-height : 50px;
+		min-height : 100px;
 		@include transition-property(all);
 		@include transition-duration(1s);
 		@include transition-timing-function(ease-in-out);
@@ -1484,7 +1484,7 @@ footer{
 		}
 
 		p{
-			min-height : 50px;
+			min-height : 100px;
 			@include opacity(1);
 			@include transition-property(all);
 			@include transition-duration(1s);
