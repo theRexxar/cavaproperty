@@ -161,7 +161,7 @@ h1,h2,h3,h4,h5,h6{
 .link-button{
 	background     : url(../images/sprite.png) no-repeat 0 -67px;
 	height         : 42px;
-	width          : 85px;
+	width          : 85px !important;
 	display        : block;
 	text-indent    : -999999px;
 	letter-spacing : -999999px;
