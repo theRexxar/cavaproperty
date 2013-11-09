@@ -266,6 +266,32 @@ $(document).ready(function(){
 		});
 	}
 
+	var cboxDetail = function(param) {
+		$(param).click(function(){
+			var _this = $(this);
+
+			var _title = "<h5>"+ _this.parents(".columns.sixteen").find("h5").html() + "</h5>";
+			var _content = ""; 
+
+			$(".columns.sixteen .article").each(function(index, value){
+				_content += "<div>"+ $(this).html() +"</div>";
+			});
+
+			var _html = _title + _content;
+			
+			$.colorbox({
+				transition : 'fade',
+				width : '800px',
+				height: '600px',
+				reposition: true,
+				html : _html
+			})
+
+			console.log(_title, _content);
+
+		})
+	}
+
 	var DIS_R_CLICK = function(param){
 		NEW_URL = param.indexOf("localhost");
 		console.log(param, NEW_URL)
@@ -566,6 +592,8 @@ $(document).ready(function(){
 		acordion_menu(".acordion span");
 
 		cboxImageClick(".cboxElement");
+
+		cboxDetail(".button-detail-project");
 
 		verticalScroll(".container-article");
 

@@ -22,6 +22,7 @@
     
 
     <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery-1.7.1.min.js"></script>
+    <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.colorbox.js"></script>
     <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.flexslider.js"></script>
     <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.easing.js"></script>
     <script src="<?php echo config_item('assets_url'); ?>js/vendor/jquery.mousewheel.js"></script>

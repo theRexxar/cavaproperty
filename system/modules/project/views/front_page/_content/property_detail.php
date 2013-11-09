@@ -80,6 +80,9 @@
 							<a href="<?php echo base_url().'project'; ?>" class="right button-more">
 								<span>+</span> MORE PROJECTS
 							</a>
+							<a href="#detail" class="button-detail-project">
+								<span>+</span> DETAIL PROJECT
+							</a>
 						</p>
 						
 						<div id="finder-container">
