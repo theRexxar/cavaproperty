@@ -57,11 +57,11 @@
                         	<a href="#" class="close">x</a>
 						</div>
 
-						<p class="clear left mt20">
+						<!--<p class="clear left mt20">
 							<a href="#finder" class="link-button green left" id="finder">
 								FINDER
 							</a>
-						</p>
+						</p>-->
 					</div>
 				</div>
 			</section>	

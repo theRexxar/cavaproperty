@@ -144,6 +144,38 @@ class Project_property_model extends BF_Model {
         }
     }
 
+    public function find_all_finder($type_id, $category)
+    {
+        if (empty($this->selects))
+        {
+            $this->db->select('
+                            id,
+                            type_id,
+                            title,
+                            category,
+                            slug,
+                            deleted,
+                            ');
+        }
+
+        $this->db->from('project_property');
+
+        $this->db->where('type_id', $type_id);
+        $this->db->where('category', $category);
+        $this->db->where('deleted', '0');
+
+        $query =  $this->db->get();
+
+        if ($query->num_rows() > 0)
+        {
+            return $query->result();
+        }
+        else
+        {
+            return FALSE;
+        }
+    }
+
     public function search_listing($type_id,$status,$city_id,$bedroom)
     {
         if (empty($this->selects))

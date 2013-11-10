@@ -39,28 +39,18 @@ class Search extends Front_Controller {
 	*/
 	public function search_widget()
 	{		
-		/*$this->load->model('project/project_model');
-		$this->load->model('project/project_type_model');
-		$this->load->model('project/project_location_model');
+		$this->load->model('project/project_property_model');
 
-		$category 	= $this->project_model->order_by('title','desc')->find_all();
-		foreach($category as $category_list)
-		{
-			$data["category"][$category_list->id] = $category_list;
-
-			$data["category"][$category_list->id]->type = $this->project_type_model->order_by('title','asc')->find_all_by('project_type.category_id', $category_list->id);
-		}
-
-		$location = $this->project_location_model->order_by('title','asc')->find_all();
+		$apartment 	= $this->project_property_model->order_by('title','asc')->find_all_finder('1', 'secondary');
+		$office 	= $this->project_property_model->order_by('title','asc')->find_all_finder('6', 'secondary');
 
         $vars = array(
-						'banner'      	=> $banner,
-						'category'		=> $category,
-						'location'		=> $location,
+						'apartment' 	=> $apartment,
+						'office'  		=> $office,
 					);
-		*/
+		
 
-		$this->load->view('front_page/_content/search_widget');
+		$this->load->view('front_page/_content/search_widget', $vars);
 	}
 
 	//--------------------------------------------------------------------
@@ -125,7 +115,7 @@ class Search extends Front_Controller {
 	    $location_id 	= $this->project_location_model->find_by('slug', $location);
 
 	    //Condition for bedroom
-	    if($bedroom == "2" OR $bedroom == "3")
+	    if($bedroom == "1" OR $bedroom == "2" OR $bedroom == "3")
 	    {
 	    	$bedroom_count = $bedroom;
 	    }

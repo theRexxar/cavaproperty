@@ -21,7 +21,7 @@
 			<select name="type" id="type-property">
 				<option value="">Type Property</option>
 	            <option value="apartement" <?php echo $this->input->get('type') ==  "apartement" ? 'selected="selected"' : ""; ?> >
-	            	Apartement
+	            	Apartment
 	            </option>
 	            <option value="house" <?php echo $this->input->get('type') ==  "house" ? 'selected="selected"' : ""; ?> >
 	            	House

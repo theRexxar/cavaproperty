@@ -10,6 +10,7 @@ class Search_model extends CI_Model {
         { 
             switch($options['bedroom'])
             {
+                case '1'        : $bedroom_field  = 'project_property.bedroom'; break;
                 case '2'        : $bedroom_field  = 'project_property.bedroom'; break;
                 case '3'        : $bedroom_field  = 'project_property.bedroom'; break;
                 case '3plus'    : $bedroom_field  = 'project_property.bedroom >'; break;
@@ -26,7 +27,8 @@ class Search_model extends CI_Model {
                 $this->db->where('project_property.deleted', '0');            
                 if(isset($options['name']) && $options['name'] != "") 
                 {                     
-                    $this->db->where('match(cv_project_property.title) against('.$this->db->escape($options['name']).' IN BOOLEAN MODE)',NULL,false); 
+                    //$this->db->where('match(cv_project_property.title) against('.$this->db->escape($options['name']).' IN BOOLEAN MODE)',NULL,false); 
+                    $this->db->where('project_property.slug',$options['name']);
                 }      
                 $this->db->where('project_property.category',$options['category']);    
                 $this->db->where('project_property.status',$options['status']);                      
