@@ -282,7 +282,7 @@ $(document).ready(function(){
 			$.colorbox({
 				transition : 'fade',
 				width : '800px',
-				height: '600px',
+				height: '650px',
 				reposition: true,
 				html : _html
 			})
