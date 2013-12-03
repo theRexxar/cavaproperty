@@ -40,13 +40,17 @@ class Search extends Front_Controller {
 	public function search_widget()
 	{		
 		$this->load->model('project/project_property_model');
+		$this->load->model('project/project_city_model');
 
 		$apartment 	= $this->project_property_model->order_by('title','asc')->find_all_finder('1', 'secondary');
 		$office 	= $this->project_property_model->order_by('title','asc')->find_all_finder('6', 'secondary');
 
+		$location 	= $this->project_city_model->order_by('title', 'asc')->find_all();
+
         $vars = array(
 						'apartment' 	=> $apartment,
 						'office'  		=> $office,
+						'location'  	=> $location,
 					);
 		
 
@@ -100,40 +104,49 @@ class Search extends Front_Controller {
     function search()
 	{		
 		$this->load->model('project/project_type_model');
-		$this->load->model('project/project_location_model');
+		$this->load->model('project/project_city_model');
 
 	    //$category       = $this->input->get('category');
-	    $status       	= $this->input->get('status');
-	    $name       	= $this->input->get('name');
-	    $type       	= $this->input->get('type');
-	    $location       = $this->input->get('location');
-	    $bedroom     	= $this->input->get('bedroom');
+	    $status       		= $this->input->get('status');
+	    $name_apartment     = $this->input->get('name_apartment');
+	    $name_office       	= $this->input->get('name_office');
+	    $type       		= $this->input->get('type');
+	    $location_house     = $this->input->get('location_house');
+	    $bedroom_apartment  = $this->input->get('bedroom_apartment');
+	    $size_office  		= $this->input->get('size_office');
 
+
+	    //Convert apartement to apartment
+	    if($type == "apartement")
+	    {
+	    	$type = "apartment";
+	    }
 
 	    //Convert string parameter from slug to id
-	    $type_id 		= $this->project_type_model->find_by('slug', $type);
-	    $location_id 	= $this->project_location_model->find_by('slug', $location);
+	    $type_id 			= $this->project_type_model->find_by('slug', $type);
+	    $location_house_id 	= $this->project_city_model->find_by('slug', $location_house);
 
-	    //Condition for bedroom
-	    if($bedroom == "1" OR $bedroom == "2" OR $bedroom == "3")
+	    //Condition for bedroom apartment
+	    if($bedroom_apartment == "1" OR $bedroom_apartment == "2" OR $bedroom_apartment == "3")
 	    {
-	    	$bedroom_count = $bedroom;
+	    	$bedroom_apartment_count = $bedroom_apartment;
 	    }
 	    elseif($bedroom == "3plus")
 	    {
-	    	$bedroom_count = "3";
+	    	$bedroom_apartment_count = "3";
 	    }
 
         
-		$options['category']   		= "secondary";
-		$options['status']   		= $status;
-		$options['name']   			= $name;
-		$options['type']   			= $type_id->id;
-		$options['location']   		= $location_id->id;
-		$options['bedroom'] 		= $bedroom;
-		$options['bedroom_count'] 	= $bedroom_count;
-        $options['order_by']      	= "created_on";
-        $options['order_method']  	= "desc";
+		$options['category']   					= "secondary";
+		$options['status']   					= $status;
+		$options['name_apartment']   			= $name_apartment;
+		$options['name_office']   				= $name_office;
+		$options['type']   						= $type_id->id;
+		$options['location_house']   			= $location_house_id->id;
+		$options['bedroom_apartment_count'] 	= $bedroom_apartment_count;
+		$options['size_office'] 				= $size_office;
+        $options['order_by']      				= "created_on";
+        $options['order_method']  				= "desc";
 		
         
         //Module Project

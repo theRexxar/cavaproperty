@@ -14,10 +14,12 @@
                             </div>
                             <?php endif; ?>
 
+                            <?php if(! empty($property->title_city)) : ?>
                             <div class="article">
                                     <span class="text-lg">LOCATION</span><br>
                                     <span class="mlr10"><?php echo $property->title_city ?></span>
                             </div>
+                            <?php endif; ?>
 
                             <?php if(! empty($property->address)) : ?>
                             <div class="article">
@@ -90,11 +92,11 @@
                             <a href="#" class="close">x</a>
                         </div>
 
-                        <p class="clear left mt20">
+                        <!--<p class="clear left mt20">
                                 <a href="#finder" class="link-button green left" id="finder">
                                         FINDER
                                 </a>
-                        </p>
+                        </p>-->
                     </div>
                 </div>
             </section>        

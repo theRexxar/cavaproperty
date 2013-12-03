@@ -76,7 +76,7 @@
 					<?php $ii=0; foreach($property_types AS $property_types_list) : $ii++; ?>
 					<?php 
 						$style = "";
-						if($property_types_list->slug != "apartement")
+						if($property_types_list->slug != "apartment")
 						{
 							$style = 'style="display:none"';
 						} 

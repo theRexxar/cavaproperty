@@ -116,9 +116,10 @@ $id = isset($project['id']) ? $project['id'] : '';
 
         <!-- City -->
         <div class="control-group <?php echo form_error('city_id') ? 'error' : ''; ?>">
-            <?php echo form_label('City'. lang('bf_form_label_required'), 'city_id', array('class' => "control-label") ); ?>
+            <?php echo form_label('City', 'city_id', array('class' => "control-label") ); ?>
             <div class='controls'>
                 <select name="city_id" id="city_id" no_parent="1" style="width: 230px;" >
+                    <option value="">Select City</option>
                     <?php foreach($location AS $location_list) : ?>
                     <optgroup label="<?php echo $location_list->title; ?>">
                         <?php foreach($location_list->city AS $city_list) : ?>
@@ -156,6 +157,22 @@ $id = isset($project['id']) ? $project['id'] : '';
             <div class='controls'>
                 <input id="size" type="text" name="size" maxlength="255" value="<?php echo set_value('size', isset($project['size']) ? $project['size'] : ''); ?>"  />
                 <span class="help-inline"><?php echo form_error('size'); ?></span>
+            </div>
+        </div>
+
+        <!-- Size Office -->
+        <div class="control-group <?php echo form_error('size_office') ? 'error' : ''; ?>">
+            <?php echo form_label('Size (for Office type)', 'size_office', array('class' => "control-label") ); ?>
+            <div class='controls'>
+                <select name="size_office" id="size_office" no_parent="1" style="width: 230px;" >
+                    <option value="">Select Size</option>
+                    <option value="<100" <?php echo isset($project['size_office']) && $project['size_office'] == "<100" ? 'selected="selected"' : ""; ?> >< 100</option>
+                    <option value="<250" <?php echo isset($project['size_office']) && $project['size_office'] == "<250" ? 'selected="selected"' : ""; ?> >< 250</option>
+                    <option value="<500" <?php echo isset($project['size_office']) && $project['size_office'] == "500" ? 'selected="selected"' : ""; ?> >< 500</option>
+                    <option value="<1000" <?php echo isset($project['size_office']) && $project['size_office'] == "<1000" ? 'selected="selected"' : ""; ?> >< 1000</option>
+                    <option value=">1000" <?php echo isset($project['size_office']) && $project['size_office'] == ">1000" ? 'selected="selected"' : ""; ?> >> 1000</option>
+                </select>
+                <span class="help-inline"><?php echo form_error('size_office'); ?></span>
             </div>
         </div>
 

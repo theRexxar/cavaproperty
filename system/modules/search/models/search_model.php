@@ -6,9 +6,9 @@ class Search_model extends CI_Model {
     { 
         $where = array(); 
 
-        if(isset($options['bedroom']) && $options['bedroom'] != "") 
+        if(isset($options['bedroom_apartment_count']) && $options['bedroom_apartment_count'] != "") 
         { 
-            switch($options['bedroom'])
+            switch($options['bedroom_apartment_count'])
             {
                 case '1'        : $bedroom_field  = 'project_property.bedroom'; break;
                 case '2'        : $bedroom_field  = 'project_property.bedroom'; break;
@@ -24,25 +24,41 @@ class Search_model extends CI_Model {
                 //$this->db->select('project_property.*, project_developer.id AS id_developer, project_developer.title AS title_developer, project_developer.slug AS slug_developer');
                 $this->db->select('project_property.*');
                 //$this->db->join('project_developer', 'project_property.developer_id = project_developer.id', 'left');
-                $this->db->where('project_property.deleted', '0');            
-                if(isset($options['name']) && $options['name'] != "") 
+                $this->db->where('project_property.deleted', '0');    
+
+                if(isset($options['name_apartment']) && $options['name_apartment'] != "") 
                 {                     
                     //$this->db->where('match(cv_project_property.title) against('.$this->db->escape($options['name']).' IN BOOLEAN MODE)',NULL,false); 
-                    $this->db->where('project_property.slug',$options['name']);
+                    $this->db->where('project_property.slug',$options['name_apartment']);
                 }      
-                $this->db->where('project_property.category',$options['category']);    
-                $this->db->where('project_property.status',$options['status']);                      
+
+                if(isset($options['name_office']) && $options['name_office'] != "") 
+                {                     
+                    $this->db->where('project_property.slug',$options['name_office']);
+                }  
+
+                $this->db->where('project_property.category',$options['category']);   
+
+                $this->db->where('project_property.status',$options['status']); 
+
                 if(isset($options['type']) && $options['type'] != "") 
                 { 
                     $this->db->where('project_property.type_id',$options['type']);
-                }                            
-                if(isset($options['location']) && $options['location'] != "") 
+                }
+
+                if(isset($options['location_house']) && $options['location_house'] != "") 
                 { 
-                    $this->db->where('project_property.location_id',$options['location']);
-                }                            
-                if(isset($options['bedroom_count']) && $options['bedroom_count'] != "") 
+                    $this->db->where('project_property.city_id',$options['location_house']);
+                }   
+
+                if(isset($options['bedroom_apartment_count']) && $options['bedroom_apartment_count'] != "") 
                 { 
-                    $this->db->where($bedroom_field,$options['bedroom_count']);
+                    $this->db->where($bedroom_field,$options['bedroom_apartment_count']);
+                } 
+
+                if(isset($options['size_office']) && $options['size_office'] != "") 
+                { 
+                    $this->db->where('project_property.size_office',$options['size_office']);
                 }
             }
         }         

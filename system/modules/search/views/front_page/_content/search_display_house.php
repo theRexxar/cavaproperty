@@ -1,9 +1,9 @@
 <div class="house" style="display: none;">
 	<div class="input">
-		<select name="location" id="">
+		<select name="location_house" id="">
 			<option value="">Location</option>
 			<?php foreach($location AS $location_list) : ?>
-			<option value="<?php echo $location_list->slug; ?>" <?php echo $this->input->get('location') ==  $location_list->slug ? 'selected="selected"' : ""; ?> >
+			<option value="<?php echo $location_list->slug; ?>" <?php echo $this->input->get('location_house') ==  $location_list->slug ? 'selected="selected"' : ""; ?> >
 				<?php echo $location_list->title; ?>
 			</option>
 			<?php endforeach; ?>
