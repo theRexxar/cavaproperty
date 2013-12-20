@@ -1,3 +1,13 @@
+<?php 
+	if(isset($_GET['type'])){
+		$type = $_GET['type'];
+	}else {
+		$type = "";
+	}
+
+	var_dump($tipe)
+?>
+
 <div class="top">
 	<h5>SEARCH PROJECT</h5>
 	<!--<span class="right">
@@ -32,7 +42,7 @@
 			</select>	
 		</div>
 
-		<div class="default">
+		<div class="default category-type" style="display: <?php echo ($type == "") ? 'block' : 'none';  ?>">
 			<div class="input">
 				<select class="disabled" disabled>
 					<option>Building Name</option>

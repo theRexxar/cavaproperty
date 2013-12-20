@@ -456,7 +456,7 @@ $(document).ready(function(){
 		$(param).change(function(){
 			var option = $(this).find("option:selected").val();
 			if(option != ""){
-				$("#finder-form").find(".default, .active").fadeOut();
+				$("#finder-form").find(".default, .active, .category-type").fadeOut();
 				$("#finder-form .active").removeClass("active");
 				$("#finder-form .submit").fadeOut();
 				setTimeout(function(){
@@ -559,7 +559,6 @@ $(document).ready(function(){
 			var _this = $(this),
 				list = _this.attr("data-target");
 
-				console.log(list);
 			if(!_this.parents(target).hasClass("active")){
 				$(target).removeClass("active");
 				_this.parents(target).addClass("active");

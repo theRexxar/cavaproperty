@@ -1,4 +1,4 @@
-<div class="house" style="display: none;">
+<div class="house category-type" style="display: <?php echo ($type == "house") ? 'block' : 'none';  ?>">
 	<div class="input">
 		<select name="location_house" id="">
 			<option value="">Location</option>

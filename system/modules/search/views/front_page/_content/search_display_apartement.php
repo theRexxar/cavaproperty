@@ -1,4 +1,4 @@
-<div class="apartement" style="display: none;">
+<div class="apartement category-type" style="display: <?php echo ($type == "apartement") ? 'block' : 'none';  ?>">
 	<div class="input">
 		<!--<input type="text" name="name" <?php echo $this->input->get('name') ? 'selected="selected"' : ""; ?> placeholder="Building Name">-->
 		<select name="name_apartment" id="">
