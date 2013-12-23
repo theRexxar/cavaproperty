@@ -116,6 +116,23 @@ class Search extends Front_Controller {
 	    $size_office  		= $this->input->get('size_office');
 
 
+	    //Session for back button
+		$this->session->unset_userdata('search_data');
+
+
+		$data_search = array();
+		$data_search['status']  			= $status;
+		$data_search['name_apartment']  	= $name_apartment;
+		$data_search['name_office']  		= $name_office;
+		$data_search['type']  				= $type;
+		$data_search['location_house']  	= $location_house;
+		$data_search['bedroom_apartment']  	= $bedroom_apartment;
+		$data_search['size_office']  		= $size_office;
+        
+        $this->session->set_userdata('search_data',$data_search);
+		//-----------------------
+
+
 	    //Convert apartement to apartment
 	    if($type == "apartement")
 	    {
@@ -157,7 +174,7 @@ class Search extends Front_Controller {
                 
                 
 		$data['result']       = $this->result;
-		
+	
 		//print_r($options);exit();
 
 		return $data;

@@ -4,8 +4,6 @@
 	}else {
 		$type = "";
 	}
-
-	var_dump($tipe)
 ?>
 
 <div class="top">

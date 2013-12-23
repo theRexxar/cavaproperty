@@ -78,12 +78,39 @@
                         </div>
                                                 
                         <p class="clear left mt20">
-                                <a href="<?php echo base_url().'project'; ?>" class="right button-more">
-                                        <span>+</span> MORE PROJECTS
-                                </a>
-                                <a href="#detail" class="button-detail-project">
-                                        <span>+</span> DETAIL PROJECT
-                                </a>
+                            <?php
+                                if($this->input->get('ref') == "search")
+                                {
+                                    $search_data = $this->session->userdata('search_data');
+
+                                    if(! empty($search_data))
+                                    {                                        
+                                        $status             = 'status='.$search_data['status'];
+                                        $type               = '&type='.$search_data['type'];
+                                        $name_apartment     = '&name_apartment='.$search_data['name_apartment'];
+                                        $bedroom_apartment  = '&bedroom_apartment='.$search_data['bedroom_apartment'];
+                                        $location_house     = '&location_house='.$search_data['location_house'];
+                                        $name_office        = '&name_office='.$search_data['name_office'];
+                                        $size_office        = '&size_office='.$search_data['size_office'];
+
+                                        $url = base_url().'search?'.$status.$type.$name_apartment.$bedroom_apartment.$location_house.$name_office.$size_office;
+                                    }
+                                    else
+                                    {
+                                        $url = base_url().'project';
+                                    }
+                                }
+                                else
+                                {
+                                    $url = base_url().'project';
+                                }
+                            ?>
+                            <a href="<?php echo $url; ?>" class="right button-more">
+                                <span><</span> BACK
+                            </a>
+                            <a href="#detail" class="button-detail-project">
+                                <span>+</span> DETAIL PROJECT
+                            </a>
                         </p>
                                                 
                         <div id="finder-container">
