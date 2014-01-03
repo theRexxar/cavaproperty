@@ -21,7 +21,23 @@
                     <?php foreach($result[$key] AS $result_list) : ?>
                     <li class="">
                         <a href="<?php echo $result_list['link_detail']; ?>">
-                            <span><?php echo $result_list['title']; ?> <small>+ MORE DETAIL</small></span>
+                            <span>
+                                <?php echo $result_list['title']; ?> 
+                                <br>
+                                <?php 
+                                    if(! empty($result_list['bedroom']))
+                                    {
+                                        echo $result_list['bedroom'].' Bedroom';
+                                    }
+                                    elseif(! empty($result_list['size_office']))
+                                    {
+                                        echo 'Size: '.$result_list['size_office'];
+                                    }
+                                ?>
+                                <br> 
+                                <?php echo $result_list['price']; ?> 
+                                <small>+ MORE DETAIL</small>
+                            </span>
                         </a>
                         <img src="<?php echo base_url().'files/large/'.$result_list['image_id'].'/200/200/fit' ?>" alt="">
                     </li>

@@ -208,7 +208,7 @@ class Search extends Front_Controller {
                 
 				if($options['table'] === 'project_property') //Module Project
 				{
-					$row['link_detail']  = base_url().'project/detail/'.$row['slug'].$from_search;
+					$row['link_detail']  = base_url().'project/detail/'.$row['id'].$from_search;
 					$row['module_name']  = 'Project';
 					$row['archive_slug'] = 'project';
 				}

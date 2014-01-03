@@ -26,13 +26,13 @@ class Search_model extends CI_Model {
                 //$this->db->join('project_developer', 'project_property.developer_id = project_developer.id', 'left');
                 $this->db->where('project_property.deleted', '0');    
 
-                if(isset($options['name_apartment']) && $options['name_apartment'] != "") 
+                if(isset($options['name_apartment']) && $options['name_apartment'] != "" && $options['type'] == 1) 
                 {                     
                     //$this->db->where('match(cv_project_property.title) against('.$this->db->escape($options['name']).' IN BOOLEAN MODE)',NULL,false); 
                     $this->db->where('project_property.slug',$options['name_apartment']);
                 }      
 
-                if(isset($options['name_office']) && $options['name_office'] != "") 
+                if(isset($options['name_office']) && $options['name_office'] != "" && $options['type'] == 6) 
                 {                     
                     $this->db->where('project_property.slug',$options['name_office']);
                 }  
@@ -46,17 +46,17 @@ class Search_model extends CI_Model {
                     $this->db->where('project_property.type_id',$options['type']);
                 }
 
-                if(isset($options['location_house']) && $options['location_house'] != "") 
+                if(isset($options['location_house']) && $options['location_house'] != "" && $options['type'] == 3) 
                 { 
                     $this->db->where('project_property.city_id',$options['location_house']);
                 }   
 
-                if(isset($options['bedroom_apartment_count']) && $options['bedroom_apartment_count'] != "") 
+                if(isset($options['bedroom_apartment_count']) && $options['bedroom_apartment_count'] != "" && $options['type'] == 1) 
                 { 
                     $this->db->where($bedroom_field,$options['bedroom_apartment_count']);
                 } 
 
-                if(isset($options['size_office']) && $options['size_office'] != "") 
+                if(isset($options['size_office']) && $options['size_office'] != "" && $options['type'] == 6) 
                 { 
                     $this->db->where('project_property.size_office',$options['size_office']);
                 }

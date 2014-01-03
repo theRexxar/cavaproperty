@@ -164,6 +164,8 @@ class Project_property_model extends BF_Model {
         $this->db->where('category', $category);
         $this->db->where('deleted', '0');
 
+        $this->db->group_by('title');
+
         $query =  $this->db->get();
 
         if ($query->num_rows() > 0)

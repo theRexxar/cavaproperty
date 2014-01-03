@@ -7,7 +7,7 @@
 				<ul class="overview">
 				<?php foreach($property AS $property_list) : ?>
 					<li class="">
-						<a href="<?php echo base_url().'project/detail/'.$property_list->slug; ?>">
+						<a href="<?php echo base_url().'project/detail/'.$property_list->id; ?>">
 							<span><?php echo $property_list->title ?> <small>+ MORE DETAILS</small></span>
 						</a>
 						<img src="<?php echo base_url().'files/large/'.$property_list->image_id.'/200/200/fit' ?>" alt="">
@@ -41,7 +41,7 @@
 							</h6>
 							<p>
 							<?php foreach($property_types_list->list_property AS $property_list) : ?>
-								<a href="<?php echo base_url().'project/detail/'.$property_list->slug; ?>">
+								<a href="<?php echo base_url().'project/detail/'.$property_list->id; ?>">
 									<?php echo $property_list->title; ?>
 								</a>
 								<br>
@@ -85,7 +85,7 @@
 						<ul class="block-grid four-up list-property">
 							<?php foreach($property_types_list->list_property AS $property_list) : ?>
 							<li class="<?php echo $property_types_list->slug; ?>-list" <?php echo $style; ?> >
-								<a href="<?php echo base_url().'project/detail/'.$property_list->slug; ?>">
+								<a href="<?php echo base_url().'project/detail/'.$property_list->id; ?>">
 									<span>
 										<?php echo $property_list->title; ?> <small>+ MORE DETAIL</small>
 									</span>

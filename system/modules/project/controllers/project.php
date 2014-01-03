@@ -142,7 +142,7 @@ class project extends Front_Controller {
 
 		Displays detail property.
 	*/
-	public function property_detail($slug=NULL)
+	public function property_detail($id=NULL)
 	{
 		$this->load->model('member/member_model');
 		$this->load->model('project_property_model');
@@ -157,7 +157,7 @@ class project extends Front_Controller {
 		}
 
 		
-		$property 		= $this->project_property_model->find_by('project_property.slug', $slug);
+		$property 		= $this->project_property_model->find_by('project_property.id', $id);
         if($property)
         {
         	$property->gallery = $this->project_property_gallery_model->find_all_by('property_id', $property->id);
